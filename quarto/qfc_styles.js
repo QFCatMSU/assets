@@ -675,7 +675,8 @@ function enablePrevious()
 
 function linksToNewWindow()
 {
-	links = encapObject.querySelectorAll('a[href]');
+	links = document.getElementById("quarto-document-content").querySelectorAll('a[href]');
+	//links = encapObject.querySelectorAll('.quarto-document-content>a[href]');
 	
 	for(i=0; i<links.length; i++)
 	{
