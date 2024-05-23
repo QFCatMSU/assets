@@ -675,14 +675,20 @@ function enablePrevious()
 
 function linksToNewWindow()
 {
-	links = document.getElementById("quarto-document-content").querySelectorAll('a[href]');
-	//links = encapObject.querySelectorAll('.quarto-document-content>a[href]');
+	// links = document.getElementById("quarto-document-content").querySelectorAll('a[href]');
+	links = document.getElementById("quarto-content").querySelectorAll('#TOC a[href], #quarto-document-content a[href]');
 	
 	for(i=0; i<links.length; i++)
 	{
+		// download script and data files
+		if(links[i].href.trim().endsWith(".R") ||	links[i].href.trim().endsWith(".csv"))
+		{
+			links[i].setAttribute("download", "");
+		}
+		
 		// only change href that go to the same page... will need to update this or it 
 		// will include anything within the same site.
-		if (links[i].href.indexOf(window.location.pathname) > -1)
+		else if (links[i].href.indexOf(window.location.pathname) > -1)
 		{
 		  hashPos = links[i].href.indexOf("#");
 	    hashID = links[i].href.substring((hashPos+1));
