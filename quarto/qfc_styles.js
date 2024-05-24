@@ -62,6 +62,26 @@ window.addEventListener("load", function(event)
 			//event.preventDefault();
 		});
 	}
+	
+	// find search bar
+	searchBar = document.querySelector(".sidebar-search input");
+	searchBar.setAttribute("placeholder", "Search website");
+	
+	if(typeof menuCollapse !== 'undefined' && menuCollapse == true)
+	{
+    // find expanded sidebars:
+  	sideBars = document.querySelector("div.sidebar-item-container");
+  	
+  	menuExpanders = sideBars.querySelectorAll("a.text-start");
+  	for(i=0; i<menuExpanders.length; i++)
+  	{
+  		menuExpanders[i].classList.add("collapsed");
+  		menuExpanders[i].setAttribute("aria-expanded", "false");
+  	}
+  	
+  	sideBars.nextElementSibling.classList.remove("show");
+	}
+	
 });
 
 // this still seems to work if there is no parent -- probably should check for this, though
