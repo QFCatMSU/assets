@@ -270,11 +270,11 @@ a:hover
   {
     white-space: pre-wrap !important;
   }
-  /* Quarto has a large indentation of code in print mode -- don't know why */
+  /* Quarto has a large indentation of code in print mode -- don't know why 
   pre > code.sourceCode > span
   {
     padding-left: 0 !important;
-  }
+  }*/
   #quarto-document-content, body
   {
     /* extra padding not needed in print mode */
