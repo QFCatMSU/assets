@@ -70,17 +70,20 @@ window.addEventListener("load", function(event)
 	
 	if(typeof menuCollapse !== 'undefined' && menuCollapse == true)
 	{
-    // find expanded sidebars:
+    // find expanded sidebars (they might not exist...)
   	sideBars = document.querySelector("div.sidebar-item-container");
   	
-  	menuExpanders = sideBars.querySelectorAll("a.text-start");
-  	for(i=0; i<menuExpanders.length; i++)
-  	{
-  		menuExpanders[i].classList.add("collapsed");
-  		menuExpanders[i].setAttribute("aria-expanded", "false");
-  	}
-  	
-  	sideBars.nextElementSibling.classList.remove("show");
+		if (sideBars !== null)
+		{
+			menuExpanders = sideBars.querySelectorAll("a.text-start");
+			for(i=0; i<menuExpanders.length; i++)
+			{
+				menuExpanders[i].classList.add("collapsed");
+				menuExpanders[i].setAttribute("aria-expanded", "false");
+			}
+			
+			sideBars.nextElementSibling.classList.remove("show");
+		}
 	}
 	
 });
