@@ -7,8 +7,8 @@
 /* add equation number to editor */
 span.MJXc-display:after
 {
-  counter-increment: eqCount;               
-  content: " ( " counter(eqCount) " )";  
+/*  counter-increment: eqCount;               
+  content: " ( " counter(eqCount) " )";  */
 }
 
 /* pm-content starts the HTML for the editor windows in Quarto */
