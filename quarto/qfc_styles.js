@@ -149,7 +149,7 @@ parent.window.onload = function()
 	// allow users to resize images from small to full-size
 	createFlexImages();
 	
-	equationNumbering();
+//	equationNumbering();
 	
 	// Create a right-click menu
 	makeContextMenu();  // needs to happen after divs are created
