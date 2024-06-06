@@ -456,9 +456,8 @@ function goBackToPrevLocation()
 	scrollTopPosition = newScrollTopPosition;
 	//return false;	// so the page does not reload (don't ask why!)
 }
-	
 
-/* adds the class "eqNum" to all figures that have the dotum font (it's a hack for D2L) */
+/* function has been deprecated by Quarto */
 function equationNumbering()
 {
 	// find all elements that are equation numbers
