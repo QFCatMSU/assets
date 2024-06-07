@@ -737,7 +737,7 @@ function linksToNewWindow()
 						});	
 				})(hashID);
 			}
-			else if (links[i].href.indexOf(window.location.hostname) > -1 && links[i].href != "_blank")
+			else if (links[i].href.indexOf(window.location.hostname) > -1 && links[i].target != "_blank")
 			{
 					links[i].target = "_self"; 
 			}
