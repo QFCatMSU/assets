@@ -64,10 +64,10 @@ window.addEventListener("load", function(event)
 	}
 	
 	// find search bar
-	searchBar = document.querySelector(".sidebar-search input");
-	if (searchBar !== null)
-		searchBar.setAttribute("placeholder", "Search website");
-	
+	//searchBar = document.querySelector(".sidebar-search input");
+	//if (searchBar !== null)  // can be done in YAML
+	//	searchBar.setAttribute("placeholder", "Search website");
+	/*
 	if(typeof menuCollapse !== 'undefined' && menuCollapse == true)
 	{
     // find expanded sidebars (they might not exist...)
@@ -84,7 +84,7 @@ window.addEventListener("load", function(event)
 			
 			sideBars.nextElementSibling.classList.remove("show");
 		}
-	}
+	}*/
 	
 });
 
