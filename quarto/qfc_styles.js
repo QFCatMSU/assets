@@ -67,7 +67,7 @@ window.addEventListener("load", function(event)
 	toc = document.querySelector("nav#toc");
 
 	// find sidebar
-	sideBar = document.querySelector("div.sidebar-item-container");
+	sidebar = document.querySelector("div.sidebar-item-container");
 	
 	// if both sidebar and toc exists...
 	if(sidebar !== null && toc !== null)
