@@ -63,6 +63,22 @@ window.addEventListener("load", function(event)
 		});
 	}
 	
+	// find toc
+	toc = document.querySelector("nav#toc");
+
+	// find sidebar
+	sideBar = document.querySelector("div.sidebar-item-container");
+	
+	// if both sidebar and toc exists...
+	if(sidebar !== null && toc !== null)
+	{
+		// move the toc before the sidebar
+		sidebar.parentNode.insertBefore(toc, sidebar);
+		
+		// add a placeholder to textbox -- this is supposed to work in yaml but doesnt
+		searchBar.setAttribute("placeholder", "Search website");
+	}
+	
 	// find search bar
 	//searchBar = document.querySelector(".sidebar-search input");
 	//if (searchBar !== null)  // can be done in YAML
