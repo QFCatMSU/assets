@@ -76,7 +76,7 @@ window.addEventListener("load", function(event)
 		sidebar.parentNode.insertBefore(toc, sidebar);
 		
 		// add a placeholder to textbox -- this is supposed to work in yaml but doesnt
-		searchBar.setAttribute("placeholder", "Search website");
+		searchBar.setAttribute("placeholder", "Search all lessons");
 	}
 	
 	// find search bar
