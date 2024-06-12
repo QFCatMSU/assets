@@ -64,7 +64,7 @@ window.addEventListener("load", function(event)
 	}
 	
 	// find toc
-	toc = document.querySelector("nav#toc");
+	toc = document.querySelector("nav.toc-active");
 
 	// find sidebar
 	sidebar = document.querySelector("div.sidebar-item-container");
