@@ -74,15 +74,13 @@ window.addEventListener("load", function(event)
 	{
 		// move the toc before the sidebar
 		sidebar.parentNode.insertBefore(toc, sidebar);
-		
-		// add a placeholder to textbox -- this is supposed to work in yaml but doesnt
-		searchBar.setAttribute("placeholder", "Search all lessons");
 	}
 	
 	// find search bar
-	//searchBar = document.querySelector(".sidebar-search input");
-	//if (searchBar !== null)  // can be done in YAML
-	//	searchBar.setAttribute("placeholder", "Search website");
+	searchBar = document.querySelector(".sidebar-search input");
+	if (searchBar !== null)  // says it can be done in yaml -- does not work yetL
+		searchBar.setAttribute("placeholder", "Search all lessons");
+		
 	/*
 	if(typeof menuCollapse !== 'undefined' && menuCollapse == true)
 	{

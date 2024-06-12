@@ -208,6 +208,12 @@
   }
 }
 
+/* add a bit of spacing between TOC and lesson menu
+nav.toc-active
+{
+  margin-bottom: 20px;
+}
+
 /* links outside of content page */
 a:hover
 {
