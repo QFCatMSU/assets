@@ -17,6 +17,13 @@ body
   counter-reset: figCount tableCount; /* eqCount; */
 }
 
+/* Add a counter to each table with a caption */
+div[id^="tbl-"]>div>p.table-caption::before, div[id^="tbl-"]>p::before
+{
+  counter-increment: tableCount;               
+  content: "Table " counter(tableCount) ": "; 
+}
+
 /* Add "Fig #" before caption that does not have a <br> -- they are empty 
    And add to divs with id starting with "fig-" that contain a paragraph */
 .pm-figcaption:not(:has(br))::before,
@@ -88,7 +95,9 @@ div[id^="fig-"] > p::before
 	padding-inline-start: 20px;
 }
 
-.pm-figcaption, .pm-content .fig, span.MJXc-display:after, div[id^="fig-"] > p, .table-caption
+.pm-figcaption, .pm-content .fig, 
+span.MJXc-display:after, div[id^="fig-"] > p, 
+.table-caption
 {
 	color: rgb(90,90,0);
 	font-style: italic;
