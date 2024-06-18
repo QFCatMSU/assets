@@ -206,6 +206,14 @@
   {
     color: rgb(0,0,150);
   }
+  th, td
+  {
+    border-width: 1px;
+  }
+  div[id^="tbl-"].fit
+  {
+    width: fit-content;
+  }
 }
 
 /* add a bit of spacing between TOC and lesson menu */
