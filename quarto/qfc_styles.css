@@ -279,6 +279,10 @@ a:hover
 
 @media print
 {
+  #quarto-content, .sidebar
+  {
+    background-color: transparent !important;
+  }
   /* wrap code to next line in print mode */
   pre > code.sourceCode
   {
