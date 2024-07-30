@@ -108,12 +108,12 @@
   /* add a line above the header 2 and 3 */
   section.level2
   {
-    box-shadow: 0 -9px #18453B;
+    box-shadow: 0 -8px 0 -1px #18453B;
     margin-top: 15px;
   }
   section.level3
   {
-    box-shadow: 0 -3px #18453B;
+    box-shadow: 0 -4px 0 -1px #18453B;
     margin-top: 15px;
   }
   /* put caption directly under image in figure (needed??) */
@@ -279,10 +279,6 @@ a:hover
 
 @media print
 {
-  #quarto-content, .sidebar
-  {
-    background-color: transparent !important;
-  }
   /* wrap code to next line in print mode */
   pre > code.sourceCode
   {
