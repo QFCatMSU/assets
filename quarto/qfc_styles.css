@@ -116,6 +116,11 @@
     box-shadow: 0 -4px 0 -1px #18453B;
     margin-top: 15px;
   }
+  section.level4
+  {
+    box-shadow: 0 -2px 0 -1px #18453B;
+    margin-top: 15px;
+  }
   /* put caption directly under image in figure (needed??) */
   .figure-img
   {
