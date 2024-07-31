@@ -287,7 +287,7 @@ a:hover
   /* remove background color */
   #quarto-content
   {
-    background-color: none !important;
+    background-color: transparent !important;
   }
   /* remove margins */
   main
@@ -340,9 +340,8 @@ a:hover
     text-decoration-color: aqua;
     text-underline-offset: 4px;
   }
-  .codeBlockTab
+  div.sourceCode
   {
-    /* not sure why I have to repeat this in print mode */
     border-style: solid;
     border-color: gray;
     border-width: 1px;
