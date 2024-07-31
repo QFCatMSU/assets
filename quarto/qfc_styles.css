@@ -284,6 +284,16 @@ a:hover
 
 @media print
 {
+  /* remove background color */
+  #quarto-content
+  {
+    background-color: none !important;
+  }
+  /* remove margins */
+  main
+  {
+    margin: 0;
+  }
   /* wrap code to next line in print mode */
   pre > code.sourceCode
   {
@@ -301,7 +311,7 @@ a:hover
   }
   /* in print mode, Quarto will display the secondary header --
      would rather have the primary header */
-  #quarto-header, #quarto-sidebar-glass, #quarto-margin-sidebar  /* secondary header */
+  nav, #quarto-header,  #quarto-sidebar-glass, #quarto-margin-sidebar  /* secondary header */
   {
     display: none !important;
   }
