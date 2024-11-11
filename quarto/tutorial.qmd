@@ -1,0 +1,105 @@
+---
+title: "Quarto Visual Tutorial"
+format: html
+editor: visual
+---
+
+-   Add anew lesson
+
+    -   create a new lesson
+
+    -   init lesson
+
+        -   starter code
+
+        -   copy old lesson
+
+    -   save lesson
+
+-   Element in webpage
+
+    -   levels: inline, block
+
+-   Spacing
+
+    -   Control-Space for extra line/ spaces
+
+-   Attributes
+
+-   Block Elements
+
+    -   P, H1-H6, Code
+
+    -   Using H1-H6
+
+-   Lists (bullets)
+
+    -   Alignment
+
+-   inline elements
+
+    -   b, i, u, ...
+
+    -   highlight and notes
+
+-   add images
+
+    -   resizing
+
+    -   add caption (figure)
+
+    -   referencing
+
+-   Links
+
+    -   inside/ouside project
+
+    -   other class lesson
+
+    -   sections (2 ways)
+
+        -   by HEader
+
+        -   add name sec-# and ref by figure
+
+    -   download
+
+    -   email links ??
+
+-   Code (block)
+
+    -   highlighting
+
+    -   tab names
+
+    -   copying
+
+    -   add caption (figure)
+
+    -   referencing
+
+    -   <div>
+
+        issue when creating codeblocks?
+
+        </div>
+
+-   Equations
+
+    -   inline and display (Latex)
+
+    -   numbering
+
+    -   captioning/ referencing
+
+-   Videos
+
+    -   From Mediaspace
+
+-   Tables
+
+    -   cannot merge cells (email Quarto re this)
+
+-   Bibliography
+
+-   

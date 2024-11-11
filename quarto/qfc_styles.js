@@ -1,9 +1,12 @@
 /***** To-do ******
-Have shortcut menu disable drag event
-
+- Have shortcut menu disable drag event
+- image sizing compares images current size to full screen,
+  as opposed to actual screen size
+- implement a "Return to Previous location" button that
+  goes away when scrolling occurs
 ****************/
 
-smallImageWidth = 100;			// set the height of flex-sized objects when small 
+smallImageWidth = 150;			// set the height of flex-sized objects when small 
 scrollTopPosition = 0; 			// value saved for links-return-links within a page
 referenceTimer = "";				// timer used to toggle the reference object
 scrollFlag = 0;  						// counts when scrolling of page occurs due to reference links
@@ -426,10 +429,18 @@ function changeImageSize(element, instruction="none")
 	}
 	else // click directly on image
 	{
+	  // current width of image
 		currentWidth = parseInt(element.clientWidth);
+		// starting width of image
 		naturalWidth = parseInt(element.naturalWidth);
+		// width of parent frame (image cannot be bigger than this)
+		parentWidth = parseInt(element.parentElement.clientWidth);
 		
-		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) )
+		if(naturalWidth >= parentWidth) 
+		  naturalWidth = parentWidth
+		
+		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) ||
+		    (naturalWidth < parseInt(element.width)))
 		{
 			element.style.width = smallImageWidth + "px";	
 		}
