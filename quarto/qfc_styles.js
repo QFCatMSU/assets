@@ -1,6 +1,6 @@
 /***** To-do ******
 - Have shortcut menu disable drag event
-- image sizing compares images current size to full screen,
+- <done> image sizing compares images current size to full screen,
   as opposed to actual screen size
 - implement a "Return to Previous location" button that
   goes away when scrolling occurs

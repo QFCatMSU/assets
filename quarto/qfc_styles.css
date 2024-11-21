@@ -340,7 +340,7 @@ a:hover
     text-decoration-color: aqua;
     text-underline-offset: 4px;
   }
-  div.sourceCode
+  div.sourceCode, span.codeBlockTab
   {
     border-style: solid;
     border-color: gray;
