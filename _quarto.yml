@@ -5,7 +5,7 @@ website:
     search: true
     contents:
       - section: "<b>QFC Assets</b>"
-        contents: tutorials/*.qmd  # using regex will add another menu level (don't know why)
+        contents: tutorials/.*.qmd  # using regex will add another menu level (don't know why)
 
 language:
   search-box-placeholder: Search All Tutorials
