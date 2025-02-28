@@ -5,14 +5,14 @@ website:
     search: true
     contents:
       - section: "<b>QFC Assets</b>"
-        contents: tutorials/.*.qmd  # using regex will add another menu level (don't know why)
+        contents: tutorials/Git.qmd  # using regex will add another menu level (don't know why)
 
 language:
   search-box-placeholder: Search All Tutorials
 
 project:
   render:
-  - tutorials/.*.qmd  # only render files whose names start with a number
+  - tutorials/Git.qmd  # only render files whose names start with a number
   type: website
   output-dir: docs
 
