@@ -4,7 +4,6 @@
   as opposed to actual screen size
 - implement a "Return to Previous location" button that
   goes away when scrolling occurs
-- make sure a page break does not break up a codeblock with a codeblock tab
 ****************/
 
 smallImageWidth = 150;			// set the height of flex-sized objects when small 

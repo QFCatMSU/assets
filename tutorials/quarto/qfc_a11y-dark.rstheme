@@ -53,7 +53,7 @@ div[id^="fig-"] > p::before
 .pm-content
 {
   /* start all header counters (must be on one line) */
-	counter-reset: h2Count; /* h3Count h4Count;  not sure why this does not work */
+	counter-reset: h2Count h3Count h4Count;
 	margin-left: 20px;  /* so you can see the gutter area on the left side */
 }
 .pm-content > h2::before 
