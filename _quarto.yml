@@ -8,11 +8,11 @@ website:
         contents: tutorials/*.qmd  # using regex will add another menu level (don't know why)
 
 language:
-  search-box-placeholder: Search All Lessons
+  search-box-placeholder: Search All Tutorials
 
 project:
   render:
-  - tutorials/*.qmd  # only render files whose names start with a number
+  - tutorials/.*.qmd  # only render files whose names start with a number
   type: website
   output-dir: docs
 
