@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Quarto Visual Tutorial</title>
+<title>Assests</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,20 +20,54 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="tutorial_files/libs/clipboard/clipboard.min.js"></script>
-<script src="tutorial_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="tutorial_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="tutorial_files/libs/quarto-html/popper.min.js"></script>
-<script src="tutorial_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="tutorial_files/libs/quarto-html/anchor.min.js"></script>
-<link href="tutorial_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="tutorial_files/libs/quarto-html/quarto-syntax-highlighting-66ab7fd5e73b7f0a764e0d49b3e29ab1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="tutorial_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="tutorial_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="tutorial_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="assets_files/libs/clipboard/clipboard.min.js"></script>
+<script src="assets_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="assets_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="assets_files/libs/quarto-html/popper.min.js"></script>
+<script src="assets_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="assets_files/libs/quarto-html/anchor.min.js"></script>
+<link href="assets_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="assets_files/libs/quarto-html/quarto-syntax-highlighting-66ab7fd5e73b7f0a764e0d49b3e29ab1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="assets_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="assets_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="assets_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -46,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto Visual Tutorial</h1>
+<h1 class="title">Assests</h1>
 </div>
 
 
@@ -63,97 +97,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<ul>
-<li><p>Git/GitHub usage</p></li>
-<li><p>Setup</p>
-<ul>
-<li><p>CSS injection</p></li>
-<li><p>VSCode: render externally</p></li>
-</ul></li>
-<li><p>Rendering</p>
-<ul>
-<li>background tasks</li>
-</ul></li>
-<li><p>Add a new lesson</p>
-<ul>
-<li><p>create a new lesson</p></li>
-<li><p>init lesson</p>
-<ul>
-<li><p>starter code</p></li>
-<li><p>copy old lesson</p></li>
-</ul></li>
-<li><p>save lesson</p></li>
-</ul></li>
-<li><p>Element in webpage</p>
-<ul>
-<li>headers (and what they mean)</li>
-<li>paragraphs</li>
-<li>codeblocks</li>
-<li>numbered/bullet lists</li>
-</ul></li>
-<li><p>Styling</p>
-<ul>
-<li><p>b,i,u,</p></li>
-<li><p>highlights and notes</p></li>
-</ul></li>
-<li><p>Spacing</p>
-<ul>
-<li>Control-Space for extra line/ spaces</li>
-</ul></li>
-<li><p>add images</p>
-<ul>
-<li><p>resizing</p></li>
-<li><p>add caption (figure)</p></li>
-<li><p>differences between VSCode, Quarto</p>
-<ul>
-<li>dropping image renames – can drop in file manager then add to page</li>
-</ul></li>
-<li><p>referencing</p></li>
-</ul></li>
-<li><p>Links</p>
-<ul>
-<li><p>inside/ouside project</p></li>
-<li><p>other class lesson</p></li>
-<li><p>sections (2 ways)</p>
-<ul>
-<li><p>by Header</p></li>
-<li><p>add name sec-# and ref by figure</p></li>
-</ul></li>
-<li><p>download</p></li>
-<li><p>email links ??</p></li>
-</ul></li>
-<li><p>Code (block)</p>
-<ul>
-<li><p>highlighting</p></li>
-<li><p>tab names</p></li>
-<li><p>copying</p></li>
-<li><p>add caption (figure)</p></li>
-<li><p>referencing</p></li>
-<li><p>language (R, Python, Java…)</p>
-<ul>
-<li>use default if you do not want highlighting (cannot leave blank)</li>
-</ul></li>
-</ul></li>
-<li><p>Equations</p>
-<ul>
-<li><p>inline and display (Latex)</p></li>
-<li><p>using EquateIO</p></li>
-<li><p>numbering</p></li>
-<li><p>captioning/ referencing</p></li>
-</ul></li>
-<li><p>Videos</p>
-<ul>
-<li>From Mediaspace</li>
-</ul></li>
-<li><p>Tables</p>
-<ul>
-<li>cannot merge cells (email Quarto re this)</li>
-</ul></li>
-<li><p>Bibliography</p>
-<ul>
-<li>Zotero</li>
-</ul></li>
-</ul>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p><a href="quarto/qfc_a11y-dark.rstheme">rs_theme_light</a></p>
+<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
+</section>
+<section id="running-code" class="level2">
+<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
+<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>You can add options to executable code like this</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+</section>
 
 </main>
 <!-- /main column -->
