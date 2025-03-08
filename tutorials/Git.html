@@ -67,16 +67,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="Git_files/libs/quarto-html/quarto-syntax-highlighting-66ab7fd5e73b7f0a764e0d49b3e29ab1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Git_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Git_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Git_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Git_files/libs/bootstrap/bootstrap-3a9f1a103051ee07f26722c5d70fe698.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link rel="shortcut icon" href="https://qfcatmsu.github.io/assets/quarto/qfc_icon.png">
+<script>mod=true; menuCollapse=true;</script>
+<script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
 
 
+<link rel="stylesheet" href="https://qfcatmsu.github.io/assets/quarto/qfc_styles.css">
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
-<main class="content" id="quarto-document-content">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title"><b>Content</b></h2>
+   
+  <ul>
+  <li><a href="#git-and-git-credential-manager" id="toc-git-and-git-credential-manager" class="nav-link active" data-scroll-target="#git-and-git-credential-manager"><span class="header-section-number">1</span> Git and Git Credential Manager</a></li>
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows"><span class="header-section-number">2</span> Windows</a>
+  <ul class="collapse">
+  <li><a href="#install-git-and-gcm" id="toc-install-git-and-gcm" class="nav-link" data-scroll-target="#install-git-and-gcm"><span class="header-section-number">2.1</span> Install Git and GCM</a></li>
+  <li><a href="#setup-git" id="toc-setup-git" class="nav-link" data-scroll-target="#setup-git"><span class="header-section-number">2.2</span> Setup Git</a></li>
+  <li><a href="#setup-git-credentials" id="toc-setup-git-credentials" class="nav-link" data-scroll-target="#setup-git-credentials"><span class="header-section-number">2.3</span> Setup Git Credentials</a></li>
+  </ul></li>
+  <li><a href="#mac" id="toc-mac" class="nav-link" data-scroll-target="#mac"><span class="header-section-number">3</span> Mac</a>
+  <ul class="collapse">
+  <li><a href="#install-homebrew" id="toc-install-homebrew" class="nav-link" data-scroll-target="#install-homebrew"><span class="header-section-number">3.1</span> Install Homebrew:</a></li>
+  <li><a href="#git-and-gcm-installation" id="toc-git-and-gcm-installation" class="nav-link" data-scroll-target="#git-and-gcm-installation"><span class="header-section-number">3.2</span> Git and GCM installation</a></li>
+  <li><a href="#setup-git-1" id="toc-setup-git-1" class="nav-link" data-scroll-target="#setup-git-1"><span class="header-section-number">3.3</span> Setup Git</a></li>
+  <li><a href="#setup-git-credentials-1" id="toc-setup-git-credentials-1" class="nav-link" data-scroll-target="#setup-git-credentials-1"><span class="header-section-number">3.4</span> Setup Git Credentials</a></li>
+  </ul></li>
+  <li><a href="#linux-mint-ubuntu-gui" id="toc-linux-mint-ubuntu-gui" class="nav-link" data-scroll-target="#linux-mint-ubuntu-gui"><span class="header-section-number">4</span> Linux Mint/ Ubuntu (GUI)</a>
+  <ul class="collapse">
+  <li><a href="#install-git" id="toc-install-git" class="nav-link" data-scroll-target="#install-git"><span class="header-section-number">4.1</span> Install Git</a></li>
+  <li><a href="#install-git-credential-manager" id="toc-install-git-credential-manager" class="nav-link" data-scroll-target="#install-git-credential-manager"><span class="header-section-number">4.2</span> Install Git Credential Manager:</a></li>
+  <li><a href="#setup-git-2" id="toc-setup-git-2" class="nav-link" data-scroll-target="#setup-git-2"><span class="header-section-number">4.3</span> Setup Git</a></li>
+  <li><a href="#setup-git-credentials-2" id="toc-setup-git-credentials-2" class="nav-link" data-scroll-target="#setup-git-credentials-2"><span class="header-section-number">4.4</span> Setup Git Credentials</a></li>
+  </ul></li>
+  <li><a href="#linux-mint-ubuntu-headless" id="toc-linux-mint-ubuntu-headless" class="nav-link" data-scroll-target="#linux-mint-ubuntu-headless"><span class="header-section-number">5</span> Linux Mint/ Ubuntu (headless)</a>
+  <ul class="collapse">
+  <li><a href="#install-git-1" id="toc-install-git-1" class="nav-link" data-scroll-target="#install-git-1"><span class="header-section-number">5.1</span> Install Git</a></li>
+  <li><a href="#install-git-credential-manager-1" id="toc-install-git-credential-manager-1" class="nav-link" data-scroll-target="#install-git-credential-manager-1"><span class="header-section-number">5.2</span> Install Git Credential Manager</a></li>
+  <li><a href="#setup-git-credentials-3" id="toc-setup-git-credentials-3" class="nav-link" data-scroll-target="#setup-git-credentials-3"><span class="header-section-number">5.3</span> Setup Git Credentials</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -85,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-right">
 
     
   
@@ -97,37 +137,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="git-and-git-credential-manager" class="level2">
-<h2 class="anchored" data-anchor-id="git-and-git-credential-manager">Git and Git Credential Manager</h2>
+<section id="git-and-git-credential-manager" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="git-and-git-credential-manager"><span class="header-section-number">1</span> Git and Git Credential Manager</h2>
 <p>The <a href="https://github.com/git-ecosystem/git-credential-manager">Git Credential Manager</a> (<strong><em>GCM</em></strong>) supports Windows, Linux , and Mac and handles the authentication between Git and the GitHub (and other online places that handle Git repositories like Azure and Bitlocker). There are deprecated Git Credential Managers (one for Windows, and one for Mac/Linux) that still often come up in searches.</p>
 </section>
-<section id="windows" class="level2">
-<h2 class="anchored" data-anchor-id="windows">Windows</h2>
+<section id="windows" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="windows"><span class="header-section-number">2</span> Windows</h2>
 <p>Windows has the easiest installation as Git Credential Manager is install with Git and there is no configuration necessary for the Git Credential Manager</p>
-<section id="install-git-and-gcm" class="level3">
-<h3 class="anchored" data-anchor-id="install-git-and-gcm">Install Git and GCM</h3>
+<section id="install-git-and-gcm" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="install-git-and-gcm"><span class="header-section-number">2.1</span> Install Git and GCM</h3>
 <p><a href="https://git-scm.com/downloads">Click here to download and install Git</a> – click on <strong><em>Download for Windows</em></strong> (version as of March 2025 is&nbsp;<strong>2.48.1</strong>)</p>
 <ul>
 <li>You can use all the default installation settings</li>
 </ul>
 </section>
-<section id="setup-git" class="level3">
-<h3 class="anchored" data-anchor-id="setup-git">Setup Git</h3>
+<section id="setup-git" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="setup-git"><span class="header-section-number">2.2</span> Setup Git</h3>
 <p>In the Command Prompt or PowerShell, set the Git user name and password (you will not be able to Commit until you do this):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"userName"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"userEmail"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This username and email is attached to the Git Commits – they are not part of any login or authorization. It makes sense to use your GitHub username and email but you can use any username and email you want.</p>
 </section>
-<section id="setup-git-credentials" class="level3">
-<h3 class="anchored" data-anchor-id="setup-git-credentials">Setup Git Credentials</h3>
+<section id="setup-git-credentials" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="setup-git-credentials"><span class="header-section-number">2.3</span> Setup Git Credentials</h3>
 <p>The first time you Push to a repository, you will be asked for your GitHub username and password. After this, your credentials are stored on the computer.</p>
 </section>
 </section>
-<section id="mac" class="level2">
-<h2 class="anchored" data-anchor-id="mac">Mac</h2>
+<section id="mac" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="mac"><span class="header-section-number">3</span> Mac</h2>
 <p>Before you install Git on Mac, you need to install Homebrew, which is a very useful tool for programmers as it gives easy access to packages not included with Mac.</p>
-<section id="install-homebrew" class="level3">
-<h3 class="anchored" data-anchor-id="install-homebrew">Install Homebrew:</h3>
+<section id="install-homebrew" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="install-homebrew"><span class="header-section-number">3.1</span> Install Homebrew:</h3>
 <p>Go to the homebrew page: <a href="https://brew.sh/" class="uri">https://brew.sh/</a></p>
 <p>Copy the command under Install Homebrew in the Terminal and execute.</p>
 <p>&nbsp;</p>
@@ -135,37 +175,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>But this could change. It is safest to just go to the Homebrew page and copy the link.</p>
 </section>
-<section id="git-and-gcm-installation" class="level3">
-<h3 class="anchored" data-anchor-id="git-and-gcm-installation">Git and GCM installation</h3>
+<section id="git-and-gcm-installation" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="git-and-gcm-installation"><span class="header-section-number">3.2</span> Git and GCM installation</h3>
 <p>Install Git in the Terminal:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install Git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Install Git Credential Manager in the Terminal:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> git-credential-manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="setup-git-1" class="level3">
-<h3 class="anchored" data-anchor-id="setup-git-1">Setup Git</h3>
+<section id="setup-git-1" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="setup-git-1"><span class="header-section-number">3.3</span> Setup Git</h3>
 <p>In the Terminal, set the Git user name and password (you will not be able to Commit until you do this):</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"userName"</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"userEmail"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This username and email is attached to the Git Commits – they are not part of any login or authorization. It makes sense to use your GitHub username and email but you can use any username and email you want.</p>
 </section>
-<section id="setup-git-credentials-1" class="level3">
-<h3 class="anchored" data-anchor-id="setup-git-credentials-1">Setup Git Credentials</h3>
+<section id="setup-git-credentials-1" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="setup-git-credentials-1"><span class="header-section-number">3.4</span> Setup Git Credentials</h3>
 <p>The first time you Push to a repository, you will be asked for your GitHub username and password. After this, your credentials are stored on the computer.</p>
 </section>
 </section>
-<section id="linux-mint-ubuntu-gui" class="level2">
-<h2 class="anchored" data-anchor-id="linux-mint-ubuntu-gui">Linux Mint/ Ubuntu (GUI)</h2>
+<section id="linux-mint-ubuntu-gui" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="linux-mint-ubuntu-gui"><span class="header-section-number">4</span> Linux Mint/ Ubuntu (GUI)</h2>
 <p>These instructions work on Ubuntu and Linux Mint that have a GUI interface. They probably work on most Debian-based machines.</p>
-<section id="install-git" class="level3">
-<h3 class="anchored" data-anchor-id="install-git">Install Git</h3>
+<section id="install-git" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="install-git"><span class="header-section-number">4.1</span> Install Git</h3>
 <p>The first line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:git-core/ppa</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> update</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="install-git-credential-manager" class="level3">
-<h3 class="anchored" data-anchor-id="install-git-credential-manager">Install Git Credential Manager:</h3>
+<section id="install-git-credential-manager" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="install-git-credential-manager"><span class="header-section-number">4.2</span> Install Git Credential Manager:</h3>
 <p>Download the Debian (*.deb) Git-Credential-Manager:</p>
 <p><a href="https://github.com/git-ecosystem/git-credential-manager/releases/latest" class="uri">https://github.com/git-ecosystem/git-credential-manager/releases/latest</a></p>
 <p>&nbsp;</p>
@@ -174,15 +214,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If the download went to the <strong><em>Downloads</em></strong> folder then this command will work:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> ~/Downloads/gcm-linux<span class="pp">*</span>.deb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="setup-git-2" class="level3">
-<h3 class="anchored" data-anchor-id="setup-git-2">Setup Git</h3>
+<section id="setup-git-2" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="setup-git-2"><span class="header-section-number">4.3</span> Setup Git</h3>
 <p>In the Terminal, set the Git user name and password (you will not be able to Commit until you do this):</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"userName"</span>  </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"userEmail"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This username and email is attached to the Git Commits – they are not part of any login or authorization. It makes sense to use your GitHub username and email but you can use any username and email you want.</p>
 </section>
-<section id="setup-git-credentials-2" class="level3">
-<h3 class="anchored" data-anchor-id="setup-git-credentials-2">Setup Git Credentials</h3>
+<section id="setup-git-credentials-2" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="setup-git-credentials-2"><span class="header-section-number">4.4</span> Setup Git Credentials</h3>
 <p>Configure the Git Credential Manager for Git</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">git-credential-manager</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Store your authentication with secretservice</p>
@@ -192,18 +232,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You might also be asked to setup a password to the keyring that stores your Git credentials. It adds security but if you do this then you will have to type in this password every time you Push to a GitHub repository.</p>
 </section>
 </section>
-<section id="linux-mint-ubuntu-headless" class="level2">
-<h2 class="anchored" data-anchor-id="linux-mint-ubuntu-headless">Linux Mint/ Ubuntu (headless)</h2>
+<section id="linux-mint-ubuntu-headless" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="linux-mint-ubuntu-headless"><span class="header-section-number">5</span> Linux Mint/ Ubuntu (headless)</h2>
 <p>The standard way to setup Git Credential requires a GUI interface. These instructions provide a way to set up the GCM through only a Terminal. These instructions probably work on most Debian-based machines.</p>
-<section id="install-git-1" class="level3">
-<h3 class="anchored" data-anchor-id="install-git-1">Install Git</h3>
+<section id="install-git-1" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="install-git-1"><span class="header-section-number">5.1</span> Install Git</h3>
 <p>The first line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:git-core/ppa </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> update </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="install-git-credential-manager-1" class="level3">
-<h3 class="anchored" data-anchor-id="install-git-credential-manager-1">Install Git Credential Manager</h3>
+<section id="install-git-credential-manager-1" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="install-git-credential-manager-1"><span class="header-section-number">5.2</span> Install Git Credential Manager</h3>
 <p>You are going to directly download the GCM tar file from the GitHub page. The instruction below are for version 2.6.1, which is the newest version as of March 2025. Adjust the numbers for newer version.</p>
 <p>&nbsp;</p>
 <p>Download Git Credential Manager</p>
@@ -215,8 +255,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In the same folder, execute the GCM:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./git-credential-manager</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="setup-git-credentials-3" class="level3">
-<h3 class="anchored" data-anchor-id="setup-git-credentials-3">Setup Git Credentials</h3>
+<section id="setup-git-credentials-3" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="setup-git-credentials-3"><span class="header-section-number">5.3</span> Setup Git Credentials</h3>
 <p>Configure the Git Credential Manager for Git</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">git-credential-manager</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Keep your authentication in cache</p>
