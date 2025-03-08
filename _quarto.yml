@@ -1,0 +1,39 @@
+website:  
+  bread-crumbs: false
+  page-navigation: true
+  sidebar:
+    search: true
+    collapse-level: 2   # does not work because a page within is opened
+    contents:
+      - section: "<b>QFC Assets and Tutorials</b>"
+        contents: .*.qmd  # using regex will add another menu level (don't know why)
+
+language:
+  search-box-placeholder: Search All Lessons # does not work...
+
+project:
+  render:
+  - .*.qmd  # only render files whose names start with a number
+  type: website
+  output-dir: docs
+
+format:
+  html:
+    page-layout: full
+    css: "https://qfcatmsu.github.io/assets/quarto/qfc_styles.css"
+    toc: true
+    toc-title: "<b>Content</b>"
+    toc-location: left
+    fig-align: left
+    theme: default
+    fontsize: 15px
+    number-sections: true
+    grid: 
+      body-width: 1000px
+    include-in-header:
+      - text: |
+          <link rel = "shortcut icon" href = "https://qfcatmsu.github.io/assets/quarto/qfc_icon.png" />
+          <script>mod=true; menuCollapse=true;</script>
+          <script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
+           
+editor: visual
