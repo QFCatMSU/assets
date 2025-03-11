@@ -277,7 +277,7 @@ a:hover
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
-#quarto-content, .sidebar
+#quarto-content #, .sidebar
 {
   background-color: #18453B !important;
 }
