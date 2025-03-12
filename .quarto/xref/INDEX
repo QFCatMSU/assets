@@ -1,5 +1,11 @@
 {
   "tutorials/Git.qmd": {
     "Git.html": "14660b8e"
+  },
+  "index.qmd": {
+    "index.html": "4d375da7"
+  },
+  "quarto/tutorial.qmd": {
+    "tutorial.html": "06bb1a59"
   }
 }

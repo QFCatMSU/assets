@@ -1,24 +1,24 @@
 ---
 title: "Git and Git Credential Manager Setup"
 
-format:
-  html:
-    page-layout: full
-    css: "https://qfcatmsu.github.io/assets/quarto/qfc_styles.css"
-    toc: true
-    toc-title: "<b>Content</b>"
-    toc-location: left
-    fig-align: left
-    theme: default
-    fontsize: 15px
-    number-sections: true
-    grid: 
-      body-width: 1000px
-    include-in-header:
-      - text: |
-          <link rel = "shortcut icon" href = "https://qfcatmsu.github.io/assets/quarto/qfc_icon.png" />
-          <script>mod=true; menuCollapse=true;</script>
-          <script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
+# format:
+#   html:
+#     page-layout: full
+#     css: "https://qfcatmsu.github.io/assets/quarto/qfc_styles.css"
+#     toc: true
+#     toc-title: "<b>Content</b>"
+#     toc-location: left
+#     fig-align: left
+#     theme: default
+#     fontsize: 15px
+#     number-sections: true
+#     grid: 
+#       body-width: 1000px
+#     include-in-header:
+#       - text: |
+#           <link rel = "shortcut icon" href = "https://qfcatmsu.github.io/assets/quarto/qfc_icon.png" />
+#           <script>mod=true; menuCollapse=true;</script>
+#           <script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
            
 editor: visual
 ---
@@ -56,7 +56,7 @@ The first time you Push to a repository, you will be asked for your GitHub usern
 
 Before you install Git on Mac, you need to install Homebrew, which is a very useful tool for programmers as it gives easy access to packages not included with Mac.
 
-### Install Homebrew: 
+### Install Homebrew:
 
 Go to the homebrew page: <https://brew.sh/>
 

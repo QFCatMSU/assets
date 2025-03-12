@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "tutorials/Git.html",
+    "href": "tutorials/Git.html",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "",
+    "text": "The Git Credential Manager (GCM) supports Windows, Linux , and Mac and handles the authentication between Git and the GitHub (and other online places that handle Git repositories like Azure and Bitlocker). There are deprecated Git Credential Managers (one for Windows, and one for Mac/Linux) that still often come up in searches.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#git-and-git-credential-manager",
+    "href": "tutorials/Git.html#git-and-git-credential-manager",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "",
+    "text": "The Git Credential Manager (GCM) supports Windows, Linux , and Mac and handles the authentication between Git and the GitHub (and other online places that handle Git repositories like Azure and Bitlocker). There are deprecated Git Credential Managers (one for Windows, and one for Mac/Linux) that still often come up in searches.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#windows",
+    "href": "tutorials/Git.html#windows",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "2 Windows",
+    "text": "2 Windows\nWindows has the easiest installation as Git Credential Manager is install with Git and there is no configuration necessary for the Git Credential Manager\n\n2.1 Install Git and GCM\nClick here to download and install Git – click on Download for Windows (version as of March 2025 is 2.48.1)\n\nYou can use all the default installation settings\n\n\n\n2.2 Setup Git\nIn the Command Prompt or PowerShell, set the Git user name and password (you will not be able to Commit until you do this):\ngit config --global user.name \"userName\"\ngit config --global user.email \"userEmail\"\nThis username and email is attached to the Git Commits – they are not part of any login or authorization. It makes sense to use your GitHub username and email but you can use any username and email you want.\n\n\n2.3 Setup Git Credentials\nThe first time you Push to a repository, you will be asked for your GitHub username and password. After this, your credentials are stored on the computer.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#mac",
+    "href": "tutorials/Git.html#mac",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "3 Mac",
+    "text": "3 Mac\nBefore you install Git on Mac, you need to install Homebrew, which is a very useful tool for programmers as it gives easy access to packages not included with Mac.\n\n3.1 Install Homebrew:\nGo to the homebrew page: https://brew.sh/\nCopy the command under Install Homebrew in the Terminal and execute.\n \nThe command as of March 2025 is:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nBut this could change. It is safest to just go to the Homebrew page and copy the link.\n\n\n3.2 Git and GCM installation\nInstall Git in the Terminal:\nbrew install Git\nInstall Git Credential Manager in the Terminal:\nbrew install --cask git-credential-manager\n\n\n3.3 Setup Git\nIn the Terminal, set the Git user name and password (you will not be able to Commit until you do this):\ngit config --global user.name \"userName\" \ngit config --global user.email \"userEmail\"\nThis username and email is attached to the Git Commits – they are not part of any login or authorization. It makes sense to use your GitHub username and email but you can use any username and email you want.\n\n\n3.4 Setup Git Credentials\nThe first time you Push to a repository, you will be asked for your GitHub username and password. After this, your credentials are stored on the computer.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#linux-mint-ubuntu-gui",
+    "href": "tutorials/Git.html#linux-mint-ubuntu-gui",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "4 Linux Mint/ Ubuntu (GUI)",
+    "text": "4 Linux Mint/ Ubuntu (GUI)\nThese instructions work on Ubuntu and Linux Mint that have a GUI interface. They probably work on most Debian-based machines.\n\n4.1 Install Git\nThe first line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.\nsudo add-apt-repository ppa:git-core/ppa\napt update\napt install git\n\n\n4.2 Install Git Credential Manager:\nDownload the Debian (*.deb) Git-Credential-Manager:\nhttps://github.com/git-ecosystem/git-credential-manager/releases/latest\n \nUnpack the deb file:\nsudo dpkg -i &lt;path/to/*.deb&gt;\nIf the download went to the Downloads folder then this command will work:\nsudo dpkg -i ~/Downloads/gcm-linux*.deb\n\n\n4.3 Setup Git\nIn the Terminal, set the Git user name and password (you will not be able to Commit until you do this):\ngit config --global user.name \"userName\"  \ngit config --global user.email \"userEmail\"\nThis username and email is attached to the Git Commits – they are not part of any login or authorization. It makes sense to use your GitHub username and email but you can use any username and email you want.\n\n\n4.4 Setup Git Credentials\nConfigure the Git Credential Manager for Git\ngit-credential-manager configure\nStore your authentication with secretservice\ngit config --global credential.credentialStore secretservice\nThe first time you Push to a repository, you will be asked for your GitHub username and password. After this, your credentials are stored on the computer.\n \nYou might also be asked to setup a password to the keyring that stores your Git credentials. It adds security but if you do this then you will have to type in this password every time you Push to a GitHub repository.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#linux-mint-ubuntu-headless",
+    "href": "tutorials/Git.html#linux-mint-ubuntu-headless",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "5 Linux Mint/ Ubuntu (headless)",
+    "text": "5 Linux Mint/ Ubuntu (headless)\nThe standard way to setup Git Credential requires a GUI interface. These instructions provide a way to set up the GCM through only a Terminal. These instructions probably work on most Debian-based machines.\n\n5.1 Install Git\nThe first line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.\nsudo add-apt-repository ppa:git-core/ppa \napt update \napt install git\n\n\n5.2 Install Git Credential Manager\nYou are going to directly download the GCM tar file from the GitHub page. The instruction below are for version 2.6.1, which is the newest version as of March 2025. Adjust the numbers for newer version.\n \nDownload Git Credential Manager\nwget https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.6.1/gcm-linux_amd64.2.6.1.tar.gz\nGo to the folder where you downloaded the GCM and unzip GCM to a folder of your choice:\ntar xavf gcm-linux_amd64.2.6.1.tar.gz -C /path/to/install/folder\nGo to the folder where you unzipped GCM and make the file executable:\nchmod +x git-credential-manager\nIn the same folder, execute the GCM:\n./git-credential-manager configure\n\n\n5.3 Setup Git Credentials\nConfigure the Git Credential Manager for Git\ngit-credential-manager configure\nKeep your authentication in cache\ngit config --global credential.credentialStore cache\nWhen you Push to GitHub you will be asked to authenticate on another device:\n\nUse Authentication Method #1: Device Code\nOn another device, go to https://github.com/login/device\nLogin if you need to\nYou will get an 8-digit code on the other device – type that code in the Terminal\n\n \nYou GitHub authentication will be stored in cache for a certain amount of time (i.e., you will need to reauthenticate when that time is up). The default amount of time is 15 minutes. You can change default time:\ngit config --global credential.helper \"cache --timeout=3600\"\nnote: time is in seconds so this is 1 hour",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Assests",
+    "section": "",
+    "text": "rs_theme_light\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "index.html#quarto",
+    "href": "index.html#quarto",
+    "title": "Assests",
+    "section": "",
+    "text": "rs_theme_light\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "index.html#running-code",
+    "href": "index.html#running-code",
+    "title": "Assests",
+    "section": "2 Running Code",
+    "text": "2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "quarto/tutorial.html",
+    "href": "quarto/tutorial.html",
+    "title": "Quarto Visual Tutorial",
+    "section": "",
+    "text": "Git/GitHub usage\nSetup\n\nCSS injection\nVSCode: render externally\n\nRendering\n\nbackground tasks\n\nAdd a new lesson\n\ncreate a new lesson\ninit lesson\n\nstarter code\ncopy old lesson\n\nsave lesson\n\nElement in webpage\n\nheaders (and what they mean)\nparagraphs\ncodeblocks\nnumbered/bullet lists\n\nStyling\n\nb,i,u,\nhighlights and notes\n\nSpacing\n\nControl-Space for extra line/ spaces\n\nadd images\n\nresizing\nadd caption (figure)\ndifferences between VSCode, Quarto\n\ndropping image renames – can drop in file manager then add to page\n\nreferencing\n\nLinks\n\ninside/ouside project\nother class lesson\nsections (2 ways)\n\nby Header\nadd name sec-# and ref by figure\n\ndownload\nemail links ??\n\nCode (block)\n\nhighlighting\ntab names\ncopying\nadd caption (figure)\nreferencing\nlanguage (R, Python, Java…)\n\nuse default if you do not want highlighting (cannot leave blank)\n\n\nEquations\n\ninline and display (Latex)\nusing EquateIO\nnumbering\ncaptioning/ referencing\n\nVideos\n\nFrom Mediaspace\n\nTables\n\ncannot merge cells (email Quarto re this)\n\nBibliography\n\nZotero",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Quarto",
+      "Quarto Visual Tutorial"
+    ]
+  }
+]

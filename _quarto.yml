@@ -6,14 +6,14 @@ website:
     collapse-level: 2   # does not work because a page within is opened
     contents:
       - section: "<b>QFC Assets and Tutorials</b>"
-        contents: .qmd  # using regex will add another menu level (don't know why)
+        contents: "**/*.qmd"  # using regex will add another menu level (don't know why)
 
 language:
   search-box-placeholder: Search All Lessons # does not work...
 
 project:
   render:
-  - .qmd  # only render files whose names start with a number
+  - "**/*.qmd"  # only render files whose names start with a number
   type: website
   output-dir: docs
 
