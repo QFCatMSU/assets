@@ -284,28 +284,6 @@ a:hover
 
 @media print
 {
-  /* gives the ability to add page numbers to printed docs */
-  html
-  {
-    counter-reset: pageNum;
-  }
-  /* sets the page size as standard letter size (US) */
-  @page 
-  {
-    size: letter;
-    margin: 0.5in;
-  }
-  /* adds the page number to the document */
-  body::after 
-  {
-    content: "Page " counter(pageNum) " of " counter(pages);
-    position: fixed;
-    bottom: 0.5in; 
-    left: 50%;
-    transform: translateX(-50%); /* Centers it */
-    font-size: 12px;
-    text-align: center;
-  }
   /* remove background color */
   #quarto-content
   {
