@@ -7,5 +7,8 @@
   },
   "quarto/tutorial.qmd": {
     "tutorial.html": "06bb1a59"
+  },
+  "tutorials/Git Setup.qmd": {
+    "Git Setup.html": "64c7572c"
   }
 }
