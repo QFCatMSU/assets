@@ -10,5 +10,13 @@
   },
   "tutorials/Git Setup.qmd": {
     "Git Setup.html": "64c7572c"
+  },
+  "res/res2.qmd": {
+    "res2.tex": "9b2e6a53",
+    "res2.html": "cbd8b16d"
+  },
+  "res/res.qmd": {
+    "res.html": "31ff36c8",
+    "res.tex": "22740c50"
   }
 }

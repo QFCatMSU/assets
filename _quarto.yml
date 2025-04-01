@@ -15,7 +15,7 @@ project:
   render:
   - "**/*.qmd"  # only render files whose names start with a number
   type: website
-  output-dir: docs
+  output-dir: .
 
 format:
   html:
