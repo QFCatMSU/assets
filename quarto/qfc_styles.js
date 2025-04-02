@@ -22,29 +22,6 @@ clickMode = null;
 fsClick = null;
 origWidth = null;
 
-
-window.addEventListener("load", function(event)
-{
-	// find table of contents
-	toc = document.querySelector("nav.toc-active");
-
-	// find sidebar
-	sidebar = document.querySelector("div.sidebar-item-container");
-	
-	// if both sidebar and toc exists...
-	if(sidebar !== null && toc !== null)
-	{
-		// move the toc before the sidebar
-		sidebar.parentNode.insertBefore(toc, sidebar);
-	}
-	
-	// find search bar
-	searchBar = document.querySelector(".sidebar-search input");
-	if (searchBar !== null)  // says it can be done in yaml -- does not work yet
-		searchBar.setAttribute("placeholder", "Search all lessons");
-});
-
-
 // this still seems to work if there is no parent -- probably should check for this, though
 parent.window.onload = function()
 {		
@@ -107,7 +84,8 @@ parent.window.onload = function()
 	// allow users to resize images from small to full-size
 	createFlexImages();
 	
-//	equationNumbering();
+	// reposition table of contents and sidebar in quarto
+  format_TOC_Sidebar();
 	
 	// Create a right-click menu
 	makeContextMenu();  // needs to happen after divs are created
@@ -793,4 +771,27 @@ function cleanupFlexEvent()
 	}
 	clickMode = null;	
 	fsClick = null;
+}
+
+function format_TOC_Sidebar()
+{
+  // find table of contents
+	toc = document.querySelector("nav.toc-active");
+
+	// find sidebar
+	sidebar = document.querySelector("div.sidebar-item-container");
+	
+	// if both sidebar and toc exists...
+	if(sidebar !== null && toc !== null)
+	{
+		// move the toc before the sidebar
+		sidebar.parentNode.insertBefore(toc, sidebar);
+	}
+	
+	// find search bar
+	searchBar = document.querySelector(".sidebar-search input");
+	
+	// this is supposed to be done in YAML but it does not work yet
+	if (searchBar !== null)  
+		searchBar.setAttribute("placeholder", "Search all lessons");
 }
