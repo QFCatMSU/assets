@@ -22,6 +22,7 @@ clickMode = null;
 fsClick = null;
 origWidth = null;
 
+
 window.addEventListener("load", function(event)
 {
 	// find all flexsized objects
@@ -67,7 +68,7 @@ window.addEventListener("load", function(event)
 		});
 	}
 	
-	// find toc
+	// find table of contents
 	toc = document.querySelector("nav.toc-active");
 
 	// find sidebar
@@ -82,33 +83,15 @@ window.addEventListener("load", function(event)
 	
 	// find search bar
 	searchBar = document.querySelector(".sidebar-search input");
-	if (searchBar !== null)  // says it can be done in yaml -- does not work yetL
+	if (searchBar !== null)  // says it can be done in yaml -- does not work yet
 		searchBar.setAttribute("placeholder", "Search all lessons");
-		
-	/*
-	if(typeof menuCollapse !== 'undefined' && menuCollapse == true)
-	{
-    // find expanded sidebars (they might not exist...)
-  	sideBars = document.querySelector("div.sidebar-item-container");
-  	
-		if (sideBars !== null)
-		{
-			menuExpanders = sideBars.querySelectorAll("a.text-start");
-			for(i=0; i<menuExpanders.length; i++)
-			{
-				menuExpanders[i].classList.add("collapsed");
-				menuExpanders[i].setAttribute("aria-expanded", "false");
-			}
-			
-			sideBars.nextElementSibling.classList.remove("show");
-		}
-	}*/
-	
 });
+
 
 // this still seems to work if there is no parent -- probably should check for this, though
 parent.window.onload = function()
 {		
+
 	encapObject = document.body; 
 	scrollTopPosition = window.parent.scrollY;  
   
@@ -729,18 +712,24 @@ function linksToNewWindow()
 	if(quartoContent !== null)
 	{
 		links = quartoContent.querySelectorAll('#TOC a[href], #quarto-document-content a[href]');
-	
+
 		for(i=0; i<links.length; i++)
 		{
-			// download script and data files
-			if(links[i].href.trim().endsWith(".R") ||	links[i].href.trim().endsWith(".csv"))
+		  const linkUrl = new URL(links[i].href);
+		  		
+      // make the link a download link if it contains class dl or download
+      //  or is an R or CSV file 
+      if(linkUrl.href.endsWith(".R") || linkUrl.href.endsWith(".csv") ||
+         links[i].classList.contains("dl") || links[i].classList.contains("download"))
 			{
 				links[i].setAttribute("download", "");
 			}
 			
-			// only change href that go to the same page... will need to update this or it 
-			// will include anything within the same site.
-			else if (links[i].href.indexOf(window.location.pathname) > -1)
+      // remove the link if it is going to the same page and instead
+      // replace it with a function that scrolls to the new location 
+      // If you do not do this then Quarto will reload pages 
+	    else if(linkUrl.hostname == window.location.hostname &&
+	            linkUrl.pathname == window.location.pathname)
 			{
 				hashPos = links[i].href.indexOf("#");
 				hashID = links[i].href.substring((hashPos+1));
@@ -763,13 +752,16 @@ function linksToNewWindow()
 						});	
 				})(hashID);
 			}
-			else if (links[i].href.indexOf(window.location.hostname) > -1 && links[i].target != "_blank")
-			{
-					links[i].target = "_self"; 
-			}
-			else if(links[i].href.trim() != "" &&                        // link is not blank
-				 !(links[i].classList.contains("sameWin")) &&          // link does not contain class sameWin
-		//   	 !(links[i].classList.contains("download")) &&         // link does not contain class download
+      // if the site is the same and the link is not explicitly going to a new page 
+	//		else if (linkUrl.host == window.location.host && links[i].target != "_blank")
+	//		{
+	//				links[i].target = "_self"; 
+	//		}
+	    else if(links[i].classList.contains("self") || links[i].classList.contains("sameWin"))
+	    {
+	      links[i].target = "_self"; 
+	    }
+			else if(links[i].href.trim() != "" &&                    // link is not blank
 				 !(links[i].classList.contains("quarto-xref")) &&      // link does not contain class quarto-xref
 				 (links[i].target == "_self" || !(links[i].target)) )  // link contains instruction to go to same window
 			{
