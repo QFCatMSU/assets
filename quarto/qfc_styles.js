@@ -25,49 +25,6 @@ origWidth = null;
 
 window.addEventListener("load", function(event)
 {
-	// find all flexsized objects
-	fsObj = document.querySelectorAll("img.fs");
-
-	// for each flexsized object
-	for(let i=0; i<fsObj.length; i++)
-	{	
-		// mousedown: set the flexsized object
-		fsObj[i].addEventListener("mousedown", function(event)
-		{
-			if(event.which == 1)
-			{		
-				fsClick = fsObj[i];
-				fsClick.ondragstart = function() {return false;};
-			}
-		});
-		fsObj[i].addEventListener("mouseup", function(event)
-		{
-			if(event.which == 1)
-			{	
-				if(clickMode == "click")
-				{
-					changeImageSize(this)
-				}
-			}
-		});
-		// end whatever you are doing if mouse leaves the object
-		fsObj[i].addEventListener("mouseout", function(event)
-		{	
-			cleanupFlexEvent()
-		});
-		fsObj[i].addEventListener("click", function(event)
-		{
-		});
-		fsObj[i].addEventListener("dragstart", function(event)
-		{
-			//event.preventDefault();
-		});
-		fsObj[i].addEventListener("dragend", function(event)
-		{
-			//event.preventDefault();
-		});
-	}
-	
 	// find table of contents
 	toc = document.querySelector("nav.toc-active");
 
@@ -325,19 +282,52 @@ the size of the image.  Called on page load.
 function createFlexImages()
 {
 	// find all images that have the class name "flexSize" or "fs"
-	var flexImage = encapObject.querySelectorAll('img.flexSize, img.fs');
 	var flexVideo = encapObject.querySelectorAll('video.flexSize, video.fs');
 	var flexIframe = encapObject.querySelectorAll("p.fs > iframe, p.flexsize > iframe");
 
-	// switch to while (there are flexImages)??
-	for(i=0; i<flexImage.length; i++)	// for each flexSize element
-	{
-		// add a click event that calls changeImageSize() to each flexSize image
-	//	flexImage[i].addEventListener("click", function()
-	//											{ changeImageSize(this) }, false); 
+	// find all flexsized images
+	fsObj = document.querySelectorAll("img.fs");
 
-		// initalize the flex image to the small size
-		changeImageSize(flexImage[i], "minimize");
+	// for each flexsized image
+	for(let i=0; i<fsObj.length; i++)
+	{	
+		// mousedown: set the flexsized object
+		fsObj[i].addEventListener("mousedown", function(event)
+		{
+			if(event.which == 1)
+			{		
+				fsClick = fsObj[i];
+				fsClick.ondragstart = function() {return false;};
+			}
+		});
+		fsObj[i].addEventListener("mouseup", function(event)
+		{
+			if(event.which == 1)
+			{	
+				if(clickMode == "click")
+				{
+					changeImageSize(this)
+				}
+			}
+		});
+		// end whatever you are doing if mouse leaves the object
+		fsObj[i].addEventListener("mouseout", function(event)
+		{	
+			cleanupFlexEvent()
+		});
+		fsObj[i].addEventListener("click", function(event)
+		{
+		});
+		fsObj[i].addEventListener("dragstart", function(event)
+		{
+			//event.preventDefault();
+		});
+		fsObj[i].addEventListener("dragend", function(event)
+		{
+			//event.preventDefault();
+		});
+		//initialize image to small size
+		changeImageSize(fsObj[i], "minimize");
 	}
 	
 	// go through all the videos...
