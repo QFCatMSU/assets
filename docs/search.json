@@ -328,5 +328,26 @@
       "Tutorials",
       "Git Setup"
     ]
+  },
+  {
+    "objectID": "readme.html",
+    "href": "readme.html",
+    "title": "Assests",
+    "section": "",
+    "text": "rs_theme_light\ngit setup\nQFC_Styles.js\nQFC_Styles.css"
+  },
+  {
+    "objectID": "readme.html#quarto",
+    "href": "readme.html#quarto",
+    "title": "Assests",
+    "section": "",
+    "text": "rs_theme_light\ngit setup\nQFC_Styles.js\nQFC_Styles.css"
+  },
+  {
+    "objectID": "readme.html#section",
+    "href": "readme.html#section",
+    "title": "Assests",
+    "section": "2 ",
+    "text": "2"
   }
 ]

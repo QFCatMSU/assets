@@ -157,6 +157,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Assests</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../readme.md" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assests</span></a>
+  </div>
+</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -653,9 +659,9 @@ Figure&nbsp;8: The URL for your GitHub repository
 <p><span class="note">Note: In Windows, <strong>Control-V</strong> does not paste in a Terminal window, but <strong>right-click</strong> -&gt; <strong>Paste</strong> works</span></p>
 <div class="sourceCode" id="cb19" data-tab="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"added Git"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>2) The second line connects (<strong><em>remote add</em></strong>) your Git repository to your GitHub repository (<strong><em>origin</em></strong>).&nbsp; <span class="hl">Replace the URL in quotes with the URL for your GitHub repository.</span></p>
-<pre><code>git remote add origin "https://github.com/myUserName/myRepository.git"</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="st">"https://github.com/myUserName/myRepository.git"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>3) The third line sends (<strong><em>Push</em></strong>) your project to the GitHub repository (<strong><em>origin</em></strong>).&nbsp; There is a good chance that GitHub will ask you to authenticate at this point using the GCM (<a href="#sec-auth" class="quarto-xref">Section&nbsp;8.2</a>)</p>
-<pre><code>git push -u origin master</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you get an error in these steps, you probably need to reset the link shown here: <a href="#fixing-an-incorrect-link-to-a-github-repository">Fixing an incorrect link to a GitHub repository</a></p>
 </section>
 <section id="sec-auth" class="level3" data-number="8.2">

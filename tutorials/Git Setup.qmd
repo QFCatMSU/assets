@@ -357,7 +357,7 @@ When logged in to GitHub (@fig-newRepo):
 
     -   **Public** means that anyone with the repository link can view (but not edit) your files
 
-    -   **Private** means that only users you add in **Settings -\> Manage Access** can view the repository (more in [Inviting users to your repository])
+    -   **Private** means that only users you add in **Settings -\> Manage Access** can view the repository (more in [Inviting users to your repository](#sec-invite))
 
 4.  Click ***Create Repository***
 
@@ -413,13 +413,13 @@ git add -A && git commit -m "added Git"
 
 2\) The second line connects (***remote add***) your Git repository to your GitHub repository (***origin***).  [Replace the URL in quotes with the URL for your GitHub repository.]{.hl}
 
-```         
+``` bash
 git remote add origin "https://github.com/myUserName/myRepository.git"
 ```
 
 3\) The third line sends (***Push***) your project to the GitHub repository (***origin***).  There is a good chance that GitHub will ask you to authenticate at this point using the GCM (@sec-auth)
 
-```         
+``` bash
 git push -u origin master
 ```
 
