@@ -10,5 +10,3 @@
 [QFC_Styles.js](quarto/qfc_styles.js)
 
 [QFC_Styles.css](quarto/qfc_styles.css)
-
-## 
