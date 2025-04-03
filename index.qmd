@@ -10,8 +10,8 @@ editor: visual
 
 [git setup](tutorials/Git%20Setup.html)
 
-[QFC_Styles.js](quarto/QFC_styles.js)
+[QFC_Styles.js](quarto/qfc_styles.js)
 
-[QFC_Styles.css](quarto/QFC_styles.css)
+[QFC_Styles.css](quarto/qfc_styles.css)
 
 ## 
