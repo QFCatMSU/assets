@@ -1,0 +1,332 @@
+[
+  {
+    "objectID": "tutorials/Git.html",
+    "href": "tutorials/Git.html",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "",
+    "text": "The Git Credential Manager (GCM) supports Windows, Linux , and Mac and handles the authentication between Git and the GitHub (and other online places that handle Git repositories like Azure and Bitlocker). There are deprecated Git Credential Managers (one for Windows, and one for Mac/Linux) that still often come up in searches.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#git-and-git-credential-manager",
+    "href": "tutorials/Git.html#git-and-git-credential-manager",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "",
+    "text": "The Git Credential Manager (GCM) supports Windows, Linux , and Mac and handles the authentication between Git and the GitHub (and other online places that handle Git repositories like Azure and Bitlocker). There are deprecated Git Credential Managers (one for Windows, and one for Mac/Linux) that still often come up in searches.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#windows",
+    "href": "tutorials/Git.html#windows",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "2 Windows",
+    "text": "2 Windows\nWindows has the easiest installation as Git Credential Manager is install with Git and there is no configuration necessary for the Git Credential Manager\n\n2.1 Install Git and GCM\nClick here to download and install Git – click on Download for Windows (version as of March 2025 is 2.48.1)\n\nYou can use all the default installation settings\n\n\n\n2.2 Setup Git\nIn the Command Prompt or PowerShell, set the Git user name and password (you will not be able to Commit until you do this):\ngit config --global user.name \"userName\"\ngit config --global user.email \"userEmail\"\nThis username and email is attached to the Git Commits – they are not part of any login or authorization. It makes sense to use your GitHub username and email but you can use any username and email you want.\n\n\n2.3 Setup Git Credentials\nThe first time you Push to a repository, you will be asked for your GitHub username and password. After this, your credentials are stored on the computer.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#mac",
+    "href": "tutorials/Git.html#mac",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "3 Mac",
+    "text": "3 Mac\nBefore you install Git on Mac, you need to install Homebrew, which is a very useful tool for programmers as it gives easy access to packages not included with Mac.\n\n3.1 Install Homebrew:\nGo to the homebrew page: https://brew.sh/\nCopy the command under Install Homebrew in the Terminal and execute.\n \nThe command as of March 2025 is:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nBut this could change. It is safest to just go to the Homebrew page and copy the link.\n\n\n3.2 Git and GCM installation\nInstall Git in the Terminal:\nbrew install Git\nInstall Git Credential Manager in the Terminal:\nbrew install --cask git-credential-manager\n\n\n3.3 Setup Git\nIn the Terminal, set the Git user name and password (you will not be able to Commit until you do this):\ngit config --global user.name \"userName\" \ngit config --global user.email \"userEmail\"\nThis username and email is attached to the Git Commits – they are not part of any login or authorization. It makes sense to use your GitHub username and email but you can use any username and email you want.\n\n\n3.4 Setup Git Credentials\nThe first time you Push to a repository, you will be asked for your GitHub username and password. After this, your credentials are stored on the computer.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#linux-mint-ubuntu-gui",
+    "href": "tutorials/Git.html#linux-mint-ubuntu-gui",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "4 Linux Mint/ Ubuntu (GUI)",
+    "text": "4 Linux Mint/ Ubuntu (GUI)\nThese instructions work on Ubuntu and Linux Mint that have a GUI interface. They probably work on most Debian-based machines.\n\n4.1 Install Git\nThe first line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.\nsudo add-apt-repository ppa:git-core/ppa\napt update\napt install git\n\n\n4.2 Install Git Credential Manager:\nDownload the Debian (*.deb) Git-Credential-Manager:\nhttps://github.com/git-ecosystem/git-credential-manager/releases/latest\n \nUnpack the deb file:\nsudo dpkg -i &lt;path/to/*.deb&gt;\nIf the download went to the Downloads folder then this command will work:\nsudo dpkg -i ~/Downloads/gcm-linux*.deb\n\n\n4.3 Setup Git\nIn the Terminal, set the Git user name and password (you will not be able to Commit until you do this):\ngit config --global user.name \"userName\"  \ngit config --global user.email \"userEmail\"\nThis username and email is attached to the Git Commits – they are not part of any login or authorization. It makes sense to use your GitHub username and email but you can use any username and email you want.\n\n\n4.4 Setup Git Credentials\nConfigure the Git Credential Manager for Git\ngit-credential-manager configure\nStore your authentication with secretservice\ngit config --global credential.credentialStore secretservice\nThe first time you Push to a repository, you will be asked for your GitHub username and password. After this, your credentials are stored on the computer.\n \nYou might also be asked to setup a password to the keyring that stores your Git credentials. It adds security but if you do this then you will have to type in this password every time you Push to a GitHub repository.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git.html#linux-mint-ubuntu-headless",
+    "href": "tutorials/Git.html#linux-mint-ubuntu-headless",
+    "title": "Git and Git Credential Manager Setup",
+    "section": "5 Linux Mint/ Ubuntu (headless)",
+    "text": "5 Linux Mint/ Ubuntu (headless)\nThe standard way to setup Git Credential requires a GUI interface. These instructions provide a way to set up the GCM through only a Terminal. These instructions probably work on most Debian-based machines.\n\n5.1 Install Git\nThe first line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.\nsudo add-apt-repository ppa:git-core/ppa \napt update \napt install git\n\n\n5.2 Install Git Credential Manager\nYou are going to directly download the GCM tar file from the GitHub page. The instruction below are for version 2.6.1, which is the newest version as of March 2025. Adjust the numbers for newer version.\n \nDownload Git Credential Manager\nwget https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.6.1/gcm-linux_amd64.2.6.1.tar.gz\nGo to the folder where you downloaded the GCM and unzip GCM to a folder of your choice:\ntar xavf gcm-linux_amd64.2.6.1.tar.gz -C /path/to/install/folder\nGo to the folder where you unzipped GCM and make the file executable:\nchmod +x git-credential-manager\nIn the same folder, execute the GCM:\n./git-credential-manager configure\n\n\n5.3 Setup Git Credentials\nConfigure the Git Credential Manager for Git\ngit-credential-manager configure\nKeep your authentication in cache\ngit config --global credential.credentialStore cache\nWhen you Push to GitHub you will be asked to authenticate on another device:\n\nUse Authentication Method #1: Device Code\nOn another device, go to https://github.com/login/device\nLogin if you need to\nYou will get an 8-digit code on the other device – type that code in the Terminal\n\n \nYou GitHub authentication will be stored in cache for a certain amount of time (i.e., you will need to reauthenticate when that time is up). The default amount of time is 15 minutes. You can change default time:\ngit config --global credential.helper \"cache --timeout=3600\"\nnote: time is in seconds so this is 1 hour",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "sandbox/index.html",
+    "href": "sandbox/index.html",
+    "title": "Assests",
+    "section": "",
+    "text": "link to Section 2.1\nrs_theme_light\ngit setup",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Assests"
+    ]
+  },
+  {
+    "objectID": "sandbox/index.html#quarto",
+    "href": "sandbox/index.html#quarto",
+    "title": "Assests",
+    "section": "",
+    "text": "link to Section 2.1\nrs_theme_light\ngit setup",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Assests"
+    ]
+  },
+  {
+    "objectID": "sandbox/index.html#lkgfdjdslg",
+    "href": "sandbox/index.html#lkgfdjdslg",
+    "title": "Assests",
+    "section": "2 lkgfdjdslg",
+    "text": "2 lkgfdjdslg\n \n https://google.com\n \n https://google.com\n\n2.1 kjdsfglkdfshgl",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Assests"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Assests",
+    "section": "",
+    "text": "rs_theme_light\ngit setup\nQFC_Styles.js\nQFC_Styles.css"
+  },
+  {
+    "objectID": "index.html#quarto",
+    "href": "index.html#quarto",
+    "title": "Assests",
+    "section": "",
+    "text": "rs_theme_light\ngit setup\nQFC_Styles.js\nQFC_Styles.css"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Assests",
+    "section": "2 ",
+    "text": "2"
+  },
+  {
+    "objectID": "quarto/tutorial.html",
+    "href": "quarto/tutorial.html",
+    "title": "Quarto Visual Tutorial",
+    "section": "",
+    "text": "Git/GitHub usage\nSetup\n\nCSS injection\nVSCode: render externally\n\nRendering\n\nbackground tasks\n\nAdd a new lesson\n\ncreate a new lesson\ninit lesson\n\nstarter code\ncopy old lesson\n\nsave lesson\n\nElement in webpage\n\nheaders (and what they mean)\nparagraphs\ncodeblocks\nnumbered/bullet lists\n\nStyling\n\nb,i,u,\nhighlights and notes\n\nSpacing\n\nControl-Space for extra line/ spaces\n\nadd images\n\nresizing\nadd caption (figure)\ndifferences between VSCode, Quarto\n\ndropping image renames – can drop in file manager then add to page\n\nreferencing\n\nLinks\n\ninside/ouside project\nother class lesson\nsections (2 ways)\n\nby Header\nadd name sec-# and ref by figure\n\ndownload\nemail links ??\n\nCode (block)\n\nhighlighting\ntab names\ncopying\nadd caption (figure)\nreferencing\nlanguage (R, Python, Java…)\n\nuse default if you do not want highlighting (cannot leave blank)\n\n\nEquations\n\ninline and display (Latex)\nusing EquateIO\nnumbering\ncaptioning/ referencing\n\nVideos\n\nFrom Mediaspace\n\nTables\n\ncannot merge cells (email Quarto re this)\n\nBibliography\n\nZotero",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Quarto",
+      "Quarto Visual Tutorial"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html",
+    "href": "tutorials/Git Setup.html",
+    "title": "Git Setup",
+    "section": "",
+    "text": "Add terminology section\nSection Links\nconfiguring GCM and test (after first Push) are separated\n\ncan you test GCM right away? Don’t think so…\n\nAdd extension about delete GitHub credentials in Windows\n\ntest file to download",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#purpose",
+    "href": "tutorials/Git Setup.html#purpose",
+    "title": "Git Setup",
+    "section": "1 Purpose",
+    "text": "1 Purpose\nTo link an RStudio Project to a GitHub repository using Git\n\n1.1 Prerequisites\n\nYou have installed a recent version of R and RStudio\n\nFor RStudio it is highly recommended to have at least version 2025.04 as RStudio fixed a major bug in their Git interface on Windows in that version\n\nYou have an RStudio Project\nYou can view hidden files and folders and see all file extensions (not required, but helpful)\n\n\n\n1.2 Tasks\n\nInstall and configure Git and Git Credential Manager (Section 4)\nConfigure Git username and email (Section 5)\nCreate a Git repository in your RStudio Project folder (Section 6)\nGet a GitHub ID (Section 7.1)\nCreate a GitHub repository (Section 7.2)\nSync your RStudio Project to GitHub (Section 8)\nInvite a user to your repository and give them Write access (Section 10)",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#git-vs.-github",
+    "href": "tutorials/Git Setup.html#git-vs.-github",
+    "title": "Git Setup",
+    "section": "2 Git vs. GitHub",
+    "text": "2 Git vs. GitHub\nGit and GitHub are two terms that are often conflated. Git is versioning software – you use Git on your computer to create a history of your project.  With this project history, you can bring back previous versions of files or your entire Project.  Git calls this complete history a repository.   GitHub is an online software development platform where you can store, sync, and share your Git repository.  When combined, Git and GitHub make a very powerful project-management system.\n \nWhile Git and GitHub are very powerful tools, they are not intuitive and there is a pretty high-barrier to entry – especially if you want to use them safely.\n \nNote: Git and GitHub can be used independent of each-other.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#rstudio-terminal-tab-to-configure-git",
+    "href": "tutorials/Git Setup.html#rstudio-terminal-tab-to-configure-git",
+    "title": "Git Setup",
+    "section": "3 RStudio Terminal tab to configure Git",
+    "text": "3 RStudio Terminal tab to configure Git\nThe RStudio Terminal tab, located in the bottom-left corner next to the Console tab (Figure 1), is a very useful tool that is used to send system commands. The Terminal tab is the same as the Terminal app in Mac and the Command Prompt in Windows.  Trap: The Console Tab and Terminal Tab\n\n\n\n\n\n\nFigure 1: The Terminal Tab in RStudio\n\n\n\nWe are going to use the Terminal tab multiple times to install, set up, and use Git.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#sec-installGit",
+    "href": "tutorials/Git Setup.html#sec-installGit",
+    "title": "Git Setup",
+    "section": "4 Installing Git and the Git Configuration Manager (GCM)",
+    "text": "4 Installing Git and the Git Configuration Manager (GCM)\nGit is software that you install on your computer that allows you to version, and create a history of, your project.  For this class, we will use Git with an RStudio Project but Git can be used with any project.\n \nThe Git Credential Manager (GCM) handles the authentication between Git and GitHub (and other online places that store Git repositories like Azure and Bitlocker).\n \nThe section provides instructions for installing and setting up Git and GCM for multiple computers.\n\n4.1 Windows\nClick here to download and install Git, with the Git Configuration Manager built-in – click on Download for Windows (version as of March 2025 is 2.49.0)\n\nMake sure RStudio is closed while Git is being installed.\nYou can use all the default installation settings \n\n \nThe Git installer also installs and configures the Git Configuration Manager.\n\n\n4.2 Mac\nBefore you install Git on Mac, you need to install Homebrew, which is a very useful tool for programmers as it gives easy access to packages not included with Mac.\n \nGo to the homebrew page: https://brew.sh/\nCopy the command under Install Homebrew in the Terminal and execute.\n \nThe command as of March 2025 is:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nBut this could change. It is safest to just go to the Homebrew page and copy the link.\n\n4.2.1 Install Git and GCM using Homebrew\nInstall Git in the Terminal:\nbrew install Git\nInstall Git Credential Manager in the Terminal:\nbrew install --cask git-credential-manager\n\n\n\n4.3 Linux Mint/ Ubuntu\nThese instructions work on Ubuntu and Linux Mint that have a GUI interface. They probably work on most Debian-based machines.\n\n4.3.1 Install Git\nThis line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.\nsudo add-apt-repository ppa:git-core/ppa apt update apt install git\n\n\n4.3.2 Install Git Credential Manager (GUI only)\nDownload the Debian (*.deb) Git-Credential-Manager:\nhttps://github.com/git-ecosystem/git-credential-manager/releases/latest\n \nUnpack the deb file:\nsudo dpkg -i &lt;path/to/*.deb&gt;\nIf the download went to the Downloads folder then this command will work:\nsudo dpkg -i ~/Downloads/gcm-linux*.deb\n\n\n4.3.3 Setup Git Credentials (GUI only)\nConfigure the Git Credential Manager for Git\ngit-credential-manager configure\nStore your authentication with secretservice\ngit config --global credential.credentialStore secretservice\n\n\n4.3.4 Install Git Credential Manager (headless)\nThe standard way to setup GCM requires a GUI interface. These instructions provide a way to set up the GCM through only a Terminal. Authentication will require another device where you can access a browser or the GitHub app. These instructions probably work on most Debian-based machines.\n \nYou are going to directly download the GCM tar file from the GitHub page. The instructions below are for version 2.6.1, which is the newest version as of March 2025. Adjust the numbers for newer version.\n \nDownload Git Credential Manager\nwget https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.6.1/gcm-linux_amd64.2.6.1.tar.gz\nGo to the folder where you downloaded the GCM and unzip GCM to a folder of your choice:\ntar xavf gcm-linux_amd64.2.6.1.tar.gz -C /path/to/install/folder\nGo to the folder where you unzipped GCM and make the file executable:\nchmod +x git-credential-manager\nNow execute the GCM:\n./git-credential-manager configure\n\n\n4.3.5 Setup Git Credentials (headless)\nConfigure the Git Credential Manager for Git\ngit-credential-manager configure\nKeep your authentication in cache\ngit config --global credential.credentialStore cache",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#sec-configureGit",
+    "href": "tutorials/Git Setup.html#sec-configureGit",
+    "title": "Git Setup",
+    "section": "5 Configure Git in RStudio",
+    "text": "5 Configure Git in RStudio\nTo use Git for your project, you need to configure Git on your computer with a username and email. The username and email are only used to identify who made what changes in the project history. You should use your GitHub ID as the username and the email associated with your GitHub account.\n \nIn the Terminal, set the Git user name and password – replace userName and userEmail with your username and email:\ngit config --global user.name \"userName\"   \ngit config --global user.email \"userEmail\"\n\n\n\n\n\n\nFigure 2: The Terminal Tab in RStudio with the two commands above (your prompt might look different)\n\n\n\n\n5.1 Viewing the configured values (optional)\nYou can check the username and email by executing these lines in the Terminal tab:\ngit config user.name\ngit config user.email\nAfter executing the two above command, your Terminal tab should look similar to this:\n\n\n\nCharlie@Charlie-QFC MINGW64 /c/Users/Charlie/Desktop/GitHub Tests/FundProgUsingR\n$ git config user.name\nbelinskyc\n\nCharlie@Charlie-QFC MINGW64 /c/Users/Charlie/Desktop/GitHub Tests/FundProgUsingR\n$ git config user.email\nbelinsky@msu.edu\n\n\nFigure 3: Testing the git configuration using the RStudio Terminal tab",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#sec-gitRepo",
+    "href": "tutorials/Git Setup.html#sec-gitRepo",
+    "title": "Git Setup",
+    "section": "6 Add Git to your RStudio Project folder",
+    "text": "6 Add Git to your RStudio Project folder\nWe are now going to add a Git repository to the same folder as your RStudio Project.  The Git repository exists locally on your computer – later on we will sync it to GitHub.\n \nFirst, make sure you are in your RStudio Project!\n \nTo add Git to your RStudio Project folder, type in the Terminal:\ngit init\nAnd then restart RStudio\n \nThis only works if the Terminal is currently at your project folder directory. The only reason it would not be is if you changed the folder in the Terminal in this RStudio session. If you did change the directory, you can get back to the correct directory by clicking: Tools -&gt; Terminal -&gt; Go to Current Directory\n \nExtension: Alternate way to add git to RStudio Project\n\n6.1 RStudio and Git\nWhen you add Git to an RStudio Project folder, a Git tab will appear in the upper-right window. RStudio’s built-in Git interface handles the most commonly performed Git functions.\n\n\n\n\n\n\nFigure 4: The Git tab has been added to the RStudio Project\n\n\n\n\n\n6.2 Project folders and Git Repositories\nLet’s look inside the project folder in the RStudio Files tab (note: you can see the same thing in your operating system’s file explorer).  By default, the Files tab will not show hidden files, we can change that by clicking on More -&gt; Show Hidden Files ( Figure 5).\n \nRStudio adds a folder (.RProj.user) and a file (*.RProj) to your project folder.  This is what makes this project folder an RStudio Project.\n \nSimilarly, Git adds files to the project folder to make it a Git repository.\n \nThe two objects that get added by Git are:\n\n.gitignore: this file is used to indicate files you do not want to be a part of the repository (i.e., files that are not shared nor versioned)\n.git: this folder is hidden and contains the history of your project – do not edit or delete this!\n\n \nYour project folder is now both an RStudio Project and a Git Repository.\n\n\n\n\n\n\nFigure 5: Files added to the project folder by RStudio and Git\n\n\n\n\n\n6.3 Files in a Git repository\nA Git repository is attached to a folder, just like an RStudio Project.  In an RStudio Project, everything inside the project folder (and its subfolders) is a part of the RStudio Project.  This is not true of Git repositories.  Everything inside the project folder can be a part of the repository, but files inside the project folder are not part of the repository until they are explicitly added to the repository (more details in future lessons).\n \n.gitignore is used to declare the files inside the project folder that you do not want to be a part of the Git repository.\n \nIf you are creating a Git repository in a working project, then you need to read Choosing files you do not want to share (.gitignore).  If you are just testing then you will learn more about .gitignore later.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#github-repository-start-second-lesson-here",
+    "href": "tutorials/Git Setup.html#github-repository-start-second-lesson-here",
+    "title": "Git Setup",
+    "section": "7 GitHub repository <start second lesson here??>",
+    "text": "7 GitHub repository &lt;start second lesson here??&gt;\nA GitHub repository is an online storage location that syncs with the Git repository on your computer.  We will create a GitHub repository that links to the Git repository just created.\nNote: The GitHub repository does not contain an exact copy of your project – we will get to this in later lessons.\n \nTo link your existing Git repository to a GitHub repository:\n\nGet a GitHub account (if you do not have one)\nCreate a GitHub repository – this is your online project folder\nGet the URL from the GitHub repository you just created\n\n\n7.1 Get a GitHub account\nIf you do not have a GitHub account then go to http://github.com and sign up for an account. For this class, it is OK to just use a free account. Educators, students, and non-profit workers can get a professional account for free.\n\n\n7.2 Creating a GitHub repository\nWhen logged in to GitHub (Figure 6):\n\nClick on the + at the top-right and choose New Repository\nChoose a repository name\nChoose whether you want the repository to be Public or Private (this can be changed later)\n\nPublic means that anyone with the repository link can view (but not edit) your files\nPrivate means that only users you add in Settings -&gt; Manage Access can view the repository (more in Inviting users to your repository)\n\nClick Create Repository\n\n\n\n\n\n\n\nFigure 6: Creating a new repository in GitHub\n\n\n\n\n\n7.3 Getting the URL for the repository\nTo link a Git repository with this GitHub repository, you will need the URL for the GitHub repository. After you create the new repository, a window will appear (Figure 7) with the URL at the top in the Quick Setup section. Copy this URL and save it – you will use it in the next section.\n\n\n\n\n\n\nFigure 7: The URL for the GitHub repository you just created\n\n\n\n\n\n7.4 GitHub repository format\nIf you lose the Quick Setup page then the URL is going to be the part of the URL circled below:\n\n\n\n\n\n\nFigure 8: The URL for your GitHub repository\n\n\n\nThe GitHub repository link is the URL that takes you directory to the online project.  A GitHub repository link is always in this format:\n\nhttps://github.com//.git\n\n \nSo, if my GitHub username is QFCatMSU and my repository name is gitHubTest then the link is (yes, this repository exists):\n\nhttps://github.com/qfcatmsu/githubtest.git\n\n \nNotes: .git is optional and capital/lowercase does not matter",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#sec-link",
+    "href": "tutorials/Git Setup.html#sec-link",
+    "title": "Git Setup",
+    "section": "8 Linking your Git repository to a GitHub repository",
+    "text": "8 Linking your Git repository to a GitHub repository\nIn this section we are going to link a Git repository on your computer with an online GitHub Repository.  The GitHub repository will be the online version of your Git repository and can be shared. \n \nWarning: This only works if the GitHub repository is empty – we will deal with linking to a non-empty repository in a future lesson.\n\n8.1 Terminal commands to link to a GitHub repository\nThere are three lines in the RStudio Terminal tab you need to type in (or copy) to link your Git repository to the GitHub repository.  Don’t forget to press enter after each line…\n \n1) The first adds (add) the first version of your project and writes (commit) the version to your repository with the message “added Git”.\nNote: In Windows, Control-V does not paste in a Terminal window, but right-click -&gt; Paste works\ngit add -A && git commit -m \"added Git\"\n2) The second line connects (remote add) your Git repository to your GitHub repository (origin).  Replace the URL in quotes with the URL for your GitHub repository.\ngit remote add origin \"https://github.com/myUserName/myRepository.git\"\n3) The third line sends (Push) your project to the GitHub repository (origin).  There is a good chance that GitHub will ask you to authenticate at this point using the GCM (Section 8.2)\ngit push -u origin master\nIf you get an error in these steps, you probably need to reset the link shown here: Fixing an incorrect link to a GitHub repository\n\n\n8.2 Authenticating with GitHub (all except headless machines)\nGitHub asks for authentication the first time you connect to a GitHub repository on each computer:\n\n\n\n\n\n\nFigure 9: GitHub asking for authentication\n\n\n\nWhen you click Sign in with your browser, your default browser will open to the GitHub login page.\n \nAfter you login you will get an Authentication Successful window:\n\n\n\n\n\n\nFigure 10: The Authentication Successful window\n\n\n\n\n8.2.1 Authenticating on Linux (GUI)\nYou might also be asked to setup a password to the keyring that stores your Git credentials.\n\nAdvantage: It adds security\nDisadvantage: you will have to type in this password every time you Push to a GitHub repository\n\n\n\n8.2.2 Authenticating on Linux (headless) &lt;to extension??&gt;\nWhen you Push to GitHub you will be asked to authenticate on another device:\n\nUse Authentication Method #1: Device Code\nOn another device, go to https://github.com/login/device\nLogin if you need to\nYou will get an 8-digit code on the other device – type that code in the Terminal\n\n \nYou GitHub authentication will be stored in cache for a certain amount of time (i.e., you will need to reauthenticate when that time is up). The default amount of time is 15 minutes. You can change the default time:\ngit config --global credential.helper \"cache --timeout=3600\"\nnote: time is in seconds so this is 1 hour",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#verifying-the-change-on-github",
+    "href": "tutorials/Git Setup.html#verifying-the-change-on-github",
+    "title": "Git Setup",
+    "section": "9 Verifying the change on GitHub",
+    "text": "9 Verifying the change on GitHub\nLet’s go to your GitHub account to verify that the project files are there (Figure 11):\n\nLog in to GitHub\nOn the left side, there is a section called Repositories. \nClick on the repository called &lt;your-user-name&gt;/&lt;your-repository-name&gt;\nChoose the Code tab (you are probably already on it)\n\n \nYou should notice that the files changed in the newest Commit have your Commit message attached (my Commit message: “A description you made…”) and the last commit for these files is recent (in this case: 7 minutes).\n\n\n\n\n\n\nFigure 11: GitHub after a new Commit was pushed\n\n\n\n\n9.1 Editing files in GitHub (a warning…)\nYou can edit/create/delete folders and files in GitHub. I would strongly recommend against this at this point. This can have consequences that require a better understanding of Git and GitHub than this class provides.  Make all edits to your project on your computer and send (Push) it to GitHub – this is covered in the next lesson.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#sec-invite",
+    "href": "tutorials/Git Setup.html#sec-invite",
+    "title": "Git Setup",
+    "section": "10 Inviting users to your repository",
+    "text": "10 Inviting users to your repository\nTo invite a user (or, as GitHub calls them, collaborator) to your repository:\n\nGo to the GitHub home page for your repository and click Settings\nClick Collaborators and teams\nClick Add people\n\nYou can use either the person’s GitHub ID or their email address associated with their GitHub ID\n\n\n\n\n\n\n\n\nFigure 12: Inviting a user to your GitHub Repository\n\n\n\nAn email will be sent to the collaborator, and they can click on Accept Invitation in the email. &lt;alternatively, can they go the page directly and accept?&gt;\n\n10.1 Responding to the GitHub repository invite\nWhat happens after you send an invite to another GitHub user can be a bit strange because:\n\nGitHub will email an invite to the collaborator, but will not notify the user on their GitHub account\nIf the user clicks the invite link on the email and they are not logged in to GitHub, they will see a 404 error and be prompted to log in – then they can accept the invitation\n\n\n\n10.2 Access rights on GitHub Repositories\nPersonal (i.e., free) GitHub repositories have limited access options. On a personal account, everyone you invite as a collaborator has editing rights on your repository.\n \nIf you want more control over access rights then you either need to:\n\nCreate a GitHub repository under an organization account. Educational institutions and non-profit organizations can get a free organization account – for instance, the QFC has a GitHub account. The process, however, is not simple.\nUpgrade your account, which you can do as a student for free as part of the Student Developer Kit – this includes a lot of software you probably will not use\nPay for GitHub Pro",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#application",
+    "href": "tutorials/Git Setup.html#application",
+    "title": "Git Setup",
+    "section": "11 Application",
+    "text": "11 Application\nAdd the instructor (GitHub user: belinskyc) to the GitHub repository you just created and give belinskyc Write access.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#trap-the-console-tab-and-terminal-tab",
+    "href": "tutorials/Git Setup.html#trap-the-console-tab-and-terminal-tab",
+    "title": "Git Setup",
+    "section": "12 Trap: The Console Tab and Terminal Tab",
+    "text": "12 Trap: The Console Tab and Terminal Tab\nJust a warning: The Console tab and the Terminal tab are next to each other and look very similar. It is very easy to confuse the two and put commands into the wrong tab.\n \n\nThe Console tab is an R Console – for commands that are specific to your R scripts.\nThe Terminal tab is the same as the Terminal in Mac or the Command Prompt in Windows – it is for sending system commands.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#choosing-files-you-do-not-want-to-share-.gitignore",
+    "href": "tutorials/Git Setup.html#choosing-files-you-do-not-want-to-share-.gitignore",
+    "title": "Git Setup",
+    "section": "13 Choosing files you do not want to share (.gitignore)",
+    "text": "13 Choosing files you do not want to share (.gitignore)\n.gitignore is a text document that lists all folders and files that are ignored when versioning/sharing your project.  In other words, the folders and files in .gitignore exist in your project folder but they do not exist in your Git repository and they will not be uploaded to GitHub.\n \nSome reasons for not sharing folders and files are that they:\n\nare temporary files\nare put in by RStudio or the operating system and do not affect the project\nare files generated by the scripts\nare large files that you do not want uploaded (e..g., simulated data, images)\n\n \n.gitignore starts with four lines (Figure 13). \n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n\n\n\n\n\n\nFigure 13: The .gitignore file\n\n\n\n\n13.1 Editing .gitignore\nYou can edit .gitignore in RStudio (or any other text-editor).\n \nHere is an example .gitignore (Note: * is a wildcard character):\n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n~*\ndoNotSync/\n*.o\ntest1/*.jpg\ntest2/data/weatherData.csv\nThe above .gitignore is ignoring:\n\n~*: filenames that start with a tilde  ( ~ )\ndoNotSync: if you have a doNotSync folder that will remain local-only\n*.o: all files with extension .o – these are intermediate files generated by C and C++ scripts\ntest1/*.jpg: all jpg files inside the test1 folder (and subfolders)\ntest2/data/weatherData.csv: ignore a single file (weatherData.csv) inside the folders test2/data\n\n \n.gitignore is a Git repository file and everyone who syncs a project uses the same .gitignore – and, no, you cannot use .gitignore to ignore .gitignore.\n\n\n13.2 gitignore only works on unversioned files\nOnce you have versioned a file, it becomes a part of your Git repository and will be shared on GitHub.  This cannot be undone using .gitignore.  This means you need to consider .gitignore before you start creating versions of your project (i.e., now).\n \nnote: there are other ways to remove files from GitHub but they are complicated",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#fixing-an-incorrect-link-to-a-github-repository",
+    "href": "tutorials/Git Setup.html#fixing-an-incorrect-link-to-a-github-repository",
+    "title": "Git Setup",
+    "section": "14 Fixing an incorrect link to a GitHub repository",
+    "text": "14 Fixing an incorrect link to a GitHub repository\nThis section is only needed if the URL for the GitHub Repository was incorrectly typed or got changed.\n \nIf after you typed in the three lines in the Terminal, you received this message:\nfatal: remote origin already exists\nThen you first need to remove the current GitHub repository (i.e., the origin):\ngit remote rm origin\nThis cleans up the whole operation so you can start fresh.  After this, you need to redo the steps in Section 8.",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  },
+  {
+    "objectID": "tutorials/Git Setup.html#extension-alternate-way-to-add-git-to-rstudio-project",
+    "href": "tutorials/Git Setup.html#extension-alternate-way-to-add-git-to-rstudio-project",
+    "title": "Git Setup",
+    "section": "15 Extension: Alternate way to add git to RStudio Project",
+    "text": "15 Extension: Alternate way to add git to RStudio Project\nTo add a Git repository to your RStudio Project folder\n\nOpen your project in RStudio\nClick Tools -&gt; Version Control -&gt; Project Setup \n\n-   This opens the ***Project Options*** window\n\nIn the Version control system dropdown menu, select Git\nAdding Git to your RStudio Project\nSay Yes to initializing a new repository for the project\nYou will be prompted torestart RStudio – click Yes.\n\n-   You can also manually restart by clicking ***Session -\\&gt; Restart R***\n\n\n\n\n\n\nFigure 14: Add Git to your RStudio Project",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Tutorials",
+      "Git Setup"
+    ]
+  }
+]
