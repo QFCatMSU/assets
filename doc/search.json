@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Assests",
-    "section": "",
-    "text": "rs_theme_light\ngit setup"
-  },
-  {
-    "objectID": "index.html#quarto",
-    "href": "index.html#quarto",
-    "title": "Assests",
-    "section": "",
-    "text": "rs_theme_light\ngit setup"
-  },
-  {
-    "objectID": "index.html#section",
-    "href": "index.html#section",
-    "title": "Assests",
-    "section": "2 ",
-    "text": "2"
-  },
-  {
     "objectID": "tutorials/Git.html",
     "href": "tutorials/Git.html",
     "title": "Git and Git Credential Manager Setup",
@@ -90,6 +69,72 @@
       "<b>QFC Assets and Tutorials</b>",
       "Tutorials",
       "Git and Git Credential Manager Setup"
+    ]
+  },
+  {
+    "objectID": "sandbox/index.html",
+    "href": "sandbox/index.html",
+    "title": "Assests",
+    "section": "",
+    "text": "link to Section 2.1\nrs_theme_light\ngit setup",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Assests"
+    ]
+  },
+  {
+    "objectID": "sandbox/index.html#quarto",
+    "href": "sandbox/index.html#quarto",
+    "title": "Assests",
+    "section": "",
+    "text": "link to Section 2.1\nrs_theme_light\ngit setup",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Assests"
+    ]
+  },
+  {
+    "objectID": "sandbox/index.html#lkgfdjdslg",
+    "href": "sandbox/index.html#lkgfdjdslg",
+    "title": "Assests",
+    "section": "2 lkgfdjdslg",
+    "text": "2 lkgfdjdslg\n \n https://google.com\n \n https://google.com\n\n2.1 kjdsfglkdfshgl",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Assests"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Assests",
+    "section": "",
+    "text": "rs_theme_light\ngit setup\nQFC_Styles.js\nQFC_Styles.css"
+  },
+  {
+    "objectID": "index.html#quarto",
+    "href": "index.html#quarto",
+    "title": "Assests",
+    "section": "",
+    "text": "rs_theme_light\ngit setup\nQFC_Styles.js\nQFC_Styles.css"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Assests",
+    "section": "2 ",
+    "text": "2"
+  },
+  {
+    "objectID": "quarto/tutorial.html",
+    "href": "quarto/tutorial.html",
+    "title": "Quarto Visual Tutorial",
+    "section": "",
+    "text": "Git/GitHub usage\nSetup\n\nCSS injection\nVSCode: render externally\n\nRendering\n\nbackground tasks\n\nAdd a new lesson\n\ncreate a new lesson\ninit lesson\n\nstarter code\ncopy old lesson\n\nsave lesson\n\nElement in webpage\n\nheaders (and what they mean)\nparagraphs\ncodeblocks\nnumbered/bullet lists\n\nStyling\n\nb,i,u,\nhighlights and notes\n\nSpacing\n\nControl-Space for extra line/ spaces\n\nadd images\n\nresizing\nadd caption (figure)\ndifferences between VSCode, Quarto\n\ndropping image renames – can drop in file manager then add to page\n\nreferencing\n\nLinks\n\ninside/ouside project\nother class lesson\nsections (2 ways)\n\nby Header\nadd name sec-# and ref by figure\n\ndownload\nemail links ??\n\nCode (block)\n\nhighlighting\ntab names\ncopying\nadd caption (figure)\nreferencing\nlanguage (R, Python, Java…)\n\nuse default if you do not want highlighting (cannot leave blank)\n\n\nEquations\n\ninline and display (Latex)\nusing EquateIO\nnumbering\ncaptioning/ referencing\n\nVideos\n\nFrom Mediaspace\n\nTables\n\ncannot merge cells (email Quarto re this)\n\nBibliography\n\nZotero",
+    "crumbs": [
+      "<b>QFC Assets and Tutorials</b>",
+      "Quarto",
+      "Quarto Visual Tutorial"
     ]
   },
   {

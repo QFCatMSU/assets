@@ -8,6 +8,10 @@ editor: visual
 
 [rs_theme_light](quarto/qfc_a11y-dark.rstheme)
 
-[git setup](tutorials/Git Setup.html)
+[git setup](tutorials/Git%20Setup.html)
+
+[QFC_Styles.js](quarto/QFC_styles.js)
+
+[QFC_Styles.css](quarto/QFC_styles.css)
 
 ## 
