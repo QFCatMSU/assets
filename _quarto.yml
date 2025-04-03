@@ -1,4 +1,4 @@
-website:  
+website:
   bread-crumbs: false
   page-navigation: true
   sidebar:
@@ -8,16 +8,16 @@ website:
       - section: "<b>QFC Assets and Tutorials</b>"
         contents: "**/*.qmd"  # using regex will add another menu level (don't know why)
 
-language:
-  search-box-placeholder: Search All Lessons # does not work...
-
+# language:
+#   search-box-placeholder: Search All Lessons # does not work...
+# 
 project:
   render:
   - "**/*.qmd"  # only render files whose names start with a number
   type: website
-  output-dir: .
-
-format:
+#  output-dir: .  # this is causing the reload of pages...
+    
+format: 
   html:
     page-layout: full
     css: "https://qfcatmsu.github.io/assets/quarto/qfc_styles.css"
@@ -28,12 +28,13 @@ format:
     theme: default
     fontsize: 15px
     number-sections: true
-    grid: 
+    grid:
       body-width: 1000px
     include-in-header:
       - text: |
           <link rel = "shortcut icon" href = "https://qfcatmsu.github.io/assets/quarto/qfc_icon.png" />
           <script>mod=true; menuCollapse=true;</script>
-#          <script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
+          <!--script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script-->
+          <script src="../quarto/qfc_styles.js"></script>
            
 editor: visual

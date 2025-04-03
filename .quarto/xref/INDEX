@@ -18,5 +18,8 @@
   "res/res.qmd": {
     "res.html": "31ff36c8",
     "res.tex": "22740c50"
+  },
+  "sandbox/index.qmd": {
+    "index.html": "71af3c20"
   }
 }
