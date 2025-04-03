@@ -4,6 +4,10 @@
 /* rs-theme-is-dark: TRUE */
 
 /* Remove bolds/ font-weight because it messes with the spacing of the Rstudio cursor */
+.ace_heading
+{
+  font-weight: normal !important;
+}
 
 /* Dark theme has three colors to change: hl, note, table caption */
 

@@ -2,7 +2,12 @@
 /* https://github.com/gadenbuie/rsthemes */
 /* rs-theme-name: a11y-light {rsthemes} */
 /* rs-theme-is-dark: FALSE */
+
 /* Remove bolds/ font-weight because it messes with the spacing of the Rstudio cursor */
+.ace_heading
+{
+  font-weight: normal !important;
+}
 
 /* add equation number to editor */
 span.MJXc-display:after
