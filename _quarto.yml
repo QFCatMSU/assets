@@ -34,7 +34,7 @@ format:
       - text: |
           <link rel = "shortcut icon" href = "https://qfcatmsu.github.io/assets/quarto/qfc_icon.png" />
           <script>mod=true; menuCollapse=true;</script>
-          <!--script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script-->
-          <script src="../quarto/qfc_styles.js"></script>
+          <script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
+          <!--script src="../quarto/qfc_styles.js"></script-->
            
 editor: visual
