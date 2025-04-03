@@ -179,6 +179,8 @@
   h2, h2>.header-section-number
   {
   	color: rgb(100,0,0);
+  	padding-top: 0.75rem;
+  	padding-bottom: 0.75rem;
   }
   h3, h3>.header-section-number
   {
