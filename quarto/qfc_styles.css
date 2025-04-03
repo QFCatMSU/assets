@@ -1,5 +1,4 @@
 /* Move .rcMenu styles into .content? */
-
 .slideshowStuff 
 {
   .pageRef
@@ -149,7 +148,7 @@
   /* reduce indentation of lists (which I feel is too much) */
   ol, ul
   {
-    padding-left: 1rem; 
+    padding-left: 1.5rem; 
   }
   /* note and hl are classes I defined */
   .note

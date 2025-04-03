@@ -36,7 +36,7 @@ parent.window.onload = function()
 	{
 		// create printer icon 
 		printLink = document.createElement('a');
-		printLink.classList.add("sameWin");
+		printLink.classList.add("self");
 		printLink.target = "_self";
 		printLink.href = "javascript:window.print();"
 		printLink.style.marginLeft = "9px";
@@ -434,31 +434,7 @@ function goBackToPrevLocation()
 	//return false;	// so the page does not reload (don't ask why!)
 }
 
-/* function has been deprecated by Quarto */
-function equationNumbering()
-{
-	// find all elements that are equation numbers
-	var equations = encapObject.getElementsByClassName("eqNum");
-	
-	// add the equation number after the equation
-	for(i=0; i<equations.length; i++)
-	{
-		if(equations[i].textContent.trim() != "")
-		{		
-			eqNumber = document.createElement("span");
-			eqNumber.classList.add("eqNum");
-			eqNumber.id = equations[i].id;
-			
-			eqNumber.textContent =  "\u00a0( " + (i+1) + " )";
 
-			equations[i].appendChild(eqNumber);
-			
-			// remove class from original element -- otherwise class could be applied to whole equation
-			equations[i].id = "";
-			equations[i].classList.remove("eqNum");   
-		}
-	}
-}
 
 function goToTopOfPage()
 {
@@ -795,3 +771,29 @@ function format_TOC_Sidebar()
 	if (searchBar !== null)  
 		searchBar.setAttribute("placeholder", "Search all lessons");
 }
+
+/* function has been deprecated by Quarto
+function equationNumbering()
+{
+	// find all elements that are equation numbers
+	var equations = encapObject.getElementsByClassName("eqNum");
+	
+	// add the equation number after the equation
+	for(i=0; i<equations.length; i++)
+	{
+		if(equations[i].textContent.trim() != "")
+		{		
+			eqNumber = document.createElement("span");
+			eqNumber.classList.add("eqNum");
+			eqNumber.id = equations[i].id;
+			
+			eqNumber.textContent =  "\u00a0( " + (i+1) + " )";
+
+			equations[i].appendChild(eqNumber);
+			
+			// remove class from original element -- otherwise class could be applied to whole equation
+			equations[i].id = "";
+			equations[i].classList.remove("eqNum");   
+		}
+	}
+} */
