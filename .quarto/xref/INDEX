@@ -25,5 +25,8 @@
   "readme.qmd": {
     "readme.md": "0c6efe10",
     "readme.html": "1d02d156"
+  },
+  "res/res2/res3.qmd": {
+    "res3.tex": "a4d29e7d"
   }
 }
