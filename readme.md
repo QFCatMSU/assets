@@ -3,7 +3,7 @@
 
 [rs_theme_light](quarto/qfc_a11y-dark.rstheme)
 
-[git setup](tutorials/Git%20Setup.html)
+[git setup](https://qfcatmsu.github.io/assets/)
 
 [QFC_Styles.js](quarto/qfc_styles.js)
 
