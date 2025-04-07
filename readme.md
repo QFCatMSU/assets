@@ -1,10 +1,5 @@
----
-title: "Assests"
-format: gfm
-editor: visual
-# command to render this to root folder:
-# quarto render readme.qmd --output-dir=.
----
+# Assests
+
 
 [rs_theme_light](quarto/qfc_a11y-dark.rstheme)
 

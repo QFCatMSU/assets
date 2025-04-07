@@ -16,7 +16,11 @@ project:
   - "**/*.qmd"  # only render files whose names start with a number
   type: website
   output-dir: docs  # . was causing the reload of pages...
-    
+
+# exclude readme.qmd from site build
+resources:
+  - readme.md
+  
 format: 
   html:
     page-layout: full
