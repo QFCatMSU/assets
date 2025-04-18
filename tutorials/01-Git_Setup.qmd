@@ -1,0 +1,430 @@
+---
+title: "01: Git Setup"
+short: "01"
+# special characters for highlighting code : «»
+---
+
+### To-do
+
+-   Add terminology section
+
+-   put headless installation as extension
+
+-   Section Links
+
+-   configuring GCM and test (after first Push) are separated
+
+    -   can you test GCM right away? Don't think so...
+
+-   Add extension about deleting GitHub credentials in Windows
+
+## Purpose
+
+To add Git to an RStudio Project and set it up
+
+### Prerequisites
+
+1.  You have installed a recent version of R and RStudio
+
+    -   For RStudio it is highly recommended to have at least version 2025.04 as RStudio fixed a major bug in their Git interface on Windows in that version
+
+2.  You have an RStudio Project
+
+3.  You can view hidden files and folders and see all file extensions (not required, but helpful)
+
+### Tasks
+
+1.  Install and configure Git and Git Credential Manager (@sec-installGit)
+
+2.  Configure Git username and email (@sec-configureGit)
+
+3.  Create a Git repository in your RStudio Project folder (@sec-gitRepo)
+
+4.  Get a GitHub ID (@sec-githubID)
+
+## What is Git 
+
+[Git]{.hl} is versioning software -- you use Git on your computer to create a retrievable history of your project.  With this project history, you can bring back previous versions of files or your entire Project.  Git calls this complete history a [repository]{.hl}. For this class, we will use Git with an RStudio Project. However, Git can be used with any project.
+
+ 
+
+While Git is very powerful tool, it is not intuitive and there is a pretty high-barrier to entry -- especially if you want to use it safely.
+
+## RStudio Terminal tab to configure Git
+
+The RStudio ***Terminal*** tab, located in the bottom-left corner next to the ***Console*** tab (@fig-TerminalTab), is a very useful tool that is used to send system commands and it also be used to send Git commands.
+
+ 
+
+The ***Terminal*** tab is the same as the Terminal app in Mac and the Command Prompt in Windows. We are going to use the ***Terminal*** tab multiple times to install, set up, and use Git.
+
+![The Terminal Tab in RStudio](images/GitSetup-TerminalTab.png){#fig-TerminalTab .fs}
+
+[Trap: The Console Tab and Terminal Tab]
+
+## Installing Git and the Git Configuration Manager (GCM) {#sec-installGit}
+
+The [Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager) (***GCM***) handles the authentication between Git and online places that store Git repositories like Azure, Bitlocker, and ***GitHub***.
+
+ 
+
+The section provides instructions for installing and setting up Git and GCM on different operating systems.
+
+### Windows
+
+[Click here to download and install Git](https://git-scm.com/downloads), with the Git Configuration Manager built-in -- click on ***Download for Windows*** (version as of March 2025 is **2.49.0**)
+
+-   Make sure [RStudio is closed]{.hl} while Git is being installed.
+
+-   You can use all the default installation settings 
+
+ 
+
+The Git installer also installs and configures the Git Configuration Manager.
+
+### Mac
+
+Before you install ***Git*** on Mac, you need to install ***Homebrew***. Homebrew is a very useful tool for programmers as it gives easy access to packages not included with Mac.
+
+ 
+
+Go to the homebrew page: <https://brew.sh/>
+
+Copy the command under Install Homebrew in the ***Terminal*** and execute.
+
+ 
+
+The command as of March 2025 is:
+
+``` bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+But this could change. It is safest to just go to the Homebrew page and copy the link.
+
+#### Install Git and GCM using Homebrew
+
+Install Git in the ***Terminal***:
+
+``` bash
+brew install Git
+```
+
+Install Git Credential Manager in the Terminal:
+
+``` bash
+brew install --cask git-credential-manager
+```
+
+### Linux Mint/ Ubuntu
+
+These instructions havebeen tested on Ubuntu and Linux Mint that have a GUI interface. They will probably work on most Debian-based machines. All installation is done through the Terminal.
+
+#### Install Git
+
+This line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.
+
+``` bash
+sudo add-apt-repository ppa:git-core/ppa apt update apt install git
+```
+
+#### Install Git Credential Manager (GUI only)
+
+Download the Debian (\*.deb) Git-Credential-Manager:
+
+<https://github.com/git-ecosystem/git-credential-manager/releases/latest>
+
+ 
+
+Unpack the deb file:
+
+``` bash
+sudo dpkg -i <path/to/*.deb>
+```
+
+If the download went to the ***Downloads*** folder then this command will work:
+
+``` bash
+sudo dpkg -i ~/Downloads/gcm-linux*.deb
+```
+
+#### Setup Git Credentials (GUI only)
+
+Configure the Git Credential Manager for Git
+
+``` bash
+git-credential-manager configure
+```
+
+Store your authentication with ***secretservice***
+
+```         
+git config --global credential.credentialStore secretservice
+```
+
+#### Install Git Credential Manager (headless)
+
+The standard way to setup GCM requires a GUI interface. These instructions provide a way to set up the GCM through only a Terminal. Authentication will require another device where you can access a browser or the GitHub app. These instructions probably work on most Debian-based machines.
+
+ 
+
+You are going to directly download the GCM tar file from the GitHub page. The instructions below are for version 2.6.1, which is the newest version as of March 2025. Adjust the numbers for newer version.
+
+ 
+
+Download Git Credential Manager
+
+``` bash
+wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.6.1/gcm-linux_amd64.2.6.1.tar.gz
+```
+
+Go to the folder where you downloaded the GCM and unzip GCM to a folder of your choice:
+
+``` bash
+tar xavf gcm-linux_amd64.2.6.1.tar.gz -C /path/to/install/folder
+```
+
+Go to the folder where you unzipped GCM and make the file executable:
+
+``` bash
+chmod +x git-credential-manager
+```
+
+Now execute the GCM:
+
+``` bash
+./git-credential-manager configure
+```
+
+#### Setup Git Credentials (headless)
+
+Configure the Git Credential Manager for Git
+
+``` bash
+git-credential-manager configure
+```
+
+Keep your authentication in cache
+
+```         
+git config --global credential.credentialStore cache
+```
+
+## Configure Git in RStudio {#sec-configureGit}
+
+To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are only used to identify who made what changes in the project history. You should use your GitHub ID as the username and the email associated with your GitHub account. If you have not signed up for a GitHub account yet, [you can do so here](https://github.com/signup).
+
+ 
+
+In the Terminal, set the Git user name and password – replace ***userName*** and ***userEmail*** with your username and email:
+
+``` bash
+git config --global user.name "userName"   
+git config --global user.email "userEmail"
+```
+
+![The Terminal Tab in RStudio with the two commands above (your prompt might look different)](images/GH-TerminalTab.jpg){#fig-user-email .fs}
+
+### Viewing the configured values (optional)
+
+You can check the username and email by executing these lines in the ***Terminal*** tab:
+
+``` {.bash tab="Terminal"}
+git config user.name
+git config user.email
+```
+
+After executing the two above command, your **Terminal** tab should look similar to this:
+
+::: {#fig-testGitConfig}
+``` {.bash tab="Terminal"}
+Charlie@Charlie-QFC MINGW64 /c/Users/Charlie/Desktop/GitHub Tests/FundProgUsingR
+$ git config user.name
+belinskyc
+
+Charlie@Charlie-QFC MINGW64 /c/Users/Charlie/Desktop/GitHub Tests/FundProgUsingR
+$ git config user.email
+belinsky@msu.edu
+```
+
+Testing the git configuration using the RStudio Terminal tab
+:::
+
+## Add Git to your RStudio Project folder {#sec-gitRepo}
+
+We are now going to add a Git repository to the same folder as your RStudio Project.  The Git repository exists locally on your computer -- later on we will sync it to GitHub.
+
+ 
+
+First, [make sure you are in your RStudio Project!]{.hl}
+
+ 
+
+To add Git to your RStudio Project folder, type in the ***Terminal***:
+
+``` r
+git init
+```
+
+And then restart RStudio
+
+ 
+
+This only works if the ***Terminal*** is currently at your project folder directory. The only reason it would not be is if you changed the folder in the Terminal in this RStudio session. If you did change the directory, you can get back to the correct directory by clicking: ***Tools -\> Terminal -\> Go to Current Directory***
+
+ 
+
+[Extension: Alternate way to add git to RStudio Project]
+
+### RStudio and Git
+
+When you add Git to an RStudio Project folder, a ***Git*** tab will appear in the upper-right window. RStudio's built-in Git interface handles the most commonly performed Git functions.
+
+![The Git tab has been added to the RStudio Project](images/GH_02_GitTab.png){#fig-gitTab .fs}
+
+### Project folders and Git Repositories
+
+Let's look inside the project folder in the RStudio ***Files*** tab ([note: you can see the same thing in your operating system's file explorer]{.note}).  By default, the ***Files*** tab will not show hidden files, we can change that by clicking on ***More -\> Show Hidden Files*** ( @fig-git-added-files).
+
+ 
+
+RStudio adds a folder (***.RProj.user***) and a file (***\*.RProj***) to your project folder.  This is what makes this project folder an RStudio Project.
+
+ 
+
+Similarly, [Git adds files to the project folder to make it a Git repository.]{.hl}
+
+ 
+
+The two objects that get added by Git are:
+
+-   .***gitignore***: this file is used to indicate files you do not want to be a part of the repository (i.e., files that are not shared nor versioned)
+
+-   ***.git***: this folder is hidden and contains the history of your project -- do not edit or delete this!
+
+ 
+
+Your project folder is now both an RStudio Project and a Git Repository.
+
+![Files added to the project folder by RStudio and Git](images/GH_AddedFiles.png){#fig-git-added-files .fs}
+
+### Files in a Git repository
+
+A Git repository is attached to a folder, just like an RStudio Project.  In an RStudio Project, everything inside the project folder (and its subfolders) is a part of the RStudio Project.  This is not true of Git repositories.  Everything inside the project folder can be a part of the repository, but files inside the project folder are not part of the repository until they are explicitly added to the repository (more details in future lessons).
+
+ 
+
+***.gitignore*** is used to declare the files inside the project folder that you do not want to be a part of the Git repository.
+
+ 
+
+If you are creating a Git repository in a working project, then you need to read [Choosing files you do not want to share (.gitignore)](#choosing-files-you-do-not-want-to-share-.gitignore).  If you are just testing then you will learn more about ***.gitignore*** later.
+
+## Trap: The Console Tab and Terminal Tab
+
+Just a warning: The ***Console*** tab and the ***Terminal*** tab are next to each other and look very similar. It is very easy to confuse the two and put commands into the wrong tab.
+
+ 
+
+-   The ***Console*** tab is an R Console -- for commands that are specific to your R scripts.
+
+-   The ***Terminal*** tab is the same as the Terminal in Mac or the Command Prompt in Windows -- it is for sending system commands.
+
+## Choosing files you do not want to share (.gitignore) {#choosing-files-you-do-not-want-to-share-.gitignore}
+
+***.gitignore*** is a text document that lists all folders and files that are ignored when versioning/sharing your project.  In other words, the folders and files in ***.gitignore*** exist in your project folder but [they do not exist in your Git repository and they will not be uploaded to GitHub]{.hl}.
+
+ 
+
+Some reasons for not sharing folders and files are that they:
+
+-   are temporary files
+
+-   are put in by RStudio or the operating system and do not affect the project
+
+-   are files generated by the scripts
+
+-   are large files that you do not want uploaded (e..g., simulated data, images)
+
+ 
+
+***.gitignore*** starts with four lines (@fig-gitignore). 
+
+``` {.bash tab=".gitignore"}
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+```
+
+![The .gitignore file](images/GitHub-GitIgnoreInit.PNG){#fig-gitignore .fs}
+
+### Editing .gitignore
+
+You can edit ***.gitignore*** in RStudio (or any other text-editor).
+
+ 
+
+Here is an example ***.gitignore*** (*Note: \* is a wildcard character):*
+
+``` {tab=".gitignore"}
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+~*
+doNotSync/
+*.o
+test1/*.jpg
+test2/data/weatherData.csv
+```
+
+The above .gitignore is ignoring:
+
+-   ***\~\*:*** filenames that start with a tilde  ( **\~** )
+
+-   ***doNotSync:*** if you have a ***doNotSync*** folder that will remain local-only
+
+-   ***\*.o***: all files with extension ***.o*** -- these are intermediate files generated by C and C++ scripts
+
+-   ***test1/\*.jpg***: all ***jpg*** files inside the ***test1*** folder (and subfolders)
+
+-   ***test2/data/weatherData.csv***: ignore a single file (***weatherData.csv***) inside the folders ***test2/data***
+
+ 
+
+[.gitignore is a Git repository file]{.hl} and everyone who syncs a project uses the same ***.gitignore*** – and, no, you cannot use .gitignore to ignore .gitignore.
+
+### gitignore only works on unversioned files
+
+Once you have versioned a file, it becomes a part of your Git repository and will be shared on GitHub.  This cannot be undone using ***.gitignore***.  This means you need to consider ***.gitignore*** before you start creating versions of your project (i.e., now).
+
+ 
+
+[note: there are other ways to remove files from GitHub but they are complicated]{.note}
+
+## Extension: Alternate way to add git to RStudio Project
+
+To add a Git repository to your RStudio Project folder
+
+1.  Open your project in RStudio
+
+2.  Click ***Tools*** -\> ***Version Control*** -\> ***Project Setup*** 
+
+```         
+-   This opens the ***Project Options*** window
+```
+
+3.  In the ***Version control system*** dropdown menu, select ***Git***
+
+4.  Adding Git to your RStudio Project
+
+5.  Say ***Yes*** to initializing a new repository for the project
+
+6.  You will be prompted torestart RStudio -- click ***Yes***.
+
+```         
+-   You can also manually restart by clicking ***Session -\> Restart R***
+```
+
+![Add Git to your RStudio Project](images/GH_Repo_ProjectSetup.png){#fig-addGit .fs}

@@ -1,0 +1,462 @@
+---
+title: "05: Diff"
+short: "05"
+# special characters for highlighting code : «»
+---
+
+### To-do
+
+-   Explain how a Diff will only be between two versions of a file because Git will never allow there to be more (refer back to funneling conflicts)
+
+-   Check Diff between any 2 versions of a file
+
+## Purpose
+
+Explore how Git shows how files change between Commits -- as shown in the Git Diff.  The Diff is often used when dealing with file conflicts.
+
+## The Staging Area
+
+When you the Git tab in an RStudio Project, what you see is the Staging Area.  The Staging Area lists all files (not in ***.gitignore***) that have uncommitted changes.  This means the file is new or was modified, deleted, or renamed since the last it was committed.  Checking a file is called ***Staging*** the file and it means that the changes to this file will be written to the next Commit.
+
+![Files in the Staging Area (unchecked=unstaged, checked=staged)](images/GH-Staging2.png){#fig-stagingAreaFiles .fs}
+
+[Note: If you click on Commit, the exact same Staging Area will appear in the top-left corner]{.note}
+
+### Right and left-side status codes
+
+Unstaged files show a status on the right-side of the ***Status*** column (@fig-stagingAreaFiles).  When the file is checked, the file is Staged and the code switches to the left-side of the Status.  If the file has been renamed or the file is new, then the Status code will change.
+
+ 
+
+[Note: the **?** Status code is the only code shown on both sides when the new file is Unstaged]{.note}*.*  I consider this to be a minor bug -- to be consistent, the ***?*** code should only be on the right-side.
+
+## File options in Staging Area
+
+When a file is in the Staging Area, you can also right-click on it and get the following four options:
+
+-   ***Diff***: shows the changes to the files since it was last committed
+
+-   ***Revert...***: undoes changes to file
+
+-   ***Ignore...***: adds the file to .***gitignore***
+
+-   ***Open File***: opens file in viewer (if the file was not deleted)
+
+![Right-click options for a file in the Staging Area -- the two Staging Areas are equivalent](images/GH_1-3_Right-ClickOptions.jpg){#fig-rightClickStaging .fs}
+
+We are going to take these options in reverse order, which is roughly the order of complexity and importance.
+
+### Open File
+
+***Open File*** just opens the file in the File Viewer (top-left window in RStudio). The ***Open File*** option will be available to you even if the file has been deleted but it will give you an error if you try to open a deleted file.
+
+### Ignore... (this option is not recommended)
+
+Ignore adds the file to ***.gitignore*** meaning that changes to the file will not be reflected in your Git Project (i.e., the book).
+
+ 
+
+However, if you want to ignore a file,[it is best to edit the **.gitignore** file in the Project Folder.]{.hl}
+
+ 
+
+For example, to ignore ***test2.r*** in the ***scripts*** folder, add this line to ***.gitignore***:
+
+``` {.r tab=".gitignore"}
+scripts/test2.r
+```
+
+#### How to ignore a file that has already been indexed (advanced)
+
+This only works if ***test2.r*** has never been written to a chapter (i.e., never been committed). If you want to ignore a file that has already been committed, you have to first remove the file from the index using the ***Terminal***:
+
+``` {.bash tab="Terminal"}
+git rm "data/doNotWantThis.R" -f
+```
+
+More information is here (the second option):
+
+<https://stackoverflow.com/questions/45400361/why-is-gitignore-not-ignoring-my-files>
+
+#### Issues with the right-click, Ignore... option 
+
+The right-click, ***Ignore*** option will create a new ***.gitignore*** file in the folder that the file is in.
+
+ 
+
+So, if you want to ignore ***test2.r*** in the ***scripts*** folder, this option will create a ***.gitignore*** file in ***scripts*** and add the following line:
+
+``` {.bash tab=".gitignore"}
+test2.r
+```
+
+This works but it is easier to maintain all of your ignores in one ***.gitignore*** file -- that is why I recommend manually editing the ***.gitignore*** in the Project Folder over using the right-click option.
+
+### Revert
+
+***Revert*** will undo all of the changes to the file since it was last committed to the book. Effectively, ***Revert*** replaces the file with the version of the file that existed when you last wrote the file into your book. The main reason to use ***Revert*** is when there is a file conflict, which is much more likely to happen when you are collaborating with others (a subject for a later lesson)--however, this is useful if you know you made changes that you do not like and just want a simple way to undo those changes. 
+
+### Diff
+
+Diff will show you all of the changes made to the content of your file since the last time the file was committed. Or, if this is the first time the file is committed, then it will show all the content of the file (i.e., the difference is the whole file). ***Diffs*** are shown in the bottom section of the ***Review Changes*** windows -- right window in @fig-rightClickStaging .  ***Commits*** are at the core of Git and ***Diff*** is at the core of ***Commits***.
+
+ 
+
+***Diff*** is what is written to a chapter whenever the content of a file changes. For the rest of this lesson, we are going to take a much deeper dive into how ***Diff*** works...
+
+## Understanding the Diff
+
+As a reminder, there are four types of file changes that are written to a chapter:
+
+1.  File is added (Diff shows added lines)
+
+2.  File is removed (Diff shows removed lines)
+
+3.  File is renamed
+
+4.  File is modified (Diff shows added and removed lines)
+
+ 
+
+Git goes line-by-line in your script and determines what lines have been added or removed. When you are dealing with file conflicts (next lesson), Diff indicates where the conflicts are occurring. For now, we are going to learn how to read the Diff.
+
+### Adding a file (all lines added)
+
+In this example, I added a file named ***test4.r*** to the ***scripts*** folder. The file has the following 6 lines:
+
+``` {.r tab="test4.r"}
+aaa
+bbb
+ccc
+ddd
+eee
+fff
+```
+
+After you Stage the file in the Staging Area (i.e., the file has been checked), the Diff section (bottom part of window) will show all the lines in the file highlighted in green. The green highlighted lines just say that the line was added. Since this is a new file, all the lines in it were added.
+
+![Looking at Diff when a file is added](images/GH_1-3_Diff-Add-Green.jpg){#fig-diff_fileAdded .fs}
+
+### Removing a file (all lines removed)
+
+If ***test4.r*** gets deleted, Diff will indicate this by showing every line highlighted in red.  This is basically the same as saying that every line in the file got deleted.
+
+![Looking at Diff when a file is deleted](images/GH_1-3_Diff-Delete-Red.jpg){#fig-diff_fileDeleted .fs}
+
+### File is renamed
+
+In this case, ***test4.r*** gets renamed to ***test5.r.*** Before Staging the changes Git sees ***test4.r*** as a deleted file and ***test5.r*** as an unknown file.  This is because ***test5.r*** has never been indexed so Git does not know to relate the files yet.
+
+![A renamed file in the Staging area before Staging](images/GH_1-3-Rename-Prestaged.jpg){#fig-renamed_prestage .fs}
+
+After Staging (i.e., the files have been checked), Git sees the file as renamed, and the Diff shows all the lines highlighted in green.  [Note: the author finds the green highlighting to be weird as this is not a new file and the lines have not been added -- I would assume the lines would have no highlighting.]{.note}
+
+![A renamed file after Staging -- the Diff area shows all the lines highlighted in green](images/GH_1-3-Rename-Staged.jpg){#fig-rename-staged .fs}
+
+### Modifying a file -- lines added and deleted {#sec-complexExample}
+
+Most of the time, we are writing file modifications to the chapters. This almost always means that lines are being added and deleted (i.e., you will see red and green highlighted lines in the Diff).
+
+ 
+
+There are two general rules here:
+
+-   If a line has been modified, Git sees this as an old line being deleted and a new line being added
+
+-   Git remembers the order of the original lines so, if lines are put in between, Git will adjust 
+
+ 
+
+Let's change
+
+``` {.r tab="test4.r"}
+aaa
+bbb
+ccc
+ddd
+eee
+fff
+```
+
+Into:
+
+``` {.r tab="test4.r"}
+bbb
+111
+cccc
+222
+ddd
+fff
+eee
+333
+```
+
+Here is what the Diff looks like in Git:
+
+![A modified file in the Diff -- lines have been added (green) and deleted (red)](images/GH_1-3-Diff-Modified.jpg){#fig-diff_mod_file .fs}
+
+We are going to take a step back and look at simpler examples and get back to this one, but for now, I want you to see the features of the Diff:
+
+-   the first column is the line number in the file that was previously committed
+
+-   the second column is the line number in the file that has been staged
+
+-   a white background means that Git determined that the line did not change (even if the line number did)
+
+-   a red background means that Git determined the line was deleted
+
+-   a green background means that Git determined the line was added
+
+ 
+
+::: {#fig-diff-alt-view .fs}
+``` bash
+1   aaa  (red - deleted)
+2 1 bbb  (white - no change - but line was moved)
+3   ccc  (red - deleted)
+  2 111  (green - added)
+  3 cccc (green - added)
+  4 222  (green - added)
+4 5 ddd  (white - no change - but line was moved)
+5   eee  (red - deleted)
+6 6 fff  (white - no change - line stayed the same)
+  7 eee  (green - added)
+  8 333  (green - added)
+```
+
+A different visual representation of the Diff
+:::
+
+## Diff changes
+
+In this section, we are going to look at how Diff reflects individual changes to a file. The examples we will look at are:
+
+1.  Adding a line
+
+2.  Removing a line
+
+3.  Modifying a line
+
+4.  Switching two lines
+
+### Adding a line
+
+Let's change:
+
+``` {.r tab="test4.r"}
+aaa
+bbb
+ccc
+ddd
+eee
+fff
+```
+
+Into:
+
+``` r
+aaa
+bbb
+ccc
+«111»
+ddd
+eee
+fff
+```
+
+![Diff with one line added to file](images/GH_1-3_Diff-AddLine.jpg){#fig-diff-line-added .fs}
+
+Git sees that line 4 (***111***) was added to the file and shades that line green.  Git also sees that the lines underneath line 4 were unchanged even though their position was changed. The Diff reflects the line number change but the lack of shading indicates that the content of the lines below line 4 did not change.
+
+### Removing a line
+
+Let's change
+
+``` {.r tab="test4.r"}
+aaa
+bbb
+«ccc»
+ddd
+eee
+fff
+```
+
+Into:
+
+``` r
+aaa
+bbb
+ddd
+eee
+fff
+```
+
+![Diff with one line removed from file](images/GH_1-3_Diff-RemoveLine.jpg){#fig-diff-line-removed .fs}
+
+Git sees that line 3 (***ccc***) was removed from the file and shades that line red. Git also sees that the lines underneath line 3 were unchanged even though their position was changed. Like before, Diff reflects the line number change, but the lack of shading indicates that the content of the lines below line 3 did not change.
+
+### Modifying a line
+
+Let's change:
+
+``` {.r tab="test4.r"}
+aaa
+bbb
+ccc
+ddd
+eee
+fff
+```
+
+Into:
+
+``` {.r tab="test4.r"}
+aaa
+bbb
+«ccc1»
+ddd
+eee
+fff
+```
+
+![Diff with one line modified from file](images/GH_1-3_Diff-ModifyLine.jpg){#fig-diff-line-modified .fs}
+
+In this case, the Diff shows a line that was deleted (***ccc***) and a line that was added (***ccc1***). Whenever there is a change to a line, Git assumes the line got deleted and was replaced with a new line. This is true even if the line only changed by 1 character.
+
+### Switching lines
+
+Let's change
+
+``` {.r tab="test4.r"}
+aaa
+bbb
+ccc
+ddd
+eee
+fff
+```
+
+Into:
+
+``` {.r tab="test4.r"}
+aaa
+bbb
+«ddd»
+«ccc»
+eee
+fff
+```
+
+![Diff with two lines switched](images/GH_1-3_Diff-SwitchLine.jpg){#fig-diff-line-switch .fs}
+
+This example best shows how Git thinks about changes. The Diff shows that three things have happened:
+
+-   Line 3 (***ccc***) was deleted
+
+-   Line 4 (***ddd***) was moved to line 3
+
+-   Line 4 (***ccc***) was added
+
+ 
+
+Even though the content of the deleted line 3 and the added line 4 are exactly the same (***ccc***), Git does not see these as the same lines.
+
+ 
+
+Git looks at the order of the lines and saw that ***ddd*** was moved up from line 4 to line 3. Git assumed at that point that ***ccc*** was deleted. The ***ccc*** that comes after ***ddd*** is seen by Git as an added line.
+
+## Returning to the complex Diff example
+
+Let's go back to the example in @sec-complexExample . The Diff here shows that multiple lines in the file were changed and it also shows what both versions of the file looked like.
+
+ 
+
+The first columns shows that there were six lines in the previous version of the file: 
+
+-   Lines 1, 3, and 5 were deleted (red)
+
+-   Lines 2, 4, and 6 were kept (white)
+
+ 
+
+The second column shows that there were eight lines in the new version of the file:
+
+-   Lines 2, 3, 4, 7, and 8 were all added (green)
+
+-   Lines 1, 5, and 6 come from the previous version (lines 2, 4, and 6)
+
+ 
+
+When line 3 was changed from **ccc** to **cccc** Git sees this as:
+
+-   line 3 (previous version) was deleted
+
+-   line 3 (new version) was added
+
+[Any change to a line means that Git will think the line was deleted and a new line was added.]{.hl}
+
+ 
+
+When line 5 ***eee*** was moved to line 7 below line 6 ***fff,*** Git saw this as:
+
+-   line 5 (previous version) was deleted
+
+-   line 7 (new version) was added
+
+[If the lines in the previous version change order, the upper lines will be seen as deleted by Git.]{.hl}
+
+![The Diff showing two versions of a file and the changes between them](images/GH_1-3-Diff-Modified2-01.jpg){#fig-complexDiff .fs}
+
+## Application
+
+A\) What will the Diff look like if you change:
+
+``` r
+cheeseAns = readline("What is the best cheese in the world?");
+
+if(cheeseAns == "swiss")
+{
+  cat("Swiss is so bland");
+}
+else if(cheeseAns == "cheddar")
+{
+  cat("Cheddar is good, but there is better.");
+}
+else if(cheeseAns == "Muenster")
+{
+  cat("Ah, yes, you are a true cheese aficionado!");
+}
+else
+{
+  cat("Sorry, I did not understand your response!");
+}
+```
+
+to this (only the order of the ***else ifs*** has changed):
+
+``` r
+cheeseAns = readline("What is the best cheese in the world?");
+
+if(cheeseAns == "swiss")
+{
+  cat("Swiss is so bland");
+}
+else if(cheeseAns == "Muenster")
+{
+  cat("Ah, yes, you are a true cheese aficionado!");
+}
+else if(cheeseAns == "cheddar")
+{
+  cat("Cheddar is good, but there is better.");
+}
+else
+{
+  cat("Sorry, I did not understand your response!");
+}
+```
+
+B\) Create a folder named ***appAnswers*** in your Project Folder and put your answer in this folder
+
+ 
+
+C\) Push your changes to GitHub and notify [belinsky\@msu.edu](mailto:belinsky@msu.edu) that the changes are there

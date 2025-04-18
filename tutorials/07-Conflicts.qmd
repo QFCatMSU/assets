@@ -1,0 +1,380 @@
+---
+title: "07: Issues and Conflicts"
+short: "07"
+# special characters for highlighting code : «»
+---
+
+### To-do
+
+-   Show example of using the Terminal to find files in conflict
+
+-   Create a hands-on example for the lesson
+
+-   Talk about how deleting a file works in collaboration
+
+## Purpose
+
+The main goal of this lesson is to present the most common issues stemming from conflicts between your local Git repository and the GitHub repository, and how to resolve them, when you are working collaboratively on a GitHub repository
+
+ 
+
+A peripheral goal is to show how these issues are actually Git's way of isolating conflicts to an individual collaborator's computer.
+
+## Single-contributor repositories
+
+Up until this point we have been dealing with the relatively simple Git situations where one person creates Commits on their computer and then Pushes the Commits to a GitHub repository. In this case, the repository is just a backup of the person's local repository and this scenario rarely causes any issues.
+
+ 
+
+We can look at all the Commits in a repository by clicking on ***History*** in the ***Git*** tab, which is the clock icon.  This will bring up the repository's ***History***.  In single-contributor repositories the ***History*** will look something like this:
+
+![The list of all the Commits in your project](images/GH-ListofCommits.jpg){#fig-allCommits .fs}
+
+The History is linear where each node (line) represents each time the contributor (in this case, only Charlie) Pushed his Commits to the GitHub Repository.
+
+ 
+
+When you Push, you are sending all your new Commits to the Github repository (i.e., Commits that the GitHub Repository does not have). After a successful ***Push***, your local computer and the GitHub repository will have the exact same Commits.
+
+ 
+
+\<show example of a history with multiple collaborators\>
+
+## Multiple-contributor -- collaborative repositories
+
+When working collaboratively, multiple people are creating Commits on their local computer and Pushing them to the GitHub Repository.  Because Git/GitHub is not automated, every collaborator needs to ***Pull*** the new Commits (i.e., Commits Pushed by other people) from the GitHub Repository.  When you ***Pull***, the GitHub repository sends you the newest Commits (i.e., Commits that your collaborators Pushed to the GitHub Repository).  Just like a successful Push, a successful Pull means that the project on your computer and the GitHub repository have the exact same Commits.
+
+ 
+
+This is the hub-spoke model in @fig-hub-spoke (hence, the name Git[Hub]{.hl}) where the GitHub Repository is the central hub that everyone communicates directly with.  It is in this handshaking between GitHub and the various local computers that we run into many issues.
+
+![The Git Repository is the central location of the project (hub-spoke model)](images/GH-Push_Pull.png){#fig-hub-spoke .fs}
+
+## Merging Commits
+
+When multiple people are collaborating on a project in a GitHub repository, they are all effectively working on the same chapter of the book.  This is because everyone is working off of the same book (project) with the same chapters (Commits) and everyone is creating the next chapter (the next Commit).
+
+ 
+
+In other words, if the book has 15 chapters then every collaborator, on their own computer, is creating a chapter 16.  Git's job (and the real magic behind Git) is to merge all of the chapter 16s into one chapter 16.  Most of the time Git can do this in the background.  Every once in a while, Git cannot merge these chapters and there is a conflict. 
+
+ 
+
+All the issue mentioned in this lesson are Git's way of funneling conflicts to a local computer and understanding how Git funnels conflicts is vital to understanding how Git works.
+
+ 
+
+[Note: Each collaborator's new Commit is actually a new project branch -- we will deal with branches in another lesson.]{.note}
+
+### When conflicts occur
+
+Git can successfully merge Commits from different computer if the files changed in the Commits were all different (i.e., the collaborators were all working on different files).  Git just combines are the file changes into one Commit.  Git can even merge changes when multiple people have edited the same file -- as long as the edits are on different lines and the structure of the file remains closely the same.
+
+![A successful merge](images/GitHub_MergeSuccess.png){#fig-merge-success .fs}
+
+When multiple people edit the same lines in the same file of the same Commit you have a ***conflict***.
+
+ 
+
+We are going to discuss, and give resolutions for, the four main issues people get when collaborating in Git.  These issues are the result of processes designed to isolate conflicts to a local Git repository.
+
+### Four issues and cryptic error messages
+
+The four issues are:
+
+1.  You cannot Push Commits to GitHub unless you have Pulled the latest Commits from GitHub
+
+2.  You cannot Pull Commits from GitHub if the Commits contains changes to files that you have also changed but not committed (yeah, that is a mouthful!)
+
+3.  A Pull Commit contains a conflict with an un-Pushed Commit on your computer
+
+4.  You cannot Push Commit if you have an unresolved conflict
+
+ 
+
+Unfortunately, Git does not present the user with easy to understand error messages.  The following is a typical message and it occurs with issue #1:
+
+![A typical, and not always helpful, error message from Git](images/GH-Issue1.png){#fig-error-msg .fs}
+
+It is important to understand what these error messages are saying and googling them online can often put you in a minefield!
+
+ 
+
+[Note: From this point on in this lesson, the error messages will be presented as text instead of an image.]{.note}
+
+## Issue 1: Cannot Push Commits until you Pull
+
+The first issue happens when:
+
+-   You try to Push your new Commits to the GitHub repository *but*
+
+-   the GitHub repository has Commits that you have not Pulled
+
+ 
+
+In other words, the book in the GitHub repository has chapters that your local Git repository does not have.
+
+ 
+
+[You need to have the latest version of the repository before you can modify it.]{.hl}  Git will not allow you to upload (***Push***) your updates to the GitHub repository until you have downloaded (***Pull***) the latest ***Commits*** from the GitHub Repository.  
+
+### Error Messages
+
+::: {#fig-pull-first}
+``` bash
+>>> C:/Program Files/Git/bin/git.exe push origin HEAD:refs/heads/master
+To https://github.com/qfcatmsu/githubstarter
+! [rejected] HEAD -> master (fetch first)
+error: failed to push some refs to 'https://github.com/qfcatmsu/githubstarter'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+The error message when you try to Push when there are Commits you need to Pull first
+:::
+
+The cryptic error message is telling you that there are Commits on the GitHub Repository that you do not have yet. In other words, someone else has Pushed Commits to the repository since you last did a Pull.
+
+ 
+
+[Note: typing `git pull` in the Terminal does the same thing as pressing the down blue arrow in the Git tab]{.note}
+
+### Solution
+
+The solution here is to ***Pull*** the changes from the repository.  And when you ***Pull*** you could get Issue 2...
+
+## Issue 2: Cannot Pull because of uncommitted files
+
+Git will not let you ***Pull*** new Commits if the new Commits have changes to files that:
+
+-   you have also modified on your local repository and
+
+-   you have not committed the changes (i.e., the modified files are in the Staging Area)
+
+Changes to files that are uncommitted are, to Git, in a vague state.  Git will not allow you to leave changed files in a vague state if those files have also been changed by other collaborators on the GitHub repository.
+
+### Error Message
+
+![The Pulled Commits contain changes to files that you have also changed but not committed](images/GH-Issue2.png){#fig-gitError2 .fs}
+
+::: {#fig-commit_changes}
+``` bash
+>>> C:/Program Files/Git/bin/git.exe pull
+error: Your local changes to the following files would be overwritten by merge:
+   scripts/test1.r
+   scripts/test2.r
+Please commit your changes or stash them before you merge.
+Aborting
+```
+
+Error message saying you need to commit your changes before Pulling new Commit
+:::
+
+The [local changes]{.hl} are your uncommitted changes (i.e., files in Staging Area).  [Merge ]{.hl}refers to the attempt to include the changes from the new Commit to your local project.  In @fig-gitError2, the newest Commits have changes to ***test1.r*** and ***test2.r*** -- but there are also changes to ***test1.r*** and ***test2.r*** in the local project that are still in the ***Staging Area*** (i.e., not Committed).
+
+ 
+
+Basically, Git is telling you the latest GitHub Commits can potentially conflict with your uncommitted changes and you either need to commit or undo your changes.
+
+### Solutions
+
+There are three solutions to this problem:
+
+1.  ***Commit*** your changes to the file
+
+    -   Recommended, but this could cause a conflict (Issue 3) because it means the same file has been modified in two different places
+
+2.  ***Revert*** your changes
+
+    -   Easiest solution, but [you will lose all changes to your files]{.hl} since last Commit -- only do this if you are sure you don't want the file changes
+
+    -   To ***Revert***: right-click on the file in the ***Staging Area*** and click ***Revert...***
+
+3.  ***Stash*** your changes
+
+    -   Advanced approach that requires the ***Terminal*** and is not covered in this class.  Stashing allows you to keep your changes by storing them in an alternate version of your project.  You can continue to work on the main version of the project.
+
+## Issue 3: Pull caused conflict
+
+A conflict can occur when the same file is modified in both:
+
+-   A Commit that [you just Pulled]{.hl} from the GitHub Repository
+
+-   A Commit on your computer that [you have yet to Push]{.hl} to the GitHub Repository
+
+### Error Message
+
+::: {#fig-error3}
+``` bash
+>>> C:/Program Files/Git/bin/git.exe pull
+Auto-merging scripts/test1.r
+CONFLICT (content): Merge conflict in scripts/test1.r
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Error message saying that there is a conflict in a file that was just Pulled
+:::
+
+[You must resolve this conflict.]{.hl}  If you do not resolve this conflict, then you will not be able to ***Push*** or ***Pull*** any more Commits to or from the Github Repository.  This is Git funneling the conflict to you.
+
+### Viewing a file in conflict
+
+The conflicted file will be listed in the ***Staging Area*** with a yellow **U**. Git adds markers to the conflicted file in your Git Repository to show where the conflicts are in both versions of the file (your version and the Pulled version).  You can see the conflicted areas of the file in the ***Git Review Changes*** window (this is also called the Git Diff) and in the file viewer window:
+
+![A file with unresolved conflicts in the Git Review Changes window](images/GH-Issue3-Diff.png){#fig-unresolvedConflict .fs}
+
+### How conflicts are displayed (the markers)
+
+There are lines added by Git, called [markers]{.hl}, to delineate where the conflicts are.
+
+ 
+
+There are two conflict areas in @fig-unresolvedConflict :
+
+-   line 2
+
+-   lines 7 and 8
+
+ 
+
+The start of both conflicts is given by the marker:
+
+``` bash
+<<<<<<<<<< HEAD
+```
+
+and the end is given by the marker:
+
+``` bash
+>>>>>>>>>> (the 40 digit Git Commit SHA)
+```
+
+In between are the two versions of the conflicting lines is the marker:
+
+``` bash
+==========
+```
+
+Putting it all together:
+
+``` bash
+>>>>>>>>>> HEAD
+
+The local version of the lines in conflict
+==========      
+
+The GitHub Repository version of the lines in conflict
+<<<<<<<<<< (40-digit SHA)   
+```
+
+### Editing the conflicted file to remove the conflict
+
+In the file editor, the conflicted file looks like this:
+
+![The same file in the editor tab](images/GH-Issue3-editor.png){#fig-conflict-editor .fs}
+
+Your job is to fix the conflicted lines and remove the markers.  Once you have done that you can save the file, Stage it, Commit it, and Push to GitHub.  This will become the official new version of the file in the latest Commit.
+
+ 
+
+**WARNING!**
+
+[Git will accept any changes you make as long as you get rid of the markers.]{.hl}  Git does not double-check to see if you did a good job merging the conflicted lines, Git just assumes you knew what you were doing when you Committed the change.  So, be a good collaborator here and be careful!
+
+## Issue 4: Cannot Push or Pull if there is an unresolved conflict
+
+When you are in a conflict state, you will get an error when you try to ***Push*** or ***Pull*** Commits.  Git will not allow you to Push or Pull when any file is in conflict.
+
+### Error message on Push
+
+If you try to Push a Commit and you did not resolve all the conflicts, you will get this message:
+
+::: {#fig-error4}
+``` bash
+>>> C:/Program Files/Git/bin/git.exe commit -F C:/Users/Charlie/AppData/Local/Temp/RtmpOgnoHW/git-commit-message-3e302184454d.txt
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U scripts/test1.r
+```
+
+Error when trying to Push while your project is in conflict
+:::
+
+In this case, Git is telling you that you still need to resolve the conflict in ***test1.r***.
+
+### Error message on Pull
+
+You can get 2 error messages if you try to Pull while in conflict.  The error depends on whether the conflicted file(s) are staged (checked) or unstaged (unchecked):
+
+ 
+
+Error when trying to ***Pull*** and there is an unresolved conflict with a [staged file]{.hl}:
+
+``` bash
+>>> C:/Program Files/Git/bin/git.exe pull
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+```
+
+Error when trying to ***Pull*** and there is an unresolved conflict with an [unstaged file]{.hl}:
+
+``` bash
+>>> C:/Program Files/Git/bin/git.exe pull
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+```
+
+Either way you need to fix the conflict, Commit the fixed file(s), and ***Push*** the Commit.
+
+## Which files are in conflict
+
+You can use the Terminal to find out which files are in conflict.
+
+ 
+
+This will list all the conflict markers in all files in your project:
+
+``` bash
+git diff --check
+```
+
+This will list just the files that have conflict markers in them:
+
+``` bash
+git diff --name-only --diff-filter=U
+```
+
+## Application
+
+Give a scenario where a conflict would occur and explain how the four issues mentioned in this lesson isolate the conflict to a local computer.
+
+## A successful merge of files
+
+Git will try to merge files that have been modified in multiple places and [Git will usually succeed if different lines were modified.]{.hl}
+
+ 
+
+Here is the message you will get when you ***Pull*** and Git successfully merges the conflicted files on its own:
+
+::: {#fig-recursiveStrategy}
+``` bash
+>>> C:/Program Files/Git/bin/git.exe pull
+From https://github.com/qfcatmsu/githubstarter
+ba13ace..b07eb63 master -> origin/master
+«Merge made by the 'recursive' strategy.»
+scripts/test1.r | 4 ++++
+1 file changed, 4 insertions(+)
+```
+
+File changes that were resolved using a recursive strategy!
+:::
+
+The recursive strategy is basically Git going line-by-line in the code and figuring out that the changes occurred in different parts of the file -- so they do not conflict.
