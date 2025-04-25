@@ -258,9 +258,9 @@ To add two folders named ***scripts*** and ***data***:
 
 We are going to download two files and add them to your new RStudio Project.
 
--   [RSProj_Setup.r](../scripts/RSProj_Setup.R): put this file in your ***scripts*** directory
+-   [RSProj_Setup.r](scripts/RSProj_Setup.R): put this file in your ***scripts*** directory
 
--   [RSProj_Setup.csv](../data/RSProj_Setup.csv): put this file in your ***data*** directory
+-   [RSProj_Setup.csv](data/RSProj_Setup.csv): put this file in your ***data*** directory
 
 ### Opening File Manager from Files tab
 
@@ -570,7 +570,7 @@ The ***Console*** tab in RStudio is an R interface, and you could type in the ab
 
 RStudio looks through your script and will prompt you to install packages used in your script that you do not have installed. With a click, RStudio installs all needed packages and dependencies.
 
-![RStudio looking for packages needed by the script-- click Install and RStudio installs the required package(s)](images/RStudioProj_InstallPackages.png){#fig-RStudioInstall .fs}
+![RStudio looking for packages needed by the script-- click Install and RStudio installs the required package(s)](images/RSProj_InstallPackages.png){#fig-RStudioInstall .fs}
 
 ## Extension: The Help tab {data-link="Extension: The Help Tab"}
 
