@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.22">
+<meta name="generator" content="quarto-1.7.28">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b4406b7675125bc2ba204020e191172.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5f39cfd1aee7e7785011fc5df168ee92.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5e6fd5a646752829aeb2af341632313.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -233,23 +233,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#mac" id="toc-mac" class="nav-link" data-scroll-target="#mac"><span class="header-section-number">4.2</span> Mac</a></li>
   <li><a href="#linux-mint-ubuntu" id="toc-linux-mint-ubuntu" class="nav-link" data-scroll-target="#linux-mint-ubuntu"><span class="header-section-number">4.3</span> Linux Mint/ Ubuntu</a></li>
   </ul></li>
-  <li><a href="#sec-configureGit" id="toc-sec-configureGit" class="nav-link" data-scroll-target="#sec-configureGit"><span class="header-section-number">5</span> Configure Git in RStudio</a>
+  <li><a href="#sec-gitHubID" id="toc-sec-gitHubID" class="nav-link" data-scroll-target="#sec-gitHubID"><span class="header-section-number">5</span> GitHub Account</a></li>
+  <li><a href="#sec-configureGit" id="toc-sec-configureGit" class="nav-link" data-scroll-target="#sec-configureGit"><span class="header-section-number">6</span> Configure Git in RStudio</a>
   <ul class="collapse">
-  <li><a href="#viewing-the-configured-values-optional" id="toc-viewing-the-configured-values-optional" class="nav-link" data-scroll-target="#viewing-the-configured-values-optional"><span class="header-section-number">5.1</span> Viewing the configured values (optional)</a></li>
+  <li><a href="#viewing-the-configured-values-optional" id="toc-viewing-the-configured-values-optional" class="nav-link" data-scroll-target="#viewing-the-configured-values-optional"><span class="header-section-number">6.1</span> Viewing the configured values (optional)</a></li>
   </ul></li>
-  <li><a href="#sec-gitRepo" id="toc-sec-gitRepo" class="nav-link" data-scroll-target="#sec-gitRepo"><span class="header-section-number">6</span> Add Git to your RStudio Project folder</a>
+  <li><a href="#sec-gitRepo" id="toc-sec-gitRepo" class="nav-link" data-scroll-target="#sec-gitRepo"><span class="header-section-number">7</span> Add Git to your RStudio Project folder</a>
   <ul class="collapse">
-  <li><a href="#rstudio-and-git" id="toc-rstudio-and-git" class="nav-link" data-scroll-target="#rstudio-and-git"><span class="header-section-number">6.1</span> RStudio and Git</a></li>
-  <li><a href="#project-folders-and-git-repositories" id="toc-project-folders-and-git-repositories" class="nav-link" data-scroll-target="#project-folders-and-git-repositories"><span class="header-section-number">6.2</span> Project folders and Git Repositories</a></li>
-  <li><a href="#files-in-a-git-repository" id="toc-files-in-a-git-repository" class="nav-link" data-scroll-target="#files-in-a-git-repository"><span class="header-section-number">6.3</span> Files in a Git repository</a></li>
+  <li><a href="#rstudio-and-git" id="toc-rstudio-and-git" class="nav-link" data-scroll-target="#rstudio-and-git"><span class="header-section-number">7.1</span> RStudio and Git</a></li>
+  <li><a href="#project-folders-and-git-repositories" id="toc-project-folders-and-git-repositories" class="nav-link" data-scroll-target="#project-folders-and-git-repositories"><span class="header-section-number">7.2</span> Project folders and Git Repositories</a></li>
+  <li><a href="#files-in-a-git-repository" id="toc-files-in-a-git-repository" class="nav-link" data-scroll-target="#files-in-a-git-repository"><span class="header-section-number">7.3</span> Files in a Git repository</a></li>
   </ul></li>
-  <li><a href="#trap-the-console-tab-and-terminal-tab" id="toc-trap-the-console-tab-and-terminal-tab" class="nav-link" data-scroll-target="#trap-the-console-tab-and-terminal-tab"><span class="header-section-number">7</span> Trap: The Console Tab and Terminal Tab</a></li>
   <li><a href="#choosing-files-you-do-not-want-to-share-.gitignore" id="toc-choosing-files-you-do-not-want-to-share-.gitignore" class="nav-link" data-scroll-target="#choosing-files-you-do-not-want-to-share-.gitignore"><span class="header-section-number">8</span> Choosing files you do not want to share (.gitignore)</a>
   <ul class="collapse">
-  <li><a href="#editing-.gitignore" id="toc-editing-.gitignore" class="nav-link" data-scroll-target="#editing-.gitignore"><span class="header-section-number">8.1</span> Editing .gitignore</a></li>
+  <li><a href="#sec-editGitignore" id="toc-sec-editGitignore" class="nav-link" data-scroll-target="#sec-editGitignore"><span class="header-section-number">8.1</span> Editing .gitignore</a></li>
   <li><a href="#gitignore-only-works-on-unversioned-files" id="toc-gitignore-only-works-on-unversioned-files" class="nav-link" data-scroll-target="#gitignore-only-works-on-unversioned-files"><span class="header-section-number">8.2</span> gitignore only works on unversioned files</a></li>
   </ul></li>
-  <li><a href="#extension-alternate-way-to-add-git-to-rstudio-project" id="toc-extension-alternate-way-to-add-git-to-rstudio-project" class="nav-link" data-scroll-target="#extension-alternate-way-to-add-git-to-rstudio-project"><span class="header-section-number">9</span> Extension: Alternate way to add git to RStudio Project</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">9</span> Application</a></li>
+  <li><a href="#trap-the-console-tab-and-terminal-tab" id="toc-trap-the-console-tab-and-terminal-tab" class="nav-link" data-scroll-target="#trap-the-console-tab-and-terminal-tab"><span class="header-section-number">10</span> Trap: The Console Tab and Terminal Tab</a></li>
+  <li><a href="#extension-alternate-way-to-add-git-to-rstudio-project" id="toc-extension-alternate-way-to-add-git-to-rstudio-project" class="nav-link" data-scroll-target="#extension-alternate-way-to-add-git-to-rstudio-project"><span class="header-section-number">11</span> Extension: Alternate way to add git to RStudio Project</a></li>
   </ul>
 </nav>
 </nav>
@@ -290,11 +292,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>can you test GCM right away? Don’t think so…</li>
 </ul></li>
 <li><p>Add extension about deleting GitHub credentials in Windows</p></li>
+<li><p>gitignore: .DS_Store (Mac)</p></li>
+<li><p>gitattributes normalize text: auto (CR/LF issue)</p></li>
 </ul>
 </section>
 <section id="purpose" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">1</span> Purpose</h2>
-<p>To add Git to an RStudio Project and set it up</p>
+<ul>
+<li><p>Install Git and Git Credential Manager (GCM)</p></li>
+<li><p>Add Git to your RStudio Project</p></li>
+<li><p>Understand the .gitignore file</p></li>
+</ul>
 <section id="prerequisites" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">1.1</span> Prerequisites</h3>
 <ol type="1">
@@ -310,9 +318,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="1.2" class="anchored" data-anchor-id="tasks"><span class="header-section-number">1.2</span> Tasks</h3>
 <ol type="1">
 <li><p>Install and configure Git and Git Credential Manager (<a href="#sec-installGit" class="quarto-xref">Section&nbsp;4</a>)</p></li>
-<li><p>Configure Git username and email (<a href="#sec-configureGit" class="quarto-xref">Section&nbsp;5</a>)</p></li>
-<li><p>Create a Git repository in your RStudio Project folder (<a href="#sec-gitRepo" class="quarto-xref">Section&nbsp;6</a>)</p></li>
-<li><p>Get a GitHub ID (<strong>?@sec-githubID</strong>)</p></li>
+<li><p>Get a GitHub ID (<a href="#sec-gitHubID" class="quarto-xref">Section&nbsp;5</a>)</p></li>
+<li><p>Configure Git username and email (<a href="#sec-configureGit" class="quarto-xref">Section&nbsp;6</a>)</p></li>
+<li><p>Create a Git repository in your RStudio Project folder (<a href="#sec-gitRepo" class="quarto-xref">Section&nbsp;7</a>)</p></li>
+<li><p>Edit .gitignore (<a href="#sec-editGitignore" class="quarto-xref">Section&nbsp;8.1</a>)</p></li>
 </ol>
 </section>
 </section>
@@ -374,7 +383,7 @@ Figure&nbsp;1: The Terminal Tab in RStudio
 </section>
 <section id="linux-mint-ubuntu" class="level3" data-number="4.3">
 <h3 data-number="4.3" class="anchored" data-anchor-id="linux-mint-ubuntu"><span class="header-section-number">4.3</span> Linux Mint/ Ubuntu</h3>
-<p>These instructions havebeen tested on Ubuntu and Linux Mint that have a GUI interface. They will probably work on most Debian-based machines. All installation is done through the Terminal.</p>
+<p>These instructions have been tested on Ubuntu and Linux Mint machines that have a GUI interface. They will probably work on most Debian-based machines. All installation is done through the Terminal.</p>
 <section id="install-git" class="level4" data-number="4.3.1">
 <h4 data-number="4.3.1" class="anchored" data-anchor-id="install-git"><span class="header-section-number">4.3.1</span> Install Git</h4>
 <p>This line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.</p>
@@ -397,8 +406,8 @@ Figure&nbsp;1: The Terminal Tab in RStudio
 <p>Store your authentication with <strong><em>secretservice</em></strong></p>
 <pre><code>git config --global credential.credentialStore secretservice</code></pre>
 </section>
-<section id="install-git-credential-manager-headless" class="level4" data-number="4.3.4">
-<h4 data-number="4.3.4" class="anchored" data-anchor-id="install-git-credential-manager-headless"><span class="header-section-number">4.3.4</span> Install Git Credential Manager (headless)</h4>
+<section id="install-git-credential-manager-headless-extension" class="level4" data-number="4.3.4">
+<h4 data-number="4.3.4" class="anchored" data-anchor-id="install-git-credential-manager-headless-extension"><span class="header-section-number">4.3.4</span> Install Git Credential Manager (headless – extension)</h4>
 <p>The standard way to setup GCM requires a GUI interface. These instructions provide a way to set up the GCM through only a Terminal. Authentication will require another device where you can access a browser or the GitHub app. These instructions probably work on most Debian-based machines.</p>
 <p>&nbsp;</p>
 <p>You are going to directly download the GCM tar file from the GitHub page. The instructions below are for version 2.6.1, which is the newest version as of March 2025. Adjust the numbers for newer version.</p>
@@ -421,9 +430,15 @@ Figure&nbsp;1: The Terminal Tab in RStudio
 </section>
 </section>
 </section>
-<section id="sec-configureGit" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="sec-configureGit"><span class="header-section-number">5</span> Configure Git in RStudio</h2>
-<p>To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are only used to identify who made what changes in the project history. You should use your GitHub ID as the username and the email associated with your GitHub account. If you have not signed up for a GitHub account yet, <a href="https://github.com/signup">you can do so here</a>.</p>
+<section id="sec-gitHubID" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="sec-gitHubID"><span class="header-section-number">5</span> GitHub Account</h2>
+<p>If you do not have a GitHub account then go to <a href="http://github.com" class="uri">http://github.com</a> and sign up for an account. For this class, it is OK to just use a free account. Educators, students, and non-profit workers can get a professional account for free.</p>
+<p>&nbsp;</p>
+<p>We will do a lot more with GitHub next lesson. For this lesson, the GitHub account is only needed to configure Git on your computer.</p>
+</section>
+<section id="sec-configureGit" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="sec-configureGit"><span class="header-section-number">6</span> Configure Git in RStudio</h2>
+<p>To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are only used to identify who made what changes in the project history. Use your GitHub ID as the username and the email associated with your GitHub account.</p>
 <p>&nbsp;</p>
 <p>In the Terminal, set the Git user name and password – replace <strong><em>userName</em></strong> and <strong><em>userEmail</em></strong> with your username and email:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"userName"</span>   </span>
@@ -438,8 +453,8 @@ Figure&nbsp;2: The Terminal Tab in RStudio with the two commands above (your pro
 </figcaption>
 </figure>
 </div>
-<section id="viewing-the-configured-values-optional" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="viewing-the-configured-values-optional"><span class="header-section-number">5.1</span> Viewing the configured values (optional)</h3>
+<section id="viewing-the-configured-values-optional" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="viewing-the-configured-values-optional"><span class="header-section-number">6.1</span> Viewing the configured values (optional)</h3>
 <p>You can check the username and email by executing these lines in the <strong><em>Terminal</em></strong> tab:</p>
 <div class="sourceCode" id="cb16" data-tab="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.name</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.email</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -462,8 +477,8 @@ Figure&nbsp;3: Testing the git configuration using the RStudio Terminal tab
 </div>
 </section>
 </section>
-<section id="sec-gitRepo" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="sec-gitRepo"><span class="header-section-number">6</span> Add Git to your RStudio Project folder</h2>
+<section id="sec-gitRepo" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="sec-gitRepo"><span class="header-section-number">7</span> Add Git to your RStudio Project folder</h2>
 <p>We are now going to add a Git repository to the same folder as your RStudio Project.&nbsp; The Git repository exists locally on your computer – later on we will sync it to GitHub.</p>
 <p>&nbsp;</p>
 <p>First, <span class="hl">make sure you are in your RStudio Project!</span></p>
@@ -472,11 +487,11 @@ Figure&nbsp;3: Testing the git configuration using the RStudio Terminal tab
 <div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>git init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>And then restart RStudio</p>
 <p>&nbsp;</p>
-<p>This only works if the <strong><em>Terminal</em></strong> is currently at your project folder directory. The only reason it would not be is if you changed the folder in the Terminal in this RStudio session. If you did change the directory, you can get back to the correct directory by clicking: <strong><em>Tools -&gt; Terminal -&gt; Go to Current Directory</em></strong></p>
+<p><span class="note">Note: <code>git init</code> only works if the <strong><em>Terminal</em></strong> is currently at your project folder directory.</span> If you changed the directory, you can get back to the correct directory by clicking: <strong><em>Tools -&gt; Terminal -&gt; Go to Current Directory</em></strong></p>
 <p>&nbsp;</p>
 <p><a href="#extension-alternate-way-to-add-git-to-rstudio-project">Extension: Alternate way to add git to RStudio Project</a></p>
-<section id="rstudio-and-git" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="rstudio-and-git"><span class="header-section-number">6.1</span> RStudio and Git</h3>
+<section id="rstudio-and-git" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="rstudio-and-git"><span class="header-section-number">7.1</span> RStudio and Git</h3>
 <p>When you add Git to an RStudio Project folder, a&nbsp;<strong><em>Git</em></strong> tab will appear in the upper-right window. RStudio’s built-in Git interface handles the most commonly performed Git functions.</p>
 <div id="fig-gitTab" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -489,9 +504,9 @@ Figure&nbsp;4: The Git tab has been added to the RStudio Project
 </figure>
 </div>
 </section>
-<section id="project-folders-and-git-repositories" class="level3" data-number="6.2">
-<h3 data-number="6.2" class="anchored" data-anchor-id="project-folders-and-git-repositories"><span class="header-section-number">6.2</span> Project folders and Git Repositories</h3>
-<p>Let’s look inside the project folder in the RStudio <strong><em>Files</em></strong> tab (<span class="note">note: you can see the same thing in your operating system’s file explorer</span>).&nbsp; By default, the <strong><em>Files</em></strong> tab will not show hidden files, we can change that by clicking on <strong><em>More -&gt; Show Hidden Files</em></strong> ( <a href="#fig-git-added-files" class="quarto-xref">Figure&nbsp;5</a>).</p>
+<section id="project-folders-and-git-repositories" class="level3" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="project-folders-and-git-repositories"><span class="header-section-number">7.2</span> Project folders and Git Repositories</h3>
+<p>Let’s look inside the project folder in the RStudio <strong><em>Files</em></strong> tab (<span class="note">note: you can see the same thing in your operating system’s file explorer</span>).&nbsp; By default, the <strong><em>Files</em></strong> tab will not show hidden files, we can change that by clicking on <strong><em>More -&gt; Show Hidden Files</em></strong> (<a href="#fig-git-added-files" class="quarto-xref">Figure&nbsp;5</a>).</p>
 <p>&nbsp;</p>
 <p>RStudio adds a folder (<strong><em>.RProj.user</em></strong>) and a file (<strong><em>*.RProj</em></strong>) to your project folder.&nbsp; This is what makes this project folder an RStudio Project.</p>
 <p>&nbsp;</p>
@@ -515,23 +530,12 @@ Figure&nbsp;5: Files added to the project folder by RStudio and Git
 </figure>
 </div>
 </section>
-<section id="files-in-a-git-repository" class="level3" data-number="6.3">
-<h3 data-number="6.3" class="anchored" data-anchor-id="files-in-a-git-repository"><span class="header-section-number">6.3</span> Files in a Git repository</h3>
-<p>A Git repository is attached to a folder, just like an RStudio Project.&nbsp; In an RStudio Project, everything inside the project folder (and its subfolders) is a part of the RStudio Project.&nbsp; This is not true of Git repositories.&nbsp; Everything inside the project folder can be a part of the repository, but files inside the project folder are not part of the repository until they are explicitly added to the repository (more details in future lessons).</p>
+<section id="files-in-a-git-repository" class="level3" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="files-in-a-git-repository"><span class="header-section-number">7.3</span> Files in a Git repository</h3>
+<p>A Git repository is attached to a folder, just like an RStudio Project.&nbsp; In an RStudio Project, everything inside the project folder (and its subfolders) is a part of the RStudio Project.&nbsp; This is not true of Git repositories.&nbsp; Files inside the project folder are not part of the repository until they are explicitly added to the repository (more details in future lessons).</p>
 <p>&nbsp;</p>
-<p><strong><em>.gitignore</em></strong> is used to declare the files inside the project folder that you do not want to be a part of the Git repository.</p>
-<p>&nbsp;</p>
-<p>If you are creating a Git repository in a working project, then you need to read <a href="#choosing-files-you-do-not-want-to-share-.gitignore">Choosing files you do not want to share (.gitignore)</a>.&nbsp; If you are just testing then you will learn more about <strong><em>.gitignore</em></strong> later.</p>
+<p><strong><em>.gitignore</em></strong> is used to declare files inside the project folder that you do not want to be a part of the Git repository.</p>
 </section>
-</section>
-<section id="trap-the-console-tab-and-terminal-tab" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="trap-the-console-tab-and-terminal-tab"><span class="header-section-number">7</span> Trap: The Console Tab and Terminal Tab</h2>
-<p>Just a warning: The <strong><em>Console</em></strong> tab and the <strong><em>Terminal</em></strong> tab are next to each other and look very similar. It is very easy to confuse the two and put commands into the wrong tab.</p>
-<p>&nbsp;</p>
-<ul>
-<li><p>The <strong><em>Console</em></strong> tab is an R Console – for commands that are specific to your R scripts.</p></li>
-<li><p>The <strong><em>Terminal</em></strong> tab is the same as the Terminal in Mac or the Command Prompt in Windows – it is for sending system commands.</p></li>
-</ul>
 </section>
 <section id="choosing-files-you-do-not-want-to-share-.gitignore" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="choosing-files-you-do-not-want-to-share-.gitignore"><span class="header-section-number">8</span> Choosing files you do not want to share (.gitignore)</h2>
@@ -546,10 +550,7 @@ Figure&nbsp;5: Files added to the project folder by RStudio and Git
 </ul>
 <p>&nbsp;</p>
 <p><strong><em>.gitignore</em></strong> starts with four lines (<a href="#fig-gitignore" class="quarto-xref">Figure&nbsp;6</a>).&nbsp;</p>
-<div class="sourceCode" id="cb19" data-tab=".gitignore"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.RData</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Ruserdata</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19" data-tab=".gitignore"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span> .Rhistory .RData .Ruserdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-gitignore" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gitignore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -560,27 +561,20 @@ Figure&nbsp;6: The .gitignore file
 </figcaption>
 </figure>
 </div>
-<section id="editing-.gitignore" class="level3" data-number="8.1">
-<h3 data-number="8.1" class="anchored" data-anchor-id="editing-.gitignore"><span class="header-section-number">8.1</span> Editing .gitignore</h3>
+<section id="sec-editGitignore" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="sec-editGitignore"><span class="header-section-number">8.1</span> Editing .gitignore</h3>
 <p>You can edit <strong><em>.gitignore</em></strong> in RStudio (or any other text-editor).</p>
 <p>&nbsp;</p>
 <p>Here is an example <strong><em>.gitignore</em></strong> (<em>Note: * is a wildcard character):</em></p>
-<pre data-tab=".gitignore"><code>.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-~*
-doNotSync/
-*.o
-test1/*.jpg
-test2/data/weatherData.csv</code></pre>
+<pre data-tab=".gitignore"><code>.Rproj.user .Rhistory .RData .Ruserdata _* doNotShare/ *.tmp test1/*.jpg /test2/data/weatherData.csv weatherData2.csv</code></pre>
 <p>The above .gitignore is ignoring:</p>
 <ul>
-<li><p><strong><em>~*:</em></strong> filenames that start with a tilde&nbsp; ( <strong>~</strong> )</p></li>
-<li><p><strong><em>doNotSync:</em></strong> if you have a <strong><em>doNotSync</em></strong> folder that will remain local-only</p></li>
-<li><p><strong><em>*.o</em></strong>: all files with extension <strong><em>.o</em></strong> – these are intermediate files generated by C and C++ scripts</p></li>
+<li><p><strong><em>_*:</em></strong> filenames that start with a underscore ( <strong>_</strong> )</p></li>
+<li><p><strong><em>doNotShare:</em></strong> all <strong><em>doNotShare</em></strong> folders</p></li>
+<li><p><strong><em>*.tmp</em></strong>: all files with extension <strong><em>.tmp</em></strong></p></li>
 <li><p><strong><em>test1/*.jpg</em></strong>: all <strong><em>jpg</em></strong> files inside the <strong><em>test1</em></strong> folder (and subfolders)</p></li>
-<li><p><strong><em>test2/data/weatherData.csv</em></strong>: ignore a single file (<strong><em>weatherData.csv</em></strong>) inside the folders <strong><em>test2/data</em></strong></p></li>
+<li><p><strong><em>/test2/data/weatherData.csv</em></strong>: ignore a single file (<strong><em>weatherData.csv</em></strong>) inside the folders <strong><em>test2/data</em></strong></p></li>
+<li><p><strong><em>weatherData2.csv</em></strong>: ignores any file named <strong><em>weatherData2.csv</em></strong></p></li>
 </ul>
 <p>&nbsp;</p>
 <p><span class="hl">.gitignore is a Git repository file</span> and everyone who syncs a project uses the same <strong><em>.gitignore</em></strong> – and, no, you cannot use .gitignore to ignore .gitignore.</p>
@@ -592,8 +586,29 @@ test2/data/weatherData.csv</code></pre>
 <p><span class="note">note: there are other ways to remove files from GitHub but they are complicated</span></p>
 </section>
 </section>
-<section id="extension-alternate-way-to-add-git-to-rstudio-project" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="extension-alternate-way-to-add-git-to-rstudio-project"><span class="header-section-number">9</span> Extension: Alternate way to add git to RStudio Project</h2>
+<section id="application" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="application"><span class="header-section-number">9</span> Application</h2>
+<ul>
+<li><p>Create a .gitignore that ignores:</p>
+<ul>
+<li><p>all .bmp files</p></li>
+<li><p>all files in the <strong><em>start</em></strong> folder in the root folder</p></li>
+<li><p><strong><em>tmp</em></strong> files in the <strong><em>scripts</em></strong> folder only</p></li>
+</ul></li>
+<li><p>Zip RStudio Project and send to belinsky@msu.edu</p></li>
+</ul>
+</section>
+<section id="trap-the-console-tab-and-terminal-tab" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="trap-the-console-tab-and-terminal-tab"><span class="header-section-number">10</span> Trap: The Console Tab and Terminal Tab</h2>
+<p>Just a warning: The <strong><em>Console</em></strong> tab and the <strong><em>Terminal</em></strong> tab are next to each other and look very similar. It is very easy to confuse the two and put commands into the wrong tab.</p>
+<p>&nbsp;</p>
+<ul>
+<li><p>The <strong><em>Console</em></strong> tab is an R Console – for commands that are specific to your R scripts.</p></li>
+<li><p>The <strong><em>Terminal</em></strong> tab is the same as the Terminal in Mac or the Command Prompt in Windows – it is for sending system commands.</p></li>
+</ul>
+</section>
+<section id="extension-alternate-way-to-add-git-to-rstudio-project" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="extension-alternate-way-to-add-git-to-rstudio-project"><span class="header-section-number">11</span> Extension: Alternate way to add git to RStudio Project</h2>
 <p>To add a Git repository to your RStudio Project folder</p>
 <ol type="1">
 <li><p>Open your project in RStudio</p></li>

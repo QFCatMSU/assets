@@ -1,5 +1,5 @@
 ---
-title: "01: Git Setup"
+title: "01: Git Repositories"
 short: "01"
 # special characters for highlighting code : «»
 ---
@@ -18,9 +18,17 @@ short: "01"
 
 -   Add extension about deleting GitHub credentials in Windows
 
+-   gitignore: .DS_Store (Mac)
+
+-   gitattributes normalize text: auto (CR/LF issue)
+
 ## Purpose
 
-To add Git to an RStudio Project and set it up
+-   Install Git and Git Credential Manager (GCM)
+
+-   Add Git to your RStudio Project
+
+-   Understand the .gitignore file
 
 ### Prerequisites
 
@@ -36,13 +44,15 @@ To add Git to an RStudio Project and set it up
 
 1.  Install and configure Git and Git Credential Manager (@sec-installGit)
 
-2.  Configure Git username and email (@sec-configureGit)
+2.  Get a GitHub ID (@sec-gitHubID)
 
-3.  Create a Git repository in your RStudio Project folder (@sec-gitRepo)
+3.  Configure Git username and email (@sec-configureGit)
 
-4.  Get a GitHub ID (@sec-githubID)
+4.  Create a Git repository in your RStudio Project folder (@sec-gitRepo)
 
-## What is Git 
+5.  Edit .gitignore (@sec-editGitignore)
+
+## What is Git
 
 [Git]{.hl} is versioning software -- you use Git on your computer to create a retrievable history of your project.  With this project history, you can bring back previous versions of files or your entire Project.  Git calls this complete history a [repository]{.hl}. For this class, we will use Git with an RStudio Project. However, Git can be used with any project.
 
@@ -118,7 +128,7 @@ brew install --cask git-credential-manager
 
 ### Linux Mint/ Ubuntu
 
-These instructions havebeen tested on Ubuntu and Linux Mint that have a GUI interface. They will probably work on most Debian-based machines. All installation is done through the Terminal.
+These instructions have been tested on Ubuntu and Linux Mint machines that have a GUI interface. They will probably work on most Debian-based machines. All installation is done through the Terminal.
 
 #### Install Git
 
@@ -162,7 +172,7 @@ Store your authentication with ***secretservice***
 git config --global credential.credentialStore secretservice
 ```
 
-#### Install Git Credential Manager (headless)
+#### Install Git Credential Manager (headless – extension)
 
 The standard way to setup GCM requires a GUI interface. These instructions provide a way to set up the GCM through only a Terminal. Authentication will require another device where you can access a browser or the GitHub app. These instructions probably work on most Debian-based machines.
 
@@ -210,9 +220,17 @@ Keep your authentication in cache
 git config --global credential.credentialStore cache
 ```
 
+## GitHub Account {#sec-gitHubID}
+
+If you do not have a GitHub account then go to <http://github.com> and sign up for an account. For this class, it is OK to just use a free account. Educators, students, and non-profit workers can get a professional account for free.
+
+ 
+
+We will do a lot more with GitHub next lesson. For this lesson, the GitHub account is only needed to configure Git on your computer.
+
 ## Configure Git in RStudio {#sec-configureGit}
 
-To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are only used to identify who made what changes in the project history. You should use your GitHub ID as the username and the email associated with your GitHub account. If you have not signed up for a GitHub account yet, [you can do so here](https://github.com/signup).
+To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are only used to identify who made what changes in the project history. Use your GitHub ID as the username and the email associated with your GitHub account.
 
  
 
@@ -270,7 +288,7 @@ And then restart RStudio
 
  
 
-This only works if the ***Terminal*** is currently at your project folder directory. The only reason it would not be is if you changed the folder in the Terminal in this RStudio session. If you did change the directory, you can get back to the correct directory by clicking: ***Tools -\> Terminal -\> Go to Current Directory***
+[Note: `git init` only works if the ***Terminal*** is currently at your project folder directory. ]{.note} If you changed the directory, you can get back to the correct directory by clicking: ***Tools -\> Terminal -\> Go to Current Directory***
 
  
 
@@ -284,7 +302,7 @@ When you add Git to an RStudio Project folder, a ***Git*** tab will appear in t
 
 ### Project folders and Git Repositories
 
-Let's look inside the project folder in the RStudio ***Files*** tab ([note: you can see the same thing in your operating system's file explorer]{.note}).  By default, the ***Files*** tab will not show hidden files, we can change that by clicking on ***More -\> Show Hidden Files*** ( @fig-git-added-files).
+Let's look inside the project folder in the RStudio ***Files*** tab ([note: you can see the same thing in your operating system's file explorer]{.note}).  By default, the ***Files*** tab will not show hidden files, we can change that by clicking on ***More -\> Show Hidden Files*** (@fig-git-added-files).
 
  
 
@@ -310,25 +328,11 @@ Your project folder is now both an RStudio Project and a Git Repository.
 
 ### Files in a Git repository
 
-A Git repository is attached to a folder, just like an RStudio Project.  In an RStudio Project, everything inside the project folder (and its subfolders) is a part of the RStudio Project.  This is not true of Git repositories.  Everything inside the project folder can be a part of the repository, but files inside the project folder are not part of the repository until they are explicitly added to the repository (more details in future lessons).
+A Git repository is attached to a folder, just like an RStudio Project.  In an RStudio Project, everything inside the project folder (and its subfolders) is a part of the RStudio Project.  This is not true of Git repositories.  Files inside the project folder are not part of the repository until they are explicitly added to the repository (more details in future lessons).
 
  
 
-***.gitignore*** is used to declare the files inside the project folder that you do not want to be a part of the Git repository.
-
- 
-
-If you are creating a Git repository in a working project, then you need to read [Choosing files you do not want to share (.gitignore)](#choosing-files-you-do-not-want-to-share-.gitignore).  If you are just testing then you will learn more about ***.gitignore*** later.
-
-## Trap: The Console Tab and Terminal Tab
-
-Just a warning: The ***Console*** tab and the ***Terminal*** tab are next to each other and look very similar. It is very easy to confuse the two and put commands into the wrong tab.
-
- 
-
--   The ***Console*** tab is an R Console -- for commands that are specific to your R scripts.
-
--   The ***Terminal*** tab is the same as the Terminal in Mac or the Command Prompt in Windows -- it is for sending system commands.
+***.gitignore*** is used to declare files inside the project folder that you do not want to be a part of the Git repository.
 
 ## Choosing files you do not want to share (.gitignore) {#choosing-files-you-do-not-want-to-share-.gitignore}
 
@@ -351,15 +355,12 @@ Some reasons for not sharing folders and files are that they:
 ***.gitignore*** starts with four lines (@fig-gitignore). 
 
 ``` {.bash tab=".gitignore"}
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+.Rproj.user .Rhistory .RData .Ruserdata
 ```
 
-![The .gitignore file](images/GitHub-GitIgnoreInit.PNG){#fig-gitignore .fs}
+![The .gitignore file](images/GitHub-GitIgnoreInit.PNG){#fig-gitignore .fs alt="The .gitignore file"}
 
-### Editing .gitignore
+### Editing .gitignore {#sec-editGitignore}
 
 You can edit ***.gitignore*** in RStudio (or any other text-editor).
 
@@ -368,28 +369,22 @@ You can edit ***.gitignore*** in RStudio (or any other text-editor).
 Here is an example ***.gitignore*** (*Note: \* is a wildcard character):*
 
 ``` {tab=".gitignore"}
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-~*
-doNotSync/
-*.o
-test1/*.jpg
-test2/data/weatherData.csv
+.Rproj.user .Rhistory .RData .Ruserdata _* doNotShare/ *.tmp test1/*.jpg /test2/data/weatherData.csv weatherData2.csv
 ```
 
 The above .gitignore is ignoring:
 
--   ***\~\*:*** filenames that start with a tilde  ( **\~** )
+-   ***\_\*:*** filenames that start with a underscore ( **\_** )
 
--   ***doNotSync:*** if you have a ***doNotSync*** folder that will remain local-only
+-   ***doNotShare:*** all ***doNotShare*** folders
 
--   ***\*.o***: all files with extension ***.o*** -- these are intermediate files generated by C and C++ scripts
+-   ***\*.tmp***: all files with extension ***.tmp***
 
 -   ***test1/\*.jpg***: all ***jpg*** files inside the ***test1*** folder (and subfolders)
 
--   ***test2/data/weatherData.csv***: ignore a single file (***weatherData.csv***) inside the folders ***test2/data***
+-   ***/test2/data/weatherData.csv***: ignore a single file (***weatherData.csv***) inside the folders ***test2/data***
+
+-   ***weatherData2.csv***: ignores any file named ***weatherData2.csv***
 
  
 
@@ -402,6 +397,28 @@ Once you have versioned a file, it becomes a part of your Git repository and wil
  
 
 [note: there are other ways to remove files from GitHub but they are complicated]{.note}
+
+## Application
+
+-   Create a .gitignore that ignores:
+
+    -   all .bmp files
+
+    -   all files in the ***start*** folder in the root folder
+
+    -   ***tmp*** files in the ***scripts*** folder only
+
+-   Zip RStudio Project and send to belinsky\@msu.edu
+
+## Trap: The Console Tab and Terminal Tab
+
+Just a warning: The ***Console*** tab and the ***Terminal*** tab are next to each other and look very similar. It is very easy to confuse the two and put commands into the wrong tab.
+
+ 
+
+-   The ***Console*** tab is an R Console -- for commands that are specific to your R scripts.
+
+-   The ***Terminal*** tab is the same as the Terminal in Mac or the Command Prompt in Windows -- it is for sending system commands.
 
 ## Extension: Alternate way to add git to RStudio Project
 

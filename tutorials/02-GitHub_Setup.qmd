@@ -1,24 +1,25 @@
 ---
-title: "02: GitHub_Setup"
+title: "02: GitHub Repositories"
 short: "02"
 # special characters for highlighting code : «»
 ---
 
 ## Purpose
 
-To link an RStudio Project to a GitHub repository using Git
+-   To link an RStudio Project to a GitHub repository using Git
 
 ### Prerequisites
 
 -   An RStudio Project with Git
+-   GitHub account
 
 ### Tasks
 
-1.  Get a GitHub ID (@sec-githubID)
+1.  Create a GitHub repository (@sec-githubRepo)
 
-2.  Create a GitHub repository (@sec-githubRepo)
+2.  Sync your Git repository to GitHub (@sec-link)
 
-3.  Sync your RStudio Project to GitHub (@sec-link)
+3.  [\<do a SACP here?\>]{.hl}
 
 4.  Invite a user to your repository and give them ***Write*** access (@sec-invite)
 
@@ -88,7 +89,7 @@ If you lose the Quick Setup page then the URL is going to be the part of the URL
 
 ![The URL for your GitHub repository](images/GH_02_URL.png){#fig-url_alt .fs}
 
-The GitHub repository link is the URL that takes you directory to the online project.  A GitHub repository link is always in this format:
+The GitHub repository link is the URL that takes you to the online project.  A GitHub repository link is always in this format:
 
 -   https://github.com/<github_user_or_team_name>/<github_repository_name>.git
 
@@ -104,11 +105,11 @@ So, if my GitHub username is ***QFCatMSU*** and my repository name is ***gitHubT
 
 ## Linking your Git repository to a GitHub repository {#sec-link}
 
-In this section we are going to link a Git repository on your computer with an online GitHub Repository.  The GitHub repository will be the online version of your Git repository and can be shared. 
+In this section we are going to link a Git repository (attached to an RStudio Project) on your computer with an online GitHub Repository.  The GitHub repository will be the online version of your Git repository and can be shared or used to collaborate.
 
  
 
-[Warning: This only works if the GitHub repository is empty -- you cannot overwrite a GitHub repository.]{.hl}
+[Warning: The following only works if the GitHub repository is empty.]{.hl}
 
 ### Terminal commands to link to a GitHub repository
 
@@ -118,7 +119,7 @@ There are three lines in the RStudio ***Terminal*** tab you need to type in (or 
 
 1\) The first adds (***add***) the first version of your project and writes **(c*ommit)*** the version to your repository with the message "added Git".
 
-[Note: In Windows, **Control-V** does not paste in a Terminal window, but **right-click** -\> **Paste** works]{.note}
+[Note: In Windows, **Control-V** does not paste inside the Terminal, but **right-click** -\> **Paste** works]{.note}
 
 ``` {.bash tab="Terminal"}
 git add -A && git commit -m "added Git"
@@ -140,7 +141,7 @@ If you get an error in these steps, you probably need to reset the link shown he
 
 ### Authenticating with GitHub (all GUI machines) {#sec-auth}
 
-GitHub asks for authentication [the first time you connect to a GitHub repository]{.hl} on each computer:
+GitHub asks for authentication [the first time you modify a GitHub repository]{.hl} on each computer:
 
 ![GitHub asking for authentication](images/GitHubLogin-new.png){#fig-auth .fs}
 
@@ -152,6 +153,8 @@ After you login you will get an Authentication Successful window:
 
 ![The Authentication Successful window](images/GH_Repo_AuthSuccess.jpg){#fig-auth-success .fs}
 
+\<Put Linux auth in extension\>
+
 #### Authenticating on Linux (GUI)
 
 You might also be asked to setup a password to the keyring that stores your Git credentials.
@@ -160,7 +163,7 @@ You might also be asked to setup a password to the keyring that stores your Git 
 
 -   Disadvantage: you will have to type in this password every time you Push to a GitHub repository
 
-#### Authenticating on Linux (headless) \<to extension??\>
+#### Authenticating on Linux (headless) 
 
 When you Push to GitHub you will be asked to authenticate on another device:
 
