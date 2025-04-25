@@ -58,5 +58,8 @@
   },
   "tutorials/Git-GitHub-Quick-Setup.qmd": {
     "Git-GitHub-Quick-Setup.html": "58ef712f"
+  },
+  "tutorials/00-RStudioProjectsSetup.qmd": {
+    "00-RStudioProjectsSetup.html": "30292e74"
   }
 }

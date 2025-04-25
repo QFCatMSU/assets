@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.22">
+<meta name="generator" content="quarto-1.7.28">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>02: GitHub_Setup</title>
+<title>02: GitHub Repositories</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b4406b7675125bc2ba204020e191172.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5f39cfd1aee7e7785011fc5df168ee92.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5e6fd5a646752829aeb2af341632313.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -124,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">02: GitHub_Setup</h1>
+          <h1 class="quarto-secondary-nav-title">02: GitHub Repositories</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -154,14 +154,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutorials/00-RStudioProjectsSetup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00: RStudio Projects Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutorials/01-Git_Setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01: Git Setup</span></a>
+ <span class="menu-text">01: Git Repositories</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/02-GitHub_Setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">02: GitHub_Setup</span></a>
+ <span class="menu-text">02: GitHub Repositories</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -261,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">02: GitHub_Setup</h1>
+<h1 class="title d-none d-lg-block">02: GitHub Repositories</h1>
 </div>
 
 
@@ -280,19 +286,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="purpose" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">1</span> Purpose</h2>
-<p>To link an RStudio Project to a GitHub repository using Git</p>
+<ul>
+<li>To link an RStudio Project to a GitHub repository using Git</li>
+</ul>
 <section id="prerequisites" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">1.1</span> Prerequisites</h3>
 <ul>
 <li>An RStudio Project with Git</li>
+<li>GitHub account</li>
 </ul>
 </section>
 <section id="tasks" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="tasks"><span class="header-section-number">1.2</span> Tasks</h3>
 <ol type="1">
-<li><p>Get a GitHub ID (<a href="#sec-githubID" class="quarto-xref">Section&nbsp;3.1</a>)</p></li>
 <li><p>Create a GitHub repository (<a href="#sec-githubRepo" class="quarto-xref">Section&nbsp;3.2</a>)</p></li>
-<li><p>Sync your RStudio Project to GitHub (<a href="#sec-link" class="quarto-xref">Section&nbsp;4</a>)</p></li>
+<li><p>Sync your Git repository to GitHub (<a href="#sec-link" class="quarto-xref">Section&nbsp;4</a>)</p></li>
+<li><p><span class="hl">&lt;do a SACP here?&gt;</span></p></li>
 <li><p>Invite a user to your repository and give them <strong><em>Write</em></strong> access (<a href="#sec-invite" class="quarto-xref">Section&nbsp;6</a>)</p></li>
 </ol>
 </section>
@@ -373,7 +382,7 @@ Figure&nbsp;3: The URL for your GitHub repository
 </figcaption>
 </figure>
 </div>
-<p>The GitHub repository link is the URL that takes you directory to the online project.&nbsp; A GitHub repository link is always in this format:</p>
+<p>The GitHub repository link is the URL that takes you to the online project.&nbsp; A GitHub repository link is always in this format:</p>
 <ul>
 <li>https://github.com/<github_user_or_team_name>/<github_repository_name>.git</github_repository_name></github_user_or_team_name></li>
 </ul>
@@ -388,15 +397,15 @@ Figure&nbsp;3: The URL for your GitHub repository
 </section>
 <section id="sec-link" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="sec-link"><span class="header-section-number">4</span> Linking your Git repository to a GitHub repository</h2>
-<p>In this section we are going to link a Git repository on your computer with an online GitHub Repository.&nbsp; The GitHub repository will be the online version of your Git repository and can be shared.&nbsp;</p>
+<p>In this section we are going to link a Git repository (attached to an RStudio Project) on your computer with an online GitHub Repository.&nbsp; The GitHub repository will be the online version of your Git repository and can be shared or used to collaborate.</p>
 <p>&nbsp;</p>
-<p><span class="hl">Warning: This only works if the GitHub repository is empty – you cannot overwrite a GitHub repository.</span></p>
+<p><span class="hl">Warning: The following only works if the GitHub repository is empty.</span></p>
 <section id="terminal-commands-to-link-to-a-github-repository" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="terminal-commands-to-link-to-a-github-repository"><span class="header-section-number">4.1</span> Terminal commands to link to a GitHub repository</h3>
 <p>There are three lines in the RStudio <strong><em>Terminal</em></strong> tab you need to type in (or copy) to link your Git repository to the GitHub repository.&nbsp;Don’t forget to press enter after each line…</p>
 <p>&nbsp;</p>
 <p>1) The first adds (<strong><em>add</em></strong>) the first version of your project and writes&nbsp;<strong>(c<em>ommit)</em></strong> the version to your repository with the message “added Git”.</p>
-<p><span class="note">Note: In Windows, <strong>Control-V</strong> does not paste in a Terminal window, but <strong>right-click</strong> -&gt; <strong>Paste</strong> works</span></p>
+<p><span class="note">Note: In Windows, <strong>Control-V</strong> does not paste inside the Terminal, but <strong>right-click</strong> -&gt; <strong>Paste</strong> works</span></p>
 <div class="sourceCode" id="cb1" data-tab="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"added Git"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>2) The second line connects (<strong><em>remote add</em></strong>) your Git repository to your GitHub repository (<strong><em>origin</em></strong>).&nbsp; <span class="hl">Replace the URL in quotes with the URL for your GitHub repository.</span></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="st">"https://github.com/myUserName/myRepository.git"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -406,7 +415,7 @@ Figure&nbsp;3: The URL for your GitHub repository
 </section>
 <section id="sec-auth" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="sec-auth"><span class="header-section-number">4.2</span> Authenticating with GitHub (all GUI machines)</h3>
-<p>GitHub asks for authentication <span class="hl">the first time you connect to a GitHub repository</span> on each computer:</p>
+<p>GitHub asks for authentication <span class="hl">the first time you modify a GitHub repository</span> on each computer:</p>
 <div id="fig-auth" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-auth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -430,6 +439,7 @@ Figure&nbsp;5: The Authentication Successful window
 </figcaption>
 </figure>
 </div>
+<p>&lt;Put Linux auth in extension&gt;</p>
 <section id="authenticating-on-linux-gui" class="level4" data-number="4.2.1">
 <h4 data-number="4.2.1" class="anchored" data-anchor-id="authenticating-on-linux-gui"><span class="header-section-number">4.2.1</span> Authenticating on Linux (GUI)</h4>
 <p>You might also be asked to setup a password to the keyring that stores your Git credentials.</p>
@@ -438,8 +448,8 @@ Figure&nbsp;5: The Authentication Successful window
 <li><p>Disadvantage: you will have to type in this password every time you Push to a GitHub repository</p></li>
 </ul>
 </section>
-<section id="authenticating-on-linux-headless-to-extension" class="level4" data-number="4.2.2">
-<h4 data-number="4.2.2" class="anchored" data-anchor-id="authenticating-on-linux-headless-to-extension"><span class="header-section-number">4.2.2</span> Authenticating on Linux (headless) &lt;to extension??&gt;</h4>
+<section id="authenticating-on-linux-headless" class="level4" data-number="4.2.2">
+<h4 data-number="4.2.2" class="anchored" data-anchor-id="authenticating-on-linux-headless"><span class="header-section-number">4.2.2</span> Authenticating on Linux (headless)</h4>
 <p>When you Push to GitHub you will be asked to authenticate on another device:</p>
 <ul>
 <li><p>Use Authentication Method #1: Device Code</p></li>
@@ -941,8 +951,8 @@ Figure&nbsp;7: Inviting a user to your GitHub Repository
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/01-Git_Setup.html" class="pagination-link" aria-label="01: Git Setup">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">01: Git Setup</span>
+      <a href="../tutorials/01-Git_Setup.html" class="pagination-link" aria-label="01: Git Repositories">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">01: Git Repositories</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
