@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.28">
+<meta name="generator" content="quarto-1.7.22">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b4406b7675125bc2ba204020e191172.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c5e6fd5a646752829aeb2af341632313.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-16be290bd018b3ffc92e23b3c7c5dd84.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -330,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="rstudio-projects-git-repositories-and-github-repositories" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="rstudio-projects-git-repositories-and-github-repositories"><span class="header-section-number">3</span> RStudio Projects, Git repositories, and GitHub repositories</h2>
-<p>It is important to distinguish the difference between these three object that all related to your project</p>
+<p>It is important to distinguish the difference between these three objects that are all related to your project</p>
 <p>&nbsp;</p>
 <ul>
 <li><p><strong><em>RStudio Project</em></strong>:&nbsp; A <strong><em>*.RProj</em></strong> file is attached to an RStudio Project folder.&nbsp; This makes the project folder the Working Directory in R and every file inside the project folder (and subfolders) is a part of the RStudio Project.</p></li>
@@ -343,11 +343,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The first thing we are going to do is change the files in your Git repository (which is in the same folder as RStudio Project) and sync those changes to the GitHub repository created in the last lesson.</p>
 <p>&nbsp;</p>
 <p>This process is much more complicated than syncing to a cloud folders (e.g., Google Drive, OneDrive), which automate the syncing of your folders and files.&nbsp; Git does not automate anything – you need to explicitly tell Git to sync your project.</p>
+<p>&nbsp;</p>
 <p>This might seem painful at first but it is because Git&nbsp; is a powerful program with advanced versioning capabilities that go far beyond cloud folders.&nbsp; <a href="#extension-versioning">Extension: Versioning</a></p>
 <p>&nbsp;</p>
 <p>The steps for syncing your project change to a GitHub are (<span class="note">note: the bold terms are Git-specific terms</span>):</p>
 <ol type="1">
-<li><p>Make changes (add, modify, or delete) to files in your project&nbsp;</p></li>
+<li><p>Make changes (add/modify/delete) to files in your project&nbsp;</p></li>
 <li><p>Approve the changes you have made (<strong><em>Staging</em></strong>)</p></li>
 <li><p>Add information about the changes you have made (<strong><em>Commit Message</em></strong>)</p></li>
 <li><p>Save the approved changes to the Git repository (<strong><em>Commit</em></strong>)</p></li>
@@ -356,14 +357,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <section id="make-changes-to-your-project-add-delete-or-modify" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="make-changes-to-your-project-add-delete-or-modify"><span class="header-section-number">4.1</span> Make changes to your project (add, delete, or modify)</h3>
-<p>Theimages below (<a href="#fig-GitTab" class="quarto-xref">Figure&nbsp;1</a>) shows an example project in which the following folders and files were added:</p>
+<p>The images below (<a href="#fig-GitTab" class="quarto-xref">Figure&nbsp;1</a>) shows an example project in which the following <del>folders and</del> files were added:</p>
 <ul>
-<li><p>a <strong><em>data</em></strong> and <strong><em>scripts</em></strong> folder was added to the Project Folder</p></li>
+<li><p><del>a <strong><em>data</em></strong> and <strong><em>scripts</em></strong> folder was added to the Project Folder&lt;done last lesson?&gt;</del></p></li>
 <li><p><strong><em>test1.r</em></strong> and <strong><em>test2.r</em></strong> was added to the scripts folder</p></li>
 <li><p><strong><em>testData.csv</em></strong> was added to the data folder&nbsp;&nbsp;</p>
 <p>&nbsp;</p></li>
 </ul>
-<p>Looking at the <strong><em>Git</em></strong> tab, you will see the three files that have been modified (added, removed, or changed&nbsp;</p>
+<p>Looking at the <strong><em>Git</em></strong> tab, you will see the three files that have been modified:</p>
 <div id="fig-GitTab" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-GitTab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -386,7 +387,7 @@ Figure&nbsp;1: Git tab and the Commit button
 <h3 data-number="4.2" class="anchored" data-anchor-id="approve-changes-be-careful-about-what-is-called-staging"><span class="header-section-number">4.2</span> Approve changes &lt;be careful about what is called Staging&gt;</h3>
 <p>To approve all of the changes you have made, press the <strong><em>Commit</em></strong> button in the <strong><em>Git</em></strong> tab and the&nbsp;<strong><em>Review Changes</em></strong> window appears. Check all the files (<a href="#fig-newCommit" class="quarto-xref">Figure&nbsp;2</a>) in the left window. Be patient, the checkboxes sometimes take a few seconds to switch states.&nbsp;<a href="#extension-approving-staging-a-large-number-of-files">Extension: Approving (staging) a large number of files</a></p>
 <p>&nbsp;</p>
-<p>Git calls the approval process <strong><em>staging</em></strong>.&nbsp; You do not have to approve every file change.&nbsp; In future lessons, we will talk about the many reason you might have to not approve changes you have made to files.</p>
+<p>Git calls the approval process <strong><em>staging</em></strong>.&nbsp; You do not have to approve every file change.&nbsp; In future lessons, we will talk about the many reasons you might have to not approve changes you have made to files.</p>
 <div id="fig-newCommit" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-newCommit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -400,7 +401,7 @@ Figure&nbsp;2: Creating a new Commit for your project
 </section>
 <section id="add-information-about-these-change" class="level3" data-number="4.3">
 <h3 data-number="4.3" class="anchored" data-anchor-id="add-information-about-these-change"><span class="header-section-number">4.3</span> Add information about these change&nbsp;</h3>
-<p>The information is put into the&nbsp;<strong><em>Commit message</em></strong> textbox (<a href="#fig-newCommit" class="quarto-xref">Figure&nbsp;2</a>).&nbsp; The message should be a short description of the changes you have made and it gets saved to this version of your project along with the file changes.&nbsp; The messages act as documentation, like script comments, and can be viewed when looking at the history of the project (something we will do in a later lesson).</p>
+<p>Information about the changes is put into the&nbsp;<strong><em>Commit message</em></strong> textbox (<a href="#fig-newCommit" class="quarto-xref">Figure&nbsp;2</a>).&nbsp; The message should be a short description of the changes you have made and this message gets saved along with the file changes.&nbsp; The Commit message act as documentation, like script comments, and can be viewed when looking at the history of the project (something we will do in a later lesson).</p>
 <p>&nbsp;</p>
 <p>You should not skip this step when you are working on a large project as it can be really helpful to see this documentation later on.</p>
 </section>
@@ -438,7 +439,7 @@ Figure&nbsp;4: Pushing to GitHub
 </div>
 <p>A window will come up giving the results of the <strong><em>Push</em></strong> with a brief description of the changes. You can close the window.</p>
 <p>&nbsp;</p>
-<p>You will usually <strong><em>Push</em></strong> new project Commits right after you create them; however, this is sometimes not possible (e.g., you don’t have an internet connection), or not desirable (e.g., you have changes you do not want to share with collaborators). You can also <strong><em>Push</em></strong> new project Commits at a later time.</p>
+<p>You will usually <strong><em>Push</em></strong> new project Commits right after you create them; however, this is sometimes not possible (e.g., you don’t have an internet connection), or not desirable (e.g., you have changes you do not want to share with collaborators). You can <strong><em>Push</em></strong> new project Commits at a later time.</p>
 <p>&nbsp;</p>
 <p><a href="#extension-broken-authentication-git-push-hangs">Extension: Broken Authentication (Git Push hangs)</a></p>
 </section>
@@ -467,11 +468,11 @@ Figure&nbsp;5: GitHub after a new Commit was pushed
 </section>
 <section id="linking-rstudio-projects-and-github-repositories" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="linking-rstudio-projects-and-github-repositories"><span class="header-section-number">5</span> Linking RStudio Projects and GitHub repositories</h2>
-<p>The main reason to link a Git repositoryt to a GitHub Repository is to sync your project between multiple locations, using the GitHub Repository as the central location (e.g., your <strong><em>hub</em></strong>).&nbsp; In an asynchronous class, it can be a bit hard to replicate the syncing of a project between two computers.</p>
+<p>The main reason to link a Git repository to a GitHub Repository is to sync your project between multiple locations using the GitHub Repository as the central location (e.g., your <strong><em>hub</em></strong>).&nbsp; The best way to understand how this works is to practice syncing between locations.</p>
 <p>&nbsp;</p>
-<p>Instead, you are going to create a copy of your project on your own computer.&nbsp; You can put the second copy of your RStudio Project anywhere on your computer <span class="hl">except inside the first RStudio Project</span>.</p>
+<p>Since most people reading this are working on their own, we are going to sync your project to two different locations on your own computer.&nbsp; Creating two copies of your project allows you to test Git’s collaboration features by yourself.&nbsp;As far as Git and GitHub are concerned, the two copies of your Project might as well be on two separate computers that are 10,000 miles apart.</p>
 <p>&nbsp;</p>
-<p>As far as Git and GitHub is concerned, the two copies of your RStudio Project might as well be on two separate computers that are 10,000 miles apart.&nbsp; Cretaing two copies of your project allows you to test Git’s collaboration features by yourself.</p>
+<p>&lt; You can put the second copy of your RStudio Project anywhere on your computer <span class="hl">except inside the first RStudio Project</span>. – move later &gt;</p>
 <section id="syncing-your-project-from-github" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="syncing-your-project-from-github"><span class="header-section-number">5.1</span> Syncing your project from GitHub</h3>
 <p>In the last lesson, we synced an&nbsp;<strong><em>existing RStudio Project</em></strong> to a <strong><em>new GitHub Repository</em></strong>. To do that, we needed to send Git commands through the command-line interface and we did that using the <strong><em>Terminal</em></strong> in RStudio.</p>
@@ -508,7 +509,7 @@ Figure&nbsp;6: Git Version Control option in RStudio
 <li><p>In the <strong><em>Clone Git Repository</em></strong> Window</p>
 <ul>
 <li><p><strong>Repository URL</strong>: paste your GitHub URL here</p></li>
-<li><p><strong>Project directory name</strong>: the<span class="hl">local project</span>name, it defaults to the name of the repository and becomes the name of the Project Folder for your RStudio Project</p>
+<li><p><strong>Project directory name</strong>: the <span class="hl">local project</span> name, it defaults to the name of the repository and becomes the name of the Project Folder for your RStudio Project</p>
 <ul>
 <li><span class="note">note: You can change the name – Git does not care if your RStudio Project and Git repository have different names</span></li>
 </ul></li>

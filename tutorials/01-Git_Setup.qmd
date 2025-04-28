@@ -126,16 +126,18 @@ Install Git Credential Manager in the Terminal:
 brew install --cask git-credential-manager
 ```
 
-### Linux Mint/ Ubuntu
+### Linux Mint/ Ubuntu {#sec-linux}
 
 These instructions have been tested on Ubuntu and Linux Mint machines that have a GUI interface. They will probably work on most Debian-based machines. All installation is done through the Terminal.
 
 #### Install Git
 
-This line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.
+The three line below (1) links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution, (2) update the repository, and (3) install the newest version of Git.
 
 ``` bash
-sudo add-apt-repository ppa:git-core/ppa apt update apt install git
+sudo add-apt-repository ppa:git-core/ppa 
+apt update 
+apt install git
 ```
 
 #### Install Git Credential Manager (GUI only)
@@ -168,7 +170,7 @@ git-credential-manager configure
 
 Store your authentication with ***secretservice***
 
-```         
+``` bash
 git config --global credential.credentialStore secretservice
 ```
 
@@ -288,7 +290,7 @@ And then restart RStudio
 
  
 
-[Note: `git init` only works if the ***Terminal*** is currently at your project folder directory. ]{.note} If you changed the directory, you can get back to the correct directory by clicking: ***Tools -\> Terminal -\> Go to Current Directory***
+[Note: `git init` only works if the ***Terminal*** is currently at your project folder directory.]{.note} If you changed the directory, you can get back to the correct directory by clicking: ***Tools -\> Terminal -\> Go to Current Directory***
 
  
 
@@ -358,7 +360,7 @@ Some reasons for not sharing folders and files are that they:
 .Rproj.user .Rhistory .RData .Ruserdata
 ```
 
-![The .gitignore file](images/GitHub-GitIgnoreInit.PNG){#fig-gitignore .fs alt="The .gitignore file"}
+![The .gitignore file](images/GitHub-GitIgnoreInit.PNG){#fig-gitignore .fs}
 
 ### Editing .gitignore {#sec-editGitignore}
 

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.28">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>01: Git Repositories</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../tutorials/02-GitHub_Setup.html" rel="next">
+<link href="../tutorials/00-RStudioProjectsSetup.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c5e6fd5a646752829aeb2af341632313.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="shortcut icon" href="https://qfcatmsu.github.io/assets/quarto/qfc_icon.png">
+<script>mod=true; menuCollapse=true;</script>
+<script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
+<!--script src="../quarto/qfc_styles.js"></script-->
+ 
+
+
+<link rel="stylesheet" href="https://qfcatmsu.github.io/assets/quarto/qfc_styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">01: Git Repositories</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text"><b>QFC Assets and Tutorials</b></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/00-RStudioProjectsSetup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00: RStudio Projects Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/01-Git_Setup.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">01: Git Repositories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/02-GitHub_Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02: GitHub Repositories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/03-Commits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03: Commits</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/04-Commits2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04: Commits 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/05-Diff.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05: Diff</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/06-Project_History.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06: Project History</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/07-Conflicts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07: Issues and Conflicts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/08-Branches.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08: Branches</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/Git-GitHub-Quick-Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quick Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title"><b>Content</b></h2>
+   
+  <ul>
+  <li><a href="#to-do" id="toc-to-do" class="nav-link active" data-scroll-target="#to-do"><span class="header-section-number">0.1</span> To-do</a></li>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link" data-scroll-target="#purpose"><span class="header-section-number">1</span> Purpose</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">1.1</span> Prerequisites</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">1.2</span> Tasks</a></li>
+  </ul></li>
+  <li><a href="#what-is-git" id="toc-what-is-git" class="nav-link" data-scroll-target="#what-is-git"><span class="header-section-number">2</span> What is Git</a></li>
+  <li><a href="#rstudio-terminal-tab-to-configure-git" id="toc-rstudio-terminal-tab-to-configure-git" class="nav-link" data-scroll-target="#rstudio-terminal-tab-to-configure-git"><span class="header-section-number">3</span> RStudio Terminal tab to configure Git</a></li>
+  <li><a href="#sec-installGit" id="toc-sec-installGit" class="nav-link" data-scroll-target="#sec-installGit"><span class="header-section-number">4</span> Installing Git and the Git Configuration Manager (GCM)</a>
+  <ul class="collapse">
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows"><span class="header-section-number">4.1</span> Windows</a></li>
+  <li><a href="#mac" id="toc-mac" class="nav-link" data-scroll-target="#mac"><span class="header-section-number">4.2</span> Mac</a></li>
+  <li><a href="#linux-mint-ubuntu" id="toc-linux-mint-ubuntu" class="nav-link" data-scroll-target="#linux-mint-ubuntu"><span class="header-section-number">4.3</span> Linux Mint/ Ubuntu</a></li>
+  </ul></li>
+  <li><a href="#sec-gitHubID" id="toc-sec-gitHubID" class="nav-link" data-scroll-target="#sec-gitHubID"><span class="header-section-number">5</span> GitHub Account</a></li>
+  <li><a href="#sec-configureGit" id="toc-sec-configureGit" class="nav-link" data-scroll-target="#sec-configureGit"><span class="header-section-number">6</span> Configure Git in RStudio</a>
+  <ul class="collapse">
+  <li><a href="#viewing-the-configured-values-optional" id="toc-viewing-the-configured-values-optional" class="nav-link" data-scroll-target="#viewing-the-configured-values-optional"><span class="header-section-number">6.1</span> Viewing the configured values (optional)</a></li>
+  </ul></li>
+  <li><a href="#sec-gitRepo" id="toc-sec-gitRepo" class="nav-link" data-scroll-target="#sec-gitRepo"><span class="header-section-number">7</span> Add Git to your RStudio Project folder</a>
+  <ul class="collapse">
+  <li><a href="#rstudio-and-git" id="toc-rstudio-and-git" class="nav-link" data-scroll-target="#rstudio-and-git"><span class="header-section-number">7.1</span> RStudio and Git</a></li>
+  <li><a href="#project-folders-and-git-repositories" id="toc-project-folders-and-git-repositories" class="nav-link" data-scroll-target="#project-folders-and-git-repositories"><span class="header-section-number">7.2</span> Project folders and Git Repositories</a></li>
+  <li><a href="#files-in-a-git-repository" id="toc-files-in-a-git-repository" class="nav-link" data-scroll-target="#files-in-a-git-repository"><span class="header-section-number">7.3</span> Files in a Git repository</a></li>
+  </ul></li>
+  <li><a href="#choosing-files-you-do-not-want-to-share-.gitignore" id="toc-choosing-files-you-do-not-want-to-share-.gitignore" class="nav-link" data-scroll-target="#choosing-files-you-do-not-want-to-share-.gitignore"><span class="header-section-number">8</span> Choosing files you do not want to share (.gitignore)</a>
+  <ul class="collapse">
+  <li><a href="#sec-editGitignore" id="toc-sec-editGitignore" class="nav-link" data-scroll-target="#sec-editGitignore"><span class="header-section-number">8.1</span> Editing .gitignore</a></li>
+  <li><a href="#gitignore-only-works-on-unversioned-files" id="toc-gitignore-only-works-on-unversioned-files" class="nav-link" data-scroll-target="#gitignore-only-works-on-unversioned-files"><span class="header-section-number">8.2</span> gitignore only works on unversioned files</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">9</span> Application</a></li>
+  <li><a href="#trap-the-console-tab-and-terminal-tab" id="toc-trap-the-console-tab-and-terminal-tab" class="nav-link" data-scroll-target="#trap-the-console-tab-and-terminal-tab"><span class="header-section-number">10</span> Trap: The Console Tab and Terminal Tab</a></li>
+  <li><a href="#extension-alternate-way-to-add-git-to-rstudio-project" id="toc-extension-alternate-way-to-add-git-to-rstudio-project" class="nav-link" data-scroll-target="#extension-alternate-way-to-add-git-to-rstudio-project"><span class="header-section-number">11</span> Extension: Alternate way to add git to RStudio Project</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">01: Git Repositories</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="to-do" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="to-do"><span class="header-section-number">0.1</span> To-do</h3>
+<ul>
+<li><p>Add terminology section</p></li>
+<li><p>put headless installation as extension</p></li>
+<li><p>Section Links</p></li>
+<li><p>configuring GCM and test (after first Push) are separated</p>
+<ul>
+<li>can you test GCM right away? Don’t think so…</li>
+</ul></li>
+<li><p>Add extension about deleting GitHub credentials in Windows</p></li>
+<li><p>gitignore: .DS_Store (Mac)</p></li>
+<li><p>gitattributes normalize text: auto (CR/LF issue)</p></li>
+</ul>
+</section>
+<section id="purpose" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">1</span> Purpose</h2>
+<ul>
+<li><p>Install Git and Git Credential Manager (GCM)</p></li>
+<li><p>Add Git to your RStudio Project</p></li>
+<li><p>Understand the .gitignore file</p></li>
+</ul>
+<section id="prerequisites" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">1.1</span> Prerequisites</h3>
+<ol type="1">
+<li><p>You have installed a recent version of R and RStudio</p>
+<ul>
+<li>For RStudio it is highly recommended to have at least version 2025.04 as RStudio fixed a major bug in their Git interface on Windows in that version</li>
+</ul></li>
+<li><p>You have an RStudio Project</p></li>
+<li><p>You can view hidden files and folders and see all file extensions (not required, but helpful)</p></li>
+</ol>
+</section>
+<section id="tasks" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="tasks"><span class="header-section-number">1.2</span> Tasks</h3>
+<ol type="1">
+<li><p>Install and configure Git and Git Credential Manager (<a href="#sec-installGit" class="quarto-xref">Section&nbsp;4</a>)</p></li>
+<li><p>Get a GitHub ID (<a href="#sec-gitHubID" class="quarto-xref">Section&nbsp;5</a>)</p></li>
+<li><p>Configure Git username and email (<a href="#sec-configureGit" class="quarto-xref">Section&nbsp;6</a>)</p></li>
+<li><p>Create a Git repository in your RStudio Project folder (<a href="#sec-gitRepo" class="quarto-xref">Section&nbsp;7</a>)</p></li>
+<li><p>Edit .gitignore (<a href="#sec-editGitignore" class="quarto-xref">Section&nbsp;8.1</a>)</p></li>
+</ol>
+</section>
+</section>
+<section id="what-is-git" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="what-is-git"><span class="header-section-number">2</span> What is Git</h2>
+<p><span class="hl">Git</span> is versioning software – you use Git on your computer to create a retrievable history of your project.&nbsp; With this project history, you can bring back previous versions of files or your entire Project.&nbsp; Git calls this complete history a <span class="hl">repository</span>. For this class, we will use Git with an RStudio Project. However, Git can be used with any project.</p>
+<p>&nbsp;</p>
+<p>While Git is very powerful tool, it is not intuitive and there is a pretty high-barrier to entry – especially if you want to use it safely.</p>
+</section>
+<section id="rstudio-terminal-tab-to-configure-git" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="rstudio-terminal-tab-to-configure-git"><span class="header-section-number">3</span> RStudio Terminal tab to configure Git</h2>
+<p>The RStudio <strong><em>Terminal</em></strong> tab, located in the bottom-left corner next to the <strong><em>Console</em></strong> tab (<a href="#fig-TerminalTab" class="quarto-xref">Figure&nbsp;1</a>), is a very useful tool that is used to send system commands and it also be used to send Git commands.</p>
+<p>&nbsp;</p>
+<p>The <strong><em>Terminal</em></strong> tab is the same as the Terminal app in Mac and the Command Prompt in Windows.&nbsp;We are going to use the&nbsp;<strong><em>Terminal</em></strong> tab multiple times to install, set up, and use Git.</p>
+<div id="fig-TerminalTab" class="fs quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-TerminalTab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/GitSetup-TerminalTab.png" class="fs img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-TerminalTab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The Terminal Tab in RStudio
+</figcaption>
+</figure>
+</div>
+<p><a href="#trap-the-console-tab-and-terminal-tab">Trap: The Console Tab and Terminal Tab</a></p>
+</section>
+<section id="sec-installGit" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sec-installGit"><span class="header-section-number">4</span> Installing Git and the Git Configuration Manager (GCM)</h2>
+<p>The <a href="https://github.com/git-ecosystem/git-credential-manager">Git Credential Manager</a> (<strong><em>GCM</em></strong>) handles the authentication between Git and online places that store Git repositories like Azure, Bitlocker, and <strong><em>GitHub</em></strong>.</p>
+<p>&nbsp;</p>
+<p>The section provides instructions for installing and setting up Git and GCM on different operating systems.</p>
+<section id="windows" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="windows"><span class="header-section-number">4.1</span> Windows</h3>
+<p><a href="https://git-scm.com/downloads">Click here to download and install Git</a>, with the Git Configuration Manager built-in – click on <strong><em>Download for Windows</em></strong> (version as of March 2025 is <strong>2.49.0</strong>)</p>
+<ul>
+<li><p>Make sure <span class="hl">RStudio is closed</span> while Git is being installed.</p></li>
+<li><p>You can use all the default installation settings&nbsp;</p></li>
+</ul>
+<p>&nbsp;</p>
+<p>The Git installer also installs and configures the Git Configuration Manager.</p>
+</section>
+<section id="mac" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="mac"><span class="header-section-number">4.2</span> Mac</h3>
+<p>Before you install <strong><em>Git</em></strong> on Mac, you need to install <strong><em>Homebrew</em></strong>. Homebrew is a very useful tool for programmers as it gives easy access to packages not included with Mac.</p>
+<p>&nbsp;</p>
+<p>Go to the homebrew page: <a href="https://brew.sh/" class="uri">https://brew.sh/</a></p>
+<p>Copy the command under Install Homebrew in the <strong><em>Terminal</em></strong> and execute.</p>
+<p>&nbsp;</p>
+<p>The command as of March 2025 is:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>But this could change. It is safest to just go to the Homebrew page and copy the link.</p>
+<section id="install-git-and-gcm-using-homebrew" class="level4" data-number="4.2.1">
+<h4 data-number="4.2.1" class="anchored" data-anchor-id="install-git-and-gcm-using-homebrew"><span class="header-section-number">4.2.1</span> Install Git and GCM using Homebrew</h4>
+<p>Install Git in the <strong><em>Terminal</em></strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install Git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Install Git Credential Manager in the Terminal:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> git-credential-manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="linux-mint-ubuntu" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="linux-mint-ubuntu"><span class="header-section-number">4.3</span> Linux Mint/ Ubuntu</h3>
+<p>These instructions have been tested on Ubuntu and Linux Mint machines that have a GUI interface. They will probably work on most Debian-based machines. All installation is done through the Terminal.</p>
+<section id="install-git" class="level4" data-number="4.3.1">
+<h4 data-number="4.3.1" class="anchored" data-anchor-id="install-git"><span class="header-section-number">4.3.1</span> Install Git</h4>
+<p>This line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:git-core/ppa apt update apt install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="install-git-credential-manager-gui-only" class="level4" data-number="4.3.2">
+<h4 data-number="4.3.2" class="anchored" data-anchor-id="install-git-credential-manager-gui-only"><span class="header-section-number">4.3.2</span> Install Git Credential Manager (GUI only)</h4>
+<p>Download the Debian (*.deb) Git-Credential-Manager:</p>
+<p><a href="https://github.com/git-ecosystem/git-credential-manager/releases/latest" class="uri">https://github.com/git-ecosystem/git-credential-manager/releases/latest</a></p>
+<p>&nbsp;</p>
+<p>Unpack the deb file:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> <span class="op">&lt;</span>path/to/<span class="pp">*</span>.deb<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the download went to the <strong><em>Downloads</em></strong> folder then this command will work:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> ~/Downloads/gcm-linux<span class="pp">*</span>.deb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setup-git-credentials-gui-only" class="level4" data-number="4.3.3">
+<h4 data-number="4.3.3" class="anchored" data-anchor-id="setup-git-credentials-gui-only"><span class="header-section-number">4.3.3</span> Setup Git Credentials (GUI only)</h4>
+<p>Configure the Git Credential Manager for Git</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">git-credential-manager</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Store your authentication with <strong><em>secretservice</em></strong></p>
+<pre><code>git config --global credential.credentialStore secretservice</code></pre>
+</section>
+<section id="install-git-credential-manager-headless-extension" class="level4" data-number="4.3.4">
+<h4 data-number="4.3.4" class="anchored" data-anchor-id="install-git-credential-manager-headless-extension"><span class="header-section-number">4.3.4</span> Install Git Credential Manager (headless – extension)</h4>
+<p>The standard way to setup GCM requires a GUI interface. These instructions provide a way to set up the GCM through only a Terminal. Authentication will require another device where you can access a browser or the GitHub app. These instructions probably work on most Debian-based machines.</p>
+<p>&nbsp;</p>
+<p>You are going to directly download the GCM tar file from the GitHub page. The instructions below are for version 2.6.1, which is the newest version as of March 2025. Adjust the numbers for newer version.</p>
+<p>&nbsp;</p>
+<p>Download Git Credential Manager</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.6.1/gcm-linux_amd64.2.6.1.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Go to the folder where you downloaded the GCM and unzip GCM to a folder of your choice:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> xavf gcm-linux_amd64.2.6.1.tar.gz <span class="at">-C</span> /path/to/install/folder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Go to the folder where you unzipped GCM and make the file executable:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x git-credential-manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now execute the GCM:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./git-credential-manager</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setup-git-credentials-headless" class="level4" data-number="4.3.5">
+<h4 data-number="4.3.5" class="anchored" data-anchor-id="setup-git-credentials-headless"><span class="header-section-number">4.3.5</span> Setup Git Credentials (headless)</h4>
+<p>Configure the Git Credential Manager for Git</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">git-credential-manager</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Keep your authentication in cache</p>
+<pre><code>git config --global credential.credentialStore cache</code></pre>
+</section>
+</section>
+</section>
+<section id="sec-gitHubID" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="sec-gitHubID"><span class="header-section-number">5</span> GitHub Account</h2>
+<p>If you do not have a GitHub account then go to <a href="http://github.com" class="uri">http://github.com</a> and sign up for an account. For this class, it is OK to just use a free account. Educators, students, and non-profit workers can get a professional account for free.</p>
+<p>&nbsp;</p>
+<p>We will do a lot more with GitHub next lesson. For this lesson, the GitHub account is only needed to configure Git on your computer.</p>
+</section>
+<section id="sec-configureGit" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="sec-configureGit"><span class="header-section-number">6</span> Configure Git in RStudio</h2>
+<p>To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are only used to identify who made what changes in the project history. Use your GitHub ID as the username and the email associated with your GitHub account.</p>
+<p>&nbsp;</p>
+<p>In the Terminal, set the Git user name and password – replace <strong><em>userName</em></strong> and <strong><em>userEmail</em></strong> with your username and email:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"userName"</span>   </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"userEmail"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-user-email" class="fs quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-user-email-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/GH-TerminalTab.jpg" class="fs img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-user-email-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The Terminal Tab in RStudio with the two commands above (your prompt might look different)
+</figcaption>
+</figure>
+</div>
+<section id="viewing-the-configured-values-optional" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="viewing-the-configured-values-optional"><span class="header-section-number">6.1</span> Viewing the configured values (optional)</h3>
+<p>You can check the username and email by executing these lines in the <strong><em>Terminal</em></strong> tab:</p>
+<div class="sourceCode" id="cb16" data-tab="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.name</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.email</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After executing the two above command, your <strong>Terminal</strong> tab should look similar to this:</p>
+<div id="fig-testGitConfig" class="quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-testGitConfig-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode" id="cb17" data-tab="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Charlie@Charlie-QFC</span> MINGW64 /c/Users/Charlie/Desktop/GitHub Tests/FundProgUsingR</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config user.name</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ex">belinskyc</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Charlie@Charlie-QFC</span> MINGW64 /c/Users/Charlie/Desktop/GitHub Tests/FundProgUsingR</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config user.email</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="ex">belinsky@msu.edu</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-testGitConfig-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Testing the git configuration using the RStudio Terminal tab
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-gitRepo" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="sec-gitRepo"><span class="header-section-number">7</span> Add Git to your RStudio Project folder</h2>
+<p>We are now going to add a Git repository to the same folder as your RStudio Project.&nbsp; The Git repository exists locally on your computer – later on we will sync it to GitHub.</p>
+<p>&nbsp;</p>
+<p>First, <span class="hl">make sure you are in your RStudio Project!</span></p>
+<p>&nbsp;</p>
+<p>To add Git to your RStudio Project folder, type in the <strong><em>Terminal</em></strong>:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>git init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And then restart RStudio</p>
+<p>&nbsp;</p>
+<p><span class="note">Note: <code>git init</code> only works if the <strong><em>Terminal</em></strong> is currently at your project folder directory.</span> If you changed the directory, you can get back to the correct directory by clicking: <strong><em>Tools -&gt; Terminal -&gt; Go to Current Directory</em></strong></p>
+<p>&nbsp;</p>
+<p><a href="#extension-alternate-way-to-add-git-to-rstudio-project">Extension: Alternate way to add git to RStudio Project</a></p>
+<section id="rstudio-and-git" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="rstudio-and-git"><span class="header-section-number">7.1</span> RStudio and Git</h3>
+<p>When you add Git to an RStudio Project folder, a&nbsp;<strong><em>Git</em></strong> tab will appear in the upper-right window. RStudio’s built-in Git interface handles the most commonly performed Git functions.</p>
+<div id="fig-gitTab" class="fs quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gitTab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/GH_02_GitTab.png" class="fs img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gitTab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: The Git tab has been added to the RStudio Project
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="project-folders-and-git-repositories" class="level3" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="project-folders-and-git-repositories"><span class="header-section-number">7.2</span> Project folders and Git Repositories</h3>
+<p>Let’s look inside the project folder in the RStudio <strong><em>Files</em></strong> tab (<span class="note">note: you can see the same thing in your operating system’s file explorer</span>).&nbsp; By default, the <strong><em>Files</em></strong> tab will not show hidden files, we can change that by clicking on <strong><em>More -&gt; Show Hidden Files</em></strong> (<a href="#fig-git-added-files" class="quarto-xref">Figure&nbsp;5</a>).</p>
+<p>&nbsp;</p>
+<p>RStudio adds a folder (<strong><em>.RProj.user</em></strong>) and a file (<strong><em>*.RProj</em></strong>) to your project folder.&nbsp; This is what makes this project folder an RStudio Project.</p>
+<p>&nbsp;</p>
+<p>Similarly, <span class="hl">Git adds files to the project folder to make it a Git repository.</span></p>
+<p>&nbsp;</p>
+<p>The two objects that get added by Git are:</p>
+<ul>
+<li><p>.<strong><em>gitignore</em></strong>: this file is used to indicate files you do not want to be a part of the repository (i.e., files that are not shared nor versioned)</p></li>
+<li><p><strong><em>.git</em></strong>: this folder is hidden and contains the history of your project – do not edit or delete this!</p></li>
+</ul>
+<p>&nbsp;</p>
+<p>Your project folder is now both an RStudio Project and a Git Repository.</p>
+<div id="fig-git-added-files" class="fs quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-git-added-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/GH_AddedFiles.png" class="fs img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-added-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Files added to the project folder by RStudio and Git
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="files-in-a-git-repository" class="level3" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="files-in-a-git-repository"><span class="header-section-number">7.3</span> Files in a Git repository</h3>
+<p>A Git repository is attached to a folder, just like an RStudio Project.&nbsp; In an RStudio Project, everything inside the project folder (and its subfolders) is a part of the RStudio Project.&nbsp; This is not true of Git repositories.&nbsp; Files inside the project folder are not part of the repository until they are explicitly added to the repository (more details in future lessons).</p>
+<p>&nbsp;</p>
+<p><strong><em>.gitignore</em></strong> is used to declare files inside the project folder that you do not want to be a part of the Git repository.</p>
+</section>
+</section>
+<section id="choosing-files-you-do-not-want-to-share-.gitignore" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="choosing-files-you-do-not-want-to-share-.gitignore"><span class="header-section-number">8</span> Choosing files you do not want to share (.gitignore)</h2>
+<p><strong><em>.gitignore</em></strong> is a text document that lists all folders and files that are ignored when versioning/sharing your project.&nbsp; In other words, the folders and files in <strong><em>.gitignore</em></strong> exist in your project folder but <span class="hl">they do not exist in your Git repository and they will not be uploaded to GitHub</span>.</p>
+<p>&nbsp;</p>
+<p>Some reasons for not sharing folders and files are that they:</p>
+<ul>
+<li><p>are temporary files</p></li>
+<li><p>are put in by RStudio or the operating system and do not affect the project</p></li>
+<li><p>are files generated by the scripts</p></li>
+<li><p>are large files that you do not want uploaded (e..g., simulated data, images)</p></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong><em>.gitignore</em></strong> starts with four lines (<a href="#fig-gitignore" class="quarto-xref">Figure&nbsp;6</a>).&nbsp;</p>
+<div class="sourceCode" id="cb19" data-tab=".gitignore"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span> .Rhistory .RData .Ruserdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-gitignore" class="fs quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gitignore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/GitHub-GitIgnoreInit.PNG" class="fs img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gitignore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: The .gitignore file
+</figcaption>
+</figure>
+</div>
+<section id="sec-editGitignore" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="sec-editGitignore"><span class="header-section-number">8.1</span> Editing .gitignore</h3>
+<p>You can edit <strong><em>.gitignore</em></strong> in RStudio (or any other text-editor).</p>
+<p>&nbsp;</p>
+<p>Here is an example <strong><em>.gitignore</em></strong> (<em>Note: * is a wildcard character):</em></p>
+<pre data-tab=".gitignore"><code>.Rproj.user .Rhistory .RData .Ruserdata _* doNotShare/ *.tmp test1/*.jpg /test2/data/weatherData.csv weatherData2.csv</code></pre>
+<p>The above .gitignore is ignoring:</p>
+<ul>
+<li><p><strong><em>_*:</em></strong> filenames that start with a underscore ( <strong>_</strong> )</p></li>
+<li><p><strong><em>doNotShare:</em></strong> all <strong><em>doNotShare</em></strong> folders</p></li>
+<li><p><strong><em>*.tmp</em></strong>: all files with extension <strong><em>.tmp</em></strong></p></li>
+<li><p><strong><em>test1/*.jpg</em></strong>: all <strong><em>jpg</em></strong> files inside the <strong><em>test1</em></strong> folder (and subfolders)</p></li>
+<li><p><strong><em>/test2/data/weatherData.csv</em></strong>: ignore a single file (<strong><em>weatherData.csv</em></strong>) inside the folders <strong><em>test2/data</em></strong></p></li>
+<li><p><strong><em>weatherData2.csv</em></strong>: ignores any file named <strong><em>weatherData2.csv</em></strong></p></li>
+</ul>
+<p>&nbsp;</p>
+<p><span class="hl">.gitignore is a Git repository file</span> and everyone who syncs a project uses the same <strong><em>.gitignore</em></strong> – and, no, you cannot use .gitignore to ignore .gitignore.</p>
+</section>
+<section id="gitignore-only-works-on-unversioned-files" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="gitignore-only-works-on-unversioned-files"><span class="header-section-number">8.2</span> gitignore only works on unversioned files</h3>
+<p>Once you have versioned a file, it becomes a part of your Git repository and will be shared on GitHub.&nbsp; This cannot be undone using <strong><em>.gitignore</em></strong>.&nbsp; This means you need to consider <strong><em>.gitignore</em></strong> before you start creating versions of your project (i.e., now).</p>
+<p>&nbsp;</p>
+<p><span class="note">note: there are other ways to remove files from GitHub but they are complicated</span></p>
+</section>
+</section>
+<section id="application" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="application"><span class="header-section-number">9</span> Application</h2>
+<ul>
+<li><p>Create a .gitignore that ignores:</p>
+<ul>
+<li><p>all .bmp files</p></li>
+<li><p>all files in the <strong><em>start</em></strong> folder in the root folder</p></li>
+<li><p><strong><em>tmp</em></strong> files in the <strong><em>scripts</em></strong> folder only</p></li>
+</ul></li>
+<li><p>Zip RStudio Project and send to belinsky@msu.edu</p></li>
+</ul>
+</section>
+<section id="trap-the-console-tab-and-terminal-tab" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="trap-the-console-tab-and-terminal-tab"><span class="header-section-number">10</span> Trap: The Console Tab and Terminal Tab</h2>
+<p>Just a warning: The <strong><em>Console</em></strong> tab and the <strong><em>Terminal</em></strong> tab are next to each other and look very similar. It is very easy to confuse the two and put commands into the wrong tab.</p>
+<p>&nbsp;</p>
+<ul>
+<li><p>The <strong><em>Console</em></strong> tab is an R Console – for commands that are specific to your R scripts.</p></li>
+<li><p>The <strong><em>Terminal</em></strong> tab is the same as the Terminal in Mac or the Command Prompt in Windows – it is for sending system commands.</p></li>
+</ul>
+</section>
+<section id="extension-alternate-way-to-add-git-to-rstudio-project" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="extension-alternate-way-to-add-git-to-rstudio-project"><span class="header-section-number">11</span> Extension: Alternate way to add git to RStudio Project</h2>
+<p>To add a Git repository to your RStudio Project folder</p>
+<ol type="1">
+<li><p>Open your project in RStudio</p></li>
+<li><p>Click <strong><em>Tools</em></strong> -&gt; <strong><em>Version Control</em></strong> -&gt; <strong><em>Project Setup</em></strong>&nbsp;</p></li>
+</ol>
+<pre><code>-   This opens the ***Project Options*** window</code></pre>
+<ol start="3" type="1">
+<li><p>In the <strong><em>Version control system</em></strong> dropdown menu, select <strong><em>Git</em></strong></p></li>
+<li><p>Adding Git to your RStudio Project</p></li>
+<li><p>Say <strong><em>Yes</em></strong> to initializing a new repository for the project</p></li>
+<li><p>You will be prompted torestart RStudio – click <strong><em>Yes</em></strong>.</p></li>
+</ol>
+<pre><code>-   You can also manually restart by clicking ***Session -\&gt; Restart R***</code></pre>
+<div id="fig-addGit" class="fs quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-addGit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/GH_Repo_ProjectSetup.png" class="fs img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-addGit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Add Git to your RStudio Project
+</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="../tutorials/00-RStudioProjectsSetup.html" class="pagination-link" aria-label="00: RStudio Projects Setup">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">00: RStudio Projects Setup</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../tutorials/02-GitHub_Setup.html" class="pagination-link" aria-label="02: GitHub Repositories">
+        <span class="nav-page-text">02: GitHub Repositories</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

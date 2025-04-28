@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.28">
+<meta name="generator" content="quarto-1.7.22">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b4406b7675125bc2ba204020e191172.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c5e6fd5a646752829aeb2af341632313.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-16be290bd018b3ffc92e23b3c7c5dd84.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -238,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows"><span class="header-section-number">4.1</span> Windows</a></li>
   <li><a href="#mac" id="toc-mac" class="nav-link" data-scroll-target="#mac"><span class="header-section-number">4.2</span> Mac</a></li>
-  <li><a href="#linux-mint-ubuntu" id="toc-linux-mint-ubuntu" class="nav-link" data-scroll-target="#linux-mint-ubuntu"><span class="header-section-number">4.3</span> Linux Mint/ Ubuntu</a></li>
+  <li><a href="#sec-linux" id="toc-sec-linux" class="nav-link" data-scroll-target="#sec-linux"><span class="header-section-number">4.3</span> Linux Mint/ Ubuntu</a></li>
   </ul></li>
   <li><a href="#sec-gitHubID" id="toc-sec-gitHubID" class="nav-link" data-scroll-target="#sec-gitHubID"><span class="header-section-number">5</span> GitHub Account</a></li>
   <li><a href="#sec-configureGit" id="toc-sec-configureGit" class="nav-link" data-scroll-target="#sec-configureGit"><span class="header-section-number">6</span> Configure Git in RStudio</a>
@@ -388,13 +388,15 @@ Figure&nbsp;1: The Terminal Tab in RStudio
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> git-credential-manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="linux-mint-ubuntu" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="linux-mint-ubuntu"><span class="header-section-number">4.3</span> Linux Mint/ Ubuntu</h3>
+<section id="sec-linux" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="sec-linux"><span class="header-section-number">4.3</span> Linux Mint/ Ubuntu</h3>
 <p>These instructions have been tested on Ubuntu and Linux Mint machines that have a GUI interface. They will probably work on most Debian-based machines. All installation is done through the Terminal.</p>
 <section id="install-git" class="level4" data-number="4.3.1">
 <h4 data-number="4.3.1" class="anchored" data-anchor-id="install-git"><span class="header-section-number">4.3.1</span> Install Git</h4>
-<p>This line links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:git-core/ppa apt update apt install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The three line below (1) links you to the repository that has the newest version of Git – as opposed to the version that comes with your Linux distribution, (2) update the repository, and (3) install the newest version of Git.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:git-core/ppa </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> update </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="install-git-credential-manager-gui-only" class="level4" data-number="4.3.2">
 <h4 data-number="4.3.2" class="anchored" data-anchor-id="install-git-credential-manager-gui-only"><span class="header-section-number">4.3.2</span> Install Git Credential Manager (GUI only)</h4>
@@ -411,7 +413,7 @@ Figure&nbsp;1: The Terminal Tab in RStudio
 <p>Configure the Git Credential Manager for Git</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">git-credential-manager</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Store your authentication with <strong><em>secretservice</em></strong></p>
-<pre><code>git config --global credential.credentialStore secretservice</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.credentialStore secretservice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="install-git-credential-manager-headless-extension" class="level4" data-number="4.3.4">
 <h4 data-number="4.3.4" class="anchored" data-anchor-id="install-git-credential-manager-headless-extension"><span class="header-section-number">4.3.4</span> Install Git Credential Manager (headless – extension)</h4>
