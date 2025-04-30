@@ -154,135 +154,135 @@
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html",
-    "href": "tutorials/04-Commits2.html",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html",
+    "href": "tutorials/04-Commits.html",
+    "title": "04: Commits",
     "section": "",
     "text": "Git repositories are centered around the Git Commits.  In this lesson, we will develop an intuitive understanding of how Git Commits works.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#purpose",
-    "href": "tutorials/04-Commits2.html#purpose",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#purpose",
+    "href": "tutorials/04-Commits.html#purpose",
+    "title": "04: Commits",
     "section": "",
     "text": "Git repositories are centered around the Git Commits.  In this lesson, we will develop an intuitive understanding of how Git Commits works.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#what-is-git",
-    "href": "tutorials/04-Commits2.html#what-is-git",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#what-is-git",
+    "href": "tutorials/04-Commits.html#what-is-git",
+    "title": "04: Commits",
     "section": "2 What is Git?",
     "text": "2 What is Git?\nFunctionally, Git is version control software; however, Git does not create versions of your project by taking snapshots or copies of your project. Instead what Git does is more analogous to writing a book about your project, where the Commits are the chapters in the book.\n \nIn order to use Git effectively, you need to understand how these chapters (Commits) act as version-control software. Using the analogy of a book, we are going to provide a conceptual understanding of how Git works.\n \nNote: Git is version-control software, GitHub is online storage.  So, GitHub is the online storage for the book created by Git – and your computer is the local storage for the book.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#what-is-a-repository",
-    "href": "tutorials/04-Commits2.html#what-is-a-repository",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#what-is-a-repository",
+    "href": "tutorials/04-Commits.html#what-is-a-repository",
+    "title": "04: Commits",
     "section": "3 What is a repository ",
     "text": "3 What is a repository \nA Git repository is always attached to a project folder.  The “book” about the project, including all the Commits, is contained in the hidden .git folder inside your project folder. In many ways, the .git folder is the Git repository.\n \nIf this is an RStudio Project, then the Project Folder also:\n\ncontains an *.Rproj file\nis the Working Directory for your project\n \n\nNote: a project technically does not include the project folder itself, only what is inside the folder.  This means that you can name the Project Folder whatever you want.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#using-git-is-like-writing-a-book",
-    "href": "tutorials/04-Commits2.html#using-git-is-like-writing-a-book",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#using-git-is-like-writing-a-book",
+    "href": "tutorials/04-Commits.html#using-git-is-like-writing-a-book",
+    "title": "04: Commits",
     "section": "4 Using Git is like writing a book",
     "text": "4 Using Git is like writing a book\nWhen you use Git on a project folder,you are essentially writing a book about your project. The book does not contain everything inside your project folder – you can be selective about what gets included in the book and when it gets included.\n \nAt the broad level, the book created by Git contains two things:\n\nAn index, which lists every file in the project that is mentioned in the book.\nChapters that contain information about file changes –  these are the Commits\n \n\nNote: for now we are treating the Project as linear (i.e., a book) – later we will deal with branches and merges that add a non-linear aspect to the project. However, the concepts of index and chapters still apply.\n\n4.1 The index\nThe index contains a list of every file mentioned in the book along with the chapters the files are mentioned in.\n \nNot every file in your project will be in the index. Generally speaking, the files not included in the index are the files that collaborators do not need.\n \nSome reasons a project file will not be in this book is:\n\nThe file contains local information only (e.g., your RStudio Project settings, the R history file)\nThe file is data generated by executing a script (i.e., the person downloading your project can generate the data themselves)\nThe file is a test or temporary file\n \n\nNote: .gitignore contains a list of files that are not included in the book (i.e., the files that do not get indexed)\n\n\n4.2 The chapters (Commits)\nThe Commits are the chapters of the book.  A Commit contains an introduction (the Commit Message) andchanges to the files in your project.\n \nThese changes in the chapters (Commits) include:\n\nFiles added to project – the chapter will contain the file name and the content of the new file\nFiles removed from project\nFiles renamed – the chapter will contain the old and new name of the file\nFiles modified (the most common) – the chapter will contain the content that was changed in the file\n \n\nRemeber that folders in Git are part of the file name, so a folder name change in Git would be a file name change.\n \nYou do not have to include every file change in a project to a Commit. You might decide that changes to certain files are not ready to be committed yet (e.g., the changes are still in beta) – and include the file changes in a later chapter.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#how-the-book-acts-as-version-control-software",
-    "href": "tutorials/04-Commits2.html#how-the-book-acts-as-version-control-software",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#how-the-book-acts-as-version-control-software",
+    "href": "tutorials/04-Commits.html#how-the-book-acts-as-version-control-software",
+    "title": "04: Commits",
     "section": "5 How the book acts as version control software",
     "text": "5 How the book acts as version control software\nThe big thing to understand about Git is that Git does not store files – Git stores changes to files (in the .git folder).\n \nSo, if you create a file called cheese.r, add a bunch of code to it, and Commit the file…\n \nGit will:\n\nadd cheese.r to the book index\nput an entry in the chapter (i.e., Commit) that says cheese.r was created\nput the content of cheese.r in the chapter – since this is the first entry for cheese.r, the content of the whole script is written to the chapter\nadd this chapter to the cheese.r link in the index\n\n\n\n\n\n\n\nFigure 1: Git adding a new file, cheese.r, and its content to a chapter (Commit)\n\n\n\n \nLater on, you realize you made mistake on line 12:\nelse if(cheeseAns == \"M«eu»nster\")\nAnd change the line to:\nelse if(cheeseAns == \"M«ue»nster\")\nand Commit the file to a new chapter…\n \nGit will:\n\nput an entry in the new chapter that says something to the effect of:\n\ncheese.r line 12 replaced with else if(cheeseAns == “Muenster”)\n\nadd this chapter to the cheese.r link in the index\n \n\nThe image below shows the line change by putting the deleted line 12 in red and the new line 12 in green\n\n\n\n\n\n\nFigure 2: Git writing the modification to cheese.r in a chapter (Commit)\n\n\n\nNote: Chapters (i.e., Commits) usually contain information about the changes to many files – as we will see when we get to the RStudio example.\n\n5.1 How Git creates “versions” of a file\nThe index for your book gives all the chapters that contain information about the file cheese.r. With this information, Git can reconstruct the file cheese.r to any point in time when cheese.r was committed to a chapter. Git does this by reading all the chapters that contain information about cheese.r up until the chapter that reflects the point in time you want cheese.r restored to.\n \nGit works great for text files (e.g., scripts) as text files tend to be small and changes to scripts tend to be iterative; however, Git does not work well with media files (e.g., images, videos). Extension: Why Git is bad for media files\n\n\n5.2 How Git creates “versions” of your project\nA single chapter (i.e., Commit) does not contain enough information to recreate your project.  However, reading the book up until and through the chapter does have the necessary information to recreate your project.\n \nIn other words, if you want to restore your project to the 15th chapter (i.e., 15th Commit) then Git will read the whole book up until chapter 15.  Git will reconstruct all the files that existed in your project in those chapters using the information in those chapters. The result is a project that is in the same state as the project in chapter 15.\n \nNote: Actually, Git reads the book backwards. In other words, Git starts with the newest chapter and undoes changes as it read the chapters in reverse order. This just happens to be more computationally efficient and is a subtle detail that will not affect anything until you get really advanced with Git.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#staging-and-commits-in-rstudio",
-    "href": "tutorials/04-Commits2.html#staging-and-commits-in-rstudio",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#staging-and-commits-in-rstudio",
+    "href": "tutorials/04-Commits.html#staging-and-commits-in-rstudio",
+    "title": "04: Commits",
     "section": "6 Staging and Commits in RStudio",
     "text": "6 Staging and Commits in RStudio\nYou do not have to Commit every file change.  You can keep some of your file changes local-only permanently (i.e., never Commit the file) or temporarily (i.e., add the file changes to a future Commit).\n \nnote: If you have a file that you know you never want to Commit, then you should put the file in .gitignore\n \nThe process of choosing which files changes get added to the next Commit is called Staging.  Staging is done in the Staging Area, which is the place that lists all the file changes that have never been Committed.\n \nIn the second example I will Commit one change to the RStudio Project using Git:\n\ntest1.r renamed to test4.r\n\n\n6.1 The Staging Area\nAll uncommitted file changes (i.e., changes not written to a chapter yet) to files not in .gitignore will appear in the Staging Area. The Staging Area lists all uncommitted changes to your project files and is located in two places in RStudio:\n\nThe Git tab\nThe Review Changes window after you click Commit in the Git tab\n\n \nThese two Staging Areas are the same. You can work from either one  – changes to one are reflected in the other.\n \nThis Staging Area shows two files:\n\ntest2.r was edited (i.e.,  it was previously Committed and recently modified)\ntest3.r was created (i.e., it has never been Committed)\n \n\n\n\n\n\n\n\nFigure 3: The duplicate Staging Areas above both reflect the fact that there are two files with uncommitted changes: test2.r and test3.r\n\n\n\n\n\n6.2 File codes\nEvery file in the Staging Area will have a code next to it that gives its status.  The most common codes are:\n\nA (green): file has been added\nD (red): file has been deleted\nM (blue): file has been modified\nR (purple): file has been renamed\n? (yellow): unknown because file has never been indexed (i.e., it is a new file) or is in a conflict state (we will deal with this in a later lesson)\n\n\n\n6.3 Pre-staged and staged codes (right/left-side)\nThe files listed in the Staging Area have changes not reflected in the repository (i.e., the book). Checking the file means you are going to include it in this Commit (i.e., chapter).  This is called Staging.  You do not have to Stage every file change (i.e., you do not have to check every file).\n \nFor each file in the Staging Area, there are two sets of codes:\n\none on the right-side – this is Git’s best guess for the status of the pre-staged file\none on the left – this is the status of the staged file\n \n\nThe ? is the only code to appear on both sides at once (this is something I find confusing).  However, once the file is checked (i.e., the file is staged), the ? will change to one of the other codes. \n\n\n6.4 Staging Example 1: A modified file and an added file\nIn Figure 4, Git shows that test2.r has been modified and test3.r is unknown; however, checking the files (i.e., Staging) changes the status of test3.r to a green A (added).  The status of test2.r remains the same after checking.\n\n\n\n\n\n\nFigure 4: Checking the files Stages them for the next Commit (i.e., chapter)\n\n\n\nThe reason that test3.r initially had a status of unknown, is that the file did not exist in the index of the book (because it is a new file).  So, Git is not sure of the exact status of the file until it is Staged.  In the next example, we will see a file go from unknown to renamed.\n \nIf you Commit the changes to both files then they will both disappear from the Staging Area. If you Commit the changes to only one file then the other file will remain in the Staging Area – and you can Commit it later.\n\n\n6.5 Staging example 2: Renaming a file\nFor this example, I renamed test1.r to test4.r. In the Staging Area, Git labels test1.r as deleted and test4.r as unknown.\n\n\n\n\n\n\nFigure 5: The Staging Area after test1.r was renamed test4.r\n\n\n\nIf you stage both files, Git will realize that the two changes were really only one change – a renamed file:\n\n\n\n\n\n\nFigure 6: After Staging the changes, Git changes the status to one file that has been renamed\n\n\n\nThe renamed status only applies when the file names changes and the file content stays the same. If you edit test4.r in any way before Staging then Git will think that you deleted test1.r and added a new file called test4.r.\n\n\n6.6 The uncommitted files\nJust a reminder that the file .gitignore contains an editable list of files that do not get committed (i.e., these files never get indexed in the book).\n \nA .gitignore file:\n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n~*\ndoNotSync/\n*.o\ntest1/*.jpg\ntest2/data/weatherData.csv\nThe top four files are added by RStudio because they only have meaning to the local user.  The others I have added: \n\n*: file names that start with ( ~ ), these are temporary files\ndoNotCommit/:  Everything in the folder doNotCommit – not necessary but it helps me to have this folder\nall files will extension .o\nall .jpg files inside the test1 folder\nthe weatherData.csv file inside the test2/data folder\n\n \nExtension: Ignoring a Committed file",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#pushing-commits-to-github",
-    "href": "tutorials/04-Commits2.html#pushing-commits-to-github",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#pushing-commits-to-github",
+    "href": "tutorials/04-Commits.html#pushing-commits-to-github",
+    "title": "04: Commits",
     "section": "7 Pushing Commits to GitHub",
     "text": "7 Pushing Commits to GitHub\nJust as a reminder – when you create a Commit (i.e., a chapter in the book), the Commit exists only on your computer.  To send the new Commits to GitHub (and, hence, the outside world), you need to Push the Commits by clicking the green up arrow.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#folder-paths-and-git",
-    "href": "tutorials/04-Commits2.html#folder-paths-and-git",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#folder-paths-and-git",
+    "href": "tutorials/04-Commits.html#folder-paths-and-git",
+    "title": "04: Commits",
     "section": "8 Folder paths and Git",
     "text": "8 Folder paths and Git\nIf you move a file to a new folder in your project then Git will also see this as a file being renamed (assuming you did not edit the file’s content).  This is because Git sees the folder path as part of the file name.\n \nAs reflected in the Staging Areas above, Git does not see files named test1.r, test2.r, etc… Git sees file paths named scripts/test1.r, scripts/test2.r, etc…  From Git’s perspective, moving a file to a new folder just changes the path name, hence the file gets the renamed status.\n \nSo if you create a new folder called oldScripts and move test1.r to that folder then Git sees a file that has been renamed:\nscripts/test1.r  -&gt;  oldScripts/test1.r\n \nOr, if you create a folder within scripts called oldStuff and move test2.r to that folder then Git sees this renamed situation:\nscripts/test2.r  -&gt;  scripts/oldStuff/test2.r\n \nLastly, you can rename the file and move it to a new folder and Git will still see it as a renamed situation:\nscripts/test3.r  -&gt;  oldscripts/2021/January/oldTest3.r\n…as long as the content of oldTest3.r and test3.r are the same",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#application",
-    "href": "tutorials/04-Commits2.html#application",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#application",
+    "href": "tutorials/04-Commits.html#application",
+    "title": "04: Commits",
     "section": "9 Application",
     "text": "9 Application\nA) Create 4 new Commits in your RStudio Project:\n\nA Commits where four files are added to your scripts folder: test1.r, test2.r, test3.r, and test4.r\n\nmake sure each file has content but the content does not matter (e.g., it does not have to be a working script)\n\nA Commit where the content in test2.r and test4.r is modified\nA Commit where test3.r is deleted\nA Commit where test1.r is renamed to test5.r and moved to the folder scripts/oldStuff\n \n\nB) Make sure you put an informative Commit Message for each Commit!\n \nC) Create an Issue in GitHub and add belinskyc as an assignee (Figure 7). In the issue text say that you have completed the application.  This will only work if you have already added belinskyc as a collaborator and belinskyc accepted.\n\n\n\n\n\n\nFigure 7: Creating an Issue in GitHub and adding an assignee",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#extension-why-git-is-bad-for-media-files",
-    "href": "tutorials/04-Commits2.html#extension-why-git-is-bad-for-media-files",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#extension-why-git-is-bad-for-media-files",
+    "href": "tutorials/04-Commits.html#extension-why-git-is-bad-for-media-files",
+    "title": "04: Commits",
     "section": "10 Extension: Why Git is bad for media files",
     "text": "10 Extension: Why Git is bad for media files\nGit does not store files, instead it stores the changes to the files. Script files are not very big to begin with…often measuring kilobytes in size. When you make changes to a script file, you are often just changing a few lines – so, the changes often measure less than one kilobyte in size.\n \nMedia (e.g., images and videos), on the other hand, is much larger than script files and when you change the media, you are effectively rewriting the whole file. So, if you are using Git to write the media changes to a chapter (i.e., Commit), then each time there is a change you are essentially rewriting the whole media file to the chapter.  In other words, each time you are adding an entry to a chapter that is the size of the media file.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
-    "objectID": "tutorials/04-Commits2.html#extension-ignoring-a-committed-file",
-    "href": "tutorials/04-Commits2.html#extension-ignoring-a-committed-file",
-    "title": "04: Commits 2",
+    "objectID": "tutorials/04-Commits.html#extension-ignoring-a-committed-file",
+    "href": "tutorials/04-Commits.html#extension-ignoring-a-committed-file",
+    "title": "04: Commits",
     "section": "11 Extension: Ignoring a Committed file",
     "text": "11 Extension: Ignoring a Committed file\nGit will not ignore a file in .gitignore if the file has already been indexed (i.e., was added to a previous Commit/Chapter). If you want to remove a file from your book, then you need to use the Terminal tab.\ngit rm \"data/doNotWantThis.R\" -f\nThis command deletes the file from the index.  This means future changes to the file will be ignored if the file is in .gitignore.\n \nHowever, there are still references to the file in the previous Commits and the file could be reconstructed by a collaborator.  If you want to remove all references to the file (e..g, the file contain sensitive information) then you have to do something like this:\nhttps://stackoverflow.com/questions/43762338/how-to-remove-file-from-git-history",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "04: Commits 2"
+      "04: Commits"
     ]
   },
   {
@@ -341,8 +341,8 @@
     ]
   },
   {
-    "objectID": "tutorials/02-GitHub_Setup.html#verifying-the-change-on-github",
-    "href": "tutorials/02-GitHub_Setup.html#verifying-the-change-on-github",
+    "objectID": "tutorials/02-GitHub_Setup.html#sec-verifyGitHub",
+    "href": "tutorials/02-GitHub_Setup.html#sec-verifyGitHub",
     "title": "02: GitHub Repositories",
     "section": "5 Verifying the change on GitHub",
     "text": "5 Verifying the change on GitHub\nLet’s go to your GitHub account to verify that the project files are there (Figure 6):\n\nLog in to GitHub\nOn the left side, there is a section called Repositories. \nClick on the repository called &lt;your-user-name&gt;/&lt;your-repository-name&gt;\nChoose the Code tab (you are probably already on it)\n\n \nYou should notice that the files changed in the newest Commit have your Commit message attached (my Commit message: “A description you made…”) and the last commit for these files is recent (in this case: 7 minutes).\n\n\n\n\n\n\nFigure 6: GitHub after a new Commit was pushed\n\n\n\n\n5.1 Editing files in GitHub (a warning…)\nYou can edit/create/delete folders and files in GitHub. I would strongly recommend against this at this point. This can have consequences that require a better understanding of Git and GitHub than this class provides.  Instead, make all edits to your project on your computer and send (Push) it to GitHub – this is covered in the next lesson.",
@@ -407,11 +407,11 @@
     ]
   },
   {
-    "objectID": "tutorials/00-RStudioProjectsSetup.html#questions-about-the-material",
-    "href": "tutorials/00-RStudioProjectsSetup.html#questions-about-the-material",
+    "objectID": "tutorials/00-RStudioProjectsSetup.html#questions-or-comments",
+    "href": "tutorials/00-RStudioProjectsSetup.html#questions-or-comments",
     "title": "00: RStudio Projects Setup",
-    "section": "2 Questions about the material…",
-    "text": "2 Questions about the material…\nIf you have any questions about the material in this lesson, feel free to email them to the instructor, Charlie Belinsky, at belinsky@msu.edu.",
+    "section": "2 Questions or comments",
+    "text": "2 Questions or comments\nIf you have any questions or comments about the material in this lesson, feel free to email them to the instructor, Charlie Belinsky, at belinsky@msu.edu.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
       "00: RStudio Projects Setup"
@@ -440,11 +440,11 @@
     ]
   },
   {
-    "objectID": "tutorials/00-RStudioProjectsSetup.html#installing-a-package",
-    "href": "tutorials/00-RStudioProjectsSetup.html#installing-a-package",
+    "objectID": "tutorials/00-RStudioProjectsSetup.html#installing-an-r-package",
+    "href": "tutorials/00-RStudioProjectsSetup.html#installing-an-r-package",
     "title": "00: RStudio Projects Setup",
-    "section": "5 Installing a package",
-    "text": "5 Installing a package\nGGPlot2, is a widely used package that does not come with R or RStudio – so we are going to install the GGPlot2 package using RStudio.\n \nTo install the package GGPlot2 using RStudio (Figure 6):\n\nClick Tools -&gt; Install Packages…\nIn the Install Packages window, type GGPlot2 in the Packages textbox\nClick Install\n\n \nGGPlot2 requires many other packages (its dependencies) – and RStudio will install those packages along with GGPlot2.  Be patient, as this could take a little time.\n\n\n\n\n\n\nFigure 6: Installing the GGPlot2 Package in RStudio\n\n\n\n \nExtension: Different ways to install packages",
+    "section": "5 Installing an R package",
+    "text": "5 Installing an R package\nGGPlot2, is a widely used package that does not come with R – so we are going to install the GGPlot2 package using RStudio.\n \nTo install the package GGPlot2 using RStudio (Figure 6):\n\nClick Tools -&gt; Install Packages…\nIn the Install Packages window, type GGPlot2 in the Packages textbox\nClick Install\n\n \nGGPlot2 requires many other packages (its dependencies) – and RStudio will install those packages along with GGPlot2.  Be patient, as this could take a little time.\n\n\n\n\n\n\nFigure 6: Installing the GGPlot2 Package in RStudio\n\n\n\n \nExtension: Different ways to install packages",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
       "00: RStudio Projects Setup"
@@ -746,190 +746,190 @@
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html",
-    "href": "tutorials/03-Commits.html",
-    "title": "03: Commits",
+    "objectID": "tutorials/03-Push_Pull.html",
+    "href": "tutorials/03-Push_Pull.html",
+    "title": "03: Push and Pull",
     "section": "",
-    "text": "show Terminal commands\nTerminology section – separate QMD\nCollab with self section",
+    "text": "show Terminal commands\nCollab with self section",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#purpose",
-    "href": "tutorials/03-Commits.html#purpose",
-    "title": "03: Commits",
+    "objectID": "tutorials/03-Push_Pull.html#purpose",
+    "href": "tutorials/03-Push_Pull.html#purpose",
+    "title": "03: Push and Pull",
     "section": "1 Purpose",
     "text": "1 Purpose\nTo understand how repositories get synced between Git and GitHub.  To do this we are going to create a copy of your repository so you can quickly and easily test out the collaboration feature.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#tasks",
-    "href": "tutorials/03-Commits.html#tasks",
-    "title": "03: Commits",
+    "objectID": "tutorials/03-Push_Pull.html#tasks",
+    "href": "tutorials/03-Push_Pull.html#tasks",
+    "title": "03: Push and Pull",
     "section": "2 Tasks",
-    "text": "2 Tasks\n\nPush changes to your GitHub repository\n\nModify (add, remove, edit) any file in your RStudio Project (sect ##)\nCommit changes to Project (sect ## to sect ##)\nPush changes to GitHub (sect ##)\nVerify changes on GitHub (sect ##)\n\nPull changes from a GitHub repository\n\nGet URL of your GitHub repository (sect ##)\nCreate a new RStudio Project and link it to your GitHub Repository (sect ##)\nMake change to the original Git repository and Push to GitHub (sect ##)\nPull changes from GitHub to the copy of your repository (sect ##)",
+    "text": "2 Tasks\n\nPush changes to your GitHub repository\n\nModify (add, remove, edit) any file in your RStudio Project (Section 4.1)\nAdd a commit message (Section 4.3)\nCommit changes to Project (Section 4.4)\nPush changes to GitHub (Section 4.5)\n\nPull changes from a GitHub repository\n\nGet URL of your GitHub repository (Section 5.1)\nCreate a new RStudio Project and link it to your GitHub Repository (Section 5.2)\nMake change to the original Git repository and Push to GitHub (Section 6)\nPull changes from GitHub to the copy of your repository (Section 6.1)",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#rstudio-projects-git-repositories-and-github-repositories",
-    "href": "tutorials/03-Commits.html#rstudio-projects-git-repositories-and-github-repositories",
-    "title": "03: Commits",
+    "objectID": "tutorials/03-Push_Pull.html#rstudio-projects-git-repositories-and-github-repositories",
+    "href": "tutorials/03-Push_Pull.html#rstudio-projects-git-repositories-and-github-repositories",
+    "title": "03: Push and Pull",
     "section": "3 RStudio Projects, Git repositories, and GitHub repositories",
     "text": "3 RStudio Projects, Git repositories, and GitHub repositories\nIt is important to distinguish the difference between these three objects that are all related to your project\n \n\nRStudio Project:  A *.RProj file is attached to an RStudio Project folder.  This makes the project folder the Working Directory in R and every file inside the project folder (and subfolders) is a part of the RStudio Project.\nGit repository: A Git repository is attached to a project folder but not every file inside the folder has to be a part of the repository.  A .gitignore file is placed in the folder and it list all files that are excluded from the repository.  There is also a hidden .git folder added that contains the history of your project (don’t touch this!)\nGitHub repository: A Git repository that is put on GitHub.  A GitHub repository is used to both share your Git repository and to collaborate with others (i.e., they can clone your GitHub repository to a Git repository on their computer)",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#sec-commit_push",
-    "href": "tutorials/03-Commits.html#sec-commit_push",
-    "title": "03: Commits",
+    "objectID": "tutorials/03-Push_Pull.html#sec-commit_push",
+    "href": "tutorials/03-Push_Pull.html#sec-commit_push",
+    "title": "03: Push and Pull",
     "section": "4 Sending changes to GitHub",
-    "text": "4 Sending changes to GitHub\nThe first thing we are going to do is change the files in your Git repository (which is in the same folder as RStudio Project) and sync those changes to the GitHub repository created in the last lesson.\n \nThis process is much more complicated than syncing to a cloud folders (e.g., Google Drive, OneDrive), which automate the syncing of your folders and files.  Git does not automate anything – you need to explicitly tell Git to sync your project.\n \nThis might seem painful at first but it is because Git  is a powerful program with advanced versioning capabilities that go far beyond cloud folders.  Extension: Versioning\n \nThe steps for syncing your project change to a GitHub are (note: the bold terms are Git-specific terms):\n\nMake changes (add/modify/delete) to files in your project \nApprove the changes you have made (Staging)\nAdd information about the changes you have made (Commit Message)\nSave the approved changes to the Git repository (Commit)\nSend changes to the GitHub repository (Push)\nVerify the changes on GitHub\n\n\n4.1 Make changes to your project (add, delete, or modify)\nThe images below (Figure 1) shows an example project in which the following folders and files were added:\n\na data and scripts folder was added to the Project Folder&lt;done last lesson?&gt;\ntest1.r and test2.r was added to the scripts folder\ntestData.csv was added to the data folder  \n \n\nLooking at the Git tab, you will see the three files that have been modified:\n\n\n\n\n\n\nFigure 1: Git tab and the Commit button\n\n\n\n\n4.1.1 Git and folders\nOne thing to notice is that the three files modified in the Git tab (Figure 1) have their folder name attached. In Git, folders are part of the file name.\n \nIn other words, Git does not see a folder named scripts that has two files named test1.r and test2.r.\nInstead, Git sees two files named scripts/test1.r and scripts/test2.r\n\n\n\n4.2 Approve changes &lt;be careful about what is called Staging&gt;\nTo approve all of the changes you have made, press the Commit button in the Git tab and the Review Changes window appears. Check all the files (Figure 2) in the left window. Be patient, the checkboxes sometimes take a few seconds to switch states. Extension: Approving (staging) a large number of files\n \nGit calls the approval process staging.  You do not have to approve every file change.  In future lessons, we will talk about the many reasons you might have to not approve changes you have made to files.\n\n\n\n\n\n\nFigure 2: Creating a new Commit for your project\n\n\n\n\n\n4.3 Add information about these change \nInformation about the changes is put into the Commit message textbox (Figure 2).  The message should be a short description of the changes you have made and this message gets saved along with the file changes.  The Commit message act as documentation, like script comments, and can be viewed when looking at the history of the project (something we will do in a later lesson).\n \nYou should not skip this step when you are working on a large project as it can be really helpful to see this documentation later on.\n\n\n4.4 Save the approved changes (Commit)\nEverything in Git is centered around the Commit and in the next lesson we will go in great detail about what a Commit is.  Right now your RStudio Project has changes that your Git repository does not.  The Commit brings your Git repository up-to-date.\n \nClick the Commit button in the Review Changes window (Figure 2) and a Git Commit window similar to this (Figure 3) will appear that gives a summary of the changes:\n\n\n\n\n\n\nFigure 3: The Git Commit window that appears after you click Commit.\n\n\n\nYou can close the Git Commit and Review Changes windows\n \nExtension: Using the Terminal to send Commits to GitHub\n\n\n4.5 Sending the newest Commits to GitHub (Push)\nAt this point, the changes to your Git repository (i.e., the Commit) exists only on your computer. Your GitHub repository and your Git repository are not in sync (i.e., they do not have the same version of your project). To sync your Git repository to GitHub, you need to send the latest Commit.  This is done with a Push. You can Push in the Git tab by clicking on the green up arrow:\n\n\n\n\n\n\nFigure 4: Pushing to GitHub\n\n\n\nA window will come up giving the results of the Push with a brief description of the changes. You can close the window.\n \nYou will usually Push new project Commits right after you create them; however, this is sometimes not possible (e.g., you don’t have an internet connection), or not desirable (e.g., you have changes you do not want to share with collaborators). You can Push new project Commits at a later time.\n \nExtension: Broken Authentication (Git Push hangs)\n\n\n4.6 Verifying the change on GitHub\nJust like we did last lesson, go to your GitHub account to verify that the new Commit is up (Figure 5):\n\nLog in to GitHub\nOn the left side, there is a section called Repositories. \nClick on the repository called &lt;your-user-name&gt;/&lt;your-repository-name&gt;\nChoose the Code tab (you are probably already on it)\n\n \nYou should notice that the files changed in the newest Commit have your Commit message attached. \n\n\n\n\n\n\nFigure 5: GitHub after a new Commit was pushed",
+    "text": "4 Sending changes to GitHub\nThe first thing we are going to do is change the files in your Git repository/RStudio Project and sync those changes to the GitHub repository created in the last lesson.\n \nThis process is much more complicated than syncing to a cloud folders (e.g., Google Drive, OneDrive), which automate the syncing of your folders and files.  Git does not automate anything – you need to explicitly tell Git to sync your project.\n \nThis might seem painful at first but it is because Git  is a powerful program with advanced versioning capabilities that go far beyond cloud folders.  Extension: Versioning\n \nThe steps for syncing your project change to a GitHub are (note: the bold terms are Git-specific terms):\n\nMake changes (add/modify/delete) to files in your project (Unstaged Changes) \nApprove the changes you have made (Staging)\nAdd information about the changes you have made (Commit Message)\nSave the approved changes to the Git repository (Commit)\nSend changes to the GitHub repository (Push)\nVerify the changes on GitHub\n\n\n4.1 Make changes to your project (add, delete, or modify)\nThe images below (Figure 1) shows an example project in which the following files were added:\n\ntest1.r and test2.r was added to the scripts folder\ntestData.csv was added to the data folder  \n \n\nLooking at the Git tab, you will see the three files that have been modified:\n\n\n\n\n\n\nFigure 1: Git tab and the Commit button\n\n\n\n\n4.1.1 Git and folders\nOne thing to notice is that the three files modified in the Git tab (Figure 1) have their folder name attached. In Git, folders are part of the file name.\n \nIn other words, Git does not see a folder named scripts that has two files named test1.r and test2.r.\nInstead, Git sees two files named scripts/test1.r and scripts/test2.r\n\n\n\n4.2 Approve changes Unstaged –&gt; Staged\nTo approve all of the changes you have made, press the Commit button in the Git tab and the Review Changes window appears. Check all the files (Figure 2) in the left window. Be patient, the checkboxes sometimes take a few seconds to switch states. Extension: Approving (staging) a large number of files\n \nGit calls the approval process staging.  You do not have to approve every file change.  In future lessons, we will talk about the reasons to not approve changes you have made to files.\n\n\n\n\n\n\nFigure 2: Creating a new Commit for your project\n\n\n\n\n\n4.3 Add information about these change (Commit Message)\nInformation about the changes is put into the Commit message textbox (Figure 2).  The message should be a short description of the changes you have made and this message gets saved along with the file changes.  The Commit message act as documentation, like script comments, and can be viewed when looking at the history of the project (something we will do in a later lesson).\n \nYou should not skip this step when you are working on a large project as it can be really helpful to see this documentation later on.\n\n\n4.4 Save the approved changes (Commit)\nEverything in Git is centered around the Commit and in the next lesson we will go in great detail about what a Commit is.  Right now your RStudio Project has changes that your Git repository does not.  The Commit brings your Git repository up-to-date.\n \nClick the Commit button in the Review Changes window (Figure 2) and a Git Commit window similar to this (Figure 3) will appear that gives a summary of the changes:\n\n\n\n\n\n\nFigure 3: The Git Commit window that appears after you click Commit.\n\n\n\nYou can close the Git Commit and Review Changes windows\n \nExtension: Using the Terminal to send Commits to GitHub\n\n\n4.5 Sending the newest Commits to GitHub (Push)\nAt this point, the changes to your Git repository (i.e., the Commit) exists only on your computer. Your GitHub repository and your Git repository are not in sync (i.e., they do not have the same version of your project). To sync your Git repository to GitHub, you need to send the latest Commit.  This is done with a Push. You can Push in the Git tab by clicking on the green up arrow:\n\n\n\n\n\n\nFigure 4: Pushing to GitHub\n\n\n\nA window will come up giving the results of the Push with a brief description of the changes. You can close the window.\n \nYou will usually Push new project Commits right after you create them; however, this is sometimes not possible (e.g., you don’t have an internet connection), or not desirable (e.g., you have changes you do not want to share with collaborators). You can Push new project Commits at a later time.\n \nExtension: Broken Authentication (Git Push hangs)\n\n\n4.6 Verifying the change on GitHub\n02-GitHub_Setup.html#sec-verifyGitHub",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#linking-rstudio-projects-and-github-repositories",
-    "href": "tutorials/03-Commits.html#linking-rstudio-projects-and-github-repositories",
-    "title": "03: Commits",
+    "objectID": "tutorials/03-Push_Pull.html#linking-rstudio-projects-and-github-repositories",
+    "href": "tutorials/03-Push_Pull.html#linking-rstudio-projects-and-github-repositories",
+    "title": "03: Push and Pull",
     "section": "5 Linking RStudio Projects and GitHub repositories",
-    "text": "5 Linking RStudio Projects and GitHub repositories\nThe main reason to link a Git repository to a GitHub Repository is to sync your project between multiple locations using the GitHub Repository as the central location (e.g., your hub).  The best way to understand how this works is to practice syncing between locations.\n \nSince most people reading this are working on their own, we are going to sync your project to two different locations on your own computer.  Creating two copies of your project allows you to test Git’s collaboration features by yourself. As far as Git and GitHub are concerned, the two copies of your Project might as well be on two separate computers that are 10,000 miles apart.\n \n&lt; You can put the second copy of your RStudio Project anywhere on your computer except inside the first RStudio Project. – move later &gt;\n\n5.1 Syncing your project from GitHub\nIn the last lesson, we synced an existing RStudio Project to a new GitHub Repository. To do that, we needed to send Git commands through the command-line interface and we did that using the Terminal in RStudio.\ngit add -A && git commit -m \"added Git\"\ngit remote add origin \"https://github.com/myUserName/myRepository.git\"\ngit push -u origin master\nIn this lesson, we are going to create a new RStudio Project and sync it to an existing GitHub repository.  It is actually easier to do this!\n \nFor this to work, you need the URL of your GitHub repository, which is always in this form:\nhttps://github.com/&lt;myUserName&gt;/&lt;myRepository&gt;.git\n\n\n5.2 Link to an existing GitHub Repository \nWe are going to create an RStudio Project that is also a Git repository and link it to a GitHub repository.  This process can be used to link any GitHub repository in RStudio.\n \nTo create a new RStudio Project/Git repository and sync your existing GitHub repository to it:\n\nOpen up RStudio\nClick File -&gt; New Project… (a Create Project window appears)\nClick Version Control\nClick Git (a Clone Git Repository window appears)\n\n\n\n\n\n\n\nFigure 6: Git Version Control option in RStudio\n\n\n\n\nIn the Clone Git Repository Window\n\nRepository URL: paste your GitHub URL here\nProject directory name: the local project name, it defaults to the name of the repository and becomes the name of the Project Folder for your RStudio Project\n\nnote: You can change the name – Git does not care if your RStudio Project and Git repository have different names\n\nCreate project as subdirectory of: click Browse and select the folder location for the Project Folder that will contain the repository.\n\nIn Figure 7, I put it on my Desktop/GitHub folder.\nThis is not your project folder, this is the folder that contains your project folder.\n\nclick Create Project\n\n\n \n\n\n\n\n\n\nFigure 7: The Clone Git Repository window\n\n\n\nAfter you click Create Project, a window will appear that tells you all the files that are being synced (it will flash by quickly) and then RStudio will open to the new RStudio Project.\n\n\n5.3 Two copies of your RStudio Project\nAt this point you should have two copies of your Git repository on your computer.  Both of these copies are linked to the same GitHub repository.  Again, you would not normally do this but it allows you to practice syncing to-and-from a GitHub repository on your own.",
+    "text": "5 Linking RStudio Projects and GitHub repositories\nThe main reason to link a Git repository to a GitHub Repository is to sync your project between multiple locations using the GitHub Repository as the central location (e.g., your hub).  The best way to understand how this works is to practice syncing between locations.\n \nSince most people reading this are working on their own, we are going to sync your project to two different locations on your own computer.  Creating two copies of your project allows you to test Git’s collaboration features by yourself. As far as Git and GitHub are concerned, the two copies of your Project might as well be on two separate computers that are 10,000 miles apart.\n\n5.1 Syncing your project from GitHub\nIn the last lesson, we synced an existing RStudio Project to a new GitHub Repository. To do that, we needed to send Git commands through the command-line interface and we did that using the Terminal in RStudio.\ngit add -A && git commit -m \"added Git\"\ngit remote add origin \"https://github.com/myUserName/myRepository.git\"\ngit push -u origin master\nIn this lesson, we are going to create a new RStudio Project and sync it to an existing GitHub repository.  It is actually easier to do this!\n \nFor this to work, you need the URL of your GitHub repository, which is always in this form:\nhttps://github.com/&lt;myUserName&gt;/&lt;myRepository&gt;.git\n\n\n5.2 Link to an existing GitHub Repository \nWe are going to create an RStudio Project that is also a Git repository and link it to a GitHub repository.  This process can be used to link any GitHub repository in RStudio.\n \n&lt; You can put the second copy of your RStudio Project anywhere on your computer except inside the first RStudio Project. – move later &gt;\n \nTo create a new RStudio Project/Git repository and sync your existing GitHub repository to it:\n\nOpen up RStudio\nClick File -&gt; New Project… (a Create Project window appears)\nClick Version Control\nClick Git (a Clone Git Repository window appears)\n\n\n\n\n\n\n\nFigure 5: Git Version Control option in RStudio\n\n\n\n\nIn the Clone Git Repository Window\n\nRepository URL: paste your GitHub URL here\nProject directory name: the local project name, it defaults to the name of the repository and becomes the name of the Project Folder for your RStudio Project\n\nnote: You can change the name – Git does not care if your RStudio Project and Git repository have different names\n\nCreate project as subdirectory of: click Browse and select the folder location for the Project Folder that will contain the repository.\n\nIn Figure 6, I put it on my Desktop/GitHub folder.\nThis is not your project folder, this is the folder that contains your project folder.\n\nclick Create Project\n\n\n \n\n\n\n\n\n\nFigure 6: The Clone Git Repository window\n\n\n\nAfter you click Create Project, a window will appear that tells you all the files that are being synced (it will flash by quickly) and then RStudio will open to the new RStudio Project.\n\n\n5.3 Two copies of your RStudio Project\nAt this point you should have two copies of your Git repository on your computer.  Both of these copies are linked to the same GitHub repository.  Again, you would not normally do this but it allows you to practice syncing to-and-from a GitHub repository on your own.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#updating-your-git-and-github-repositories",
-    "href": "tutorials/03-Commits.html#updating-your-git-and-github-repositories",
-    "title": "03: Commits",
+    "objectID": "tutorials/03-Push_Pull.html#sec-update",
+    "href": "tutorials/03-Push_Pull.html#sec-update",
+    "title": "03: Push and Pull",
     "section": "6 Updating your Git and GitHub repositories",
-    "text": "6 Updating your Git and GitHub repositories\nIn this section you are going to make changes to one copy of your Git repository, send the changes (Push) to GitHub, and the receive the changes (Pull) at the other copy of your Git repository.\n \nTo make changes to your project (add, delete or, modify files), repeat the first five steps in Section 4\n \nAfter step 5, the new Commit with the changes you have made to your Git repository have been sent to GitHub.\n \nNote: in the following section we will update your second project with the changes on GitHub.  This process would be exactly the same if the project folder was on another computer.\n\n6.1 Getting updates (Pull) from GitHub\nWhen a GitHub repository gets updated, the updates are not automatically downloaded to your local repository.  In Git, actions like requesting updates need to be explicitly stated.\n\nOpen up the copy of your Git repository, which currently has an older version of your project.\n \nTo get the updates (i.e., latest Commits), you need to send a request.  Git calls this request a Pull and you perform a Pull by clicking on the blue down arrow in the Git tab:\n\n\n\n\n\n\nFigure 8: Pulling from GitHub\n\n\n\n\n\n6.2 Results of a Pull request\nA window will come up giving the results of the Pull. If there are no updates, the window will say: Already up to date. You can close the window.\n \nIn Figure 9, the results show that 3 files were changed as a result of the Pull.  The number after the file name is how many lines were changed and + and - tell you whether something was added or deleted.  You can click Close.\n\n\n\n\n\n\nFigure 9: The results of a Pull command\n\n\n\n\n\n6.3 Importance of pulling project changes\nWhen you are working collaboratively on a project in a GitHub repository, it is best to to get the latest version of the project by doing a Pull before you make any changes.  You (almost always) want to make sure you are working on the latest version of the project.",
+    "text": "6 Updating your Git and GitHub repositories\nIn this section you are going to make changes to one copy of your Git repository, send the changes (Push) to GitHub, and the receive the changes (Pull) at the other copy of your Git repository.\n \nTo make changes to your project (add, delete or, modify files), repeat the first five steps in Section 4\n \nAfter step 5, the new Commit with the changes you have made to your Git repository have been sent to GitHub.\n \nNote: in the following section we will update your second project with the changes on GitHub.  This process would be exactly the same if the project folder was on another computer.\n\n6.1 Getting updates (Pull) from GitHub\nWhen a GitHub repository gets updated, the updates are not automatically downloaded to your local repository.  In Git, actions like requesting updates need to be explicitly stated.\n\nOpen up the copy of your Git repository, which currently has an older version of your project.\n \nTo get the updates (i.e., latest Commits), you need to send a request.  Git calls this request a Pull and you perform a Pull by clicking on the blue down arrow in the Git tab:\n\n\n\n\n\n\nFigure 7: Pulling from GitHub\n\n\n\n\n\n6.2 Results of a Pull request\nA window will come up giving the results of the Pull. If there are no updates, the window will say: Already up to date. You can close the window.\n \nIn Figure 8, the results show that 3 files were changed as a result of the Pull.  The number after the file name is how many lines were changed and + and - tell you whether something was added or deleted.  You can click Close.\n\n\n\n\n\n\nFigure 8: The results of a Pull command\n\n\n\n\n\n6.3 Importance of pulling project changes\nWhen you are working collaboratively on a project in a GitHub repository, it is best to to get the latest version of the project by doing a Pull before you make any changes.  You (almost always) want to make sure you are working on the latest version of the project.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#downloading-github-repositories-extension-",
-    "href": "tutorials/03-Commits.html#downloading-github-repositories-extension-",
-    "title": "03: Commits",
-    "section": "7 Downloading GitHub repositories <extension-??>",
-    "text": "7 Downloading GitHub repositories &lt;extension-??&gt;\nIf you just want to download a Project that is in a GitHub repository andyou do not care about updates then you can:\n\nGo to the page of the GitHub repository\n\nYou can use the GitHub repository you just creates or go to https://github.com/qfcatmsu/githubtest\n\nClick on the green Code button and choose Download ZIP\nSave the Zip file to your computer and unzip\nIf it is an RStudio Project, then double click on the .Rproj file to open (in this case, gitHubTest.Rproj)\n \n\nThis is a simple way to share your GitHub repository with people who are not your collaborators and do not care about the history/versions of your project.",
+    "objectID": "tutorials/03-Push_Pull.html#the-complexity-of-git",
+    "href": "tutorials/03-Push_Pull.html#the-complexity-of-git",
+    "title": "03: Push and Pull",
+    "section": "7 The complexity of Git",
+    "text": "7 The complexity of Git\nThe first few lesson were designed to get you using Git and GitHub.  The next few lesson will take a deeper dive into what is going on behind the scenes.  One of the main goals of Git is to isolate the problems that occur when multiple people are working asynchronously on the same file.  If you working collaboratively on a project then understanding how Git works will keep you out of a lot of trouble.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#the-complexity-of-git",
-    "href": "tutorials/03-Commits.html#the-complexity-of-git",
-    "title": "03: Commits",
-    "section": "8 The complexity of Git",
-    "text": "8 The complexity of Git\nThe first few lesson were designed to get you using Git and GitHub.  The next few lesson will take a deeper dive into what is going on behind the scenes.  One of the main goals of Git is to isolate the problems that occur when multiple people are working asynchronously on the same file.  If you working collaboratively on a project then understanding how Git works will keep you out of a lot of trouble.",
+    "objectID": "tutorials/03-Push_Pull.html#application",
+    "href": "tutorials/03-Push_Pull.html#application",
+    "title": "03: Push and Pull",
+    "section": "8 Application ",
+    "text": "8 Application \nA) For the Git/GitHub sandbox repository: &lt;make sure this is the one I have been added to&gt;\n\ndelete one file from the repository\nmodify another file in the repository\nrename a file\nadd a file\n\n \nB) Commit the changes to your repository with a Commit message that clearly states all the changes you made.\n \nC) Push the changes to GitHub\nnote: if Push fails, it is probably because the instructor forgot to add you the repository.  Politely email him a reminder of this fact…",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#application",
-    "href": "tutorials/03-Commits.html#application",
-    "title": "03: Commits",
-    "section": "9 Application",
-    "text": "9 Application\nA) Create a new RStudio Project/Git repository on your computer and link it to the GitHub repository:\nhttps://github.com/QFCatMSU/GitHubTest\n \nB) On the GitHubTest Git repository on your computer:\n\ndelete one file from the repository\nmodify another file in the repository\nrename a file\nadd a file\n\n \nC) Commit the changes to your repository with a Commit messagethat clearly states all the changes you made.\n \nD) Push the changes to GitHub\nnote: if Push fails, it is probably because the instructor forgot to add you the repository.  Politely email him a reminder of this fact…",
+    "objectID": "tutorials/03-Push_Pull.html#extension-approving-staging-a-large-number-of-files",
+    "href": "tutorials/03-Push_Pull.html#extension-approving-staging-a-large-number-of-files",
+    "title": "03: Push and Pull",
+    "section": "9 Extension: Approving (staging) a large number of files",
+    "text": "9 Extension: Approving (staging) a large number of files\nRStudio’s Git tab can be very slow with staging a large number of files.  If all you want to do is stage every single changed file and there are a lot of files then it is probably quicker to go into the Terminal tab and type:\n$ git add -A\nThis will quickly stage every changed file in your Git tab.\n \nRStudio versions previous to 2025.05 have a bug in which staging a large number of files can cause RStudio to hang in Windows.  If this happens, you need to delete the index.lock file inside the .git folder in your project folder.  The .git folder is hidden.  You can view it in RStudio’s Files tab by clicking More -&gt; Show hidden files.  After deleting index.lock, you can go to the Terminal and type git All -A to avoid the problem.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#extension-approving-staging-a-large-number-of-files",
-    "href": "tutorials/03-Commits.html#extension-approving-staging-a-large-number-of-files",
-    "title": "03: Commits",
-    "section": "10 Extension: Approving (staging) a large number of files",
-    "text": "10 Extension: Approving (staging) a large number of files\nRStudio’s Git tab can be very slow with staging a large number of files.  If all you want to do is stage every single changed file and there are a lot of files then it is probably quicker to go into the Terminal tab and type:\n$ git All -A\nThis will quickly stage every changed file in your Git tab.\n \nAs of June 2023, there is also a bug in RStudio in which staging a large number of files can cause RStudio to hang in Windows.  If this happens, you need to delete the index.lock file inside the .git folder in your project folder.  The .git folder is hidden.  You can view it in RStudio’s Files tab by clicking More -&gt; Show hidden files.  After deleting index.lock, you can go to the Terminal and type git All -A to avoid the problem.",
+    "objectID": "tutorials/03-Push_Pull.html#files-added-to-rstudio-projects-by-git",
+    "href": "tutorials/03-Push_Pull.html#files-added-to-rstudio-projects-by-git",
+    "title": "03: Push and Pull",
+    "section": "10 Files added to RStudio Projects by Git",
+    "text": "10 Files added to RStudio Projects by Git\nWhen you create an RStudio Project and add Git to it, two files are created in the Project Folder (Figure 9): .gitignore and *.RProj (RProj was explained in &lt;lesson1??&gt;)\n \nNote: If your File Manager is set to view hidden files and folders then you will also see two folders: .git and .RProj.user – you do not need to do anything with these folders.\n\n\n\n\n\n\nFigure 9: .gitignore and *.RProj – in RStudio Files tab and Windows folder viewer\n\n\n\n\n10.1 .gitignore (added by Git)\n.gitignore is a text document that lists all folders and files that are ignored when syncing your RStudio Project to the GitHub Repository. In other words, folders and files listed in .gitignore are not uploaded to the GitHub repository.\n \nSome reasons for not sharing folders and files are that they:\n\nonly have meaning on the local computer (e.g., history files or temporary files)\nare generated by the scripts and do not need to be synced (e.g., images or simulated data – you do not want to keep uploading and downloading simulated data).\n \n\n.gitignore starts with four files (Figure 10). \n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n\n\n\n\n\n\nFigure 10: The .gitignore file\n\n\n\n\n10.1.1 Editing .gitignore\nYou can edit .gitignore in RStudio (or any other text-editor).\n \nI recommend adding two lines to .gitignore (Note: * is a wildcard character):\n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n~*\ndoNotSync/\n\n*: filenames that start with a tilde  ( ~ ) – these are temporary files\n\ndoNotSync: anyone who syncs this project can create a doNotSync folder that will remain local-only\n \nOther files you might want to include:\n\nimages and videos: *.jpg, *.png, *.mp4 (especially if your code generates these files)\n \n\nNote: .gitignore is a project file – so everyone who sync a project uses the same .gitignore.  \nignoring files on one instance of your project",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#files-added-to-rstudio-projects-by-git",
-    "href": "tutorials/03-Commits.html#files-added-to-rstudio-projects-by-git",
-    "title": "03: Commits",
-    "section": "11 Files added to RStudio Projects by Git",
-    "text": "11 Files added to RStudio Projects by Git\nWhen you create an RStudio Project and add Git to it, two files are created in the Project Folder (Figure 10): .gitignore and *.RProj (RProj was explained in &lt;lesson1??&gt;)\n \nNote: If your File Manager is set to view hidden files and folders then you will also see two folders: .git and .RProj.user – you do not need to do anything with these folders.\n\n\n\n\n\n\nFigure 10: .gitignore and *.RProj – in RStudio Files tab and Windows folder viewer\n\n\n\n\n11.1 .gitignore (added by Git)\n.gitignore is a text document that lists all folders and files that are ignored when syncing your RStudio Project to the GitHub Repository. In other words, folders and files listed in .gitignore are not uploaded to the GitHub repository.\n \nSome reasons for not sharing folders and files are that they:\n\nonly have meaning on the local computer (e.g., history files or temporary files)\nare generated by the scripts and do not need to be synced (e.g., images or simulated data – you do not want to keep uploading and downloading simulated data).\n \n\n.gitignore starts with four files (Figure 11). \n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n\n\n\n\n\n\nFigure 11: The .gitignore file\n\n\n\n\n11.1.1 Editing .gitignore\nYou can edit .gitignore in RStudio (or any other text-editor).\n \nI recommend adding two lines to .gitignore (Note: * is a wildcard character):\n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n~*\ndoNotSync/\n\n*: filenames that start with a tilde  ( ~ ) – these are temporary files\n\ndoNotSync: anyone who syncs this project can create a doNotSync folder that will remain local-only\n \nOther files you might want to include:\n\nimages and videos: *.jpg, *.png, *.mp4 (especially if your code generates these files)\n \n\nNote: .gitignore is a project file – so everyone who sync a project uses the same .gitignore.  \nignoring files on one instance of your project",
+    "objectID": "tutorials/03-Push_Pull.html#extension-broken-authentication-git-push-hangs",
+    "href": "tutorials/03-Push_Pull.html#extension-broken-authentication-git-push-hangs",
+    "title": "03: Push and Pull",
+    "section": "11 Extension: Broken Authentication (Git Push hangs)",
+    "text": "11 Extension: Broken Authentication (Git Push hangs)\nThe Push can only happen if you have successfully authenticated your computer with GitHub (from last lesson).\n \nIt is rare but this authentication can break and the only sign that the authentication is broken is that the Push will just hang without an error message.\n \nThe easiest solution to fix a broken authentication is to:\n\nclose RStudio completely\nreinstall Git and Git Configuration Manager (GCM)\nopen your RStudio Project and retry the Push\n \n\nThis should reset the authentication and ask you for your GitHub password.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#extension-broken-authentication-git-push-hangs",
-    "href": "tutorials/03-Commits.html#extension-broken-authentication-git-push-hangs",
-    "title": "03: Commits",
-    "section": "12 Extension: Broken Authentication (Git Push hangs)",
-    "text": "12 Extension: Broken Authentication (Git Push hangs)\nThe Push can only happen if you have successfully authenticated your computer with GitHub (from last lesson).\n \nIt is rare but this authentication can break and the only sign that the authentication is broken is that the Push will just hang without an error message.\n \nThe easiest solution to fix a broken authentication is to:\n\nclose RStudio completely\nreinstall Git and Git Configuration Manager (GCM)\nopen your RStudio Project and retry the Push\n \n\nThis should reset the authentication and ask you for your GitHub password.",
+    "objectID": "tutorials/03-Push_Pull.html#extension-using-the-terminal-to-send-commits-to-github",
+    "href": "tutorials/03-Push_Pull.html#extension-using-the-terminal-to-send-commits-to-github",
+    "title": "03: Push and Pull",
+    "section": "12 Extension: Using the Terminal to send Commits to GitHub",
+    "text": "12 Extension: Using the Terminal to send Commits to GitHub\nThe process to send project changes to GitHub is somewhat convoluted due to there being many options that are beyond this lesson.\n \nSo, most of the time you just want to:\n\nCreate a new Commit of your project with all the file and folder changes\nSend the new Commit to GitHub\n\n \nThis can also be done by typing the following in RStudio’s Terminal tab:\ngit add -A && git commit -m \"Put a commit message here\"\n\n12.1 Create the shortcut (only need to do once per computer)\nYou can create a shortcut, which I call acpush\n \nIn the Terminal tab of RStudio type (or copy/paste). \ngit config --global alias.acpush '!f() { git add -A && git commit -m \"$@\" && git push; }; f'\n\n\n12.2 Using the acpush shortcut\nThe above command created an alias in Git called acpush.  acpush creates a new Commit of your project with all file changes, attaches the commit message,  and pushes the new Commit to GitHub.\n \nTo use acpush, in the Terminal tab type:\ngit acpush \"Your new commit message\"\nand you can skip using the Git tab whenever you just want to Commit all changes and send the Commit to GitHub",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#extension-using-the-terminal-to-send-commits-to-github",
-    "href": "tutorials/03-Commits.html#extension-using-the-terminal-to-send-commits-to-github",
-    "title": "03: Commits",
-    "section": "13 Extension: Using the Terminal to send Commits to GitHub",
-    "text": "13 Extension: Using the Terminal to send Commits to GitHub\nThe process to send project changes to GitHub is somewhat convoluted due to there being many options that are beyond this lesson.\n \nSo, most of the time you just want to:\n\nCreate a new Commit of your project with all the file and folder changes\nSend the new Commit to GitHub\n\n \nThis can also be done by typing the following in RStudio’s Terminal tab:\ngit add -A && git commit -m \"Put a commit message here\"\n\n13.1 Create the shortcut (only need to do once per computer)\nYou can create a shortcut, which I call acpush\n \nIn the Terminal tab of RStudio type (or copy/paste). \ngit config --global alias.acpush '!f() { git add -A && git commit -m \"$@\" && git push; }; f'\n\n\n13.2 Using the acpush shortcut\nThe above command created an alias in Git called acpush.  acpush creates a new Commit of your project with all file changes, attaches the commit message,  and pushes the new Commit to GitHub.\n \nTo use acpush, in the Terminal tab type:\ngit acpush \"Your new commit message\"\nand you can skip using the Git tab whenever you just want to Commit all changes and send the Commit to GitHub",
+    "objectID": "tutorials/03-Push_Pull.html#ignoring-files-on-one-instance-of-your-project",
+    "href": "tutorials/03-Push_Pull.html#ignoring-files-on-one-instance-of-your-project",
+    "title": "03: Push and Pull",
+    "section": "13 ignoring files on one instance of your project",
+    "text": "13 ignoring files on one instance of your project\n.gitignore is meant to be the same for every instance of your project, whether it is on GitHub or other computers. For this reason, Git will not allow you to ignore .gitignore. When you change .gitignore, you are changing it for every instance of your project.\n \nIf you want to ignore files specific to your instance of the project beyond what is in .gitignore then you need to edit the file:\n&lt;Root Folder&gt;/.git/info/exclude\n \n.git is a hidden folder – you can see it in the RStudio Files tab by clicking More -&gt; Show Hidden Files\n \nYou can add folders and files to the end of the exclude file just like you would in .gitignore:\n\n\n\n# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n\n\nFigure 11: exclude file before it is edited – you can add folders and files starting at line 7",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#ignoring-files-on-one-instance-of-your-project",
-    "href": "tutorials/03-Commits.html#ignoring-files-on-one-instance-of-your-project",
-    "title": "03: Commits",
-    "section": "14 ignoring files on one instance of your project",
-    "text": "14 ignoring files on one instance of your project\n.gitignore is meant to be the same for every instance of your project, whether it is on GitHub or other computers. For this reason, Git will not allow you to ignore .gitignore. When you change .gitignore, you are changing it for every instance of your project.\n \nIf you want to ignore files specific to your instance of the project beyond what is in .gitignore then you need to edit the file:\n&lt;Root Folder&gt;/.git/info/exclude\n \n.git is a hidden folder – you can see it in the RStudio Files tab by clicking More -&gt; Show Hidden Files\n \nYou can add folders and files to the end of the exclude file just like you would in .gitignore:\n\n\n\n# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n\n\nFigure 12: exclude file before it is edited – you can add folders and files starting at line 7",
+    "objectID": "tutorials/03-Push_Pull.html#extension-versioning",
+    "href": "tutorials/03-Push_Pull.html#extension-versioning",
+    "title": "03: Push and Pull",
+    "section": "14 Extension: Versioning",
+    "text": "14 Extension: Versioning\nBehind the scenes of both GitHub is Git. Git is a powerful version control system. Versions are like snapshots of your project, and these snapshots both provide a retrievable history for your project and can be shared between multiple platforms.\n \nGit does not store a copy of each version of your project, Git stores the changes between the versions. This is a subtle point to keep in the back of your head – it becomes increasingly important as you get more advanced with Git.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#extension-versioning",
-    "href": "tutorials/03-Commits.html#extension-versioning",
-    "title": "03: Commits",
-    "section": "15 Extension: Versioning",
-    "text": "15 Extension: Versioning\nBehind the scenes of both GitHub is Git. Git is a powerful version control system. Versions are like snapshots of your project, and these snapshots both provide a retrievable history for your project and can be shared between multiple platforms.\n \nGit does not store a copy of each version of your project, Git stores the changes between the versions. This is a subtle point to keep in the back of your head – it becomes increasingly important as you get more advanced with Git.",
+    "objectID": "tutorials/03-Push_Pull.html#extension-pulls",
+    "href": "tutorials/03-Push_Pull.html#extension-pulls",
+    "title": "03: Push and Pull",
+    "section": "15 Extension: Pulls",
+    "text": "15 Extension: Pulls\nUp until now, all changes to your project have occurred on your computer. If new Commits were made elsewhere and pushed to GitHub then you need to Pull the newest Commit(s) from GitHub.\n \nPull gets the newest Commits from your project from your GitHub repository and saves it to your RStudio Project.\n \nYou need to do a Pull when:\n\nSomebody else sent a new Commit to the GitHub repository (e.g., your instructor might add some comments)\nYou sent a new project Commit from another computer\n \n\nNote: Even if neither of the above is true, it is a good idea to get into the habit of doing a Pull before you start working. If you are working in a team, this is imperative.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
-    "objectID": "tutorials/03-Commits.html#extension-pulls",
-    "href": "tutorials/03-Commits.html#extension-pulls",
-    "title": "03: Commits",
-    "section": "16 Extension: Pulls",
-    "text": "16 Extension: Pulls\nUp until now, all changes to your project have occurred on your computer. If new Commits were made elsewhere and pushed to GitHub then you need to Pull the newest Commit(s) from GitHub.\n \nPull gets the newest Commits from your project from your GitHub repository and saves it to your RStudio Project.\n \nYou need to do a Pull when:\n\nSomebody else sent a new Commit to the GitHub repository (e.g., your instructor might add some comments)\nYou sent a new project Commit from another computer\n \n\nNote: Even if neither of the above is true, it is a good idea to get into the habit of doing a Pull before you start working. If you are working in a team, this is imperative.",
+    "objectID": "tutorials/03-Push_Pull.html#extension-downloading-github-repositories",
+    "href": "tutorials/03-Push_Pull.html#extension-downloading-github-repositories",
+    "title": "03: Push and Pull",
+    "section": "16 Extension: Downloading GitHub repositories",
+    "text": "16 Extension: Downloading GitHub repositories\nIf you just want to download a Project that is in a GitHub repository and you do not care about updates then you can:\n\nGo to the page of the GitHub repository\n\nYou can use the GitHub repository you just creates or go to https://github.com/qfcatmsu/githubtest\n\nClick on the green Code button and choose Download ZIP\nSave the Zip file to your computer and unzip\nIf it is an RStudio Project, then double click on the .Rproj file to open (in this case, gitHubTest.Rproj)\n \n\nThis is a simple way to share your GitHub repository with people who are not your collaborators and do not care about the history/versions of your project.",
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
-      "03: Commits"
+      "03: Push and Pull"
     ]
   },
   {
@@ -1293,369 +1293,6 @@
     "crumbs": [
       "<b>QFC Assets and Tutorials</b>",
       "Quick Setup"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html",
-    "href": "tutorials/03-Push_Pull.html",
-    "title": "03: Push and Pull",
-    "section": "",
-    "text": "show Terminal commands\nCollab with self section",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#purpose",
-    "href": "tutorials/03-Push_Pull.html#purpose",
-    "title": "03: Push and Pull",
-    "section": "1 Purpose",
-    "text": "1 Purpose\nTo understand how repositories get synced between Git and GitHub.  To do this we are going to create a copy of your repository so you can quickly and easily test out the collaboration feature.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#tasks",
-    "href": "tutorials/03-Push_Pull.html#tasks",
-    "title": "03: Push and Pull",
-    "section": "2 Tasks",
-    "text": "2 Tasks\n\nPush changes to your GitHub repository\n\nModify (add, remove, edit) any file in your RStudio Project (sect ##)\nCommit changes to Project (sect ## to sect ##)\nPush changes to GitHub (sect ##)\nVerify changes on GitHub (sect ##)\n\nPull changes from a GitHub repository\n\nGet URL of your GitHub repository (sect ##)\nCreate a new RStudio Project and link it to your GitHub Repository (sect ##)\nMake change to the original Git repository and Push to GitHub (sect ##)\nPull changes from GitHub to the copy of your repository (sect ##)",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#rstudio-projects-git-repositories-and-github-repositories",
-    "href": "tutorials/03-Push_Pull.html#rstudio-projects-git-repositories-and-github-repositories",
-    "title": "03: Push and Pull",
-    "section": "3 RStudio Projects, Git repositories, and GitHub repositories",
-    "text": "3 RStudio Projects, Git repositories, and GitHub repositories\nIt is important to distinguish the difference between these three objects that are all related to your project\n \n\nRStudio Project:  A *.RProj file is attached to an RStudio Project folder.  This makes the project folder the Working Directory in R and every file inside the project folder (and subfolders) is a part of the RStudio Project.\nGit repository: A Git repository is attached to a project folder but not every file inside the folder has to be a part of the repository.  A .gitignore file is placed in the folder and it list all files that are excluded from the repository.  There is also a hidden .git folder added that contains the history of your project (don’t touch this!)\nGitHub repository: A Git repository that is put on GitHub.  A GitHub repository is used to both share your Git repository and to collaborate with others (i.e., they can clone your GitHub repository to a Git repository on their computer)",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#sec-commit_push",
-    "href": "tutorials/03-Push_Pull.html#sec-commit_push",
-    "title": "03: Push and Pull",
-    "section": "4 Sending changes to GitHub",
-    "text": "4 Sending changes to GitHub\nThe first thing we are going to do is change the files in your Git repository/RStudio Project and sync those changes to the GitHub repository created in the last lesson.\n \nThis process is much more complicated than syncing to a cloud folders (e.g., Google Drive, OneDrive), which automate the syncing of your folders and files.  Git does not automate anything – you need to explicitly tell Git to sync your project.\n \nThis might seem painful at first but it is because Git  is a powerful program with advanced versioning capabilities that go far beyond cloud folders.  Extension: Versioning\n \nThe steps for syncing your project change to a GitHub are (note: the bold terms are Git-specific terms):\n\nMake changes (add/modify/delete) to files in your project (Unstaged Changes) \nApprove the changes you have made (Staging)\nAdd information about the changes you have made (Commit Message)\nSave the approved changes to the Git repository (Commit)\nSend changes to the GitHub repository (Push)\nVerify the changes on GitHub\n\n\n4.1 Make changes to your project (add, delete, or modify)\nThe images below (Figure 1) shows an example project in which the following files were added:\n\ntest1.r and test2.r was added to the scripts folder\ntestData.csv was added to the data folder  \n \n\nLooking at the Git tab, you will see the three files that have been modified:\n\n\n\n\n\n\nFigure 1: Git tab and the Commit button\n\n\n\n\n4.1.1 Git and folders\nOne thing to notice is that the three files modified in the Git tab (Figure 1) have their folder name attached. In Git, folders are part of the file name.\n \nIn other words, Git does not see a folder named scripts that has two files named test1.r and test2.r.\nInstead, Git sees two files named scripts/test1.r and scripts/test2.r\n\n\n\n4.2 Approve changes Unstaged –&gt; Staged\nTo approve all of the changes you have made, press the Commit button in the Git tab and the Review Changes window appears. Check all the files (Figure 2) in the left window. Be patient, the checkboxes sometimes take a few seconds to switch states. Extension: Approving (staging) a large number of files\n \nGit calls the approval process staging.  You do not have to approve every file change.  In future lessons, we will talk about the reasons to not approve changes you have made to files.\n\n\n\n\n\n\nFigure 2: Creating a new Commit for your project\n\n\n\n\n\n4.3 Add information about these change (Commit Message)\nInformation about the changes is put into the Commit message textbox (Figure 2).  The message should be a short description of the changes you have made and this message gets saved along with the file changes.  The Commit message act as documentation, like script comments, and can be viewed when looking at the history of the project (something we will do in a later lesson).\n \nYou should not skip this step when you are working on a large project as it can be really helpful to see this documentation later on.\n\n\n4.4 Save the approved changes (Commit)\nEverything in Git is centered around the Commit and in the next lesson we will go in great detail about what a Commit is.  Right now your RStudio Project has changes that your Git repository does not.  The Commit brings your Git repository up-to-date.\n \nClick the Commit button in the Review Changes window (Figure 2) and a Git Commit window similar to this (Figure 3) will appear that gives a summary of the changes:\n\n\n\n\n\n\nFigure 3: The Git Commit window that appears after you click Commit.\n\n\n\nYou can close the Git Commit and Review Changes windows\n \nExtension: Using the Terminal to send Commits to GitHub\n\n\n4.5 Sending the newest Commits to GitHub (Push)\nAt this point, the changes to your Git repository (i.e., the Commit) exists only on your computer. Your GitHub repository and your Git repository are not in sync (i.e., they do not have the same version of your project). To sync your Git repository to GitHub, you need to send the latest Commit.  This is done with a Push. You can Push in the Git tab by clicking on the green up arrow:\n\n\n\n\n\n\nFigure 4: Pushing to GitHub\n\n\n\nA window will come up giving the results of the Push with a brief description of the changes. You can close the window.\n \nYou will usually Push new project Commits right after you create them; however, this is sometimes not possible (e.g., you don’t have an internet connection), or not desirable (e.g., you have changes you do not want to share with collaborators). You can Push new project Commits at a later time.\n \nExtension: Broken Authentication (Git Push hangs)\n\n\n4.6 Verifying the change on GitHub\n02-GitHub_Setup.html#sec-verifyGitHub",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#linking-rstudio-projects-and-github-repositories",
-    "href": "tutorials/03-Push_Pull.html#linking-rstudio-projects-and-github-repositories",
-    "title": "03: Push and Pull",
-    "section": "5 Linking RStudio Projects and GitHub repositories",
-    "text": "5 Linking RStudio Projects and GitHub repositories\nThe main reason to link a Git repository to a GitHub Repository is to sync your project between multiple locations using the GitHub Repository as the central location (e.g., your hub).  The best way to understand how this works is to practice syncing between locations.\n \nSince most people reading this are working on their own, we are going to sync your project to two different locations on your own computer.  Creating two copies of your project allows you to test Git’s collaboration features by yourself. As far as Git and GitHub are concerned, the two copies of your Project might as well be on two separate computers that are 10,000 miles apart.\n\n5.1 Syncing your project from GitHub\nIn the last lesson, we synced an existing RStudio Project to a new GitHub Repository. To do that, we needed to send Git commands through the command-line interface and we did that using the Terminal in RStudio.\ngit add -A && git commit -m \"added Git\"\ngit remote add origin \"https://github.com/myUserName/myRepository.git\"\ngit push -u origin master\nIn this lesson, we are going to create a new RStudio Project and sync it to an existing GitHub repository.  It is actually easier to do this!\n \nFor this to work, you need the URL of your GitHub repository, which is always in this form:\nhttps://github.com/&lt;myUserName&gt;/&lt;myRepository&gt;.git\n\n\n5.2 Link to an existing GitHub Repository \nWe are going to create an RStudio Project that is also a Git repository and link it to a GitHub repository.  This process can be used to link any GitHub repository in RStudio.\n \n&lt; You can put the second copy of your RStudio Project anywhere on your computer except inside the first RStudio Project. – move later &gt;\n \nTo create a new RStudio Project/Git repository and sync your existing GitHub repository to it:\n\nOpen up RStudio\nClick File -&gt; New Project… (a Create Project window appears)\nClick Version Control\nClick Git (a Clone Git Repository window appears)\n\n\n\n\n\n\n\nFigure 5: Git Version Control option in RStudio\n\n\n\n\nIn the Clone Git Repository Window\n\nRepository URL: paste your GitHub URL here\nProject directory name: the local project name, it defaults to the name of the repository and becomes the name of the Project Folder for your RStudio Project\n\nnote: You can change the name – Git does not care if your RStudio Project and Git repository have different names\n\nCreate project as subdirectory of: click Browse and select the folder location for the Project Folder that will contain the repository.\n\nIn Figure 6, I put it on my Desktop/GitHub folder.\nThis is not your project folder, this is the folder that contains your project folder.\n\nclick Create Project\n\n\n \n\n\n\n\n\n\nFigure 6: The Clone Git Repository window\n\n\n\nAfter you click Create Project, a window will appear that tells you all the files that are being synced (it will flash by quickly) and then RStudio will open to the new RStudio Project.\n\n\n5.3 Two copies of your RStudio Project\nAt this point you should have two copies of your Git repository on your computer.  Both of these copies are linked to the same GitHub repository.  Again, you would not normally do this but it allows you to practice syncing to-and-from a GitHub repository on your own.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#updating-your-git-and-github-repositories",
-    "href": "tutorials/03-Push_Pull.html#updating-your-git-and-github-repositories",
-    "title": "03: Push and Pull",
-    "section": "6 Updating your Git and GitHub repositories",
-    "text": "6 Updating your Git and GitHub repositories\nIn this section you are going to make changes to one copy of your Git repository, send the changes (Push) to GitHub, and the receive the changes (Pull) at the other copy of your Git repository.\n \nTo make changes to your project (add, delete or, modify files), repeat the first five steps in Section 4\n \nAfter step 5, the new Commit with the changes you have made to your Git repository have been sent to GitHub.\n \nNote: in the following section we will update your second project with the changes on GitHub.  This process would be exactly the same if the project folder was on another computer.\n\n6.1 Getting updates (Pull) from GitHub\nWhen a GitHub repository gets updated, the updates are not automatically downloaded to your local repository.  In Git, actions like requesting updates need to be explicitly stated.\n\nOpen up the copy of your Git repository, which currently has an older version of your project.\n \nTo get the updates (i.e., latest Commits), you need to send a request.  Git calls this request a Pull and you perform a Pull by clicking on the blue down arrow in the Git tab:\n\n\n\n\n\n\nFigure 7: Pulling from GitHub\n\n\n\n\n\n6.2 Results of a Pull request\nA window will come up giving the results of the Pull. If there are no updates, the window will say: Already up to date. You can close the window.\n \nIn Figure 8, the results show that 3 files were changed as a result of the Pull.  The number after the file name is how many lines were changed and + and - tell you whether something was added or deleted.  You can click Close.\n\n\n\n\n\n\nFigure 8: The results of a Pull command\n\n\n\n\n\n6.3 Importance of pulling project changes\nWhen you are working collaboratively on a project in a GitHub repository, it is best to to get the latest version of the project by doing a Pull before you make any changes.  You (almost always) want to make sure you are working on the latest version of the project.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#the-complexity-of-git",
-    "href": "tutorials/03-Push_Pull.html#the-complexity-of-git",
-    "title": "03: Push and Pull",
-    "section": "7 The complexity of Git",
-    "text": "7 The complexity of Git\nThe first few lesson were designed to get you using Git and GitHub.  The next few lesson will take a deeper dive into what is going on behind the scenes.  One of the main goals of Git is to isolate the problems that occur when multiple people are working asynchronously on the same file.  If you working collaboratively on a project then understanding how Git works will keep you out of a lot of trouble.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#application",
-    "href": "tutorials/03-Push_Pull.html#application",
-    "title": "03: Push and Pull",
-    "section": "8 Application ",
-    "text": "8 Application \nA) For the Git/GitHub sandbox repository: &lt;make sure this is the one I have been added to&gt;\n\ndelete one file from the repository\nmodify another file in the repository\nrename a file\nadd a file\n\n \nB) Commit the changes to your repository with a Commit message that clearly states all the changes you made.\n \nC) Push the changes to GitHub\nnote: if Push fails, it is probably because the instructor forgot to add you the repository.  Politely email him a reminder of this fact…",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#extension-approving-staging-a-large-number-of-files",
-    "href": "tutorials/03-Push_Pull.html#extension-approving-staging-a-large-number-of-files",
-    "title": "03: Push and Pull",
-    "section": "9 Extension: Approving (staging) a large number of files",
-    "text": "9 Extension: Approving (staging) a large number of files\nRStudio’s Git tab can be very slow with staging a large number of files.  If all you want to do is stage every single changed file and there are a lot of files then it is probably quicker to go into the Terminal tab and type:\n$ git add -A\nThis will quickly stage every changed file in your Git tab.\n \nRStudio versions previous to 2025.05 have a bug in which staging a large number of files can cause RStudio to hang in Windows.  If this happens, you need to delete the index.lock file inside the .git folder in your project folder.  The .git folder is hidden.  You can view it in RStudio’s Files tab by clicking More -&gt; Show hidden files.  After deleting index.lock, you can go to the Terminal and type git All -A to avoid the problem.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#files-added-to-rstudio-projects-by-git",
-    "href": "tutorials/03-Push_Pull.html#files-added-to-rstudio-projects-by-git",
-    "title": "03: Push and Pull",
-    "section": "10 Files added to RStudio Projects by Git",
-    "text": "10 Files added to RStudio Projects by Git\nWhen you create an RStudio Project and add Git to it, two files are created in the Project Folder (Figure 9): .gitignore and *.RProj (RProj was explained in &lt;lesson1??&gt;)\n \nNote: If your File Manager is set to view hidden files and folders then you will also see two folders: .git and .RProj.user – you do not need to do anything with these folders.\n\n\n\n\n\n\nFigure 9: .gitignore and *.RProj – in RStudio Files tab and Windows folder viewer\n\n\n\n\n10.1 .gitignore (added by Git)\n.gitignore is a text document that lists all folders and files that are ignored when syncing your RStudio Project to the GitHub Repository. In other words, folders and files listed in .gitignore are not uploaded to the GitHub repository.\n \nSome reasons for not sharing folders and files are that they:\n\nonly have meaning on the local computer (e.g., history files or temporary files)\nare generated by the scripts and do not need to be synced (e.g., images or simulated data – you do not want to keep uploading and downloading simulated data).\n \n\n.gitignore starts with four files (Figure 10). \n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n\n\n\n\n\n\nFigure 10: The .gitignore file\n\n\n\n\n10.1.1 Editing .gitignore\nYou can edit .gitignore in RStudio (or any other text-editor).\n \nI recommend adding two lines to .gitignore (Note: * is a wildcard character):\n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n~*\ndoNotSync/\n\n*: filenames that start with a tilde  ( ~ ) – these are temporary files\n\ndoNotSync: anyone who syncs this project can create a doNotSync folder that will remain local-only\n \nOther files you might want to include:\n\nimages and videos: *.jpg, *.png, *.mp4 (especially if your code generates these files)\n \n\nNote: .gitignore is a project file – so everyone who sync a project uses the same .gitignore.  \nignoring files on one instance of your project",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#extension-broken-authentication-git-push-hangs",
-    "href": "tutorials/03-Push_Pull.html#extension-broken-authentication-git-push-hangs",
-    "title": "03: Push and Pull",
-    "section": "11 Extension: Broken Authentication (Git Push hangs)",
-    "text": "11 Extension: Broken Authentication (Git Push hangs)\nThe Push can only happen if you have successfully authenticated your computer with GitHub (from last lesson).\n \nIt is rare but this authentication can break and the only sign that the authentication is broken is that the Push will just hang without an error message.\n \nThe easiest solution to fix a broken authentication is to:\n\nclose RStudio completely\nreinstall Git and Git Configuration Manager (GCM)\nopen your RStudio Project and retry the Push\n \n\nThis should reset the authentication and ask you for your GitHub password.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#extension-using-the-terminal-to-send-commits-to-github",
-    "href": "tutorials/03-Push_Pull.html#extension-using-the-terminal-to-send-commits-to-github",
-    "title": "03: Push and Pull",
-    "section": "12 Extension: Using the Terminal to send Commits to GitHub",
-    "text": "12 Extension: Using the Terminal to send Commits to GitHub\nThe process to send project changes to GitHub is somewhat convoluted due to there being many options that are beyond this lesson.\n \nSo, most of the time you just want to:\n\nCreate a new Commit of your project with all the file and folder changes\nSend the new Commit to GitHub\n\n \nThis can also be done by typing the following in RStudio’s Terminal tab:\ngit add -A && git commit -m \"Put a commit message here\"\n\n12.1 Create the shortcut (only need to do once per computer)\nYou can create a shortcut, which I call acpush\n \nIn the Terminal tab of RStudio type (or copy/paste). \ngit config --global alias.acpush '!f() { git add -A && git commit -m \"$@\" && git push; }; f'\n\n\n12.2 Using the acpush shortcut\nThe above command created an alias in Git called acpush.  acpush creates a new Commit of your project with all file changes, attaches the commit message,  and pushes the new Commit to GitHub.\n \nTo use acpush, in the Terminal tab type:\ngit acpush \"Your new commit message\"\nand you can skip using the Git tab whenever you just want to Commit all changes and send the Commit to GitHub",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#ignoring-files-on-one-instance-of-your-project",
-    "href": "tutorials/03-Push_Pull.html#ignoring-files-on-one-instance-of-your-project",
-    "title": "03: Push and Pull",
-    "section": "13 ignoring files on one instance of your project",
-    "text": "13 ignoring files on one instance of your project\n.gitignore is meant to be the same for every instance of your project, whether it is on GitHub or other computers. For this reason, Git will not allow you to ignore .gitignore. When you change .gitignore, you are changing it for every instance of your project.\n \nIf you want to ignore files specific to your instance of the project beyond what is in .gitignore then you need to edit the file:\n&lt;Root Folder&gt;/.git/info/exclude\n \n.git is a hidden folder – you can see it in the RStudio Files tab by clicking More -&gt; Show Hidden Files\n \nYou can add folders and files to the end of the exclude file just like you would in .gitignore:\n\n\n\n# git ls-files --others --exclude-from=.git/info/exclude\n# Lines that start with '#' are comments.\n# For a project mostly in C, the following would be a good set of\n# exclude patterns (uncomment them if you want to use them):\n# *.[oa]\n# *~\n\n\nFigure 11: exclude file before it is edited – you can add folders and files starting at line 7",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#extension-versioning",
-    "href": "tutorials/03-Push_Pull.html#extension-versioning",
-    "title": "03: Push and Pull",
-    "section": "14 Extension: Versioning",
-    "text": "14 Extension: Versioning\nBehind the scenes of both GitHub is Git. Git is a powerful version control system. Versions are like snapshots of your project, and these snapshots both provide a retrievable history for your project and can be shared between multiple platforms.\n \nGit does not store a copy of each version of your project, Git stores the changes between the versions. This is a subtle point to keep in the back of your head – it becomes increasingly important as you get more advanced with Git.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#extension-pulls",
-    "href": "tutorials/03-Push_Pull.html#extension-pulls",
-    "title": "03: Push and Pull",
-    "section": "15 Extension: Pulls",
-    "text": "15 Extension: Pulls\nUp until now, all changes to your project have occurred on your computer. If new Commits were made elsewhere and pushed to GitHub then you need to Pull the newest Commit(s) from GitHub.\n \nPull gets the newest Commits from your project from your GitHub repository and saves it to your RStudio Project.\n \nYou need to do a Pull when:\n\nSomebody else sent a new Commit to the GitHub repository (e.g., your instructor might add some comments)\nYou sent a new project Commit from another computer\n \n\nNote: Even if neither of the above is true, it is a good idea to get into the habit of doing a Pull before you start working. If you are working in a team, this is imperative.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#extension-downloading-github-repositories",
-    "href": "tutorials/03-Push_Pull.html#extension-downloading-github-repositories",
-    "title": "03: Push and Pull",
-    "section": "16 Extension: Downloading GitHub repositories",
-    "text": "16 Extension: Downloading GitHub repositories\nIf you just want to download a Project that is in a GitHub repository and you do not care about updates then you can:\n\nGo to the page of the GitHub repository\n\nYou can use the GitHub repository you just creates or go to https://github.com/qfcatmsu/githubtest\n\nClick on the green Code button and choose Download ZIP\nSave the Zip file to your computer and unzip\nIf it is an RStudio Project, then double click on the .Rproj file to open (in this case, gitHubTest.Rproj)\n \n\nThis is a simple way to share your GitHub repository with people who are not your collaborators and do not care about the history/versions of your project.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html",
-    "href": "tutorials/04-Commits.html",
-    "title": "04: Commits",
-    "section": "",
-    "text": "Git repositories are centered around the Git Commits.  In this lesson, we will develop an intuitive understanding of how Git Commits works.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#purpose",
-    "href": "tutorials/04-Commits.html#purpose",
-    "title": "04: Commits",
-    "section": "",
-    "text": "Git repositories are centered around the Git Commits.  In this lesson, we will develop an intuitive understanding of how Git Commits works.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#what-is-git",
-    "href": "tutorials/04-Commits.html#what-is-git",
-    "title": "04: Commits",
-    "section": "2 What is Git?",
-    "text": "2 What is Git?\nFunctionally, Git is version control software; however, Git does not create versions of your project by taking snapshots or copies of your project. Instead what Git does is more analogous to writing a book about your project, where the Commits are the chapters in the book.\n \nIn order to use Git effectively, you need to understand how these chapters (Commits) act as version-control software. Using the analogy of a book, we are going to provide a conceptual understanding of how Git works.\n \nNote: Git is version-control software, GitHub is online storage.  So, GitHub is the online storage for the book created by Git – and your computer is the local storage for the book.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#what-is-a-repository",
-    "href": "tutorials/04-Commits.html#what-is-a-repository",
-    "title": "04: Commits",
-    "section": "3 What is a repository ",
-    "text": "3 What is a repository \nA Git repository is always attached to a project folder.  The “book” about the project, including all the Commits, is contained in the hidden .git folder inside your project folder. In many ways, the .git folder is the Git repository.\n \nIf this is an RStudio Project, then the Project Folder also:\n\ncontains an *.Rproj file\nis the Working Directory for your project\n \n\nNote: a project technically does not include the project folder itself, only what is inside the folder.  This means that you can name the Project Folder whatever you want.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#using-git-is-like-writing-a-book",
-    "href": "tutorials/04-Commits.html#using-git-is-like-writing-a-book",
-    "title": "04: Commits",
-    "section": "4 Using Git is like writing a book",
-    "text": "4 Using Git is like writing a book\nWhen you use Git on a project folder,you are essentially writing a book about your project. The book does not contain everything inside your project folder – you can be selective about what gets included in the book and when it gets included.\n \nAt the broad level, the book created by Git contains two things:\n\nAn index, which lists every file in the project that is mentioned in the book.\nChapters that contain information about file changes –  these are the Commits\n \n\nNote: for now we are treating the Project as linear (i.e., a book) – later we will deal with branches and merges that add a non-linear aspect to the project. However, the concepts of index and chapters still apply.\n\n4.1 The index\nThe index contains a list of every file mentioned in the book along with the chapters the files are mentioned in.\n \nNot every file in your project will be in the index. Generally speaking, the files not included in the index are the files that collaborators do not need.\n \nSome reasons a project file will not be in this book is:\n\nThe file contains local information only (e.g., your RStudio Project settings, the R history file)\nThe file is data generated by executing a script (i.e., the person downloading your project can generate the data themselves)\nThe file is a test or temporary file\n \n\nNote: .gitignore contains a list of files that are not included in the book (i.e., the files that do not get indexed)\n\n\n4.2 The chapters (Commits)\nThe Commits are the chapters of the book.  A Commit contains an introduction (the Commit Message) andchanges to the files in your project.\n \nThese changes in the chapters (Commits) include:\n\nFiles added to project – the chapter will contain the file name and the content of the new file\nFiles removed from project\nFiles renamed – the chapter will contain the old and new name of the file\nFiles modified (the most common) – the chapter will contain the content that was changed in the file\n \n\nRemeber that folders in Git are part of the file name, so a folder name change in Git would be a file name change.\n \nYou do not have to include every file change in a project to a Commit. You might decide that changes to certain files are not ready to be committed yet (e.g., the changes are still in beta) – and include the file changes in a later chapter.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#how-the-book-acts-as-version-control-software",
-    "href": "tutorials/04-Commits.html#how-the-book-acts-as-version-control-software",
-    "title": "04: Commits",
-    "section": "5 How the book acts as version control software",
-    "text": "5 How the book acts as version control software\nThe big thing to understand about Git is that Git does not store files – Git stores changes to files (in the .git folder).\n \nSo, if you create a file called cheese.r, add a bunch of code to it, and Commit the file…\n \nGit will:\n\nadd cheese.r to the book index\nput an entry in the chapter (i.e., Commit) that says cheese.r was created\nput the content of cheese.r in the chapter – since this is the first entry for cheese.r, the content of the whole script is written to the chapter\nadd this chapter to the cheese.r link in the index\n\n\n\n\n\n\n\nFigure 1: Git adding a new file, cheese.r, and its content to a chapter (Commit)\n\n\n\n \nLater on, you realize you made mistake on line 12:\nelse if(cheeseAns == \"M«eu»nster\")\nAnd change the line to:\nelse if(cheeseAns == \"M«ue»nster\")\nand Commit the file to a new chapter…\n \nGit will:\n\nput an entry in the new chapter that says something to the effect of:\n\ncheese.r line 12 replaced with else if(cheeseAns == “Muenster”)\n\nadd this chapter to the cheese.r link in the index\n \n\nThe image below shows the line change by putting the deleted line 12 in red and the new line 12 in green\n\n\n\n\n\n\nFigure 2: Git writing the modification to cheese.r in a chapter (Commit)\n\n\n\nNote: Chapters (i.e., Commits) usually contain information about the changes to many files – as we will see when we get to the RStudio example.\n\n5.1 How Git creates “versions” of a file\nThe index for your book gives all the chapters that contain information about the file cheese.r. With this information, Git can reconstruct the file cheese.r to any point in time when cheese.r was committed to a chapter. Git does this by reading all the chapters that contain information about cheese.r up until the chapter that reflects the point in time you want cheese.r restored to.\n \nGit works great for text files (e.g., scripts) as text files tend to be small and changes to scripts tend to be iterative; however, Git does not work well with media files (e.g., images, videos). Extension: Why Git is bad for media files\n\n\n5.2 How Git creates “versions” of your project\nA single chapter (i.e., Commit) does not contain enough information to recreate your project.  However, reading the book up until and through the chapter does have the necessary information to recreate your project.\n \nIn other words, if you want to restore your project to the 15th chapter (i.e., 15th Commit) then Git will read the whole book up until chapter 15.  Git will reconstruct all the files that existed in your project in those chapters using the information in those chapters. The result is a project that is in the same state as the project in chapter 15.\n \nNote: Actually, Git reads the book backwards. In other words, Git starts with the newest chapter and undoes changes as it read the chapters in reverse order. This just happens to be more computationally efficient and is a subtle detail that will not affect anything until you get really advanced with Git.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#staging-and-commits-in-rstudio",
-    "href": "tutorials/04-Commits.html#staging-and-commits-in-rstudio",
-    "title": "04: Commits",
-    "section": "6 Staging and Commits in RStudio",
-    "text": "6 Staging and Commits in RStudio\nYou do not have to Commit every file change.  You can keep some of your file changes local-only permanently (i.e., never Commit the file) or temporarily (i.e., add the file changes to a future Commit).\n \nnote: If you have a file that you know you never want to Commit, then you should put the file in .gitignore\n \nThe process of choosing which files changes get added to the next Commit is called Staging.  Staging is done in the Staging Area, which is the place that lists all the file changes that have never been Committed.\n \nIn the second example I will Commit one change to the RStudio Project using Git:\n\ntest1.r renamed to test4.r\n\n\n6.1 The Staging Area\nAll uncommitted file changes (i.e., changes not written to a chapter yet) to files not in .gitignore will appear in the Staging Area. The Staging Area lists all uncommitted changes to your project files and is located in two places in RStudio:\n\nThe Git tab\nThe Review Changes window after you click Commit in the Git tab\n\n \nThese two Staging Areas are the same. You can work from either one  – changes to one are reflected in the other.\n \nThis Staging Area shows two files:\n\ntest2.r was edited (i.e.,  it was previously Committed and recently modified)\ntest3.r was created (i.e., it has never been Committed)\n \n\n\n\n\n\n\n\nFigure 3: The duplicate Staging Areas above both reflect the fact that there are two files with uncommitted changes: test2.r and test3.r\n\n\n\n\n\n6.2 File codes\nEvery file in the Staging Area will have a code next to it that gives its status.  The most common codes are:\n\nA (green): file has been added\nD (red): file has been deleted\nM (blue): file has been modified\nR (purple): file has been renamed\n? (yellow): unknown because file has never been indexed (i.e., it is a new file) or is in a conflict state (we will deal with this in a later lesson)\n\n\n\n6.3 Pre-staged and staged codes (right/left-side)\nThe files listed in the Staging Area have changes not reflected in the repository (i.e., the book). Checking the file means you are going to include it in this Commit (i.e., chapter).  This is called Staging.  You do not have to Stage every file change (i.e., you do not have to check every file).\n \nFor each file in the Staging Area, there are two sets of codes:\n\none on the right-side – this is Git’s best guess for the status of the pre-staged file\none on the left – this is the status of the staged file\n \n\nThe ? is the only code to appear on both sides at once (this is something I find confusing).  However, once the file is checked (i.e., the file is staged), the ? will change to one of the other codes. \n\n\n6.4 Staging Example 1: A modified file and an added file\nIn Figure 4, Git shows that test2.r has been modified and test3.r is unknown; however, checking the files (i.e., Staging) changes the status of test3.r to a green A (added).  The status of test2.r remains the same after checking.\n\n\n\n\n\n\nFigure 4: Checking the files Stages them for the next Commit (i.e., chapter)\n\n\n\nThe reason that test3.r initially had a status of unknown, is that the file did not exist in the index of the book (because it is a new file).  So, Git is not sure of the exact status of the file until it is Staged.  In the next example, we will see a file go from unknown to renamed.\n \nIf you Commit the changes to both files then they will both disappear from the Staging Area. If you Commit the changes to only one file then the other file will remain in the Staging Area – and you can Commit it later.\n\n\n6.5 Staging example 2: Renaming a file\nFor this example, I renamed test1.r to test4.r. In the Staging Area, Git labels test1.r as deleted and test4.r as unknown.\n\n\n\n\n\n\nFigure 5: The Staging Area after test1.r was renamed test4.r\n\n\n\nIf you stage both files, Git will realize that the two changes were really only one change – a renamed file:\n\n\n\n\n\n\nFigure 6: After Staging the changes, Git changes the status to one file that has been renamed\n\n\n\nThe renamed status only applies when the file names changes and the file content stays the same. If you edit test4.r in any way before Staging then Git will think that you deleted test1.r and added a new file called test4.r.\n\n\n6.6 The uncommitted files\nJust a reminder that the file .gitignore contains an editable list of files that do not get committed (i.e., these files never get indexed in the book).\n \nA .gitignore file:\n.Rproj.user\n.Rhistory\n.RData\n.Ruserdata\n~*\ndoNotSync/\n*.o\ntest1/*.jpg\ntest2/data/weatherData.csv\nThe top four files are added by RStudio because they only have meaning to the local user.  The others I have added: \n\n*: file names that start with ( ~ ), these are temporary files\ndoNotCommit/:  Everything in the folder doNotCommit – not necessary but it helps me to have this folder\nall files will extension .o\nall .jpg files inside the test1 folder\nthe weatherData.csv file inside the test2/data folder\n\n \nExtension: Ignoring a Committed file",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#pushing-commits-to-github",
-    "href": "tutorials/04-Commits.html#pushing-commits-to-github",
-    "title": "04: Commits",
-    "section": "7 Pushing Commits to GitHub",
-    "text": "7 Pushing Commits to GitHub\nJust as a reminder – when you create a Commit (i.e., a chapter in the book), the Commit exists only on your computer.  To send the new Commits to GitHub (and, hence, the outside world), you need to Push the Commits by clicking the green up arrow.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#folder-paths-and-git",
-    "href": "tutorials/04-Commits.html#folder-paths-and-git",
-    "title": "04: Commits",
-    "section": "8 Folder paths and Git",
-    "text": "8 Folder paths and Git\nIf you move a file to a new folder in your project then Git will also see this as a file being renamed (assuming you did not edit the file’s content).  This is because Git sees the folder path as part of the file name.\n \nAs reflected in the Staging Areas above, Git does not see files named test1.r, test2.r, etc… Git sees file paths named scripts/test1.r, scripts/test2.r, etc…  From Git’s perspective, moving a file to a new folder just changes the path name, hence the file gets the renamed status.\n \nSo if you create a new folder called oldScripts and move test1.r to that folder then Git sees a file that has been renamed:\nscripts/test1.r  -&gt;  oldScripts/test1.r\n \nOr, if you create a folder within scripts called oldStuff and move test2.r to that folder then Git sees this renamed situation:\nscripts/test2.r  -&gt;  scripts/oldStuff/test2.r\n \nLastly, you can rename the file and move it to a new folder and Git will still see it as a renamed situation:\nscripts/test3.r  -&gt;  oldscripts/2021/January/oldTest3.r\n…as long as the content of oldTest3.r and test3.r are the same",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#application",
-    "href": "tutorials/04-Commits.html#application",
-    "title": "04: Commits",
-    "section": "9 Application",
-    "text": "9 Application\nA) Create 4 new Commits in your RStudio Project:\n\nA Commits where four files are added to your scripts folder: test1.r, test2.r, test3.r, and test4.r\n\nmake sure each file has content but the content does not matter (e.g., it does not have to be a working script)\n\nA Commit where the content in test2.r and test4.r is modified\nA Commit where test3.r is deleted\nA Commit where test1.r is renamed to test5.r and moved to the folder scripts/oldStuff\n \n\nB) Make sure you put an informative Commit Message for each Commit!\n \nC) Create an Issue in GitHub and add belinskyc as an assignee (Figure 7). In the issue text say that you have completed the application.  This will only work if you have already added belinskyc as a collaborator and belinskyc accepted.\n\n\n\n\n\n\nFigure 7: Creating an Issue in GitHub and adding an assignee",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#extension-why-git-is-bad-for-media-files",
-    "href": "tutorials/04-Commits.html#extension-why-git-is-bad-for-media-files",
-    "title": "04: Commits",
-    "section": "10 Extension: Why Git is bad for media files",
-    "text": "10 Extension: Why Git is bad for media files\nGit does not store files, instead it stores the changes to the files. Script files are not very big to begin with…often measuring kilobytes in size. When you make changes to a script file, you are often just changing a few lines – so, the changes often measure less than one kilobyte in size.\n \nMedia (e.g., images and videos), on the other hand, is much larger than script files and when you change the media, you are effectively rewriting the whole file. So, if you are using Git to write the media changes to a chapter (i.e., Commit), then each time there is a change you are essentially rewriting the whole media file to the chapter.  In other words, each time you are adding an entry to a chapter that is the size of the media file.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/04-Commits.html#extension-ignoring-a-committed-file",
-    "href": "tutorials/04-Commits.html#extension-ignoring-a-committed-file",
-    "title": "04: Commits",
-    "section": "11 Extension: Ignoring a Committed file",
-    "text": "11 Extension: Ignoring a Committed file\nGit will not ignore a file in .gitignore if the file has already been indexed (i.e., was added to a previous Commit/Chapter). If you want to remove a file from your book, then you need to use the Terminal tab.\ngit rm \"data/doNotWantThis.R\" -f\nThis command deletes the file from the index.  This means future changes to the file will be ignored if the file is in .gitignore.\n \nHowever, there are still references to the file in the previous Commits and the file could be reconstructed by a collaborator.  If you want to remove all references to the file (e..g, the file contain sensitive information) then you have to do something like this:\nhttps://stackoverflow.com/questions/43762338/how-to-remove-file-from-git-history",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "04: Commits"
-    ]
-  },
-  {
-    "objectID": "tutorials/00-RStudioProjectsSetup.html#questions-or-comments",
-    "href": "tutorials/00-RStudioProjectsSetup.html#questions-or-comments",
-    "title": "00: RStudio Projects Setup",
-    "section": "2 Questions or comments",
-    "text": "2 Questions or comments\nIf you have any questions or comments about the material in this lesson, feel free to email them to the instructor, Charlie Belinsky, at belinsky@msu.edu.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "00: RStudio Projects Setup"
-    ]
-  },
-  {
-    "objectID": "tutorials/00-RStudioProjectsSetup.html#installing-an-r-package",
-    "href": "tutorials/00-RStudioProjectsSetup.html#installing-an-r-package",
-    "title": "00: RStudio Projects Setup",
-    "section": "5 Installing an R package",
-    "text": "5 Installing an R package\nGGPlot2, is a widely used package that does not come with R – so we are going to install the GGPlot2 package using RStudio.\n \nTo install the package GGPlot2 using RStudio (Figure 6):\n\nClick Tools -&gt; Install Packages…\nIn the Install Packages window, type GGPlot2 in the Packages textbox\nClick Install\n\n \nGGPlot2 requires many other packages (its dependencies) – and RStudio will install those packages along with GGPlot2.  Be patient, as this could take a little time.\n\n\n\n\n\n\nFigure 6: Installing the GGPlot2 Package in RStudio\n\n\n\n \nExtension: Different ways to install packages",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "00: RStudio Projects Setup"
-    ]
-  },
-  {
-    "objectID": "tutorials/02-GitHub_Setup.html#sec-verifyGitHub",
-    "href": "tutorials/02-GitHub_Setup.html#sec-verifyGitHub",
-    "title": "02: GitHub Repositories",
-    "section": "5 Verifying the change on GitHub",
-    "text": "5 Verifying the change on GitHub\nLet’s go to your GitHub account to verify that the project files are there (Figure 6):\n\nLog in to GitHub\nOn the left side, there is a section called Repositories. \nClick on the repository called &lt;your-user-name&gt;/&lt;your-repository-name&gt;\nChoose the Code tab (you are probably already on it)\n\n \nYou should notice that the files changed in the newest Commit have your Commit message attached (my Commit message: “A description you made…”) and the last commit for these files is recent (in this case: 7 minutes).\n\n\n\n\n\n\nFigure 6: GitHub after a new Commit was pushed\n\n\n\n\n5.1 Editing files in GitHub (a warning…)\nYou can edit/create/delete folders and files in GitHub. I would strongly recommend against this at this point. This can have consequences that require a better understanding of Git and GitHub than this class provides.  Instead, make all edits to your project on your computer and send (Push) it to GitHub – this is covered in the next lesson.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "02: GitHub Repositories"
-    ]
-  },
-  {
-    "objectID": "tutorials/03-Push_Pull.html#sec-update",
-    "href": "tutorials/03-Push_Pull.html#sec-update",
-    "title": "03: Push and Pull",
-    "section": "6 Updating your Git and GitHub repositories",
-    "text": "6 Updating your Git and GitHub repositories\nIn this section you are going to make changes to one copy of your Git repository, send the changes (Push) to GitHub, and the receive the changes (Pull) at the other copy of your Git repository.\n \nTo make changes to your project (add, delete or, modify files), repeat the first five steps in Section 4\n \nAfter step 5, the new Commit with the changes you have made to your Git repository have been sent to GitHub.\n \nNote: in the following section we will update your second project with the changes on GitHub.  This process would be exactly the same if the project folder was on another computer.\n\n6.1 Getting updates (Pull) from GitHub\nWhen a GitHub repository gets updated, the updates are not automatically downloaded to your local repository.  In Git, actions like requesting updates need to be explicitly stated.\n\nOpen up the copy of your Git repository, which currently has an older version of your project.\n \nTo get the updates (i.e., latest Commits), you need to send a request.  Git calls this request a Pull and you perform a Pull by clicking on the blue down arrow in the Git tab:\n\n\n\n\n\n\nFigure 7: Pulling from GitHub\n\n\n\n\n\n6.2 Results of a Pull request\nA window will come up giving the results of the Pull. If there are no updates, the window will say: Already up to date. You can close the window.\n \nIn Figure 8, the results show that 3 files were changed as a result of the Pull.  The number after the file name is how many lines were changed and + and - tell you whether something was added or deleted.  You can click Close.\n\n\n\n\n\n\nFigure 8: The results of a Pull command\n\n\n\n\n\n6.3 Importance of pulling project changes\nWhen you are working collaboratively on a project in a GitHub repository, it is best to to get the latest version of the project by doing a Pull before you make any changes.  You (almost always) want to make sure you are working on the latest version of the project.",
-    "crumbs": [
-      "<b>QFC Assets and Tutorials</b>",
-      "03: Push and Pull"
     ]
   }
 ]
