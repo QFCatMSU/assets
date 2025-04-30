@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tutorials/03-Commits.html" rel="next">
+<link href="../tutorials/03-Push_Pull.html" rel="next">
 <link href="../tutorials/01-Git_Setup.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -172,14 +172,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/03-Commits.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03: Commits</span></a>
+  <a href="../tutorials/03-Push_Pull.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03: Push and Pull</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/04-Commits2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04: Commits 2</span></a>
+  <a href="../tutorials/04-Commits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04: Commits</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#terminal-commands-to-link-to-a-github-repository" id="toc-terminal-commands-to-link-to-a-github-repository" class="nav-link" data-scroll-target="#terminal-commands-to-link-to-a-github-repository"><span class="header-section-number">4.1</span> Terminal commands to link to a GitHub repository</a></li>
   <li><a href="#sec-auth" id="toc-sec-auth" class="nav-link" data-scroll-target="#sec-auth"><span class="header-section-number">4.2</span> Authenticating with GitHub (all GUI machines)</a></li>
   </ul></li>
-  <li><a href="#verifying-the-change-on-github" id="toc-verifying-the-change-on-github" class="nav-link" data-scroll-target="#verifying-the-change-on-github"><span class="header-section-number">5</span> Verifying the change on GitHub</a>
+  <li><a href="#sec-verifyGitHub" id="toc-sec-verifyGitHub" class="nav-link" data-scroll-target="#sec-verifyGitHub"><span class="header-section-number">5</span> Verifying the change on GitHub</a>
   <ul class="collapse">
   <li><a href="#editing-files-in-github-a-warning" id="toc-editing-files-in-github-a-warning" class="nav-link" data-scroll-target="#editing-files-in-github-a-warning"><span class="header-section-number">5.1</span> Editing files in GitHub (a warning…)</a></li>
   </ul></li>
@@ -402,10 +402,9 @@ Figure&nbsp;3: The URL for your GitHub repository
 <p><span class="hl">Warning: The following only works if the GitHub repository is empty.</span></p>
 <section id="terminal-commands-to-link-to-a-github-repository" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="terminal-commands-to-link-to-a-github-repository"><span class="header-section-number">4.1</span> Terminal commands to link to a GitHub repository</h3>
-<p>There are three lines in the RStudio <strong><em>Terminal</em></strong> tab you need to type in (or copy) to link your Git repository to the GitHub repository.&nbsp;Don’t forget to press enter after each line…</p>
+<p>There are three lines in the RStudio <strong><em>Terminal</em></strong> tab you need to type in (or copy) to link your Git repository to the GitHub repository.&nbsp;<span class="note">Note: In Windows, <strong>Control-V</strong> does not paste inside the Terminal, but <strong>right-click</strong> -&gt; <strong>Paste</strong> works</span></p>
 <p>&nbsp;</p>
 <p>1) The first adds (<strong><em>add</em></strong>) the first version of your project and writes&nbsp;<strong>(c<em>ommit)</em></strong> the version to your repository with the message “added Git”.</p>
-<p><span class="note">Note: In Windows, <strong>Control-V</strong> does not paste inside the Terminal, but <strong>right-click</strong> -&gt; <strong>Paste</strong> works</span></p>
 <div class="sourceCode" id="cb1" data-tab="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-A</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"added Git"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>2) The second line connects (<strong><em>remote add</em></strong>) your Git repository to your GitHub repository (<strong><em>origin</em></strong>).&nbsp; <span class="hl">Replace the URL in quotes with the URL for your GitHub repository.</span></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="st">"https://github.com/myUserName/myRepository.git"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -439,7 +438,6 @@ Figure&nbsp;5: The Authentication Successful window
 </figcaption>
 </figure>
 </div>
-<p>&lt;Put Linux auth in extension&gt;</p>
 <section id="authenticating-on-linux-gui" class="level4" data-number="4.2.1">
 <h4 data-number="4.2.1" class="anchored" data-anchor-id="authenticating-on-linux-gui"><span class="header-section-number">4.2.1</span> Authenticating on Linux (GUI)</h4>
 <p>You might also be asked to setup a password to the keyring that stores your Git credentials.</p>
@@ -464,8 +462,8 @@ Figure&nbsp;5: The Authentication Successful window
 </section>
 </section>
 </section>
-<section id="verifying-the-change-on-github" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="verifying-the-change-on-github"><span class="header-section-number">5</span> Verifying the change on GitHub</h2>
+<section id="sec-verifyGitHub" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="sec-verifyGitHub"><span class="header-section-number">5</span> Verifying the change on GitHub</h2>
 <p>Let’s go to your GitHub account to verify that the project files are there (<a href="#fig-github-after-push" class="quarto-xref">Figure&nbsp;6</a>):</p>
 <ol type="1">
 <li><p>Log in to GitHub</p></li>
@@ -956,8 +954,8 @@ Figure&nbsp;7: Inviting a user to your GitHub Repository
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tutorials/03-Commits.html" class="pagination-link" aria-label="03: Commits">
-        <span class="nav-page-text">03: Commits</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../tutorials/03-Push_Pull.html" class="pagination-link" aria-label="03: Push and Pull">
+        <span class="nav-page-text">03: Push and Pull</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -10,12 +10,6 @@ short: "01"
 
 -   put headless installation as extension
 
--   Section Links
-
--   configuring GCM and test (after first Push) are separated
-
-    -   can you test GCM right away? Don't think so...
-
 -   Add extension about deleting GitHub credentials in Windows
 
 -   gitignore: .DS_Store (Mac)
@@ -232,7 +226,7 @@ We will do a lot more with GitHub next lesson. For this lesson, the GitHub accou
 
 ## Configure Git in RStudio {#sec-configureGit}
 
-To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are only used to identify who made what changes in the project history. Use your GitHub ID as the username and the email associated with your GitHub account.
+To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are used to identify who made what changes in the project history, important when you are collaborating with others on a project. Use your GitHub ID as the username and the email associated with your GitHub account.
 
  
 
@@ -298,7 +292,7 @@ And then restart RStudio
 
 ### RStudio and Git
 
-When you add Git to an RStudio Project folder, a ***Git*** tab will appear in the upper-right window. RStudio's built-in Git interface handles the most commonly performed Git functions.
+When you add Git to an RStudio Project folder, a ***Git*** tab will appear in the upper-right window. RStudio's built-in Git interface handles most of the commonly performed Git functions.
 
 ![The Git tab has been added to the RStudio Project](images/GH_02_GitTab.png){#fig-gitTab .fs}
 
@@ -357,7 +351,10 @@ Some reasons for not sharing folders and files are that they:
 ***.gitignore*** starts with four lines (@fig-gitignore). 
 
 ``` {.bash tab=".gitignore"}
-.Rproj.user .Rhistory .RData .Ruserdata
+.Rproj.user 
+.Rhistory 
+.RData 
+.Ruserdata
 ```
 
 ![The .gitignore file](images/GitHub-GitIgnoreInit.PNG){#fig-gitignore .fs}
@@ -371,7 +368,15 @@ You can edit ***.gitignore*** in RStudio (or any other text-editor).
 Here is an example ***.gitignore*** (*Note: \* is a wildcard character):*
 
 ``` {tab=".gitignore"}
-.Rproj.user .Rhistory .RData .Ruserdata _* doNotShare/ *.tmp test1/*.jpg /test2/data/weatherData.csv weatherData2.csv
+.Rproj.user 
+.Rhistory 
+.RData 
+.Ruserdata _* 
+doNotShare/ 
+*.tmp 
+test1/*.jpg 
+/test2/data/weatherData.csv
+weatherData2.csv
 ```
 
 The above .gitignore is ignoring:
@@ -382,17 +387,19 @@ The above .gitignore is ignoring:
 
 -   ***\*.tmp***: all files with extension ***.tmp***
 
--   ***test1/\*.jpg***: all ***jpg*** files inside the ***test1*** folder (and subfolders)
+-   ***test1/\*.jpg***: all ***jpg*** files inside [any]{.hl}***test1*** folder (and subfolders)
 
--   ***/test2/data/weatherData.csv***: ignore a single file (***weatherData.csv***) inside the folders ***test2/data***
+-   ***/test2/weatherData.csv***: ignores a single file (***weatherData.csv***) inside the folder ***test2***
+
+    -   the slash at the beginning means the root folder – this will only ignore files in the ***test2*** folder inside the root folder
 
 -   ***weatherData2.csv***: ignores any file named ***weatherData2.csv***
 
- 
+### more about gitignore
 
 [.gitignore is a Git repository file]{.hl} and everyone who syncs a project uses the same ***.gitignore*** – and, no, you cannot use .gitignore to ignore .gitignore.
 
-### gitignore only works on unversioned files
+ 
 
 Once you have versioned a file, it becomes a part of your Git repository and will be shared on GitHub.  This cannot be undone using ***.gitignore***.  This means you need to consider ***.gitignore*** before you start creating versions of your project (i.e., now).
 
@@ -430,9 +437,9 @@ To add a Git repository to your RStudio Project folder
 
 2.  Click ***Tools*** -\> ***Version Control*** -\> ***Project Setup*** 
 
-```         
--   This opens the ***Project Options*** window
-```
+    -   This opens the ***Project Options*** window
+
+<!-- -->
 
 3.  In the ***Version control system*** dropdown menu, select ***Git***
 
@@ -442,8 +449,6 @@ To add a Git repository to your RStudio Project folder
 
 6.  You will be prompted torestart RStudio -- click ***Yes***.
 
-```         
--   You can also manually restart by clicking ***Session -\> Restart R***
-```
+    -   You can also manually restart by clicking ***Session -\> Restart R***
 
 ![Add Git to your RStudio Project](images/GH_Repo_ProjectSetup.png){#fig-addGit .fs}

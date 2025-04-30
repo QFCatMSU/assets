@@ -61,5 +61,11 @@
   },
   "tutorials/00-RStudioProjectsSetup.qmd": {
     "00-RStudioProjectsSetup.html": "30292e74"
+  },
+  "tutorials/03-Push_Pull.qmd": {
+    "03-Push_Pull.html": "81a37f0e"
+  },
+  "tutorials/04-Commits.qmd": {
+    "04-Commits.html": "e3cb71cd"
   }
 }

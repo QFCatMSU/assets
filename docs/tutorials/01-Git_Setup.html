@@ -172,14 +172,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/03-Commits.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03: Commits</span></a>
+  <a href="../tutorials/03-Push_Pull.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03: Push and Pull</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/04-Commits2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04: Commits 2</span></a>
+  <a href="../tutorials/04-Commits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04: Commits</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -254,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#choosing-files-you-do-not-want-to-share-.gitignore" id="toc-choosing-files-you-do-not-want-to-share-.gitignore" class="nav-link" data-scroll-target="#choosing-files-you-do-not-want-to-share-.gitignore"><span class="header-section-number">8</span> Choosing files you do not want to share (.gitignore)</a>
   <ul class="collapse">
   <li><a href="#sec-editGitignore" id="toc-sec-editGitignore" class="nav-link" data-scroll-target="#sec-editGitignore"><span class="header-section-number">8.1</span> Editing .gitignore</a></li>
-  <li><a href="#gitignore-only-works-on-unversioned-files" id="toc-gitignore-only-works-on-unversioned-files" class="nav-link" data-scroll-target="#gitignore-only-works-on-unversioned-files"><span class="header-section-number">8.2</span> gitignore only works on unversioned files</a></li>
+  <li><a href="#more-about-gitignore" id="toc-more-about-gitignore" class="nav-link" data-scroll-target="#more-about-gitignore"><span class="header-section-number">8.2</span> more about gitignore</a></li>
   </ul></li>
   <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">9</span> Application</a></li>
   <li><a href="#trap-the-console-tab-and-terminal-tab" id="toc-trap-the-console-tab-and-terminal-tab" class="nav-link" data-scroll-target="#trap-the-console-tab-and-terminal-tab"><span class="header-section-number">10</span> Trap: The Console Tab and Terminal Tab</a></li>
@@ -293,11 +293,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p>Add terminology section</p></li>
 <li><p>put headless installation as extension</p></li>
-<li><p>Section Links</p></li>
-<li><p>configuring GCM and test (after first Push) are separated</p>
-<ul>
-<li>can you test GCM right away? Don’t think so…</li>
-</ul></li>
 <li><p>Add extension about deleting GitHub credentials in Windows</p></li>
 <li><p>gitignore: .DS_Store (Mac)</p></li>
 <li><p>gitattributes normalize text: auto (CR/LF issue)</p></li>
@@ -447,7 +442,7 @@ Figure&nbsp;1: The Terminal Tab in RStudio
 </section>
 <section id="sec-configureGit" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="sec-configureGit"><span class="header-section-number">6</span> Configure Git in RStudio</h2>
-<p>To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are only used to identify who made what changes in the project history. Use your GitHub ID as the username and the email associated with your GitHub account.</p>
+<p>To use Git for your project, you need to configure Git on your computer with a username and email. The username and email are used to identify who made what changes in the project history, important when you are collaborating with others on a project. Use your GitHub ID as the username and the email associated with your GitHub account.</p>
 <p>&nbsp;</p>
 <p>In the Terminal, set the Git user name and password – replace <strong><em>userName</em></strong> and <strong><em>userEmail</em></strong> with your username and email:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"userName"</span>   </span>
@@ -501,7 +496,7 @@ Figure&nbsp;3: Testing the git configuration using the RStudio Terminal tab
 <p><a href="#extension-alternate-way-to-add-git-to-rstudio-project">Extension: Alternate way to add git to RStudio Project</a></p>
 <section id="rstudio-and-git" class="level3" data-number="7.1">
 <h3 data-number="7.1" class="anchored" data-anchor-id="rstudio-and-git"><span class="header-section-number">7.1</span> RStudio and Git</h3>
-<p>When you add Git to an RStudio Project folder, a&nbsp;<strong><em>Git</em></strong> tab will appear in the upper-right window. RStudio’s built-in Git interface handles the most commonly performed Git functions.</p>
+<p>When you add Git to an RStudio Project folder, a&nbsp;<strong><em>Git</em></strong> tab will appear in the upper-right window. RStudio’s built-in Git interface handles most of the commonly performed Git functions.</p>
 <div id="fig-gitTab" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gitTab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -559,7 +554,10 @@ Figure&nbsp;5: Files added to the project folder by RStudio and Git
 </ul>
 <p>&nbsp;</p>
 <p><strong><em>.gitignore</em></strong> starts with four lines (<a href="#fig-gitignore" class="quarto-xref">Figure&nbsp;6</a>).&nbsp;</p>
-<div class="sourceCode" id="cb19" data-tab=".gitignore"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span> .Rhistory .RData .Ruserdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19" data-tab=".gitignore"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.RData</span> </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Ruserdata</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-gitignore" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gitignore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -575,21 +573,32 @@ Figure&nbsp;6: The .gitignore file
 <p>You can edit <strong><em>.gitignore</em></strong> in RStudio (or any other text-editor).</p>
 <p>&nbsp;</p>
 <p>Here is an example <strong><em>.gitignore</em></strong> (<em>Note: * is a wildcard character):</em></p>
-<pre data-tab=".gitignore"><code>.Rproj.user .Rhistory .RData .Ruserdata _* doNotShare/ *.tmp test1/*.jpg /test2/data/weatherData.csv weatherData2.csv</code></pre>
+<pre data-tab=".gitignore"><code>.Rproj.user 
+.Rhistory 
+.RData 
+.Ruserdata _* 
+doNotShare/ 
+*.tmp 
+test1/*.jpg 
+/test2/data/weatherData.csv
+weatherData2.csv</code></pre>
 <p>The above .gitignore is ignoring:</p>
 <ul>
 <li><p><strong><em>_*:</em></strong> filenames that start with a underscore ( <strong>_</strong> )</p></li>
 <li><p><strong><em>doNotShare:</em></strong> all <strong><em>doNotShare</em></strong> folders</p></li>
 <li><p><strong><em>*.tmp</em></strong>: all files with extension <strong><em>.tmp</em></strong></p></li>
-<li><p><strong><em>test1/*.jpg</em></strong>: all <strong><em>jpg</em></strong> files inside the <strong><em>test1</em></strong> folder (and subfolders)</p></li>
-<li><p><strong><em>/test2/data/weatherData.csv</em></strong>: ignore a single file (<strong><em>weatherData.csv</em></strong>) inside the folders <strong><em>test2/data</em></strong></p></li>
+<li><p><strong><em>test1/*.jpg</em></strong>: all <strong><em>jpg</em></strong> files inside <span class="hl">any</span><strong><em>test1</em></strong> folder (and subfolders)</p></li>
+<li><p><strong><em>/test2/weatherData.csv</em></strong>: ignores a single file (<strong><em>weatherData.csv</em></strong>) inside the folder <strong><em>test2</em></strong></p>
+<ul>
+<li>the slash at the beginning means the root folder – this will only ignore files in the <strong><em>test2</em></strong> folder inside the root folder</li>
+</ul></li>
 <li><p><strong><em>weatherData2.csv</em></strong>: ignores any file named <strong><em>weatherData2.csv</em></strong></p></li>
 </ul>
-<p>&nbsp;</p>
-<p><span class="hl">.gitignore is a Git repository file</span> and everyone who syncs a project uses the same <strong><em>.gitignore</em></strong> – and, no, you cannot use .gitignore to ignore .gitignore.</p>
 </section>
-<section id="gitignore-only-works-on-unversioned-files" class="level3" data-number="8.2">
-<h3 data-number="8.2" class="anchored" data-anchor-id="gitignore-only-works-on-unversioned-files"><span class="header-section-number">8.2</span> gitignore only works on unversioned files</h3>
+<section id="more-about-gitignore" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="more-about-gitignore"><span class="header-section-number">8.2</span> more about gitignore</h3>
+<p><span class="hl">.gitignore is a Git repository file</span> and everyone who syncs a project uses the same <strong><em>.gitignore</em></strong> – and, no, you cannot use .gitignore to ignore .gitignore.</p>
+<p>&nbsp;</p>
 <p>Once you have versioned a file, it becomes a part of your Git repository and will be shared on GitHub.&nbsp; This cannot be undone using <strong><em>.gitignore</em></strong>.&nbsp; This means you need to consider <strong><em>.gitignore</em></strong> before you start creating versions of your project (i.e., now).</p>
 <p>&nbsp;</p>
 <p><span class="note">note: there are other ways to remove files from GitHub but they are complicated</span></p>
@@ -621,16 +630,21 @@ Figure&nbsp;6: The .gitignore file
 <p>To add a Git repository to your RStudio Project folder</p>
 <ol type="1">
 <li><p>Open your project in RStudio</p></li>
-<li><p>Click <strong><em>Tools</em></strong> -&gt; <strong><em>Version Control</em></strong> -&gt; <strong><em>Project Setup</em></strong>&nbsp;</p></li>
+<li><p>Click <strong><em>Tools</em></strong> -&gt; <strong><em>Version Control</em></strong> -&gt; <strong><em>Project Setup</em></strong>&nbsp;</p>
+<ul>
+<li>This opens the <strong><em>Project Options</em></strong> window</li>
+</ul></li>
 </ol>
-<pre><code>-   This opens the ***Project Options*** window</code></pre>
+<!-- -->
 <ol start="3" type="1">
 <li><p>In the <strong><em>Version control system</em></strong> dropdown menu, select <strong><em>Git</em></strong></p></li>
 <li><p>Adding Git to your RStudio Project</p></li>
 <li><p>Say <strong><em>Yes</em></strong> to initializing a new repository for the project</p></li>
-<li><p>You will be prompted torestart RStudio – click <strong><em>Yes</em></strong>.</p></li>
+<li><p>You will be prompted torestart RStudio – click <strong><em>Yes</em></strong>.</p>
+<ul>
+<li>You can also manually restart by clicking <strong><em>Session -&gt; Restart R</em></strong></li>
+</ul></li>
 </ol>
-<pre><code>-   You can also manually restart by clicking ***Session -\&gt; Restart R***</code></pre>
 <div id="fig-addGit" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-addGit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

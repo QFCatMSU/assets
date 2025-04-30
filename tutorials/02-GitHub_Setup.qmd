@@ -113,13 +113,11 @@ In this section we are going to link a Git repository (attached to an RStudio Pr
 
 ### Terminal commands to link to a GitHub repository
 
-There are three lines in the RStudio ***Terminal*** tab you need to type in (or copy) to link your Git repository to the GitHub repository. Don't forget to press enter after each line...
+There are three lines in the RStudio ***Terminal*** tab you need to type in (or copy) to link your Git repository to the GitHub repository. [Note: In Windows, **Control-V** does not paste inside the Terminal, but **right-click** -\> **Paste** works]{.note}
 
  
 
 1\) The first adds (***add***) the first version of your project and writes **(c*ommit)*** the version to your repository with the message "added Git".
-
-[Note: In Windows, **Control-V** does not paste inside the Terminal, but **right-click** -\> **Paste** works]{.note}
 
 ``` {.bash tab="Terminal"}
 git add -A && git commit -m "added Git"
@@ -153,8 +151,6 @@ After you login you will get an Authentication Successful window:
 
 ![The Authentication Successful window](images/GH_Repo_AuthSuccess.jpg){#fig-auth-success .fs}
 
-\<Put Linux auth in extension\>
-
 #### Authenticating on Linux (GUI)
 
 You might also be asked to setup a password to the keyring that stores your Git credentials.
@@ -163,7 +159,7 @@ You might also be asked to setup a password to the keyring that stores your Git 
 
 -   Disadvantage: you will have to type in this password every time you Push to a GitHub repository
 
-#### Authenticating on Linux (headless) 
+#### Authenticating on Linux (headless)
 
 When you Push to GitHub you will be asked to authenticate on another device:
 
@@ -185,7 +181,7 @@ git config --global credential.helper "cache --timeout=3600"
 
 [note: time is in seconds so this is 1 hour]{.note}
 
-## Verifying the change on GitHub
+## Verifying the change on GitHub {#sec-verifyGitHub}
 
 Let's go to your GitHub account to verify that the project files are there (@fig-github-after-push):
 

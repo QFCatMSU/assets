@@ -171,14 +171,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/03-Commits.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03: Commits</span></a>
+  <a href="../tutorials/03-Push_Pull.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03: Push and Pull</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/04-Commits2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04: Commits 2</span></a>
+  <a href="../tutorials/04-Commits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04: Commits</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -228,9 +228,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#to-do" id="toc-to-do" class="nav-link active" data-scroll-target="#to-do"><span class="header-section-number">0.1</span> To do</a></li>
   <li><a href="#purpose" id="toc-purpose" class="nav-link" data-scroll-target="#purpose"><span class="header-section-number">1</span> Purpose</a>
   <ul class="collapse">
-  <li><a href="#special-note-about-images-in-the-lessons-for-this-class" id="toc-special-note-about-images-in-the-lessons-for-this-class" class="nav-link" data-scroll-target="#special-note-about-images-in-the-lessons-for-this-class"><span class="header-section-number">1.1</span> Special note about images in the lessons for this class</a></li>
+  <li><a href="#special-note-about-images-in-the-class" id="toc-special-note-about-images-in-the-class" class="nav-link" data-scroll-target="#special-note-about-images-in-the-class"><span class="header-section-number">1.1</span> Special note about images in the class</a></li>
   </ul></li>
-  <li><a href="#questions-about-the-material" id="toc-questions-about-the-material" class="nav-link" data-scroll-target="#questions-about-the-material"><span class="header-section-number">2</span> Questions about the material…</a></li>
+  <li><a href="#questions-or-comments" id="toc-questions-or-comments" class="nav-link" data-scroll-target="#questions-or-comments"><span class="header-section-number">2</span> Questions or comments</a></li>
   <li><a href="#viewing-file-extensions-and-hidden-files" id="toc-viewing-file-extensions-and-hidden-files" class="nav-link" data-scroll-target="#viewing-file-extensions-and-hidden-files"><span class="header-section-number">3</span> Viewing file extensions and hidden files</a>
   <ul class="collapse">
   <li><a href="#viewing-in-newer-versions-of-windows-11" id="toc-viewing-in-newer-versions-of-windows-11" class="nav-link" data-scroll-target="#viewing-in-newer-versions-of-windows-11"><span class="header-section-number">3.1</span> Viewing in newer versions of Windows 11</a></li>
@@ -242,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-or-update-r-need-version-4.4-or-higher" id="toc-install-or-update-r-need-version-4.4-or-higher" class="nav-link" data-scroll-target="#install-or-update-r-need-version-4.4-or-higher"><span class="header-section-number">4.1</span> Install or update R (need version 4.4 or higher)</a></li>
   <li><a href="#install-or-update-rstudio" id="toc-install-or-update-rstudio" class="nav-link" data-scroll-target="#install-or-update-rstudio"><span class="header-section-number">4.2</span> Install or update RStudio</a></li>
   </ul></li>
-  <li><a href="#installing-a-package" id="toc-installing-a-package" class="nav-link" data-scroll-target="#installing-a-package"><span class="header-section-number">5</span> Installing a package</a></li>
+  <li><a href="#installing-an-r-package" id="toc-installing-an-r-package" class="nav-link" data-scroll-target="#installing-an-r-package"><span class="header-section-number">5</span> Installing an R package</a></li>
   <li><a href="#rstudio-projects-and-project-folders" id="toc-rstudio-projects-and-project-folders" class="nav-link" data-scroll-target="#rstudio-projects-and-project-folders"><span class="header-section-number">6</span> RStudio Projects and Project Folders</a>
   <ul class="collapse">
   <li><a href="#create-a-new-rstudio-project" id="toc-create-a-new-rstudio-project" class="nav-link" data-scroll-target="#create-a-new-rstudio-project"><span class="header-section-number">6.1</span> Create a new RStudio Project</a></li>
@@ -323,24 +323,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="0.1" class="anchored" data-anchor-id="to-do"><span class="header-section-number">0.1</span> To do</h3>
 <ul>
 <li>Include checklist</li>
+<li>Mention Projects tab near top-left corner</li>
 </ul>
 </section>
 <section id="purpose" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">1</span> Purpose</h2>
 <ul>
-<li><p>Install and test the software you will need for this class</p></li>
+<li><p>Install, setup, and test R and RStudio</p></li>
 <li><p>Provide a basic overview of how RStudio works and its relationship to R</p></li>
 <li><p>Execute, using the Source button, an R script</p></li>
-<li><p>Show how commenting works and the importance of commenting</p></li>
 </ul>
-<section id="special-note-about-images-in-the-lessons-for-this-class" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="special-note-about-images-in-the-lessons-for-this-class"><span class="header-section-number">1.1</span> Special note about images in the lessons for this class</h3>
-<p>RStudio is a rapidly evolving program, and it would be too much work to maintain all the images so that they reflect the newest version of RStudio and its visual likeness.&nbsp; Some of the images in this class reflect older versions of RStudio and there are minor changes that I have made to the code that I did not believe warrants putting in new images. I have tried to make sure these differences change nothing functionally.&nbsp; Inevitably, something will fall through the cracks – so please, contact the instructor if there is a problem!</p>
+<section id="special-note-about-images-in-the-class" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="special-note-about-images-in-the-class"><span class="header-section-number">1.1</span> Special note about images in the class</h3>
+<p>RStudio is a rapidly evolving program, and it would be too much work to maintain all the images so that they reflect the newest version of RStudio and its visual likeness.&nbsp; Some of the images in this class reflect older versions of RStudio and there are minor changes that I have made to the code that I did not believe warrant putting in new images. I have tried to make sure these differences change nothing functionally.&nbsp; Inevitably, something will fall through the cracks – so please, contact me if there is a problem!</p>
 </section>
 </section>
-<section id="questions-about-the-material" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="questions-about-the-material"><span class="header-section-number">2</span> Questions about the material…</h2>
-<p>If you have any questions about the material in this lesson, feel free to email them to the instructor, Charlie Belinsky, at belinsky@msu.edu.</p>
+<section id="questions-or-comments" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="questions-or-comments"><span class="header-section-number">2</span> Questions or comments</h2>
+<p>If you have any questions or comments about the material in this lesson, feel free to email them to the instructor, Charlie Belinsky, at belinsky@msu.edu.</p>
 </section>
 <section id="viewing-file-extensions-and-hidden-files" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="viewing-file-extensions-and-hidden-files"><span class="header-section-number">3</span> Viewing file extensions and hidden files</h2>
@@ -426,9 +426,7 @@ Figure&nbsp;3: Change settings to view all file extensions on a Mac
 <h2 data-number="4" class="anchored" data-anchor-id="install-r-and-rstudio-on-your-computer"><span class="header-section-number">4</span> Install R and RStudio on your computer</h2>
 <p>We are going to install <strong>R</strong> and <strong>RStudio</strong> on your computer. R is a programming language and RStudio provides a structured environment for the R programming language, similar to the way Microsoft Word provides a structured environment for document editing. RStudio is patterned on other popular programming environments like <a href="https://visualstudio.microsoft.com/">Microsoft’s Visual Studio</a>.</p>
 <p>&nbsp;</p>
-<p>On Windows the default installation can be used for R and RStudio. For Mac, installation is a bit trickier – details below.</p>
-<p>&nbsp;</p>
-<p><span class="note">Note: Even if you already have the software installed, it is a good idea to verify you have a recent version.</span></p>
+<p>On Windows the default installation can be used for R and RStudio. For Mac, installation is trickier.</p>
 <section id="install-or-update-r-need-version-4.4-or-higher" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="install-or-update-r-need-version-4.4-or-higher"><span class="header-section-number">4.1</span> Install or update R (need version 4.4 or higher)</h3>
 <p>The <a href="https://cran.r-project.org/bin/windows/base/">R for Windows download is here</a>. Click on <strong><em>Download R 4.#.# for Windows</em></strong>.<br>
@@ -486,9 +484,9 @@ Figure&nbsp;5: Unmounting the RStudio device (very important!)
 </section>
 </section>
 </section>
-<section id="installing-a-package" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="installing-a-package"><span class="header-section-number">5</span> Installing a package</h2>
-<p><strong><em>GGPlot2</em></strong>, is a widely used package that does not come with R or RStudio – so we are going to install the <strong><em>GGPlot2</em></strong> package using RStudio.</p>
+<section id="installing-an-r-package" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="installing-an-r-package"><span class="header-section-number">5</span> Installing an R package</h2>
+<p><strong><em>GGPlot2</em></strong>, is a widely used package that does not come with R – so we are going to install the <strong><em>GGPlot2</em></strong> package using RStudio.</p>
 <p>&nbsp;</p>
 <p>To install the package <strong><em>GGPlot2</em></strong> using RStudio (<a href="#fig-ggplot2" class="quarto-xref">Figure&nbsp;6</a>):</p>
 <ol type="1">
@@ -513,7 +511,7 @@ Figure&nbsp;6: Installing the GGPlot2 Package in RStudio
 </section>
 <section id="rstudio-projects-and-project-folders" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="rstudio-projects-and-project-folders"><span class="header-section-number">6</span> RStudio Projects and Project Folders</h2>
-<p>Most of the work you will do in R involves multiple scripts, data files, and perhaps other types of files.&nbsp; All these files together make up your project and they exist within a <strong><em>Project Folder</em></strong>, which is the folder on your computer than contains all the files and subfolders for your project – and <span class="hl">it is very important that you keep all files associated with a project within a Project Folder.</span></p>
+<p>Most of the work you do in R involves scripts, data files, and other types of files (e.g., shapefiles).&nbsp; All these files together make up your project and they exist within a <strong><em>Project Folder</em></strong>, which is the folder on your computer that contains all the files and subfolders for your project. <span class="hl">It is very important that you keep all files associated with a project within a Project Folder.</span></p>
 <p>&nbsp;</p>
 <p>In this class we will be using <strong>RStudio</strong> to create, edit, and execute <strong>R</strong> scripts.&nbsp; In <strong>RStudio</strong>, there is a feature called <strong>RStudio Projects</strong>, which is a Project Folder, that makes it much easier to move, share, and host your project on GitHub.&nbsp; <span class="hl">You need to keep all of your class work in an RStudio Project.</span></p>
 <section id="create-a-new-rstudio-project" class="level3" data-number="6.1">
@@ -655,7 +653,7 @@ Figure&nbsp;13: RStudio opened with an RStudio Project (named My_Project)
 <p>&nbsp;</p>
 <p><strong><em>RSProj_Setup.R</em></strong> takes weather data from the other downloaded file, <strong><em>RSProj_Setup.csv</em></strong> and creates boxplots showing how Wind Direction and Wind Speed relate to the Change In Temperature.</p>
 <p>&nbsp;</p>
-<p>We are executing the script to test your setup and help you become familiar with the RStudio environment. If you are taking the GGPlot class, the code in <strong><em>RSProj_Setup.R</em></strong> is something you will learn throughout the course. For this lesson,</p>
+<p>We are executing the script to test your setup and help you become familiar with the RStudio environment. If you are taking the GGPlot class, the code in <strong><em>RSProj_Setup.R</em></strong> is something you will learn throughout the course.</p>
 <section id="open-your-rstudio-project" class="level3" data-number="7.1">
 <h3 data-number="7.1" class="anchored" data-anchor-id="open-your-rstudio-project"><span class="header-section-number">7.1</span> Open your RStudio Project</h3>
 <p>There are multiple ways to open an RStudio Project – three of them are:</p>
