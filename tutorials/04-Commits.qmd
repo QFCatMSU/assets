@@ -38,7 +38,7 @@ If this is an RStudio Project, then the Project Folder also:
 
 ## Using Git is like writing a book
 
-When you use Git on a project folder,[you are essentially writing a book about your project]{.hl}. The book does not contain everything inside your project folder -- you can be selective about what gets included in the book and when it gets included.
+When you use Git on a project folder, [you are essentially writing a book about your project]{.hl}. The book does not contain everything inside your project folder -- you can be selective about what gets included in the book and when it gets included.
 
  
 
@@ -76,7 +76,7 @@ Some reasons a project file will not be in this book is:
 
 ### The chapters (Commits)
 
-The Commits are the chapters of the book.  A Commit contains an introduction (the Commit Message) and[changes to the files]{.hl} in your project.
+The Commits are the chapters of the book.  A Commit contains an introduction (the Commit Message) and [changes to the files]{.hl} in your project.
 
  
 
@@ -88,11 +88,9 @@ These changes in the chapters (Commits) include:
 
 -   Files renamed -- the chapter will contain the old and new name of the file
 
+    -   [Remeber that folders in Git are part of the file name, so a folder name change in Git would be a file name change for every file in the folder.]{.note}
+
 -   Files modified (the most common) -- the chapter will contain the content that was changed in the file
-
-     
-
-[Remeber that folders in Git are part of the file name, so a folder name change in Git would be a file name change.]{.note}
 
  
 
@@ -100,7 +98,7 @@ These changes in the chapters (Commits) include:
 
 ## How the book acts as version control software
 
-The big thing to understand about Git is that Git does not store files -- *Git stores changes to files* (in the .git folder).
+The big thing to understand about Git is that Git does not store files -- [Git stores changes to files]{.hl} (in the .git folder).
 
  
 
@@ -184,7 +182,7 @@ You do not have to Commit every file change.  You can keep some of your file ch
 
  
 
-The process of choosing which files changes get added to the next Commit is called *Staging*.  Staging is done in the *Staging Area*, which is the place that lists all the file changes that have never been Committed.
+The process of choosing which files changes get added to the next Commit is called [Staging]{.hl}.  Staging is done in the [Staging Area]{.hl}, which is the place that lists all the file changes that have never been Committed.
 
  
 
@@ -270,7 +268,7 @@ If you stage both files, Git will realize that the two changes were really only 
 
 [The **renamed** status only applies when the file names changes and the file content stays the same]{.hl}*.* If you edit ***test4.r*** in any way before Staging then Git will think that you deleted ***test1.r*** and added a new file called ***test4.r***.
 
-### The uncommitted files
+### The uncommitted files \<in lesson 1- sec8.1\>
 
 Just a reminder that the file ***.gitignore*** contains an editable list of files that do not get committed (i.e., these files never get indexed in the book).
 
@@ -283,11 +281,11 @@ A ***.gitignore*** file:
 .Rhistory
 .RData
 .Ruserdata
-~*
-doNotSync/
-*.o
-test1/*.jpg
-test2/data/weatherData.csv
+doNotShare/ 
+*.tmp 
+test1/*.jpg 
+/test2/data/weatherData.csv
+weatherData2.csv
 ```
 
 The top four files are added by RStudio because they only have meaning to the local user.  The others I have added: 
@@ -296,7 +294,7 @@ The top four files are added by RStudio because they only have meaning to the lo
 
 -   ***doNotCommit/***:  Everything in the folder ***doNotCommit*** -- not necessary but it helps me to have this folder
 
--   all files will extension ***.o***
+-   all files will extension ***.tmp***
 
 -   all ***.jpg*** files inside the ***test1*** folder
 

@@ -4,6 +4,20 @@ short: "02"
 # special characters for highlighting code : «»
 ---
 
+### to-do
+
+-   workshop:
+
+    -   book analogy
+
+    -   hub-spoke diagram
+
+    -   color codes
+
+    -   pushing multiple chapters
+
+    -   index.lock (only old RStudio)
+
 ## Purpose
 
 -   To link an RStudio Project to a GitHub repository using Git

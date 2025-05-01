@@ -10,6 +10,10 @@ short: "03"
 
 -   Collab with self section
 
+-   Workshop:
+
+    -   empty files do not go into book
+
 ## Purpose
 
 To understand how repositories get synced between Git and GitHub.  To do this we are going to create a copy of your repository so you can quickly and easily test out the collaboration feature.
@@ -337,7 +341,7 @@ Some reasons for not sharing folders and files are that they:
 
 ***.gitignore*** starts with four files (@fig-gitignore). 
 
-``` {.text tab=".gitignore"}
+``` {.bash tab=".gitignore"}
 .Rproj.user
 .Rhistory
 .RData
@@ -354,7 +358,7 @@ You can edit ***.gitignore*** in RStudio (or any other text-editor).
 
 I recommend adding two lines to ***.gitignore*** ([Note: \* is a wildcard character]{.note}*):*
 
-``` {.text tab=".gitignore"}
+``` {.bash tab=".gitignore"}
 .Rproj.user
 .Rhistory
 .RData
@@ -502,11 +506,11 @@ You need to do a ***Pull*** when:
 
 -   You sent a new project Commit from another computer
 
--    
+     
 
 [Note: Even if neither of the above is true, it is a good idea to get into the habit of doing a **Pull** before you start working. If you are working in a team, this is imperative.]{.note}
 
-## Extension: Downloading GitHub repositories 
+## Extension: Downloading GitHub repositories
 
 If you just want to download a Project that is in a GitHub repository and [you do not care about updates]{.hl} then you can:
 

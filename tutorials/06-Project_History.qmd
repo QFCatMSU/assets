@@ -4,6 +4,10 @@ short: "06"
 # special characters for highlighting code : «»
 ---
 
+### To-do
+
+-   include GitHub History view
+
 ## Purpose
 
 To learn how to read the Project History and use the history to revert a file or the whole project to an earlier state.
@@ -36,7 +40,7 @@ The four sections are:
 
 Following are the 11 components in @fig-ProjHist_Window .  The description of the component will start will the section/sections it is in:
 
-1\) (A) Dropdown to choose the branch you want to look at -- we will cover this in a future lesson
+1\) (A) Dropdown to choose the branch you want to look at -- we will cover branches in a future lesson
 
  
 
@@ -44,7 +48,7 @@ Following are the 11 components in @fig-ProjHist_Window .  The description of t
 
  
 
-3\) (A,B) The Subject of the Commit is the same as the Commit Message (I wish they just called it the same thing in both places...)
+3\) (A,B) ***Subject*** of the Commit is the same as ***Commit Message*** (I wish they just called it Commit Message)
 
  
 
@@ -55,7 +59,7 @@ git config --global user.name "<NameHere>"
 git config --global user.email "<EmailHere>"
 ```
 
-This information is only used in the Commit to list the author and email -- it is not login information. 
+This information is only used in the Commit to list the author and email.
 
  
 
@@ -95,7 +99,7 @@ This will give you all the information about changes in the Commit including the
 
  
 
-10\) (D) A summary of the Diff for each changed file.  If the file was added then it will show all lines in green. If the file was removed then it will show all lines in red.   The Terminal version of the summary ( (@fig-terminal-commit-changes) specifically says when files are added and deleted whereas the RStudio version does not.  There is a file added and one file deleted -- I will let you find those lines in the Terminal if you want...
+10\) (D) A summary of the Diff for each changed file.  If the file was added then it will show all lines in green. If the file was removed then it will show all lines in red.   The Terminal version of the summary (@fig-terminal-commit-changes) specifically says when files are added and deleted whereas the RStudio version does not.  There is a file added and one file deleted -- I will let you find those lines in the Terminal if you want...
 
  
 
@@ -197,7 +201,7 @@ The Terminal command is:
 git revert --no-commit <SHA>..HEAD
 ```
 
-where, in my case, the SHA is 0f15ecf7 so...
+where, in my case, the SHA is **0f15ecf7** so...
 
 ``` bash
 git revert --no-commit 0f15ecf7...HEAD

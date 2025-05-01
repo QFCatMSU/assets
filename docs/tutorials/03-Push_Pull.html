@@ -620,10 +620,10 @@ Figure&nbsp;9: .gitignore and *.RProj – in RStudio Files tab and Windows folde
 <p>&nbsp;</p></li>
 </ul>
 <p><strong><em>.gitignore</em></strong> starts with four files (<a href="#fig-gitignore" class="quarto-xref">Figure&nbsp;10</a>).&nbsp;</p>
-<pre class="text" data-tab=".gitignore"><code>.Rproj.user
-.Rhistory
-.RData
-.Ruserdata</code></pre>
+<div class="sourceCode" id="cb3" data-tab=".gitignore"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.RData</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Ruserdata</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-gitignore" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gitignore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -639,12 +639,12 @@ Figure&nbsp;10: The .gitignore file
 <p>You can edit <strong><em>.gitignore</em></strong> in RStudio (or any other text-editor).</p>
 <p>&nbsp;</p>
 <p>I recommend adding two lines to <strong><em>.gitignore</em></strong> (<span class="note">Note: * is a wildcard character</span><em>):</em></p>
-<pre class="text" data-tab=".gitignore"><code>.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-~*
-doNotSync/</code></pre>
+<div class="sourceCode" id="cb4" data-tab=".gitignore"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.RData</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Ruserdata</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">~*</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">doNotSync/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><strong><em>*:</em></strong> filenames that start with a tilde&nbsp; ( <strong>~</strong> ) – these are temporary files</li>
 </ul>

@@ -56,7 +56,7 @@ When multiple people are collaborating on a project in a GitHub repository, they
 
  
 
-In other words, if the book has 15 chapters then every collaborator, on their own computer, is creating a chapter 16.  Git's job (and the real magic behind Git) is to merge all of the chapter 16s into one chapter 16.  Most of the time Git can do this in the background.  Every once in a while, Git cannot merge these chapters and there is a conflict. 
+In other words, if the book has 15 chapters then every collaborator, on their own computer, is creating a chapter 16.  Git's job (and the real magic behind Git) is to merge all of the chapter 16s into one cohesive chapter 16.  Most of the time Git can do this in the background.  Every once in a while, Git cannot merge the various chapter 16s and there is a conflict. 
 
  
 
@@ -72,7 +72,7 @@ Git can successfully merge Commits from different computer if the files changed 
 
 ![A successful merge](images/GitHub_MergeSuccess.png){#fig-merge-success .fs}
 
-When multiple people edit the same lines in the same file of the same Commit you have a ***conflict***.
+[When multiple people edit the same lines in the same file of the same Commit you have a ***conflict***.]{.hl}
 
  
 
@@ -106,7 +106,7 @@ It is important to understand what these error messages are saying and googling 
 
 The first issue happens when:
 
--   You try to Push your new Commits to the GitHub repository *but*
+-   You try to Push your new Commits to the GitHub repository... but
 
 -   the GitHub repository has Commits that you have not Pulled
 
@@ -138,13 +138,13 @@ The error message when you try to Push when there are Commits you need to Pull f
 
 The cryptic error message is telling you that there are Commits on the GitHub Repository that you do not have yet. In other words, someone else has Pushed Commits to the repository since you last did a Pull.
 
- 
-
-[Note: typing `git pull` in the Terminal does the same thing as pressing the down blue arrow in the Git tab]{.note}
-
 ### Solution
 
 The solution here is to ***Pull*** the changes from the repository.  And when you ***Pull*** you could get Issue 2...
+
+ 
+
+[Note: typing `git pull` in the Terminal does the same thing as pressing the down blue arrow in the Git tab]{.note}
 
 ## Issue 2: Cannot Pull because of uncommitted files
 
@@ -153,6 +153,8 @@ Git will not let you ***Pull*** new Commits if the new Commits have changes to f
 -   you have also modified on your local repository and
 
 -   you have not committed the changes (i.e., the modified files are in the Staging Area)
+
+ 
 
 Changes to files that are uncommitted are, to Git, in a vague state.  Git will not allow you to leave changed files in a vague state if those files have also been changed by other collaborators on the GitHub repository.
 
@@ -173,7 +175,7 @@ Aborting
 Error message saying you need to commit your changes before Pulling new Commit
 :::
 
-The [local changes]{.hl} are your uncommitted changes (i.e., files in Staging Area).  [Merge ]{.hl}refers to the attempt to include the changes from the new Commit to your local project.  In @fig-gitError2, the newest Commits have changes to ***test1.r*** and ***test2.r*** -- but there are also changes to ***test1.r*** and ***test2.r*** in the local project that are still in the ***Staging Area*** (i.e., not Committed).
+The [local changes]{.hl} are your uncommitted changes (i.e., files in Staging Area).  [Merge]{.hl} refers to the attempt to include the changes from the new Commit to your local project.  In @fig-gitError2, the newest Commits have changes to ***test1.r*** and ***test2.r*** -- but there are also changes to ***test1.r*** and ***test2.r*** in the local project that are still in the ***Staging Area*** (i.e., not Committed).
 
  
 
@@ -243,31 +245,31 @@ There are two conflict areas in @fig-unresolvedConflict :
 The start of both conflicts is given by the marker:
 
 ``` bash
-<<<<<<<<<< HEAD
+ <<<<<<<<<< HEAD
 ```
 
 and the end is given by the marker:
 
 ``` bash
->>>>>>>>>> (the 40 digit Git Commit SHA)
+ >>>>>>>>>> (the 40 digit Git Commit SHA)
 ```
 
 In between are the two versions of the conflicting lines is the marker:
 
 ``` bash
-==========
+ ==========
 ```
 
 Putting it all together:
 
 ``` bash
->>>>>>>>>> HEAD
+ >>>>>>>>>> HEAD
 
 The local version of the lines in conflict
-==========      
+ ==========      
 
 The GitHub Repository version of the lines in conflict
-<<<<<<<<<< (40-digit SHA)   
+ <<<<<<<<<< (40-digit SHA)   
 ```
 
 ### Editing the conflicted file to remove the conflict
@@ -280,7 +282,7 @@ Your job is to fix the conflicted lines and remove the markers.  Once you have 
 
  
 
-**WARNING!**
+[**WARNING!**]{.hl}
 
 [Git will accept any changes you make as long as you get rid of the markers.]{.hl}  Git does not double-check to see if you did a good job merging the conflicted lines, Git just assumes you knew what you were doing when you Committed the change.  So, be a good collaborator here and be careful!
 
@@ -356,7 +358,7 @@ git diff --name-only --diff-filter=U
 
 Give a scenario where a conflict would occur and explain how the four issues mentioned in this lesson isolate the conflict to a local computer.
 
-## A successful merge of files
+## Extension: A successful merge of files
 
 Git will try to merge files that have been modified in multiple places and [Git will usually succeed if different lines were modified.]{.hl}
 

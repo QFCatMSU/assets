@@ -16,6 +16,16 @@ short: "01"
 
 -   gitattributes normalize text: auto (CR/LF issue)
 
+-   Workshop:
+
+    -   Git is Linux based
+
+    -   Main branch setup (add to git config ?)
+
+        -   git config --global init.defaultBranch main
+
+    -   Staging area as a term
+
 ## Purpose
 
 -   Install Git and Git Credential Manager (GCM)

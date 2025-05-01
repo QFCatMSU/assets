@@ -12,6 +12,9 @@ short: "00"
 
 -   Include checklist
 -   Mention Projects tab near top-left corner
+-   Workshop:
+    -   Project on GitHub - Unzip project
+    -   setwd() is a session variables
 
 ## Purpose
 

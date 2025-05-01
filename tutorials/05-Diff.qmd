@@ -56,7 +56,7 @@ Ignore adds the file to ***.gitignore*** meaning that changes to the file will n
 
  
 
-However, if you want to ignore a file,[it is best to edit the **.gitignore** file in the Project Folder.]{.hl}
+However, if you want to ignore a file, [it is best to edit the **.gitignore** file in the Project Folder.]{.hl}
 
  
 
@@ -66,19 +66,7 @@ For example, to ignore ***test2.r*** in the ***scripts*** folder, add this line 
 scripts/test2.r
 ```
 
-#### How to ignore a file that has already been indexed (advanced)
-
-This only works if ***test2.r*** has never been written to a chapter (i.e., never been committed). If you want to ignore a file that has already been committed, you have to first remove the file from the index using the ***Terminal***:
-
-``` {.bash tab="Terminal"}
-git rm "data/doNotWantThis.R" -f
-```
-
-More information is here (the second option):
-
-<https://stackoverflow.com/questions/45400361/why-is-gitignore-not-ignoring-my-files>
-
-#### Issues with the right-click, Ignore... option 
+#### Issues with the right-click, Ignore... option
 
 The right-click, ***Ignore*** option will create a new ***.gitignore*** file in the folder that the file is in.
 
@@ -91,6 +79,18 @@ test2.r
 ```
 
 This works but it is easier to maintain all of your ignores in one ***.gitignore*** file -- that is why I recommend manually editing the ***.gitignore*** in the Project Folder over using the right-click option.
+
+#### How to ignore a file that has already been indexed (advanced)
+
+The above instructions only work if ***test2.r*** has never been written to a chapter (i.e., never been committed). If you want to ignore a file that has already been committed, you have to first remove the file from the index using the ***Terminal***:
+
+``` {.bash tab="Terminal"}
+git rm "data/doNotWantThis.R" -f
+```
+
+More information is here (the second option):
+
+<https://stackoverflow.com/questions/45400361/why-is-gitignore-not-ignoring-my-files>
 
 ### Revert
 
@@ -383,7 +383,7 @@ The second column shows that there were eight lines in the new version of the fi
 
 -   Lines 2, 3, 4, 7, and 8 were all added (green)
 
--   Lines 1, 5, and 6 come from the previous version (lines 2, 4, and 6)
+-   Lines 1, 5, and 6 come from the previous versions lines 2, 4, and 6
 
  
 
