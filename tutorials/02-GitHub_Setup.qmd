@@ -143,7 +143,7 @@ git add -A && git commit -m "added Git"
 git remote add origin "https://github.com/myUserName/myRepository.git"
 ```
 
-3\) The third line sends (***Push***) your project to the GitHub repository (***origin***).  There is a good chance that GitHub will ask you to authenticate at this point using the GCM (@sec-auth)
+3\) The third line sends (***Push***) your project to the GitHub repository (***origin***).  There is a good chance that GitHub will ask you to authenticate at this point using the GCM (@sec-auth) \<does main work here?
 
 ``` bash
 git push -u origin master

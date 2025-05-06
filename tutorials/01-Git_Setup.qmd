@@ -16,6 +16,12 @@ short: "01"
 
 -   gitattributes normalize text: auto (CR/LF issue)
 
+-   add main git branch to config
+
+    -   add git init -b main
+
+    -   alt: say
+
 -   Workshop:
 
     -   Git is Linux based
@@ -287,7 +293,7 @@ First, [make sure you are in your RStudio Project!]{.hl}
 To add Git to your RStudio Project folder, type in the ***Terminal***:
 
 ``` r
-git init
+git init -b main
 ```
 
 And then restart RStudio
@@ -299,6 +305,8 @@ And then restart RStudio
  
 
 [Extension: Alternate way to add git to RStudio Project]
+
+Extension: Permanently make the default branch main
 
 ### RStudio and Git
 
