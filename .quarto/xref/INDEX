@@ -106,5 +106,8 @@
   },
   "tutorials/Git/notes.qmd": {
     "notes.html": "97aed459"
+  },
+  "tutorials/ADMB-TMB/ADMB-TMB-Install.qmd": {
+    "ADMB-TMB-Install.html": "ab354029"
   }
 }

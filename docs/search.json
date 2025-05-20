@@ -1329,5 +1329,75 @@
       "<b>QFC Assets and Tutorials</b>",
       "Quick Setup"
     ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "",
+    "text": "Charlie Belinsky\nQuantitative Fisheries Center\nMichigan State University\nbelinsky@msu.edu\n248-383-5611\n \nNote: Mac installation of this software is much more involved – contact Charlie for instructions.\n \nThe project is maintained on Github."
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#author",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#author",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "",
+    "text": "Charlie Belinsky\nQuantitative Fisheries Center\nMichigan State University\nbelinsky@msu.edu\n248-383-5611\n \nNote: Mac installation of this software is much more involved – contact Charlie for instructions.\n \nThe project is maintained on Github."
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#overview",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#overview",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "2 Overview",
+    "text": "2 Overview\nThese procedures in the document install the following software and was tested on 5/20/2025:\n\nR 4.5.0\nRtools 45 (for the CPP compilers)\nRStudio 2025.05.0 Build 496\nTMB package for R 1.9.17\nADMB 13.1\nEmacs 27.2 (Emacs versions 28 and up will not work)\nEmacs configuration files\n\nThese files provide the syntax highlighting in Emacs for both ADMB and TMB and set up the Environment\n\nadmb2r.cpp in the ADMB folder\n\n \nAppendix 1: User Environment PATH\n\n2.1 Admin access to your computer\nThe installation procedures will do the following thatmight require more administrative access to your computer than your user account has:\n\nInstall programs (R, RStudio, Rtools, ADMB, Emacs)\nInstall programs directly to the C: drive (ADMB, RTools)\nInstall programs not validated by Microsoft (ADMB)\nRun a batch file (PATH.bat)"
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#viewing-hidden-files-and-extensions-in-windows-optional",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#viewing-hidden-files-and-extensions-in-windows-optional",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "3 Viewing hidden files and extensions in Windows (optional)",
+    "text": "3 Viewing hidden files and extensions in Windows (optional)\nThis section is useful for this installation and for any programming you do on your computer.\nNote: images in this document can be resized by clicking on them\n \n1) Open a File Explorer window and in…\nWindows 10: Click View ➔ Options ➔ Change folder and search options\n\n\n\n\n\n\nFigure 1: Accessing folder options in Windows 10\n\n\n\nWindows 11: click 3 dots ( … ) ➔ Options\n\n\n\n\n\n\nFigure 2: Accessing folder options in Windows 11\n\n\n\n2) Both Windows 10 and 11:\n\nClick View tab\nCheck Show hidden files…\nUncheck Hide extensions for known file types\nclick OK\n\n\n\n\n\n\nFigure 3: Showing hidden files and hiding extensions"
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#software-installation",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#software-installation",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "4 Software Installation",
+    "text": "4 Software Installation\nYou can use the default installation options for all applications.\n \nSteps 1-4 are only needed for TMB, step 5 is only needed for ADMB, steps 6 and 7 are needed for both ADMB and TMB.\n1) Download and Install R (you need to have at least version 4.3)\n \n2) Download and install Rtools (you need to have at least version 43 and the version must match your R version)\n\nClick on Rrools4X Installer in Installing Rtools4X section\n\n \n3) Download and install RStudio (you need to have a version from 2022 or later)\n \n4) Open RStudio and install the TMB package\n\nIn RStudio: Tools ➔ Install Packages… ➔ type TMB in Packages textbox ➔ Install\nClose RStudio after installing package\n\n \n5) Download and install ADMB-13.1-windows.exe\n\nAlternatively, you can download ADMB-12.3-windows.exe (under Windows header)\nWhen installing, you will likely get a Windows protected your PC screen, if so:\n\nclick More info\nclick Run anyway\n\n\n \n6) Download and install emacs-27.2-x86_64-installer.exe\n \n7) Go to ADMB-TMB-Install GitHub page\n\nClick on green Code button and choose Download Zip\n\nThis will download a zipped file named ADMB-TMB-Install-main.zip\n\nUnzip ADMB-TMB-Install-main.zip (right-click, Extract All then Extract). \nExecute (double-click) Path.bat\n\nYou will likely get a Windows protected your PC screen, if so:\n\nclick More info\nclick Run anyway\n\n\nIf this does not work you can do this: Appendix 2: manually copy configuration files and admb2r.cpp (this link also includes more about the files)\n\n \n8) Restart computer\n\nAs far as I know, this step is not needed – but I keep it here just to be safe."
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#have-emacs-open-tpl-files-by-default-optional",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#have-emacs-open-tpl-files-by-default-optional",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "5 Have Emacs open TPL files by default (optional)",
+    "text": "5 Have Emacs open TPL files by default (optional)\n\nRight-click on any *.tpl file\n\nthere is one in the folder you just extracted ➔ examples ➔ simple ➔ simple.tpl\n\nChoose Open With\nWindows 10:\n\nAt bottom, click Choose an app on your PC\nThe Path is: C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe\nClick Open\nClick Always\n\nWindows 11:\n\ngo to bottom and click on Choose another\nAt bottom, click Choose an app on your PC\nThe Path is: C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe\nClick OK\n\n\n \nNote: the same procedures will work if you want emacs to be the default program for CPP files"
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-admb",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-admb",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "6 Testing out ADMB",
+    "text": "6 Testing out ADMB\n\nIn folder you just unzipped, double-click emacs ➔ examples ➔ simple ➔ simple.tpl\nOpen simple.tpl in Emacs\nClick Translate (button 1), Build (button 2), and Run (button 3)\n\nMake sure you wait for steps to complete\n\nIf the Emacs panels look like this after Run, then ADMB is properly installed:\n\n\n\n\n\n\n\nFigure 4: Translate, Build, and Run buttons in ADMB.  This view is from ADMB 12.3 – the view from 13.1 is slightly different"
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-tmb",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-tmb",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "7 Testing out TMB",
+    "text": "7 Testing out TMB\n\nIn folder you just unzipped, double-click emacs ➔ examples ➔ mini ➔ mini.cpp\nOpen mini.cpp in Emacs\nClick Clean (button 1), Compile (button 2), and Run (button 3)\n\nMake sure you wait for each step to complete\nCompile take a minute or two\n\nIf the Emacs panels look like this after Run, then TMB is properly installed:\n\n\n\n\n\n\n\nFigure 5: Clean, Compile, and Run buttons in TMB\n\n\n\n\n7.1 Package inconsistency error\nIf you see this message when compiling a TMB program:\nWarning message:\nIn checkMatrixPackageVersion() : Package version inconsistency detected.\nTMB was built with «Matrix version 1.5.4.1»\nCurrent «Matrix version is 1.5.4»\nPlease re-install 'TMB' from source using install.packages('TMB', type = 'source') or ask CRAN for a binary version of 'TMB' matching CRAN's 'Matrix' package\nusing C++ compiler: 'G__~1.EXE (GCC) 12.2.0'\nDo not follow the instructions given.  Instead just update or reinstall the outdated package (in this case, Matrix).  This is only necessary if the the script does not work because of the outdated package."
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-1-user-environment-path",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-1-user-environment-path",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "8 Appendix 1: User Environment PATH",
+    "text": "8 Appendix 1: User Environment PATH\nThe User Environment PATH variable is not needed anymore.  I added this to the emacs configuration files.\n \nHowever, there is still a chance that the User Environment PATH has been set by a previously installed program and that PATH could interfere with ADMB and TMB’s operation.  This is most likely only going to be true if you previously installed ADStudio.\n \nYou can see the User Environment PATH by doing a Windows search for Environment and choosing Edit the system environment variables.\n \nThat will open the System Properties window on the Advanced tab– click on the Environment… button:\n\n\n\n\n\n\nFigure 6: The Advanced System Properties tab\n\n\n\nThen double-click on Path in the User variables section:\n\n\n\n\n\n\nFigure 7: Path variables\n\n\n\nDelete any references to older versions of ADMB, TMB, or ADStudio.  You can also safely delete the references to the current ADMB version – they are not needed."
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-2-manually-copy-configuration-files-and-admb2r.cpp",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-2-manually-copy-configuration-files-and-admb2r.cpp",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "9 Appendix 2: manually copy configuration files and admb2r.cpp",
+    "text": "9 Appendix 2: manually copy configuration files and admb2r.cpp\nThe extracted folder ADMB-TMB-Install-main contains:\n\nAn executable file called PATH.bat (which installs the folders and files below)\nA folder called emacsConfigFiles that gets installed to the emacs folder when PATH.bat is executed\nA folder called Examples, which contains ADMB and TMB scripts that are used in this document to test the installation.\nadmb2r.cpp – a commonly used ADMB script file that is not included with ADMB\n\n \nPATH.bat is a batch file that copies the emacs configuration files and admb2r.cpp to the correct locations.\n \nThe following are instructions to manually copy the files – this is only needed if PATH.bat does not work.\n\n9.1 Copy emacs configuration files\nInside ADMB-TMB-Install-main, there is a folder named emacsConfigFiles.  You need to copy the contents inside the emacsConfigFiles folder (a file named .emacs and a folder named emacs) to the user’s appdata folder.\n \nThe easiest way to get to the user’s appdata folder is to type %appdata% in a File Explorer window and hit enter.  Or, you can go directly to the folder: C:\\Users\\&lt;yourUserName&gt;\\AppData\\Roaming.  Move both the emacs folder and .emacs file to this folder:\n\n\n\n\n\n\nFigure 8: Location to copy the emacs configuration files\n\n\n\n\n\n9.2 Copy admb2r.cpp\nThe file admb2r.cpp is used in ADMB scripts but it does not come with ADMB.\n \nYou can add it to ADMB by copying admb2r.cpp from the ADMB-TMB-Install-main folder to the following locations:\n\nc:\\ADMB-13.1\\include\nc:\\ADMB-13.1\\include\\contrib  (I am not sure it is necessary to copy it here)\n\n \nNote: If you are using a different version of ADMB then replace 13.1 with the version you are using"
   }
 ]
