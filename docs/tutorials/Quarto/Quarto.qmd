@@ -1,0 +1,115 @@
+---
+title: "Quarto Installation and help"
+author: "Charlie Belinsky <br> belinsky@msu.edu"
+date: 11/16/2023
+format: 
+  html:
+    #css: "https://qfcatmsu.github.io/css/presStyle.css"
+    toc: true
+    number-sections: true
+editor: visual
+---
+
+## Info
+
+This document was created and is maintained by Charlie Belinsky and lives here: <https://qfcatmsu.github.io/tutorials/Quarto.html>. It is meant to be a living document so expect to see changes on it. Feel free to email me with questions and/or suggestions.
+
+### What's next
+
+-   explanation of the two types of Quarto editors (visual and source)
+
+-   using headers in quarto
+
+-   better organization of the document and presentation types
+
+-   rendering doucments
+
+## Install Quarto
+
+You need to download and install Quarto version ***1.4***, which, as of November 16, 2023, is the pre-release version.
+
+<https://quarto.org/docs/download/prerelease.html>
+
+The released version of Quarto (1.3) will not work.
+
+### RStudio
+
+Quarto has worked for me on every 2023 version of RStudio, however it is recommended to get the latest RStudio because RStudio is constantly updating its Quarto interface (both Quarto and RStudio are developed by the same company, posit)
+
+### Packages needed
+
+You need to install RmarkDown:\
+`install.packages("rmarkdown")`
+
+## Installation of LaTex on Windows (tinyTeX)
+
+This is only needed if you plan to render a Quarto document directly to PDF format.
+
+Install the ***tinytex*** package (from CRAN):\
+`install.packages("tinytex")`
+
+Use the ***tinytex*** package to install the ***tinytex*** application:\
+`tinytex::install_tinytex()`
+
+### Update issue with tinyTeX
+
+When rendering a PDF Quarto might prompt you to update **tlmgr**, which is your LaTeX distribution. You will not be able to render a PDF until the update has occurred but following Quarto's prompts will NOT be successful.
+
+You need to update **tlmgr** manually by running:\
+`tinytex::tlmgr_update()`
+
+## Starting a new Quarto document
+
+In RStudio, click ***File -\> New File -\> Quarto document...***
+
+![](images/Quarto_Docs.png)
+
+### Quarto document options
+
+There are three types of documents you can create in Quarto:
+
+1.  HTML document
+
+2.  PDF document (requires a LaTex installation)
+
+3.  Word document
+
+### HTML and PDF documents
+
+If you want a ***document*** that can be ***both*** HTML and PDF then:
+
+1.  Create an HTML document.
+
+2.  Open the HTML document in any browser
+
+3.  Use the Print dialog and Print to a PDF
+
+Note: This method does not require a LaTeX installation.
+
+## Starting a new Quarto presentation
+
+In RStudio, click ***File -\> New File -\> Quarto presentation...***
+
+![](images/Quarto_Pres.png)
+
+### Quarto presentation options
+
+1.  Reveal JS presentation (a webpage designed like PowerPoint)
+
+2.  Beamer presentation (a PDF designed like PowerPoint)
+
+3.  PowerPoint
+
+### HTML and PDF presentations
+
+If you want a PowerPoint-like ***presentation*** that can be ***both*** HTML and PDF then:
+
+1.  Create an Reveal JS document.
+
+2.  Open the HTML document in Chrome
+
+3.  Click "E" on the webpage
+
+4.  Use the Print dialog and Print to a PDF
+
+Note: This method does not require a LaTeX installation.
