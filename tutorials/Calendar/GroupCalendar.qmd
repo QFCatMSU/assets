@@ -1,0 +1,63 @@
+---
+title: "New QFC Group Calendar"
+---
+
+These instructions are linked on the Calendar every Sunday. Click on images to resize them.
+
+## Location (Outlook)
+
+The new QFC Calendar is automatically put into your Outlook Calendars. It will be under the ***Groups*** category named ***QFC***.
+
+ 
+
+This view is from the new Outlook (you should update to the new Outlook):
+
+![Location of QFC Calendar in Outlook](images/QFCCalendarLocation.png){.fs}
+
+[Note: If you only want to see QFC events, then uncheck every other calendar]{.note}
+
+## Event Categories
+
+There are three types of QFC events and they are color coded:
+
+-   Staff Availability (blue)
+
+-   Conference Room (orange)
+
+-   Informational (green)
+
+ 
+
+Unfortunately, Outlook does not yet allow you to change category names on Group Calendars (you can do this on individual calendars) so we have to deal with the awkward category colors.
+
+## Creating a new event
+
+In Outlook calendar, click on ***New Event*** and this windows will appear:
+
+![Creating a new QFC Group event](images/NewEvent-01.png){.fs}
+
+Make sure you:
+
+-   change the calendar to ***QFC (your_email\@msu.edu)***
+
+-   change the ***category*** color
+
+-   add something to the description that tell which kind of event this is (so we are not fully dependent on the awkward color categories)
+
+### Event emails and notifications
+
+[Only people explicitly added to the ***Invite attendees*** section will get emails/notifications about the event]{.hl}. For everyone else, the event will just appear on the group calendar.
+
+### Changing event category (color)
+
+If you need to change the category color of the event, you can right-click on the event and click ***Categorize***:
+
+![Changing the event category (color)](images/ChangeColor.png){.fs}
+
+## QFC calendar on Teams
+
+The QFC Group Calendar is also linked on the QFC Teams page:
+
+![The QFC Group Calendar in the Teams page](images/TeamsView.png){.fs}
+
+When you click on QFC Group calendar, it opens your Outlook calendar with the QFC Group calendar checked. You can add events and edit the calendar here.

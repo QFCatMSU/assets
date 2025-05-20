@@ -67,5 +67,44 @@
   },
   "tutorials/04-Commits.qmd": {
     "04-Commits.html": "e3cb71cd"
+  },
+  "tutorials/Calendar/GroupCalendar.qmd": {
+    "GroupCalendar.html": "5a79988f"
+  },
+  "tutorials/Git/00-RStudioProjectsSetup.qmd": {
+    "00-RStudioProjectsSetup.html": "52bec931"
+  },
+  "tutorials/Git/01-Git_Setup.qmd": {
+    "01-Git_Setup.html": "702f1c27"
+  },
+  "tutorials/Git/02-GitHub_Setup.qmd": {
+    "02-GitHub_Setup.html": "182db284"
+  },
+  "tutorials/Git/03-Push_Pull.qmd": {
+    "03-Push_Pull.html": "2d9d5a3e"
+  },
+  "tutorials/Git/04-Commits.qmd": {
+    "04-Commits.html": "c57b2e92"
+  },
+  "tutorials/Git/05-Diff.qmd": {
+    "05-Diff.html": "2aff9515"
+  },
+  "tutorials/Git/06-Project_History.qmd": {
+    "06-Project_History.html": "aa6ed354"
+  },
+  "tutorials/Git/07-Conflicts.qmd": {
+    "07-Conflicts.html": "60df3b2c"
+  },
+  "tutorials/Git/08-Branches.qmd": {
+    "08-Branches.html": "ce252b2a"
+  },
+  "tutorials/Git/Git-GitHub-Quick-Setup.qmd": {
+    "Git-GitHub-Quick-Setup.html": "51b11152"
+  },
+  "tutorials/Git/GroupCalendar.qmd": {
+    "GroupCalendar.html": "4df0ae3c"
+  },
+  "tutorials/Git/notes.qmd": {
+    "notes.html": "97aed459"
   }
 }

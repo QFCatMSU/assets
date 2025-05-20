@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.28">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>notes</title>
+<title>08: Branches</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../tutorials/Git-GitHub-Quick-Setup.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b719d3d4935f2b08311a76135e2bf442.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c5e6fd5a646752829aeb2af341632313.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../tutorials/Git/Git-GitHub-Quick-Setup.html" rel="next">
+<link href="../../tutorials/Git/07-Conflicts.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c5e6fd5a646752829aeb2af341632313.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">notes</h1>
+          <h1 class="quarto-secondary-nav-title">08: Branches</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -118,67 +119,67 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/00-RStudioProjectsSetup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/00-RStudioProjectsSetup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">00: RStudio Projects Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/01-Git_Setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/01-Git_Setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01: Git Repositories</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/02-GitHub_Setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/02-GitHub_Setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02: GitHub Repositories</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/03-Push_Pull.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/03-Push_Pull.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03: Push and Pull</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/04-Commits.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/04-Commits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">04: Commits</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/05-Diff.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/05-Diff.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05: Diff</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/06-Project_History.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/06-Project_History.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">06: Project History</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/07-Conflicts.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/07-Conflicts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07: Issues and Conflicts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/08-Branches.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/08-Branches.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">08: Branches</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/Git-GitHub-Quick-Setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Git/Git-GitHub-Quick-Setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quick Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/notes.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../tutorials/Git/notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">notes</span></a>
   </div>
 </li>
@@ -186,7 +187,27 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title"><b>Content</b></h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">1</span> Purpose</a>
+  <ul class="collapse">
+  <li><a href="#branch-history" id="toc-branch-history" class="nav-link" data-scroll-target="#branch-history"><span class="header-section-number">1.1</span> Branch History</a></li>
+  </ul></li>
+  <li><a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology"><span class="header-section-number">2</span> Terminology</a></li>
+  <li><a href="#user-created-branches" id="toc-user-created-branches" class="nav-link" data-scroll-target="#user-created-branches"><span class="header-section-number">3</span> User-created branches</a>
+  <ul class="collapse">
+  <li><a href="#branches-and-commits" id="toc-branches-and-commits" class="nav-link" data-scroll-target="#branches-and-commits"><span class="header-section-number">3.1</span> Branches and Commits</a></li>
+  </ul></li>
+  <li><a href="#new-branches" id="toc-new-branches" class="nav-link" data-scroll-target="#new-branches"><span class="header-section-number">4</span> New Branches</a></li>
+  <li><a href="#branch-drop-down" id="toc-branch-drop-down" class="nav-link" data-scroll-target="#branch-drop-down"><span class="header-section-number">5</span> Branch drop-down</a></li>
+  <li><a href="#git-concepts" id="toc-git-concepts" class="nav-link" data-scroll-target="#git-concepts"><span class="header-section-number">6</span> Git concepts</a>
+  <ul class="collapse">
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches"><span class="header-section-number">6.1</span> Branches</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -197,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">notes</h1>
+<h1 class="title d-none d-lg-block">08: Branches</h1>
 </div>
 
 
@@ -214,21 +235,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Push and Pull only operate on the branch you are currently working on</p>
-<p>Detached Head: when the Head is not pointing to the end of a branch</p>
-<p>refs: list all head/master</p>
-<p>origin: remote repository (as of last Pull)</p>
-<p>HEAD: point to the currently checked out branch – usually the end unless the head is detached</p>
-<p>- can have multiple (worktree) – this is advanced!</p>
-<p>master: end of main branch</p>
-<p>&lt;name of branch&gt; - end of another branch</p>
-<p>origin/master - end of remote master branch</p>
-<p>origin/&lt;name of branch&gt; - end of another remote branch</p>
-<p>Note: origin is the name typically used for the remote repo – it does not have to be that name</p>
-<p>origin/HEAD - remote checkedout branch</p>
-<p>HEAD -&gt; refs/head/master (similar to folder linking?)</p>
+<section id="purpose" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">1</span> Purpose</h2>
+<p>Show how to create a branch of your project.</p>
+<p>– start with branches within one repository</p>
+<p>&nbsp;- talk about origin/master/other branch names</p>
+<p>&nbsp;- head (checkout branch/remote branch/ end of branch – unless detached)</p>
+<section id="branch-history" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="branch-history"><span class="header-section-number">1.1</span> Branch History</h3>
+<p>Note that history from the origin is based on the last time you Pulled.</p>
+<p>&nbsp;</p>
+<p>- switching branches switches your project</p>
+<p>- PUSH and PULL only work on the branch you are on</p>
+<p>- When project is new you will Pull only Master (but can see other branches)</p>
+<p>- PULL will inform you that a new branch exists and list the branch under Origin – it will not get the files</p>
+</section>
+</section>
+<section id="terminology" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="terminology"><span class="header-section-number">2</span> Terminology</h2>
+<p>Master: the main branch of your project.&nbsp; If you create no branches in your project then you only have the master branch</p>
+<p>Origin: the location of the remote repository (you can change the name but origin is default and typically what is used)</p>
+<p>Note: You can have multiple remote repositories – but this is rare.&nbsp; If you did have multiple remote repositories then Origin is the location of the original remote repository</p>
+<p>Head: the current working Commit (usually at the tip of a branch – the last Commit on the branch)</p>
+<p>- more advanced: you can “checkout” an older Commit and this Commit would have HEAD attached to it</p>
+<p>&nbsp;</p>
+<p>– Is there a HEAD to each branch or just one HEAD?&nbsp; Just one.</p>
+</section>
+<section id="user-created-branches" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="user-created-branches"><span class="header-section-number">3</span> User-created branches</h2>
+<p>In the previous lesson, we saw how Git crates a branch whenever two different people work are editing the same Commit – let’s say it is Commit #15.&nbsp; Git will then attempt to merge the branched Commit (16a and 16b) into one Commit (16).&nbsp; As long as the two people are editing different files or editing different places in the same file, Git will most likely be successful at merging the Commits.&nbsp; If not, then the second user to create Commit #16 needs to manually merge the branched Commit by fixing the conflicts.</p>
+<p>&nbsp;</p>
+<p>However, there are times where people want to create and maintain new branches of their project.&nbsp;</p>
+<p>&nbsp;</p>
+<p>Some of these reasons are:</p>
+<p>- You want to test out code and do not want to interfere with the main project</p>
+<p>- You are starting a new version of your project but still want to maintain the old version</p>
+<p>- Multiple people want to try multiple solutions to the same problem</p>
+<section id="branches-and-commits" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="branches-and-commits"><span class="header-section-number">3.1</span> Branches and Commits</h3>
+<p>Branches within a project essentially create a project within a project</p>
+<p>&nbsp;</p>
+<p>&lt;image of branched project with Commit numbers&gt;</p>
+<p>&nbsp;</p>
+<p>Note: Branches can be merged back into the main project</p>
+</section>
+</section>
+<section id="new-branches" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="new-branches"><span class="header-section-number">4</span> New Branches</h2>
+<p><img src="images/NewRemote.png" class="img-fluid"></p>
+<p>Your RStudio Project can only reflect one branch at a time, you can change the branch using the branch drop-down (show image):</p>
+<p>&nbsp;</p>
+<p>Branch Name: Name of the branch you created – this will appear as an option in the branch drop-down</p>
+<p>Remote: The name of the online repository – you can connect different branches to different repository</p>
+<p>&nbsp;– typical, the “main” repository is called origin – although this is not necessary</p>
+<p>Add Remote: Link to a repository not currently on your list</p>
+<p>Sync branch with Remote: if uncheck then this branch will only exist on your computer</p>
+<p>&lt;do not do anything with Remote – this will open a Pandora’s Box!&gt;</p>
+</section>
+<section id="branch-drop-down" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="branch-drop-down"><span class="header-section-number">5</span> Branch drop-down</h2>
+<p><img src="images/BranchDropDown.png" class="img-fluid"></p>
+<p>The branch drop-down lists all of the branches in your project.&nbsp; The original branch was called <strong><em>master</em></strong> &lt;is this always true?&gt; and the original repository is called <strong><em>origin</em></strong> &lt;does not have to be true&gt;.&nbsp; The dropdown menu also organizes the branches by which remote they are attached to…</p>
+<p>&nbsp;</p>
+<p>Note: <strong><em>notRemote</em></strong> is not listed in the sections underneath because it is not attached to a repository (it is local only)</p>
+<p>&nbsp;</p>
+<p>My questions:</p>
+<p>Are the branches listed with the repository the exact same as the branches listed with the local computer (maybe?!? - you can checkout branches and also have changes not Pushed/Pulled – check this – does not seem to matter).&nbsp; Perhaps there will be a difference if you have checked out a Commit.&nbsp; But, why give the option to work with the Remote branch instead of the local branch?</p>
+</section>
+<section id="git-concepts" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="git-concepts"><span class="header-section-number">6</span> Git concepts</h2>
+<p>Before we get into the error messages, we will start with the Git concepts that are involved in these issues: branches, merges, and conflicts.</p>
+<section id="branches" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="branches"><span class="header-section-number">6.1</span> Branches</h3>
+<p>Up until this point in this class, every Commit belonged to one branch, called the <strong><em>master</em></strong> branch.&nbsp; This meant that the Commits were all linear – like chapters in a book.&nbsp; In Git parlance, every Commit has exactly one child Commit and one parent Commit (except the first and last Commit).</p>
+<p>&nbsp;</p>
+<p>However, in Git a project can have multiple branches.&nbsp; In other words, a Commit can have more than one child Commit – think of it as a fork in the project.</p>
+<p>&nbsp;</p>
+<p>There are two types of branches in Git:</p>
+<ol type="1">
+<li><p><strong>User-created branches</strong>: The main reason for someone to create a branch in a project is to test out new features without including them in the main (master) branch until they have been tested.&nbsp; We will talk more about creating your own branches in the next lesson.<br>
+</p></li>
+<li><p><strong>Git-created branches</strong>: When multiple people are working on the same project, they essentially are all working off of the same book – and they are all writing the next chapter.&nbsp; So, if the book has 15 chapter (i.e., Commits), then everyone is writing a 16<sup>th</sup> chapter.&nbsp; Effectively, everyone is creating a branch.&nbsp; Most of the time, Git will merge those branches together behind-the-scenes.</p></li>
+<li></li>
+</ol>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -632,11 +725,14 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/Git-GitHub-Quick-Setup.html" class="pagination-link" aria-label="Quick Setup">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Quick Setup</span>
+      <a href="../../tutorials/Git/07-Conflicts.html" class="pagination-link" aria-label="07: Issues and Conflicts">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">07: Issues and Conflicts</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../tutorials/Git/Git-GitHub-Quick-Setup.html" class="pagination-link" aria-label="Quick Setup">
+        <span class="nav-page-text">Quick Setup</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
