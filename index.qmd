@@ -4,7 +4,9 @@ format: html
 editor: visual
 ---
 
-## Quarto
+[Project Management using Git and GitHub class](https://qfcatmsu.github.io/Project_Management/)
+
+ 
 
 [rs_theme_light](quarto/qfc_a11y-dark.rstheme)
 
