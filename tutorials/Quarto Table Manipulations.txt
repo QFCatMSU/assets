@@ -1,0 +1,25 @@
+Modifying a table in Quarto Visual mode
+
+For all modification, you need to put the table inside a Div 
+- Format -> Div (or Insert -> Div)
+- it is easiest to create the div first and the table within
+- you can also create the div outside the table and cut/paste the div in
+
+To make the table width the size of content:
+- Add class "fit" to the Div
+
+To make the table linkable:
+- Add id="tbl-anyThingGoesHere" to the Div
+
+To add a Title to the table (this also numbers the table):
+- Put text inside the Div under the table
+- Note: only do one line of text
+
+To add a caption under the table:
+- Add text directly under the Div (not inside) 
+- Surrond text with a Span (format -> Span)
+- add class = "table-caption" to the Span
+
+
+
+

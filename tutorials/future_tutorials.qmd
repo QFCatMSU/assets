@@ -1,0 +1,112 @@
+---
+title: "Quarto Visual Tutorial"
+format: html
+editor: visual
+---
+
+-   Git/GitHub usage
+
+-   Setup
+
+    -   CSS injection
+
+    -   VSCode: render externally
+
+-   Rendering
+
+    -   background tasks
+
+-   Add a new lesson
+
+    -   create a new lesson
+
+    -   init lesson
+
+        -   starter code
+
+        -   copy old lesson
+
+    -   save lesson
+
+-   Element in webpage
+
+    -   headers (and what they mean)
+    -   paragraphs
+    -   codeblocks
+    -   numbered/bullet lists
+
+-   Styling
+
+    -   b,i,u,
+
+    -   highlights and notes
+
+-   Spacing
+
+    -   Control-Space for extra line/ spaces
+
+-   add images
+
+    -   resizing
+
+    -   add caption (figure)
+
+    -   differences between VSCode, Quarto
+
+        -   dropping image renames – can drop in file manager then add to page
+
+    -   referencing
+
+-   Links
+
+    -   inside/ouside project
+
+    -   other class lesson
+
+    -   sections (2 ways)
+
+        -   by Header
+
+        -   add name sec-# and ref by figure
+
+    -   download
+
+    -   email links ??
+
+-   Code (block)
+
+    -   highlighting
+
+    -   tab names
+
+    -   copying
+
+    -   add caption (figure)
+
+    -   referencing
+
+    -   language (R, Python, Java...)
+
+        -   use default if you do not want highlighting (cannot leave blank)
+
+-   Equations
+
+    -   inline and display (Latex)
+
+    -   using EquateIO
+
+    -   numbering
+
+    -   captioning/ referencing
+
+-   Videos
+
+    -   From Mediaspace
+
+-   Tables
+
+    -   cannot merge cells (email Quarto re this)
+
+-   Bibliography
+
+    -   Zotero

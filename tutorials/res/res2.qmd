@@ -1,0 +1,15 @@
+---
+title: CV
+format:
+  quarto-cv-pdf: default
+  # install: quarto install extension mps9506/quarto-cv
+  #          extension installed in root folder
+  # template: quarto use template mps9506/quarto-cv
+  #          extension installed in same folder as template
+  # extension works from both root folder and folder with template 
+author: William Gosset
+date: last-modified
+phone: 123-456-7890
+address: "Guinness Brewery · Park Royal · London NW10 7RR, UK"
+email: guinness@consumer-care.net
+---

@@ -109,5 +109,20 @@
   },
   "tutorials/ADMB-TMB/ADMB-TMB-Install.qmd": {
     "ADMB-TMB-Install.html": "ab354029"
+  },
+  "tutorials/GroupCalendar/GroupCalendar.qmd": {
+    "GroupCalendar.html": "cb55cac7"
+  },
+  "tutorials/Quarto/Quarto.qmd": {
+    "Quarto.html": "487fe442"
+  },
+  "tutorials/future_tutorials.qmd": {
+    "future_tutorials.html": "a4fce9b9"
+  },
+  "tutorials/res/res.qmd": {
+    "res.tex": "b0beba0a"
+  },
+  "tutorials/res/res2.qmd": {
+    "res2.tex": "8ff8e25b"
   }
 }
