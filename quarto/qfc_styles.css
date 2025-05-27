@@ -162,7 +162,10 @@
   /* highlighting in codeblock */
   code b
   {
-    background-color: rgb(255,255,200);
+    background-color: rgb(255,255,100);
+    padding-left: 1px;
+    padding-right: 1px;
+    border-radius: 3px;
   }
   /* highlighting on in-page object that is linked to */
   .refObjHighlight
