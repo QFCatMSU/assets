@@ -124,5 +124,8 @@
   },
   "tutorials/res/res2.qmd": {
     "res2.tex": "8ff8e25b"
+  },
+  "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.qmd": {
+    "01-RStudioProjectsSetup.html": "389a488b"
   }
 }
