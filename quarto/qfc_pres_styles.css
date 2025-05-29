@@ -108,3 +108,17 @@ div.slide-menu-button
   /* make sure the menu button does not get hidden by the slide number */
   z-index: 32 !important;
 }
+
+a.pdfLink
+{
+  position: absolute;
+  top: 40%;
+}
+
+@media print
+{
+  a.pdfLink
+  {
+    display: none;
+  }
+}
