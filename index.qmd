@@ -15,3 +15,5 @@ editor: visual
 [QFC_Styles.js](quarto/qfc_styles.js)
 
 [QFC_Styles.css](quarto/qfc_styles.css)
+
+[QFC_pres_styles.css](quarto/qfc_pres_styles.css)
