@@ -105,6 +105,6 @@ ul, ul ul, ul ul ul, ul ul ul ul
 
 div.slide-menu-button
 {
-  /* make sure the menu button does not get hidden */
-  z-index: 99;
+  /* make sure the menu button does not get hidden by the slide number */
+  z-index: 32 !important;
 }
