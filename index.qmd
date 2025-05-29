@@ -21,3 +21,5 @@ editor: visual
 [QFC_pres_styles.js](quarto/qfc_pres_styles.js)
 
 [qfc_logo.png](images/qfc_logo.png)
+
+[qfc_icon.png](images/qfc_icon.png)
