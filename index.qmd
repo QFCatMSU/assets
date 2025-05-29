@@ -17,3 +17,5 @@ editor: visual
 [QFC_Styles.css](quarto/qfc_styles.css)
 
 [QFC_pres_styles.css](quarto/qfc_pres_styles.css)
+
+[qfc_logo.png](images/qfc_logo.png)
