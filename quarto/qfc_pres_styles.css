@@ -113,6 +113,7 @@ a.pdfLink
 {
   position: absolute;
   top: 40%;
+  left: 35%;
 }
 
 @media print
