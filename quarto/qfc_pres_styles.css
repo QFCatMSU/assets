@@ -102,3 +102,9 @@ ul, ul ul, ul ul ul, ul ul ul ul
 {
   list-style-type: disc !important;
 }
+
+div.slide-menu-button
+{
+  /* make sure the menu button does not get hidden */
+  z-index: 99;
+}
