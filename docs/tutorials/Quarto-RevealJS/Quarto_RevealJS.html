@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>New QFC Group Calendar</title>
+<title>Quarto RevealJS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../tutorials/Quarto-RevealJS/Quarto_RevealJS.html" rel="next">
-<link href="../../tutorials/Quarto/Quarto.html" rel="prev">
+<link href="../../tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html" rel="next">
+<link href="../../tutorials/GroupCalendar/GroupCalendar.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -89,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">New QFC Group Calendar</h1>
+          <h1 class="quarto-secondary-nav-title">Quarto RevealJS</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -125,13 +160,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../tutorials/GroupCalendar/GroupCalendar.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../tutorials/GroupCalendar/GroupCalendar.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">New QFC Group Calendar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../tutorials/Quarto-RevealJS/Quarto_RevealJS.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/Quarto-RevealJS/Quarto_RevealJS.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Quarto RevealJS</span></a>
   </div>
 </li>
@@ -155,14 +190,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title"><b>Content</b></h2>
    
   <ul>
-  <li><a href="#location-outlook" id="toc-location-outlook" class="nav-link active" data-scroll-target="#location-outlook"><span class="header-section-number">1</span> Location (Outlook)</a></li>
-  <li><a href="#event-categories" id="toc-event-categories" class="nav-link" data-scroll-target="#event-categories"><span class="header-section-number">2</span> Event Categories</a></li>
-  <li><a href="#creating-a-new-event" id="toc-creating-a-new-event" class="nav-link" data-scroll-target="#creating-a-new-event"><span class="header-section-number">3</span> Creating a new event</a>
-  <ul class="collapse">
-  <li><a href="#event-emails-and-notifications" id="toc-event-emails-and-notifications" class="nav-link" data-scroll-target="#event-emails-and-notifications"><span class="header-section-number">3.1</span> Event emails and notifications</a></li>
-  <li><a href="#changing-event-category-color" id="toc-changing-event-category-color" class="nav-link" data-scroll-target="#changing-event-category-color"><span class="header-section-number">3.2</span> Changing event category (color)</a></li>
-  </ul></li>
-  <li><a href="#qfc-calendar-on-teams" id="toc-qfc-calendar-on-teams" class="nav-link" data-scroll-target="#qfc-calendar-on-teams"><span class="header-section-number">4</span> QFC calendar on Teams</a></li>
+  <li><a href="#what-is-revealjs" id="toc-what-is-revealjs" class="nav-link active" data-scroll-target="#what-is-revealjs"><span class="header-section-number">1</span> What is RevealJS</a></li>
+  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml"><span class="header-section-number">2</span> YAML</a></li>
   </ul>
 </nav>
 </nav>
@@ -175,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">New QFC Group Calendar</h1>
+<h1 class="title d-none d-lg-block">Quarto RevealJS</h1>
 </div>
 
 
@@ -192,71 +221,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>These instructions are linked on the Calendar every Sunday. Click on images to resize them.</p>
-<section id="location-outlook" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="location-outlook"><span class="header-section-number">1</span> Location (Outlook)</h2>
-<p>The new QFC Calendar is automatically put into your Outlook Calendars. It will be under the <strong><em>Groups</em></strong> category named <strong><em>QFC</em></strong>.</p>
-<p>&nbsp;</p>
-<p>This view is from the new Outlook (you should update to the new Outlook):</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="images/QFCCalendarLocation.png" class="fs img-fluid figure-img"></p>
-<figcaption>Location of QFC Calendar in Outlook</figcaption>
-</figure>
-</div>
-<p><span class="note">Note: If you only want to see QFC events, then uncheck every other calendar</span></p>
+<section id="what-is-revealjs" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="what-is-revealjs"><span class="header-section-number">1</span> What is RevealJS</h2>
+<p>RevealJS is a system for developing web-based presentation documents, similar to PowerPoint. This tutorial assume that you want to create multiple documents inside a project (e.g., multiple lessons in a class repository).</p>
 </section>
-<section id="event-categories" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="event-categories"><span class="header-section-number">2</span> Event Categories</h2>
-<p>There are three types of QFC events and they are color coded:</p>
-<ul>
-<li><p>Staff Availability (blue)</p></li>
-<li><p>Conference Room (orange)</p></li>
-<li><p>Informational (green)</p></li>
-</ul>
-<p>&nbsp;</p>
-<p>Unfortunately, Outlook does not yet allow you to change category names on Group Calendars (you can do this on individual calendars) so we have to deal with the awkward category colors.</p>
-</section>
-<section id="creating-a-new-event" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="creating-a-new-event"><span class="header-section-number">3</span> Creating a new event</h2>
-<p>In Outlook calendar, click on <strong><em>New Event</em></strong> and this windows will appear:</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="images/NewEvent-01.png" class="fs img-fluid figure-img"></p>
-<figcaption>Creating a new QFC Group event</figcaption>
-</figure>
-</div>
-<p>Make sure you:</p>
-<ul>
-<li><p>change the calendar to <strong><em>QFC (your_email@msu.edu)</em></strong></p></li>
-<li><p>change the <strong><em>category</em></strong> color</p></li>
-<li><p>add something to the description that tell which kind of event this is (so we are not fully dependent on the awkward color categories)</p></li>
-</ul>
-<section id="event-emails-and-notifications" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="event-emails-and-notifications"><span class="header-section-number">3.1</span> Event emails and notifications</h3>
-<p><span class="hl">Only people explicitly added to the <strong><em>Invite attendees</em></strong> section will get emails/notifications about the event</span>. For everyone else, the event will just appear on the group calendar.</p>
-</section>
-<section id="changing-event-category-color" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="changing-event-category-color"><span class="header-section-number">3.2</span> Changing event category (color)</h3>
-<p>If you need to change the category color of the event, you can right-click on the event and click <strong><em>Categorize</em></strong>:</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="images/ChangeColor.png" class="fs img-fluid figure-img"></p>
-<figcaption>Changing the event category (color)</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="qfc-calendar-on-teams" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="qfc-calendar-on-teams"><span class="header-section-number">4</span> QFC calendar on Teams</h2>
-<p>The QFC Group Calendar is also linked on the QFC Teams page:</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="images/TeamsView.png" class="fs img-fluid figure-img"></p>
-<figcaption>The QFC Group Calendar in the Teams page</figcaption>
-</figure>
-</div>
-<p>When you click on QFC Group calendar, it opens your Outlook calendar with the QFC Group calendar checked. You can add events and edit the calendar here.</p>
+<section id="yaml" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="yaml"><span class="header-section-number">2</span> YAML</h2>
+<p>Create a <strong><em>_quarto.yml</em></strong> file (<span class="note">note: the filename starts with an underscore</span>) in the root of your project folder and add the following:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Put the title of your class</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">date-format</span><span class="kw">:</span><span class="at"> </span><span class="st">"D MMMM YYYY"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title-slide-attributes</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">data-background-image</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://qfcatmsu.github.io/assets/images/qfc_logo.png"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">data-background-size</span><span class="kw">:</span><span class="at"> </span><span class="st">"40%"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">data-background-position</span><span class="kw">:</span><span class="at"> </span><span class="st">"6% 95%"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://qfcatmsu.github.io/assets/quarto/qfc_pres_styles.css"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> c/t  </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> simple </span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">      - </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="ch">|</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>          &lt;link rel = "shortcut icon" href = "https://qfcatmsu.github.io/assets/images/qfc_icon.png" /&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>          &lt;script src="https://qfcatmsu.github.io/assets/quarto/qfc_pres_styles.js"&gt;&lt;/script&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> visual</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">highlight-style</span><span class="kw">:</span><span class="at"> kate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The YAML above will be applied to all Quarto revealjs documents in your repository</p>
 
 
 </section>
@@ -663,13 +653,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../../tutorials/Quarto/Quarto.html" class="pagination-link" aria-label="Quarto Installation and help">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Quarto Installation and help</span>
+      <a href="../../tutorials/GroupCalendar/GroupCalendar.html" class="pagination-link" aria-label="New QFC Group Calendar">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">New QFC Group Calendar</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../tutorials/Quarto-RevealJS/Quarto_RevealJS.html" class="pagination-link" aria-label="Quarto RevealJS">
-        <span class="nav-page-text">Quarto RevealJS</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html" class="pagination-link" aria-label="01: RStudio Projects Setup">
+        <span class="nav-page-text">01: RStudio Projects Setup</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

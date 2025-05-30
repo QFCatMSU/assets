@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link rel="shortcut icon" href="https://qfcatmsu.github.io/assets/quarto/qfc_icon.png">
+<link rel="shortcut icon" href="https://qfcatmsu.github.io/images/quarto/qfc_icon.png">
 <script>mod=true; menuCollapse=true;</script>
 <script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
 <!--script src="../quarto/qfc_styles.js"></script-->
@@ -107,8 +107,30 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text"><b>QFC Assets and Tutorials</b></span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">QFC Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">tutorials/Quarto/*.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">tutorials/GroupCalendar/*.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">tutorials/Quarto-RevealJS/*.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">tutorials/RStudio_Project_Setup/*.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">tutorials/ADMB-TMB/*.qmd</span>
+  </li>
+      </ul>
   </li>
     </ul>
     </div>

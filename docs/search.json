@@ -7,276 +7,471 @@
     "text": "Git/GitHub usage\nSetup\n\nCSS injection\nVSCode: render externally\n\nRendering\n\nbackground tasks\n\nAdd a new lesson\n\ncreate a new lesson\ninit lesson\n\nstarter code\ncopy old lesson\n\nsave lesson\n\nElement in webpage\n\nheaders (and what they mean)\nparagraphs\ncodeblocks\nnumbered/bullet lists\n\nStyling\n\nb,i,u,\nhighlights and notes\n\nSpacing\n\nControl-Space for extra line/ spaces\n\nadd images\n\nresizing\nadd caption (figure)\ndifferences between VSCode, Quarto\n\ndropping image renames – can drop in file manager then add to page\n\nreferencing\n\nLinks\n\ninside/ouside project\nother class lesson\nsections (2 ways)\n\nby Header\nadd name sec-# and ref by figure\n\ndownload\nemail links ??\n\nCode (block)\n\nhighlighting\ntab names\ncopying\nadd caption (figure)\nreferencing\nlanguage (R, Python, Java…)\n\nuse default if you do not want highlighting (cannot leave blank)\n\n\nEquations\n\ninline and display (Latex)\nusing EquateIO\nnumbering\ncaptioning/ referencing\n\nVideos\n\nFrom Mediaspace\n\nTables\n\ncannot merge cells (email Quarto re this)\n\nBibliography\n\nZotero"
   },
   {
-    "objectID": "tutorials/GroupCalendar/GroupCalendar.html",
-    "href": "tutorials/GroupCalendar/GroupCalendar.html",
-    "title": "New QFC Group Calendar",
-    "section": "",
-    "text": "These instructions are linked on the Calendar every Sunday. Click on images to resize them."
-  },
-  {
-    "objectID": "tutorials/GroupCalendar/GroupCalendar.html#location-outlook",
-    "href": "tutorials/GroupCalendar/GroupCalendar.html#location-outlook",
-    "title": "New QFC Group Calendar",
-    "section": "1 Location (Outlook)",
-    "text": "1 Location (Outlook)\nThe new QFC Calendar is automatically put into your Outlook Calendars. It will be under the Groups category named QFC.\n \nThis view is from the new Outlook (you should update to the new Outlook):\n\n\n\nLocation of QFC Calendar in Outlook\n\n\nNote: If you only want to see QFC events, then uncheck every other calendar"
-  },
-  {
-    "objectID": "tutorials/GroupCalendar/GroupCalendar.html#event-categories",
-    "href": "tutorials/GroupCalendar/GroupCalendar.html#event-categories",
-    "title": "New QFC Group Calendar",
-    "section": "2 Event Categories",
-    "text": "2 Event Categories\nThere are three types of QFC events and they are color coded:\n\nStaff Availability (blue)\nConference Room (orange)\nInformational (green)\n\n \nUnfortunately, Outlook does not yet allow you to change category names on Group Calendars (you can do this on individual calendars) so we have to deal with the awkward category colors."
-  },
-  {
-    "objectID": "tutorials/GroupCalendar/GroupCalendar.html#creating-a-new-event",
-    "href": "tutorials/GroupCalendar/GroupCalendar.html#creating-a-new-event",
-    "title": "New QFC Group Calendar",
-    "section": "3 Creating a new event",
-    "text": "3 Creating a new event\nIn Outlook calendar, click on New Event and this windows will appear:\n\n\n\nCreating a new QFC Group event\n\n\nMake sure you:\n\nchange the calendar to QFC (your_email@msu.edu)\nchange the category color\nadd something to the description that tell which kind of event this is (so we are not fully dependent on the awkward color categories)\n\n\n3.1 Event emails and notifications\nOnly people explicitly added to the Invite attendees section will get emails/notifications about the event. For everyone else, the event will just appear on the group calendar.\n\n\n3.2 Changing event category (color)\nIf you need to change the category color of the event, you can right-click on the event and click Categorize:\n\n\n\nChanging the event category (color)"
-  },
-  {
-    "objectID": "tutorials/GroupCalendar/GroupCalendar.html#qfc-calendar-on-teams",
-    "href": "tutorials/GroupCalendar/GroupCalendar.html#qfc-calendar-on-teams",
-    "title": "New QFC Group Calendar",
-    "section": "4 QFC calendar on Teams",
-    "text": "4 QFC calendar on Teams\nThe QFC Group Calendar is also linked on the QFC Teams page:\n\n\n\nThe QFC Group Calendar in the Teams page\n\n\nWhen you click on QFC Group calendar, it opens your Outlook calendar with the QFC Group calendar checked. You can add events and edit the calendar here."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Assests",
-    "section": "",
-    "text": "Project Management using Git and GitHub class\n \nrs_theme_light\ngit tutorial\nQFC_Styles.js\nQFC_Styles.css\nQFC_pres_styles.css\nQFC_pres_styles.js\nqfc_logo.png\nqfc_icon.png"
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "",
-    "text": "Charlie Belinsky\nQuantitative Fisheries Center\nMichigan State University\nbelinsky@msu.edu\n248-383-5611\n \nNote: Mac installation of this software is much more involved – contact Charlie for instructions.\n \nThe project is maintained on Github."
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#author",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#author",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "",
-    "text": "Charlie Belinsky\nQuantitative Fisheries Center\nMichigan State University\nbelinsky@msu.edu\n248-383-5611\n \nNote: Mac installation of this software is much more involved – contact Charlie for instructions.\n \nThe project is maintained on Github."
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#overview",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#overview",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "2 Overview",
-    "text": "2 Overview\nThese procedures in the document install the following software and was tested on 5/20/2025:\n\nR 4.5.0\nRtools 45 (for the CPP compilers)\nRStudio 2025.05.0 Build 496\nTMB package for R 1.9.17\nADMB 13.1\nEmacs 27.2 (Emacs versions 28 and up will not work)\nEmacs configuration files\n\nThese files provide the syntax highlighting in Emacs for both ADMB and TMB and set up the Environment\n\nadmb2r.cpp in the ADMB folder\n\n \nAppendix 1: User Environment PATH\n\n2.1 Admin access to your computer\nThe installation procedures will do the following thatmight require more administrative access to your computer than your user account has:\n\nInstall programs (R, RStudio, Rtools, ADMB, Emacs)\nInstall programs directly to the C: drive (ADMB, RTools)\nInstall programs not validated by Microsoft (ADMB)\nRun a batch file (PATH.bat)"
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#viewing-hidden-files-and-extensions-in-windows-optional",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#viewing-hidden-files-and-extensions-in-windows-optional",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "3 Viewing hidden files and extensions in Windows (optional)",
-    "text": "3 Viewing hidden files and extensions in Windows (optional)\nThis section is useful for this installation and for any programming you do on your computer.\nNote: images in this document can be resized by clicking on them\n \n1) Open a File Explorer window and in…\nWindows 10: Click View ➔ Options ➔ Change folder and search options\n\n\n\n\n\n\nFigure 1: Accessing folder options in Windows 10\n\n\n\nWindows 11: click 3 dots ( … ) ➔ Options\n\n\n\n\n\n\nFigure 2: Accessing folder options in Windows 11\n\n\n\n2) Both Windows 10 and 11:\n\nClick View tab\nCheck Show hidden files…\nUncheck Hide extensions for known file types\nclick OK\n\n\n\n\n\n\nFigure 3: Showing hidden files and hiding extensions"
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#software-installation",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#software-installation",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "4 Software Installation",
-    "text": "4 Software Installation\nYou can use the default installation options for all applications.\n \nSteps 1-4 are only needed for TMB, step 5 is only needed for ADMB, steps 6 and 7 are needed for both ADMB and TMB.\n1) Download and Install R (you need to have at least version 4.3)\n \n2) Download and install Rtools (you need to have at least version 43 and the version must match your R version)\n\nClick on Rrools4X Installer in Installing Rtools4X section\n\n \n3) Download and install RStudio (you need to have a version from 2022 or later)\n \n4) Open RStudio and install the TMB package\n\nIn RStudio: Tools ➔ Install Packages… ➔ type TMB in Packages textbox ➔ Install\nClose RStudio after installing package\n\n \n5) Download and install ADMB-13.1-windows.exe\n\nAlternatively, you can download ADMB-12.3-windows.exe (under Windows header)\nWhen installing, you will likely get a Windows protected your PC screen, if so:\n\nclick More info\nclick Run anyway\n\n\n \n6) Download and install emacs-27.2-x86_64-installer.exe\n \n7) Go to ADMB-TMB-Install GitHub page\n\nClick on green Code button and choose Download Zip\n\nThis will download a zipped file named ADMB-TMB-Install-main.zip\n\nUnzip ADMB-TMB-Install-main.zip (right-click, Extract All then Extract). \nExecute (double-click) Path.bat\n\nYou will likely get a Windows protected your PC screen, if so:\n\nclick More info\nclick Run anyway\n\n\nIf this does not work you can do this: Appendix 2: manually copy configuration files and admb2r.cpp (this link also includes more about the files)\n\n \n8) Restart computer\n\nAs far as I know, this step is not needed – but I keep it here just to be safe."
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#have-emacs-open-tpl-files-by-default-optional",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#have-emacs-open-tpl-files-by-default-optional",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "5 Have Emacs open TPL files by default (optional)",
-    "text": "5 Have Emacs open TPL files by default (optional)\n\nRight-click on any *.tpl file\n\nthere is one in the folder you just extracted ➔ examples ➔ simple ➔ simple.tpl\n\nChoose Open With\nWindows 10:\n\nAt bottom, click Choose an app on your PC\nThe Path is: C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe\nClick Open\nClick Always\n\nWindows 11:\n\ngo to bottom and click on Choose another\nAt bottom, click Choose an app on your PC\nThe Path is: C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe\nClick OK\n\n\n \nNote: the same procedures will work if you want emacs to be the default program for CPP files"
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-admb",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-admb",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "6 Testing out ADMB",
-    "text": "6 Testing out ADMB\n\nIn folder you just unzipped, double-click emacs ➔ examples ➔ simple ➔ simple.tpl\nOpen simple.tpl in Emacs\nClick Translate (button 1), Build (button 2), and Run (button 3)\n\nMake sure you wait for steps to complete\n\nIf the Emacs panels look like this after Run, then ADMB is properly installed:\n\n\n\n\n\n\n\nFigure 4: Translate, Build, and Run buttons in ADMB.  This view is from ADMB 12.3 – the view from 13.1 is slightly different"
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-tmb",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-tmb",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "7 Testing out TMB",
-    "text": "7 Testing out TMB\n\nIn folder you just unzipped, double-click emacs ➔ examples ➔ mini ➔ mini.cpp\nOpen mini.cpp in Emacs\nClick Clean (button 1), Compile (button 2), and Run (button 3)\n\nMake sure you wait for each step to complete\nCompile take a minute or two\n\nIf the Emacs panels look like this after Run, then TMB is properly installed:\n\n\n\n\n\n\n\nFigure 5: Clean, Compile, and Run buttons in TMB\n\n\n\n\n7.1 Package inconsistency error\nIf you see this message when compiling a TMB program:\nWarning message:\nIn checkMatrixPackageVersion() : Package version inconsistency detected.\nTMB was built with «Matrix version 1.5.4.1»\nCurrent «Matrix version is 1.5.4»\nPlease re-install 'TMB' from source using install.packages('TMB', type = 'source') or ask CRAN for a binary version of 'TMB' matching CRAN's 'Matrix' package\nusing C++ compiler: 'G__~1.EXE (GCC) 12.2.0'\nDo not follow the instructions given.  Instead just update or reinstall the outdated package (in this case, Matrix).  This is only necessary if the the script does not work because of the outdated package."
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-1-user-environment-path",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-1-user-environment-path",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "8 Appendix 1: User Environment PATH",
-    "text": "8 Appendix 1: User Environment PATH\nThe User Environment PATH variable is not needed anymore.  I added this to the emacs configuration files.\n \nHowever, there is still a chance that the User Environment PATH has been set by a previously installed program and that PATH could interfere with ADMB and TMB’s operation.  This is most likely only going to be true if you previously installed ADStudio.\n \nYou can see the User Environment PATH by doing a Windows search for Environment and choosing Edit the system environment variables.\n \nThat will open the System Properties window on the Advanced tab– click on the Environment… button:\n\n\n\n\n\n\nFigure 6: The Advanced System Properties tab\n\n\n\nThen double-click on Path in the User variables section:\n\n\n\n\n\n\nFigure 7: Path variables\n\n\n\nDelete any references to older versions of ADMB, TMB, or ADStudio.  You can also safely delete the references to the current ADMB version – they are not needed."
-  },
-  {
-    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-2-manually-copy-configuration-files-and-admb2r.cpp",
-    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-2-manually-copy-configuration-files-and-admb2r.cpp",
-    "title": "ADMB/TMB Full Installation for Windows",
-    "section": "9 Appendix 2: manually copy configuration files and admb2r.cpp",
-    "text": "9 Appendix 2: manually copy configuration files and admb2r.cpp\nThe extracted folder ADMB-TMB-Install-main contains:\n\nAn executable file called PATH.bat (which installs the folders and files below)\nA folder called emacsConfigFiles that gets installed to the emacs folder when PATH.bat is executed\nA folder called Examples, which contains ADMB and TMB scripts that are used in this document to test the installation.\nadmb2r.cpp – a commonly used ADMB script file that is not included with ADMB\n\n \nPATH.bat is a batch file that copies the emacs configuration files and admb2r.cpp to the correct locations.\n \nThe following are instructions to manually copy the files – this is only needed if PATH.bat does not work.\n\n9.1 Copy emacs configuration files\nInside ADMB-TMB-Install-main, there is a folder named emacsConfigFiles.  You need to copy the contents inside the emacsConfigFiles folder (a file named .emacs and a folder named emacs) to the user’s appdata folder.\n \nThe easiest way to get to the user’s appdata folder is to type %appdata% in a File Explorer window and hit enter.  Or, you can go directly to the folder: C:\\Users\\&lt;yourUserName&gt;\\AppData\\Roaming.  Move both the emacs folder and .emacs file to this folder:\n\n\n\n\n\n\nFigure 8: Location to copy the emacs configuration files\n\n\n\n\n\n9.2 Copy admb2r.cpp\nThe file admb2r.cpp is used in ADMB scripts but it does not come with ADMB.\n \nYou can add it to ADMB by copying admb2r.cpp from the ADMB-TMB-Install-main folder to the following locations:\n\nc:\\ADMB-13.1\\include\nc:\\ADMB-13.1\\include\\contrib  (I am not sure it is necessary to copy it here)\n\n \nNote: If you are using a different version of ADMB then replace 13.1 with the version you are using"
-  },
-  {
     "objectID": "tutorials/Quarto/Quarto.html",
     "href": "tutorials/Quarto/Quarto.html",
     "title": "Quarto Installation and help",
     "section": "",
-    "text": "This document was created and is maintained by Charlie Belinsky and lives here: https://qfcatmsu.github.io/tutorials/Quarto.html. It is meant to be a living document so expect to see changes on it. Feel free to email me with questions and/or suggestions.\n\n\n\nexplanation of the two types of Quarto editors (visual and source)\nusing headers in quarto\nbetter organization of the document and presentation types\nrendering doucments"
+    "text": "This document was created and is maintained by Charlie Belinsky and lives here: https://qfcatmsu.github.io/tutorials/Quarto.html. It is meant to be a living document so expect to see changes on it. Feel free to email me with questions and/or suggestions.\n\n\n\nexplanation of the two types of Quarto editors (visual and source)\nusing headers in quarto\nbetter organization of the document and presentation types\nrendering doucments",
+    "crumbs": [
+      "QFC Tutorials",
+      "Quarto Installation and help"
+    ]
   },
   {
     "objectID": "tutorials/Quarto/Quarto.html#info",
     "href": "tutorials/Quarto/Quarto.html#info",
     "title": "Quarto Installation and help",
     "section": "",
-    "text": "This document was created and is maintained by Charlie Belinsky and lives here: https://qfcatmsu.github.io/tutorials/Quarto.html. It is meant to be a living document so expect to see changes on it. Feel free to email me with questions and/or suggestions.\n\n\n\nexplanation of the two types of Quarto editors (visual and source)\nusing headers in quarto\nbetter organization of the document and presentation types\nrendering doucments"
+    "text": "This document was created and is maintained by Charlie Belinsky and lives here: https://qfcatmsu.github.io/tutorials/Quarto.html. It is meant to be a living document so expect to see changes on it. Feel free to email me with questions and/or suggestions.\n\n\n\nexplanation of the two types of Quarto editors (visual and source)\nusing headers in quarto\nbetter organization of the document and presentation types\nrendering doucments",
+    "crumbs": [
+      "QFC Tutorials",
+      "Quarto Installation and help"
+    ]
   },
   {
     "objectID": "tutorials/Quarto/Quarto.html#install-quarto",
     "href": "tutorials/Quarto/Quarto.html#install-quarto",
     "title": "Quarto Installation and help",
     "section": "2 Install Quarto",
-    "text": "2 Install Quarto\nYou need to download and install Quarto version 1.4, which, as of November 16, 2023, is the pre-release version.\nhttps://quarto.org/docs/download/prerelease.html\nThe released version of Quarto (1.3) will not work.\n\n2.1 RStudio\nQuarto has worked for me on every 2023 version of RStudio, however it is recommended to get the latest RStudio because RStudio is constantly updating its Quarto interface (both Quarto and RStudio are developed by the same company, posit)\n\n\n2.2 Packages needed\nYou need to install RmarkDown:\ninstall.packages(\"rmarkdown\")"
+    "text": "2 Install Quarto\nYou need to download and install Quarto version 1.4, which, as of November 16, 2023, is the pre-release version.\nhttps://quarto.org/docs/download/prerelease.html\nThe released version of Quarto (1.3) will not work.\n\n2.1 RStudio\nQuarto has worked for me on every 2023 version of RStudio, however it is recommended to get the latest RStudio because RStudio is constantly updating its Quarto interface (both Quarto and RStudio are developed by the same company, posit)\n\n\n2.2 Packages needed\nYou need to install RmarkDown:\ninstall.packages(\"rmarkdown\")",
+    "crumbs": [
+      "QFC Tutorials",
+      "Quarto Installation and help"
+    ]
   },
   {
     "objectID": "tutorials/Quarto/Quarto.html#installation-of-latex-on-windows-tinytex",
     "href": "tutorials/Quarto/Quarto.html#installation-of-latex-on-windows-tinytex",
     "title": "Quarto Installation and help",
     "section": "3 Installation of LaTex on Windows (tinyTeX)",
-    "text": "3 Installation of LaTex on Windows (tinyTeX)\nThis is only needed if you plan to render a Quarto document directly to PDF format.\nInstall the tinytex package (from CRAN):\ninstall.packages(\"tinytex\")\nUse the tinytex package to install the tinytex application:\ntinytex::install_tinytex()\n\n3.1 Update issue with tinyTeX\nWhen rendering a PDF Quarto might prompt you to update tlmgr, which is your LaTeX distribution. You will not be able to render a PDF until the update has occurred but following Quarto’s prompts will NOT be successful.\nYou need to update tlmgr manually by running:\ntinytex::tlmgr_update()"
+    "text": "3 Installation of LaTex on Windows (tinyTeX)\nThis is only needed if you plan to render a Quarto document directly to PDF format.\nInstall the tinytex package (from CRAN):\ninstall.packages(\"tinytex\")\nUse the tinytex package to install the tinytex application:\ntinytex::install_tinytex()\n\n3.1 Update issue with tinyTeX\nWhen rendering a PDF Quarto might prompt you to update tlmgr, which is your LaTeX distribution. You will not be able to render a PDF until the update has occurred but following Quarto’s prompts will NOT be successful.\nYou need to update tlmgr manually by running:\ntinytex::tlmgr_update()",
+    "crumbs": [
+      "QFC Tutorials",
+      "Quarto Installation and help"
+    ]
   },
   {
     "objectID": "tutorials/Quarto/Quarto.html#starting-a-new-quarto-document",
     "href": "tutorials/Quarto/Quarto.html#starting-a-new-quarto-document",
     "title": "Quarto Installation and help",
     "section": "4 Starting a new Quarto document",
-    "text": "4 Starting a new Quarto document\nIn RStudio, click File -&gt; New File -&gt; Quarto document…\n\n\n4.1 Quarto document options\nThere are three types of documents you can create in Quarto:\n\nHTML document\nPDF document (requires a LaTex installation)\nWord document\n\n\n\n4.2 HTML and PDF documents\nIf you want a document that can be both HTML and PDF then:\n\nCreate an HTML document.\nOpen the HTML document in any browser\nUse the Print dialog and Print to a PDF\n\nNote: This method does not require a LaTeX installation."
+    "text": "4 Starting a new Quarto document\nIn RStudio, click File -&gt; New File -&gt; Quarto document…\n\n\n4.1 Quarto document options\nThere are three types of documents you can create in Quarto:\n\nHTML document\nPDF document (requires a LaTex installation)\nWord document\n\n\n\n4.2 HTML and PDF documents\nIf you want a document that can be both HTML and PDF then:\n\nCreate an HTML document.\nOpen the HTML document in any browser\nUse the Print dialog and Print to a PDF\n\nNote: This method does not require a LaTeX installation.",
+    "crumbs": [
+      "QFC Tutorials",
+      "Quarto Installation and help"
+    ]
   },
   {
     "objectID": "tutorials/Quarto/Quarto.html#starting-a-new-quarto-presentation",
     "href": "tutorials/Quarto/Quarto.html#starting-a-new-quarto-presentation",
     "title": "Quarto Installation and help",
     "section": "5 Starting a new Quarto presentation",
-    "text": "5 Starting a new Quarto presentation\nIn RStudio, click File -&gt; New File -&gt; Quarto presentation…\n\n\n5.1 Quarto presentation options\n\nReveal JS presentation (a webpage designed like PowerPoint)\nBeamer presentation (a PDF designed like PowerPoint)\nPowerPoint\n\n\n\n5.2 HTML and PDF presentations\nIf you want a PowerPoint-like presentation that can be both HTML and PDF then:\n\nCreate an Reveal JS document.\nOpen the HTML document in Chrome\nClick “E” on the webpage\nUse the Print dialog and Print to a PDF\n\nNote: This method does not require a LaTeX installation."
+    "text": "5 Starting a new Quarto presentation\nIn RStudio, click File -&gt; New File -&gt; Quarto presentation…\n\n\n5.1 Quarto presentation options\n\nReveal JS presentation (a webpage designed like PowerPoint)\nBeamer presentation (a PDF designed like PowerPoint)\nPowerPoint\n\n\n\n5.2 HTML and PDF presentations\nIf you want a PowerPoint-like presentation that can be both HTML and PDF then:\n\nCreate an Reveal JS document.\nOpen the HTML document in Chrome\nClick “E” on the webpage\nUse the Print dialog and Print to a PDF\n\nNote: This method does not require a LaTeX installation.",
+    "crumbs": [
+      "QFC Tutorials",
+      "Quarto Installation and help"
+    ]
+  },
+  {
+    "objectID": "tutorials/GroupCalendar/GroupCalendar.html",
+    "href": "tutorials/GroupCalendar/GroupCalendar.html",
+    "title": "New QFC Group Calendar",
+    "section": "",
+    "text": "These instructions are linked on the Calendar every Sunday. Click on images to resize them.",
+    "crumbs": [
+      "QFC Tutorials",
+      "New QFC Group Calendar"
+    ]
+  },
+  {
+    "objectID": "tutorials/GroupCalendar/GroupCalendar.html#location-outlook",
+    "href": "tutorials/GroupCalendar/GroupCalendar.html#location-outlook",
+    "title": "New QFC Group Calendar",
+    "section": "1 Location (Outlook)",
+    "text": "1 Location (Outlook)\nThe new QFC Calendar is automatically put into your Outlook Calendars. It will be under the Groups category named QFC.\n \nThis view is from the new Outlook (you should update to the new Outlook):\n\n\n\nLocation of QFC Calendar in Outlook\n\n\nNote: If you only want to see QFC events, then uncheck every other calendar",
+    "crumbs": [
+      "QFC Tutorials",
+      "New QFC Group Calendar"
+    ]
+  },
+  {
+    "objectID": "tutorials/GroupCalendar/GroupCalendar.html#event-categories",
+    "href": "tutorials/GroupCalendar/GroupCalendar.html#event-categories",
+    "title": "New QFC Group Calendar",
+    "section": "2 Event Categories",
+    "text": "2 Event Categories\nThere are three types of QFC events and they are color coded:\n\nStaff Availability (blue)\nConference Room (orange)\nInformational (green)\n\n \nUnfortunately, Outlook does not yet allow you to change category names on Group Calendars (you can do this on individual calendars) so we have to deal with the awkward category colors.",
+    "crumbs": [
+      "QFC Tutorials",
+      "New QFC Group Calendar"
+    ]
+  },
+  {
+    "objectID": "tutorials/GroupCalendar/GroupCalendar.html#creating-a-new-event",
+    "href": "tutorials/GroupCalendar/GroupCalendar.html#creating-a-new-event",
+    "title": "New QFC Group Calendar",
+    "section": "3 Creating a new event",
+    "text": "3 Creating a new event\nIn Outlook calendar, click on New Event and this windows will appear:\n\n\n\nCreating a new QFC Group event\n\n\nMake sure you:\n\nchange the calendar to QFC (your_email@msu.edu)\nchange the category color\nadd something to the description that tell which kind of event this is (so we are not fully dependent on the awkward color categories)\n\n\n3.1 Event emails and notifications\nOnly people explicitly added to the Invite attendees section will get emails/notifications about the event. For everyone else, the event will just appear on the group calendar.\n\n\n3.2 Changing event category (color)\nIf you need to change the category color of the event, you can right-click on the event and click Categorize:\n\n\n\nChanging the event category (color)",
+    "crumbs": [
+      "QFC Tutorials",
+      "New QFC Group Calendar"
+    ]
+  },
+  {
+    "objectID": "tutorials/GroupCalendar/GroupCalendar.html#qfc-calendar-on-teams",
+    "href": "tutorials/GroupCalendar/GroupCalendar.html#qfc-calendar-on-teams",
+    "title": "New QFC Group Calendar",
+    "section": "4 QFC calendar on Teams",
+    "text": "4 QFC calendar on Teams\nThe QFC Group Calendar is also linked on the QFC Teams page:\n\n\n\nThe QFC Group Calendar in the Teams page\n\n\nWhen you click on QFC Group calendar, it opens your Outlook calendar with the QFC Group calendar checked. You can add events and edit the calendar here.",
+    "crumbs": [
+      "QFC Tutorials",
+      "New QFC Group Calendar"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "",
+    "text": "Charlie Belinsky\nQuantitative Fisheries Center\nMichigan State University\nbelinsky@msu.edu\n248-383-5611\n \nNote: Mac installation of this software is much more involved – contact Charlie for instructions.\n \nThe project is maintained on Github.",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#author",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#author",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "",
+    "text": "Charlie Belinsky\nQuantitative Fisheries Center\nMichigan State University\nbelinsky@msu.edu\n248-383-5611\n \nNote: Mac installation of this software is much more involved – contact Charlie for instructions.\n \nThe project is maintained on Github.",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#overview",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#overview",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "2 Overview",
+    "text": "2 Overview\nThese procedures in the document install the following software and was tested on 5/20/2025:\n\nR 4.5.0\nRtools 45 (for the CPP compilers)\nRStudio 2025.05.0 Build 496\nTMB package for R 1.9.17\nADMB 13.1\nEmacs 27.2 (Emacs versions 28 and up will not work)\nEmacs configuration files\n\nThese files provide the syntax highlighting in Emacs for both ADMB and TMB and set up the Environment\n\nadmb2r.cpp in the ADMB folder\n\n \nAppendix 1: User Environment PATH\n\n2.1 Admin access to your computer\nThe installation procedures will do the following thatmight require more administrative access to your computer than your user account has:\n\nInstall programs (R, RStudio, Rtools, ADMB, Emacs)\nInstall programs directly to the C: drive (ADMB, RTools)\nInstall programs not validated by Microsoft (ADMB)\nRun a batch file (PATH.bat)",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#viewing-hidden-files-and-extensions-in-windows-optional",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#viewing-hidden-files-and-extensions-in-windows-optional",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "3 Viewing hidden files and extensions in Windows (optional)",
+    "text": "3 Viewing hidden files and extensions in Windows (optional)\nThis section is useful for this installation and for any programming you do on your computer.\nNote: images in this document can be resized by clicking on them\n \n1) Open a File Explorer window and in…\nWindows 10: Click View ➔ Options ➔ Change folder and search options\n\n\n\n\n\n\nFigure 1: Accessing folder options in Windows 10\n\n\n\nWindows 11: click 3 dots ( … ) ➔ Options\n\n\n\n\n\n\nFigure 2: Accessing folder options in Windows 11\n\n\n\n2) Both Windows 10 and 11:\n\nClick View tab\nCheck Show hidden files…\nUncheck Hide extensions for known file types\nclick OK\n\n\n\n\n\n\nFigure 3: Showing hidden files and hiding extensions",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#software-installation",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#software-installation",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "4 Software Installation",
+    "text": "4 Software Installation\nYou can use the default installation options for all applications.\n \nSteps 1-4 are only needed for TMB, step 5 is only needed for ADMB, steps 6 and 7 are needed for both ADMB and TMB.\n1) Download and Install R (you need to have at least version 4.3)\n \n2) Download and install Rtools (you need to have at least version 43 and the version must match your R version)\n\nClick on Rrools4X Installer in Installing Rtools4X section\n\n \n3) Download and install RStudio (you need to have a version from 2022 or later)\n \n4) Open RStudio and install the TMB package\n\nIn RStudio: Tools ➔ Install Packages… ➔ type TMB in Packages textbox ➔ Install\nClose RStudio after installing package\n\n \n5) Download and install ADMB-13.1-windows.exe\n\nAlternatively, you can download ADMB-12.3-windows.exe (under Windows header)\nWhen installing, you will likely get a Windows protected your PC screen, if so:\n\nclick More info\nclick Run anyway\n\n\n \n6) Download and install emacs-27.2-x86_64-installer.exe\n \n7) Go to ADMB-TMB-Install GitHub page\n\nClick on green Code button and choose Download Zip\n\nThis will download a zipped file named ADMB-TMB-Install-main.zip\n\nUnzip ADMB-TMB-Install-main.zip (right-click, Extract All then Extract). \nExecute (double-click) Path.bat\n\nYou will likely get a Windows protected your PC screen, if so:\n\nclick More info\nclick Run anyway\n\n\nIf this does not work you can do this: Appendix 2: manually copy configuration files and admb2r.cpp (this link also includes more about the files)\n\n \n8) Restart computer\n\nAs far as I know, this step is not needed – but I keep it here just to be safe.",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#have-emacs-open-tpl-files-by-default-optional",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#have-emacs-open-tpl-files-by-default-optional",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "5 Have Emacs open TPL files by default (optional)",
+    "text": "5 Have Emacs open TPL files by default (optional)\n\nRight-click on any *.tpl file\n\nthere is one in the folder you just extracted ➔ examples ➔ simple ➔ simple.tpl\n\nChoose Open With\nWindows 10:\n\nAt bottom, click Choose an app on your PC\nThe Path is: C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe\nClick Open\nClick Always\n\nWindows 11:\n\ngo to bottom and click on Choose another\nAt bottom, click Choose an app on your PC\nThe Path is: C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe\nClick OK\n\n\n \nNote: the same procedures will work if you want emacs to be the default program for CPP files",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-admb",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-admb",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "6 Testing out ADMB",
+    "text": "6 Testing out ADMB\n\nIn folder you just unzipped, double-click emacs ➔ examples ➔ simple ➔ simple.tpl\nOpen simple.tpl in Emacs\nClick Translate (button 1), Build (button 2), and Run (button 3)\n\nMake sure you wait for steps to complete\n\nIf the Emacs panels look like this after Run, then ADMB is properly installed:\n\n\n\n\n\n\n\nFigure 4: Translate, Build, and Run buttons in ADMB.  This view is from ADMB 12.3 – the view from 13.1 is slightly different",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-tmb",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#testing-out-tmb",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "7 Testing out TMB",
+    "text": "7 Testing out TMB\n\nIn folder you just unzipped, double-click emacs ➔ examples ➔ mini ➔ mini.cpp\nOpen mini.cpp in Emacs\nClick Clean (button 1), Compile (button 2), and Run (button 3)\n\nMake sure you wait for each step to complete\nCompile take a minute or two\n\nIf the Emacs panels look like this after Run, then TMB is properly installed:\n\n\n\n\n\n\n\nFigure 5: Clean, Compile, and Run buttons in TMB\n\n\n\n\n7.1 Package inconsistency error\nIf you see this message when compiling a TMB program:\nWarning message:\nIn checkMatrixPackageVersion() : Package version inconsistency detected.\nTMB was built with «Matrix version 1.5.4.1»\nCurrent «Matrix version is 1.5.4»\nPlease re-install 'TMB' from source using install.packages('TMB', type = 'source') or ask CRAN for a binary version of 'TMB' matching CRAN's 'Matrix' package\nusing C++ compiler: 'G__~1.EXE (GCC) 12.2.0'\nDo not follow the instructions given.  Instead just update or reinstall the outdated package (in this case, Matrix).  This is only necessary if the the script does not work because of the outdated package.",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-1-user-environment-path",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-1-user-environment-path",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "8 Appendix 1: User Environment PATH",
+    "text": "8 Appendix 1: User Environment PATH\nThe User Environment PATH variable is not needed anymore.  I added this to the emacs configuration files.\n \nHowever, there is still a chance that the User Environment PATH has been set by a previously installed program and that PATH could interfere with ADMB and TMB’s operation.  This is most likely only going to be true if you previously installed ADStudio.\n \nYou can see the User Environment PATH by doing a Windows search for Environment and choosing Edit the system environment variables.\n \nThat will open the System Properties window on the Advanced tab– click on the Environment… button:\n\n\n\n\n\n\nFigure 6: The Advanced System Properties tab\n\n\n\nThen double-click on Path in the User variables section:\n\n\n\n\n\n\nFigure 7: Path variables\n\n\n\nDelete any references to older versions of ADMB, TMB, or ADStudio.  You can also safely delete the references to the current ADMB version – they are not needed.",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-2-manually-copy-configuration-files-and-admb2r.cpp",
+    "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#appendix-2-manually-copy-configuration-files-and-admb2r.cpp",
+    "title": "ADMB/TMB Full Installation for Windows",
+    "section": "9 Appendix 2: manually copy configuration files and admb2r.cpp",
+    "text": "9 Appendix 2: manually copy configuration files and admb2r.cpp\nThe extracted folder ADMB-TMB-Install-main contains:\n\nAn executable file called PATH.bat (which installs the folders and files below)\nA folder called emacsConfigFiles that gets installed to the emacs folder when PATH.bat is executed\nA folder called Examples, which contains ADMB and TMB scripts that are used in this document to test the installation.\nadmb2r.cpp – a commonly used ADMB script file that is not included with ADMB\n\n \nPATH.bat is a batch file that copies the emacs configuration files and admb2r.cpp to the correct locations.\n \nThe following are instructions to manually copy the files – this is only needed if PATH.bat does not work.\n\n9.1 Copy emacs configuration files\nInside ADMB-TMB-Install-main, there is a folder named emacsConfigFiles.  You need to copy the contents inside the emacsConfigFiles folder (a file named .emacs and a folder named emacs) to the user’s appdata folder.\n \nThe easiest way to get to the user’s appdata folder is to type %appdata% in a File Explorer window and hit enter.  Or, you can go directly to the folder: C:\\Users\\&lt;yourUserName&gt;\\AppData\\Roaming.  Move both the emacs folder and .emacs file to this folder:\n\n\n\n\n\n\nFigure 8: Location to copy the emacs configuration files\n\n\n\n\n\n9.2 Copy admb2r.cpp\nThe file admb2r.cpp is used in ADMB scripts but it does not come with ADMB.\n \nYou can add it to ADMB by copying admb2r.cpp from the ADMB-TMB-Install-main folder to the following locations:\n\nc:\\ADMB-13.1\\include\nc:\\ADMB-13.1\\include\\contrib  (I am not sure it is necessary to copy it here)\n\n \nNote: If you are using a different version of ADMB then replace 13.1 with the version you are using",
+    "crumbs": [
+      "QFC Tutorials",
+      "ADMB/TMB Full Installation for Windows"
+    ]
+  },
+  {
+    "objectID": "tutorials/Quarto-RevealJS/Quarto_RevealJS.html",
+    "href": "tutorials/Quarto-RevealJS/Quarto_RevealJS.html",
+    "title": "Quarto RevealJS",
+    "section": "",
+    "text": "RevealJS is a system for developing web-based presentation documents, similar to PowerPoint. This tutorial assume that you want to create multiple documents inside a project (e.g., multiple lessons in a class repository).",
+    "crumbs": [
+      "QFC Tutorials",
+      "Quarto RevealJS"
+    ]
+  },
+  {
+    "objectID": "tutorials/Quarto-RevealJS/Quarto_RevealJS.html#what-is-revealjs",
+    "href": "tutorials/Quarto-RevealJS/Quarto_RevealJS.html#what-is-revealjs",
+    "title": "Quarto RevealJS",
+    "section": "",
+    "text": "RevealJS is a system for developing web-based presentation documents, similar to PowerPoint. This tutorial assume that you want to create multiple documents inside a project (e.g., multiple lessons in a class repository).",
+    "crumbs": [
+      "QFC Tutorials",
+      "Quarto RevealJS"
+    ]
+  },
+  {
+    "objectID": "tutorials/Quarto-RevealJS/Quarto_RevealJS.html#yaml",
+    "href": "tutorials/Quarto-RevealJS/Quarto_RevealJS.html#yaml",
+    "title": "Quarto RevealJS",
+    "section": "2 YAML",
+    "text": "2 YAML\nCreate a _quarto.yml file (note: the filename starts with an underscore) in the root of your project folder and add the following:\ntitle: Put the title of your class\ndate-format: \"D MMMM YYYY\"\n\ntitle-slide-attributes:\n    data-background-image: \"https://qfcatmsu.github.io/assets/images/qfc_logo.png\"\n    data-background-size: \"40%\"\n    data-background-position: \"6% 95%\"\nformat: \n  revealjs:\n    css: \"https://qfcatmsu.github.io/assets/quarto/qfc_pres_styles.css\"\n    slide-number: c/t  \n    theme: simple \n    include-in-header:\n      - text: |\n          &lt;link rel = \"shortcut icon\" href = \"https://qfcatmsu.github.io/assets/images/qfc_icon.png\" /&gt;\n          &lt;script src=\"https://qfcatmsu.github.io/assets/quarto/qfc_pres_styles.js\"&gt;&lt;/script&gt;\neditor: visual\nhighlight-style: kate\nThe YAML above will be applied to all Quarto revealjs documents in your repository",
+    "crumbs": [
+      "QFC Tutorials",
+      "Quarto RevealJS"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html",
     "title": "01: RStudio Projects Setup",
     "section": "",
-    "text": "Include checklist\nMention Projects tab near top-left corner\nWorkshop:\n\nProject on GitHub - Unzip project\nsetwd() is a session variables"
+    "text": "Include checklist\nMention Projects tab near top-left corner\nWorkshop:\n\nProject on GitHub - Unzip project\nsetwd() is a session variables",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#purpose",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#purpose",
     "title": "01: RStudio Projects Setup",
     "section": "1 Purpose",
-    "text": "1 Purpose\n\nInstall, setup, and test R and RStudio\nProvide a basic overview of how RStudio works and its relationship to R\nExecute, using the Source button, an R script\n\n\n1.1 Special note about images in the class\nRStudio is a rapidly evolving program, and it would be too much work to maintain all the images so that they reflect the newest version of RStudio and its visual likeness.  Some of the images in this class reflect older versions of RStudio and there are minor changes that I have made to the code that I did not believe warrant putting in new images. I have tried to make sure these differences change nothing functionally.  Inevitably, something will fall through the cracks – so please, contact me if there is a problem!"
+    "text": "1 Purpose\n\nInstall, setup, and test R and RStudio\nProvide a basic overview of how RStudio works and its relationship to R\nExecute, using the Source button, an R script\n\n\n1.1 Special note about images in the class\nRStudio is a rapidly evolving program, and it would be too much work to maintain all the images so that they reflect the newest version of RStudio and its visual likeness.  Some of the images in this class reflect older versions of RStudio and there are minor changes that I have made to the code that I did not believe warrant putting in new images. I have tried to make sure these differences change nothing functionally.  Inevitably, something will fall through the cracks – so please, contact me if there is a problem!",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#questions-or-comments",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#questions-or-comments",
     "title": "01: RStudio Projects Setup",
     "section": "2 Questions or comments",
-    "text": "2 Questions or comments\nIf you have any questions or comments about the material in this lesson, feel free to email them to the instructor, ?var:instructor.name, at ?var:instructor.email."
+    "text": "2 Questions or comments\nIf you have any questions or comments about the material in this lesson, feel free to email them to the instructor, ?var:instructor.name, at ?var:instructor.email.",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#viewing-file-extensions-and-hidden-files",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#viewing-file-extensions-and-hidden-files",
     "title": "01: RStudio Projects Setup",
     "section": "3 Viewing file extensions and hidden files",
-    "text": "3 Viewing file extensions and hidden files\nBy default, Windows and Mac hides file extensions from you (e.g., your Word document file is listed in the file manager as stuff instead of stuff.docx).  This is not convenient when you are programming as you are working with many file types (e.g., *.txt, *.r, *.csv) and, many times, the only difference between the name of two files is the extension.  For instance, you might have two files called weather.r and weather.csv in your folder – without file extensions they are both listed as weather.\n \nAlso, when you are programming, there are files you will need to access that are hidden by default by the operating system.\n \nThis section is optional, but I would highly recommend you learn how to view all files and file extensions – it will greatly assist you when programming.\n\n3.1 Viewing in newer versions of Windows 11\nThis is easy to to do in newer versions of Windows 11:\n\nOpen the File Explorer\nClick View -&gt; Show\nCheck File name extensions and Hidden items\n\n\n\n\n\n\n\nFigure 1: Change settings to view all file extensions on Windows 11\n\n\n\n\n\n3.2 Viewing in Windows 10 and older Windows 11 versions\nThis feature is a bit buried in these Window versions.\n \n\nOpen any File Explorer window (i.e., your folder viewer)\nIn menu bar\n\nWindows 10: click View -&gt; Options -&gt; Change folder and search options\nWindows 11: click 3 dots ( · · · ) -&gt; Options\n\nIn Folder Options window (Figure 2), go to the View tab\nUncheck Hide extensions for known file types\nCheck Show hidden files, folder, and drives\nClick OK\n\n\n\n\n\n\n\nFigure 2: Viewing in older versions of Windows\n\n\n\n\n\n3.3 Viewing in Mac\nFile Extensions:\n\nOpen Finder\nClick on Finder -&gt; Preferences…\nIn Finder Preferences window click on the Advanced tab\nCheck Show all filename extensions\n\n \nHidden files:\n\nYou can temporarily see hidden files in the Finder by pressing Command-Shift-Dot ( . ). \nYou can use the Terminal to permanently show hidden files as described on this webpage but this is not recommended unless you are comfortable with Terminal commands.\n\n\n\n\n\n\n\nFigure 3: Change settings to view all file extensions on a Mac"
+    "text": "3 Viewing file extensions and hidden files\nBy default, Windows and Mac hides file extensions from you (e.g., your Word document file is listed in the file manager as stuff instead of stuff.docx).  This is not convenient when you are programming as you are working with many file types (e.g., *.txt, *.r, *.csv) and, many times, the only difference between the name of two files is the extension.  For instance, you might have two files called weather.r and weather.csv in your folder – without file extensions they are both listed as weather.\n \nAlso, when you are programming, there are files you will need to access that are hidden by default by the operating system.\n \nThis section is optional, but I would highly recommend you learn how to view all files and file extensions – it will greatly assist you when programming.\n\n3.1 Viewing in newer versions of Windows 11\nThis is easy to to do in newer versions of Windows 11:\n\nOpen the File Explorer\nClick View -&gt; Show\nCheck File name extensions and Hidden items\n\n\n\n\n\n\n\nFigure 1: Change settings to view all file extensions on Windows 11\n\n\n\n\n\n3.2 Viewing in Windows 10 and older Windows 11 versions\nThis feature is a bit buried in these Window versions.\n \n\nOpen any File Explorer window (i.e., your folder viewer)\nIn menu bar\n\nWindows 10: click View -&gt; Options -&gt; Change folder and search options\nWindows 11: click 3 dots ( · · · ) -&gt; Options\n\nIn Folder Options window (Figure 2), go to the View tab\nUncheck Hide extensions for known file types\nCheck Show hidden files, folder, and drives\nClick OK\n\n\n\n\n\n\n\nFigure 2: Viewing in older versions of Windows\n\n\n\n\n\n3.3 Viewing in Mac\nFile Extensions:\n\nOpen Finder\nClick on Finder -&gt; Preferences…\nIn Finder Preferences window click on the Advanced tab\nCheck Show all filename extensions\n\n \nHidden files:\n\nYou can temporarily see hidden files in the Finder by pressing Command-Shift-Dot ( . ). \nYou can use the Terminal to permanently show hidden files as described on this webpage but this is not recommended unless you are comfortable with Terminal commands.\n\n\n\n\n\n\n\nFigure 3: Change settings to view all file extensions on a Mac",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#install-r-and-rstudio-on-your-computer",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#install-r-and-rstudio-on-your-computer",
     "title": "01: RStudio Projects Setup",
     "section": "4 Install R and RStudio on your computer",
-    "text": "4 Install R and RStudio on your computer\nWe are going to install R and RStudio on your computer. R is a programming language and RStudio provides a structured environment for the R programming language, similar to the way Microsoft Word provides a structured environment for document editing. RStudio is patterned on other popular programming environments like Microsoft’s Visual Studio.\n \nOn Windows the default installation can be used for R and RStudio. For Mac, installation is trickier.\n\n4.1 Install or update R (need version 4.4 or higher)\nThe R for Windows download is here. Click on Download R 4.#.# for Windows.\n \nThe R for Mac download is here.  \n\nThere are two versions of R for Mac \n\nR-4.#.#-arm64.pkg: for Macs with Apple-based processors (M1, M2, M3…), all Macs from 2021 on use Apple-based processors\nR-4.#.#.pkg: for older Macs with Intel-based processors\n\nThe installer will tell you If you pick the wrong pkg file – there is no harm except a bit of wasted time.\n\n \nAnd for those of you using Linux – the R for Linux download instructions are here.\n\n\n4.2 Install or update RStudio\nYou need version 2023.12 or higher for this class and you should have 2025.04 or higher if you are using Git.\n \nYou can download the RStudio Installer here. Download the appropriate file for your computer under Installers, open the file, and use the default installation options.\n\n4.2.1 Special instructions for Mac users\nFor Mac users there are some extra complexities:\n\nYou might be asked to install Command Line Developer Tools while installing RStudio. Go ahead and install the developer tools.\n \nThe download for RStudio is called RStudio-202X.XX.dmg.  Double-clicking the file will open the window below (Figure 4).  In the window, drag the RStudio file to the Applications folder\n\n\n\n\n\n\n\nFigure 4: Opening RStudio DMG file\n\n\n\nIf you already have RStudio installed, you will be asked if you want to replace the old version – go ahead and Replace it.\n \n\nAfter installation, unmount the RStudio device in the Finder by clicking the eject button (Figure 5)\n\n\n\n\n\n\n\nFigure 5: Unmounting the RStudio device (very important!)"
+    "text": "4 Install R and RStudio on your computer\nWe are going to install R and RStudio on your computer. R is a programming language and RStudio provides a structured environment for the R programming language, similar to the way Microsoft Word provides a structured environment for document editing. RStudio is patterned on other popular programming environments like Microsoft’s Visual Studio.\n \nOn Windows the default installation can be used for R and RStudio. For Mac, installation is trickier.\n\n4.1 Install or update R (need version 4.4 or higher)\nThe R for Windows download is here. Click on Download R 4.#.# for Windows.\n \nThe R for Mac download is here.  \n\nThere are two versions of R for Mac \n\nR-4.#.#-arm64.pkg: for Macs with Apple-based processors (M1, M2, M3…), all Macs from 2021 on use Apple-based processors\nR-4.#.#.pkg: for older Macs with Intel-based processors\n\nThe installer will tell you If you pick the wrong pkg file – there is no harm except a bit of wasted time.\n\n \nAnd for those of you using Linux – the R for Linux download instructions are here.\n\n\n4.2 Install or update RStudio\nYou need version 2023.12 or higher for this class and you should have 2025.04 or higher if you are using Git.\n \nYou can download the RStudio Installer here. Download the appropriate file for your computer under Installers, open the file, and use the default installation options.\n\n4.2.1 Special instructions for Mac users\nFor Mac users there are some extra complexities:\n\nYou might be asked to install Command Line Developer Tools while installing RStudio. Go ahead and install the developer tools.\n \nThe download for RStudio is called RStudio-202X.XX.dmg.  Double-clicking the file will open the window below (Figure 4).  In the window, drag the RStudio file to the Applications folder\n\n\n\n\n\n\n\nFigure 4: Opening RStudio DMG file\n\n\n\nIf you already have RStudio installed, you will be asked if you want to replace the old version – go ahead and Replace it.\n \n\nAfter installation, unmount the RStudio device in the Finder by clicking the eject button (Figure 5)\n\n\n\n\n\n\n\nFigure 5: Unmounting the RStudio device (very important!)",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#installing-an-r-package",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#installing-an-r-package",
     "title": "01: RStudio Projects Setup",
     "section": "5 Installing an R package",
-    "text": "5 Installing an R package\nGGPlot2, is a widely used package that does not come with R – so we are going to install the GGPlot2 package using RStudio.\n \nTo install the package GGPlot2 using RStudio (Figure 6):\n\nClick Tools -&gt; Install Packages…\nIn the Install Packages window, type GGPlot2 in the Packages textbox\nClick Install\n\n \nGGPlot2 requires many other packages (its dependencies) – and RStudio will install those packages along with GGPlot2.  Be patient, as this could take a little time.\n\n\n\n\n\n\nFigure 6: Installing the GGPlot2 Package in RStudio\n\n\n\n \nExtension: Different ways to install packages"
+    "text": "5 Installing an R package\nGGPlot2, is a widely used package that does not come with R – so we are going to install the GGPlot2 package using RStudio.\n \nTo install the package GGPlot2 using RStudio (Figure 6):\n\nClick Tools -&gt; Install Packages…\nIn the Install Packages window, type GGPlot2 in the Packages textbox\nClick Install\n\n \nGGPlot2 requires many other packages (its dependencies) – and RStudio will install those packages along with GGPlot2.  Be patient, as this could take a little time.\n\n\n\n\n\n\nFigure 6: Installing the GGPlot2 Package in RStudio\n\n\n\n \nExtension: Different ways to install packages",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#rstudio-projects-and-project-folders",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#rstudio-projects-and-project-folders",
     "title": "01: RStudio Projects Setup",
     "section": "6 RStudio Projects and Project Folders",
-    "text": "6 RStudio Projects and Project Folders\nMost of the work you do in R involves scripts, data files, and other types of files (e.g., shapefiles).  All these files together make up your project and they exist within a Project Folder, which is the folder on your computer that contains all the files and subfolders for your project. It is very important that you keep all files associated with a project within a Project Folder.\n \nIn this class we will be using RStudio to create, edit, and execute R scripts.  In RStudio, there is a feature called RStudio Projects, which is a Project Folder, that makes it much easier to move, share, and host your project on GitHub.  You need to keep all of your class work in an RStudio Project.\n\n6.1 Create a new RStudio Project\nTo create a new RStudio Project, which is also your project folder:\n\nopen RStudio\nclick File -&gt; New Project \nIn the Create Project window click New Directory\nIn the Project Type window click New Project\n\n\n\n\n\n\n\nFigure 7: Creating a new RStudio Project\n\n\n\n \nIn the Create New Project window:\n\nThe Directory name is the name of the Project Folder that will contain your whole RStudio Project\nThe Project Folder will be created in the folder listed in the second textbox (Create project as subdirectory of:)\n\n \nIn Figure 8, the Project Folder is named My_Project and is in the Desktop folder.  Note: you can name the folder whatever you want and put it in any folder location.\n\n\n\n\n\n\nFigure 8: Creating a directory for the RStudio Project\n\n\n\n \nExtension: RStudio Project in an existing directory\n\n\n6.2 RStudio Project Files Tab\nThe Files tab (bottom-right corner) in RStudio is a File Manager, and it allows you to do many things that you can do in your operating systems File Manager (called File Explorer in Windows and Finder in Mac). The Files tab can be used to open, add, remove, or rename files and folders. When we first create the RStudio Project, the Files tab will be set to the Project Folder (Figure 9, C:/Users/Charlie/Desktop/My_Project) and there is one file in the folder: My_Project.Rproj.\n \nWhenever you create an RStudio Project, an .Rproj file is added to the Project Folder. This main purpose of this file is to designate this folder as the working directory for your project.  Double-clicking on the .Rproj file in your File Manager will open your Project in RStudio (just like double-clicking a .docx file opens the file in Word).\n\n\n\n\n\n\nFigure 9: Files tab opened to the Project Folder\n\n\n\n\n\n6.3 Viewing hidden files in RStudio\nBy default, the Files tab shows file extension but it does not show hidden files.  If you click on More -&gt; Show Hidden Files, you will see the hidden folder .Rproj.user – this is not a folder you will use in this class.\n \n\n\n\n\n\n\nFigure 10: Showing hidden files\n\n\n\nExtension: *.RProj and .Rhistory\n\n\n6.4 Add Subfolders\nWe will use the Files tab in RStudio (bottom-right tab) to create two subfolders: scripts and data.\n \nTo add two folders named scripts and data:\n\nClick on New Folder in the Files tab\nEnter scripts in the textbox and click OK\nRepeat the last two steps to add a folder called data\n\n\n\n\n\n\n\nFigure 11: Adding folders using the Files tab in RStudio\n\n\n\n\n\n6.5 Add files to the project\nWe are going to download two files and add them to your new RStudio Project.\n\nRSProj_Setup.r: put this file in your scripts directory\nRSProj_Setup.csv: put this file in your data directory\n\n\n\n6.6 Opening File Manager from Files tab\nThe Files tab can do a lot of things that File Explorer/Finder can do – but not everything.  For instance, you cannot drag and drop files in the Files tab like you can in File Explorer/Finder.\n \nYou can open up a File Explorer/Finder window to the same folder by clicking More… -&gt; Show Folder in New Window.\n\n\n\n\n\n\nFigure 12: The Files tab in RStudio and the File Manager\n\n\n\n\n\n6.7 RStudio Project File Manager\nYou should now be running RStudio, opened to the RStudio Project that you just created.  If you click on the Files tab in the lower-right corner, you will see all the folders and files within your RStudio Project (linked to your Project Folder). You will also see your project name in the upper-right corner (in this case, My_Project).\n\n\n\n\n\n\nFigure 13: RStudio opened with an RStudio Project (named My_Project)\n\n\n\nThe *.RProj files is here and you might also see a file named .RHistory. These are not files you will need to use right away but you can learn more about them at Extension: *.RProj and .Rhistory."
+    "text": "6 RStudio Projects and Project Folders\nMost of the work you do in R involves scripts, data files, and other types of files (e.g., shapefiles).  All these files together make up your project and they exist within a Project Folder, which is the folder on your computer that contains all the files and subfolders for your project. It is very important that you keep all files associated with a project within a Project Folder.\n \nIn this class we will be using RStudio to create, edit, and execute R scripts.  In RStudio, there is a feature called RStudio Projects, which is a Project Folder, that makes it much easier to move, share, and host your project on GitHub.  You need to keep all of your class work in an RStudio Project.\n\n6.1 Create a new RStudio Project\nTo create a new RStudio Project, which is also your project folder:\n\nopen RStudio\nclick File -&gt; New Project \nIn the Create Project window click New Directory\nIn the Project Type window click New Project\n\n\n\n\n\n\n\nFigure 7: Creating a new RStudio Project\n\n\n\n \nIn the Create New Project window:\n\nThe Directory name is the name of the Project Folder that will contain your whole RStudio Project\nThe Project Folder will be created in the folder listed in the second textbox (Create project as subdirectory of:)\n\n \nIn Figure 8, the Project Folder is named My_Project and is in the Desktop folder.  Note: you can name the folder whatever you want and put it in any folder location.\n\n\n\n\n\n\nFigure 8: Creating a directory for the RStudio Project\n\n\n\n \nExtension: RStudio Project in an existing directory\n\n\n6.2 RStudio Project Files Tab\nThe Files tab (bottom-right corner) in RStudio is a File Manager, and it allows you to do many things that you can do in your operating systems File Manager (called File Explorer in Windows and Finder in Mac). The Files tab can be used to open, add, remove, or rename files and folders. When we first create the RStudio Project, the Files tab will be set to the Project Folder (Figure 9, C:/Users/Charlie/Desktop/My_Project) and there is one file in the folder: My_Project.Rproj.\n \nWhenever you create an RStudio Project, an .Rproj file is added to the Project Folder. This main purpose of this file is to designate this folder as the working directory for your project.  Double-clicking on the .Rproj file in your File Manager will open your Project in RStudio (just like double-clicking a .docx file opens the file in Word).\n\n\n\n\n\n\nFigure 9: Files tab opened to the Project Folder\n\n\n\n\n\n6.3 Viewing hidden files in RStudio\nBy default, the Files tab shows file extension but it does not show hidden files.  If you click on More -&gt; Show Hidden Files, you will see the hidden folder .Rproj.user – this is not a folder you will use in this class.\n \n\n\n\n\n\n\nFigure 10: Showing hidden files\n\n\n\nExtension: *.RProj and .Rhistory\n\n\n6.4 Add Subfolders\nWe will use the Files tab in RStudio (bottom-right tab) to create two subfolders: scripts and data.\n \nTo add two folders named scripts and data:\n\nClick on New Folder in the Files tab\nEnter scripts in the textbox and click OK\nRepeat the last two steps to add a folder called data\n\n\n\n\n\n\n\nFigure 11: Adding folders using the Files tab in RStudio\n\n\n\n\n\n6.5 Add files to the project\nWe are going to download two files and add them to your new RStudio Project.\n\nRSProj_Setup.r: put this file in your scripts directory\nRSProj_Setup.csv: put this file in your data directory\n\n\n\n6.6 Opening File Manager from Files tab\nThe Files tab can do a lot of things that File Explorer/Finder can do – but not everything.  For instance, you cannot drag and drop files in the Files tab like you can in File Explorer/Finder.\n \nYou can open up a File Explorer/Finder window to the same folder by clicking More… -&gt; Show Folder in New Window.\n\n\n\n\n\n\nFigure 12: The Files tab in RStudio and the File Manager\n\n\n\n\n\n6.7 RStudio Project File Manager\nYou should now be running RStudio, opened to the RStudio Project that you just created.  If you click on the Files tab in the lower-right corner, you will see all the folders and files within your RStudio Project (linked to your Project Folder). You will also see your project name in the upper-right corner (in this case, My_Project).\n\n\n\n\n\n\nFigure 13: RStudio opened with an RStudio Project (named My_Project)\n\n\n\nThe *.RProj files is here and you might also see a file named .RHistory. These are not files you will need to use right away but you can learn more about them at Extension: *.RProj and .Rhistory.",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#rstudio-basics",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#rstudio-basics",
     "title": "01: RStudio Projects Setup",
     "section": "7 RStudio Basics",
-    "text": "7 RStudio Basics\nNow we are going to execute the script file, RSProj_Setup.R, that we just downloaded to your RStudio Project’s scripts folder.\n \nRSProj_Setup.R takes weather data from the other downloaded file, RSProj_Setup.csv and creates boxplots showing how Wind Direction and Wind Speed relate to the Change In Temperature.\n \nWe are executing the script to test your setup and help you become familiar with the RStudio environment. If you are taking the GGPlot class, the code in RSProj_Setup.R is something you will learn throughout the course.\n\n7.1 Open your RStudio Project\nThere are multiple ways to open an RStudio Project – three of them are:\n\nOpen your Project Folder in File Explorer (Windows) or Finder (Mac) window and double-click the &lt;Project_Name&gt;.Rproj file\nIn RStudio, click File -&gt; Open Project… -&gt; navigate to the Project Folder and click the *&lt;Project_Name&gt;.Rproj file\nIn RStudio, click File -&gt; Recent Projects -&gt; choose the RStudio Project you just created\n\n\n\n7.2 Open a script file in your Project\nTo open the script file either:\n\nIn Files tab, go to the scripts folder and click on RSProj_Setup.R or\nIn RStudio click File -&gt; Open File -&gt; and then find  RSProj_Setup.R in the scripts folder and click Open.\n\n \nAfter opening the script file, you should see something that looks like this (Figure 14) on your screen:\n\n\n\n\n\n\nFigure 14: Opening your first script in RStudio\n\n\n\nThe script will only execute if it is opened inside your RStudio Project.\n\n\n7.3 Setting up RStudio tabs for scripts\nWhen we are editing and executing an R script, we generally have the following RStudio tabs open (Figure 15):\n\nFile Viewer – text viewer and editor for the opened script files (upper-left corner)\nConsole – displays information about the execution of your script file (lower-left corner)\nEnvironment – displays data points, or variables, from the execution of your script file (upper-right corner)\nPlots – plots produced by the execution of your script file are displayed here (lower-right corner)\n\n \nThe fourth (lower-right corner) tab is on Files, so we switched the tab to Plots:\n\n\n\n\n\n\nFigure 15: The Tabs most commonly used in RStudio\n\n\n\n \nNote: the Help tab in the lower-right corner is something you might find useful. Extension: The Help Tab\n\n\n7.4 Common buttons used in RStudio\nThe script file, RSProj_Setup.r, is a fully functioning script that takes temperature and wind data from the Comma Separated Value (CSV) file, RSProj_Setup.csv, and plots out the data. I am going to use this program to demonstrate a few of the useful buttons in RStudio.\n \nThe one button you will use most in R is Source, which executes your whole script.  Press the Source button to execute the script (Figure 16).\n \nNote: If you have already used R, there is a good chance you highlight lines of code and click Run to execute just those lines.  We are not using this method in this class.  For this class, you should always use Source to execute your code.  For more information go to Extension: Run vs. Source\n\n\n\n\n\n\nFigure 16: Running (Sourcing) the script\n\n\n\nAfter the script is run:\n\nThe Environment tab displays values for the data (variables) in the script (e.g., weatherData, windLabels).\nThe Console tab displays information about the execution of the script.\nThe Plot tab displays the box plots.  If there are multiple plots, you can use the arrow buttons to switch between the plots.\n\n\n\n7.5 Cleaning up the RStudio windows\nThere many times where you want to clean up the windows, which can get very crowded with information from old script executions.\n\nTo clean the Environment, Plot, and Console tabs use the brush button (Figure 16).\n\n\n\n\n\n\n\nFigure 17: Cleaning out the windows\n\n\n\n \nIf you click Source again, the Environment, Plot, and Console tabs will once again be populated with data from the script."
+    "text": "7 RStudio Basics\nNow we are going to execute the script file, RSProj_Setup.R, that we just downloaded to your RStudio Project’s scripts folder.\n \nRSProj_Setup.R takes weather data from the other downloaded file, RSProj_Setup.csv and creates boxplots showing how Wind Direction and Wind Speed relate to the Change In Temperature.\n \nWe are executing the script to test your setup and help you become familiar with the RStudio environment. If you are taking the GGPlot class, the code in RSProj_Setup.R is something you will learn throughout the course.\n\n7.1 Open your RStudio Project\nThere are multiple ways to open an RStudio Project – three of them are:\n\nOpen your Project Folder in File Explorer (Windows) or Finder (Mac) window and double-click the &lt;Project_Name&gt;.Rproj file\nIn RStudio, click File -&gt; Open Project… -&gt; navigate to the Project Folder and click the *&lt;Project_Name&gt;.Rproj file\nIn RStudio, click File -&gt; Recent Projects -&gt; choose the RStudio Project you just created\n\n\n\n7.2 Open a script file in your Project\nTo open the script file either:\n\nIn Files tab, go to the scripts folder and click on RSProj_Setup.R or\nIn RStudio click File -&gt; Open File -&gt; and then find  RSProj_Setup.R in the scripts folder and click Open.\n\n \nAfter opening the script file, you should see something that looks like this (Figure 14) on your screen:\n\n\n\n\n\n\nFigure 14: Opening your first script in RStudio\n\n\n\nThe script will only execute if it is opened inside your RStudio Project.\n\n\n7.3 Setting up RStudio tabs for scripts\nWhen we are editing and executing an R script, we generally have the following RStudio tabs open (Figure 15):\n\nFile Viewer – text viewer and editor for the opened script files (upper-left corner)\nConsole – displays information about the execution of your script file (lower-left corner)\nEnvironment – displays data points, or variables, from the execution of your script file (upper-right corner)\nPlots – plots produced by the execution of your script file are displayed here (lower-right corner)\n\n \nThe fourth (lower-right corner) tab is on Files, so we switched the tab to Plots:\n\n\n\n\n\n\nFigure 15: The Tabs most commonly used in RStudio\n\n\n\n \nNote: the Help tab in the lower-right corner is something you might find useful. Extension: The Help Tab\n\n\n7.4 Common buttons used in RStudio\nThe script file, RSProj_Setup.r, is a fully functioning script that takes temperature and wind data from the Comma Separated Value (CSV) file, RSProj_Setup.csv, and plots out the data. I am going to use this program to demonstrate a few of the useful buttons in RStudio.\n \nThe one button you will use most in R is Source, which executes your whole script.  Press the Source button to execute the script (Figure 16).\n \nNote: If you have already used R, there is a good chance you highlight lines of code and click Run to execute just those lines.  We are not using this method in this class.  For this class, you should always use Source to execute your code.  For more information go to Extension: Run vs. Source\n\n\n\n\n\n\nFigure 16: Running (Sourcing) the script\n\n\n\nAfter the script is run:\n\nThe Environment tab displays values for the data (variables) in the script (e.g., weatherData, windLabels).\nThe Console tab displays information about the execution of the script.\nThe Plot tab displays the box plots.  If there are multiple plots, you can use the arrow buttons to switch between the plots.\n\n\n\n7.5 Cleaning up the RStudio windows\nThere many times where you want to clean up the windows, which can get very crowded with information from old script executions.\n\nTo clean the Environment, Plot, and Console tabs use the brush button (Figure 16).\n\n\n\n\n\n\n\nFigure 17: Cleaning out the windows\n\n\n\n \nIf you click Source again, the Environment, Plot, and Console tabs will once again be populated with data from the script.",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#application",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#application",
     "title": "01: RStudio Projects Setup",
     "section": "8 Application",
-    "text": "8 Application\n\nIn your RStudio Project, create a new script file (File -&gt; New File -&gt; R Script)\nCopy and paste this lesson’s script, RSProj_Setup1.r, to the new script.\nChange the colors in the boxplot (edit lines 17-21)\n\nHere is a comprehensive list of color names you can use in R\n\nSave the script as app01.r, and to your script folder\n\n \nIf you have any questions regarding this application, feel free to email them to ?var:instructor.name at ?var:instructor.email.\n\n8.1 Questions to answer\nAnswer the following in comments inside your application script:\n\nWhat was your level of comfort with the lesson/application?\nWhat areas of the lesson/application confused or still confuses you?\nWhat are some things you would like to know more about that is related to, but not covered in, this lesson?\n\n\n\n8.2 Turn in on GitHub\nSave the script as app01.r in your scripts folder, Push the changes to your GitHub repository, create an Issue in GitHub that says you have finished the application and assign the issue to ?var:instructor.githubID.\n\n\n8.3 Zip your Project Folder\nIn your File Manager (not in RStudio), right-click on the Project Folder and in:\n\nWindows 10:\n\nClick Send to\nClick Compressed (zipped) folder\n\nWindows 11:\n\nClick Compress to Zip file\n\nMac:\n\nClick Compress “&lt;Project Folder&gt;”\n\n\nFor all operating systems, a zipped file named &lt;Project Folder&gt;.zip with all the Project Folders’ contents is created in the same folder. You can email the zip file."
+    "text": "8 Application\n\nIn your RStudio Project, create a new script file (File -&gt; New File -&gt; R Script)\nCopy and paste this lesson’s script, RSProj_Setup1.r, to the new script.\nChange the colors in the boxplot (edit lines 17-21)\n\nHere is a comprehensive list of color names you can use in R\n\nSave the script as app01.r, and to your script folder\n\n \nIf you have any questions regarding this application, feel free to email them to ?var:instructor.name at ?var:instructor.email.\n\n8.1 Questions to answer\nAnswer the following in comments inside your application script:\n\nWhat was your level of comfort with the lesson/application?\nWhat areas of the lesson/application confused or still confuses you?\nWhat are some things you would like to know more about that is related to, but not covered in, this lesson?\n\n\n\n8.2 Turn in on GitHub\nSave the script as app01.r in your scripts folder, Push the changes to your GitHub repository, create an Issue in GitHub that says you have finished the application and assign the issue to ?var:instructor.githubID.\n\n\n8.3 Zip your Project Folder\nIn your File Manager (not in RStudio), right-click on the Project Folder and in:\n\nWindows 10:\n\nClick Send to\nClick Compressed (zipped) folder\n\nWindows 11:\n\nClick Compress to Zip file\n\nMac:\n\nClick Compress “&lt;Project Folder&gt;”\n\n\nFor all operating systems, a zipped file named &lt;Project Folder&gt;.zip with all the Project Folders’ contents is created in the same folder. You can email the zip file.",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-color-schemes",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-color-schemes",
     "title": "01: RStudio Projects Setup",
     "section": "9 Extension: Color Schemes",
-    "text": "9 Extension: Color Schemes\nI am not a big fan of the default color scheme in RStudio.  It does not create enough differentiation between the different components of a script.  For instance, comments (red arrows) are in green and quoted items (blue arrows) are in just a slightly different green (Figure 18).\n\n\n\n\n\n\nFigure 18: The text color for comments and quotes\n\n\n\n\n9.1 Changing the color scheme\nA good color scheme can really help a programmer by allowing them to quickly identify parts of a script and common errors, like misplaced quotes.\n \nRStudio offers many color schemes – you can change the color scheme by:\n\nclicking on Tools in the main menu (circled in Figure 19)\nchoose Global Options\nWhen the Global Options window open (in Figure 19), click on Appearance\n\n\n\n\n\n\n\nFigure 19: Color schemes for RStudio (note: the Editor font might be different in your window – that is OK)\n\n\n\n \nThe image above shows the Xcode color scheme ( Figure 19).  I prefer Xcode because it does a good job differentiating the different aspects of the script. Notice how the comments (in green) are now clearly distinguished from the quotes (in red).\n \nYou can choose from around 20 themes in the Editor theme window and you can change the theme anytime without affecting anything else.\n\n\n9.2 Adding more color to differentiate output\nThere are a couple more helpful options in RStudio that use color to distinguish components of your code and the output in the Console tab.\n \nTo make these changes go to\nTools -&gt; Global Options… -&gt; Code -&gt; Display and check:\n\nHighlight R function calls\n\n \nTools -&gt; Console and check:\n\nShow syntax highlighting in console input\n\n\n\n\n\n\n\nFigure 20: Console Window changes"
+    "text": "9 Extension: Color Schemes\nI am not a big fan of the default color scheme in RStudio.  It does not create enough differentiation between the different components of a script.  For instance, comments (red arrows) are in green and quoted items (blue arrows) are in just a slightly different green (Figure 18).\n\n\n\n\n\n\nFigure 18: The text color for comments and quotes\n\n\n\n\n9.1 Changing the color scheme\nA good color scheme can really help a programmer by allowing them to quickly identify parts of a script and common errors, like misplaced quotes.\n \nRStudio offers many color schemes – you can change the color scheme by:\n\nclicking on Tools in the main menu (circled in Figure 19)\nchoose Global Options\nWhen the Global Options window open (in Figure 19), click on Appearance\n\n\n\n\n\n\n\nFigure 19: Color schemes for RStudio (note: the Editor font might be different in your window – that is OK)\n\n\n\n \nThe image above shows the Xcode color scheme ( Figure 19).  I prefer Xcode because it does a good job differentiating the different aspects of the script. Notice how the comments (in green) are now clearly distinguished from the quotes (in red).\n \nYou can choose from around 20 themes in the Editor theme window and you can change the theme anytime without affecting anything else.\n\n\n9.2 Adding more color to differentiate output\nThere are a couple more helpful options in RStudio that use color to distinguish components of your code and the output in the Console tab.\n \nTo make these changes go to\nTools -&gt; Global Options… -&gt; Code -&gt; Display and check:\n\nHighlight R function calls\n\n \nTools -&gt; Console and check:\n\nShow syntax highlighting in console input\n\n\n\n\n\n\n\nFigure 20: Console Window changes",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-stop-rstudio-from-automatically-adding-matching-parenthesis-and-quotes",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-stop-rstudio-from-automatically-adding-matching-parenthesis-and-quotes",
     "title": "01: RStudio Projects Setup",
     "section": "10 Extension: Stop RStudio from automatically adding matching parenthesis and quotes",
-    "text": "10 Extension: Stop RStudio from automatically adding matching parenthesis and quotes\nA common complaint I have gotten from my students is they hate the way RStudio tries to be “helpful” by automatically adding matching parenthesis or quotes when the user types in a parenthesis or start quote.\n \nYou can turn off this feature by:\n\ngoing to Tools -&gt; Global Options… -&gt; Code  -&gt; Editing\nuncheck Insert matching parens/quotes\nset Surround selection on text insertion to Never\n\n\n\n\n\n\n\nFigure 21: Stop RStudio from automatically ending your parenthesis and quotes."
+    "text": "10 Extension: Stop RStudio from automatically adding matching parenthesis and quotes\nA common complaint I have gotten from my students is they hate the way RStudio tries to be “helpful” by automatically adding matching parenthesis or quotes when the user types in a parenthesis or start quote.\n \nYou can turn off this feature by:\n\ngoing to Tools -&gt; Global Options… -&gt; Code  -&gt; Editing\nuncheck Insert matching parens/quotes\nset Surround selection on text insertion to Never\n\n\n\n\n\n\n\nFigure 21: Stop RStudio from automatically ending your parenthesis and quotes.",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-rstudio-project-in-an-existing-directory",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-rstudio-project-in-an-existing-directory",
     "title": "01: RStudio Projects Setup",
     "section": "11 Extension: RStudio Project in an existing directory",
-    "text": "11 Extension: RStudio Project in an existing directory\nTo create a new RStudio Project inside a directory that already exists (has scripts and data)\n\nopen RStudio\nclick File -&gt; New Project \nIn the Create Project window click Existing Directory\nBrowse to the folder you want to be the Project working directory and click Create Project\n\n \nRStudio will add a *.RProj file to the folder – this is what makes the folder an RStudio Project."
+    "text": "11 Extension: RStudio Project in an existing directory\nTo create a new RStudio Project inside a directory that already exists (has scripts and data)\n\nopen RStudio\nclick File -&gt; New Project \nIn the Create Project window click Existing Directory\nBrowse to the folder you want to be the Project working directory and click Create Project\n\n \nRStudio will add a *.RProj file to the folder – this is what makes the folder an RStudio Project.",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-working-directories-in-r-and-rstudio-why-rstudio-projects",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-working-directories-in-r-and-rstudio-why-rstudio-projects",
     "title": "01: RStudio Projects Setup",
     "section": "12 Extension: Working directories in R and RStudio (why RStudio Projects)",
-    "text": "12 Extension: Working directories in R and RStudio (why RStudio Projects)\nThis topic is, in this author’s opinion, one of the most frustrating topic in R.  Compared to other programming languages (e.g., C++. Python, Javascript), R handling of working directories makes it harderto share projects.\n \nA working directory is the folder location used when one file is looking for another file.  It is best shown by its use-case: a script file that is reading in information from another file – this file can be a data file or another script file.\n \nFor example, let’s say we have a script file called weather.r and it is pulling in data from the file weather2020.csv.  weather.r needs to first find the folder location for weather2020.csv before it can access the file.  To do this, weather.r needs a path to weather2020.csv.  This path can be thought of as map directions between two points – and the working directory is the starting point.\n \nFor the vast majority of programming languages, there is no concept of a working directory.  The process of files calling other files works like google maps – a route is specified between the two files starting with the folder the caller (e.g., weather.r) is in and ending where the callee (e.g., weather.csv) is. The path between the two files is called a relative file path. \n\n12.1 R’s default handling of working directories\nIn R, the starting point, or working directory, is fixed for all R files opened in a session (called a session variable).  Using the google maps analogy, this is like saying the map starting point is fixed for everyone – it does not matter where you actually are located.  You can change the working directory in your script using setwd() but this changes the working directories for all R files in the session.  In other words, you are simply changing the starting point to a new location and all files will now use that location.\n\n\n12.2 Absolute file paths (a bad fix to the problem)\nOne way to get around working directories is to use an absolute file path.  So, instead of mapping between weather.R and weather.csv, you just give the file path for weather.csv on your computer (called the absolute file path).\n \nThis will look something like: c:\\Users\\RStudent\\Documents\\WeatherProj\\Data\\weather.csv\n \nDoing this means you do not have to worry about working directories.  But this solution breaks as soon as you move files on your computer or move them to another computer.  The reason is that the file path changes.  Absolute file paths make it almost impossible to share file and should not be used.\n\n\n12.3 How RStudio Projects handle working directory (the least-worst option)\nAn RStudio Project sets the working directory to the Project Folder.  So, for weather.r to find weather.csv inside an RStudio Project, it just needs to know where weather.csv is located relative to the project folder.  Most likely this will be something like: Data\\weather.csv. This makes it far easier to share your project because the path to weather.csv will be the same on any computer.\nWhile I believe this is by far the best method for handling working directory issues, it comes with a major caveat:You need to open script files from within the RStudio Project.  Opening the project sets the working directory for all script files used in the session.  If you a file outside of the Project session, then the working directory is not set by the project.\n\n\n12.4 The default working directory\nA working directory is not defined for a file, it is defined for a session.  So, all files within that session will have the same working directory.  IF you change the working directory in one file, you change it for every file within the session.  This leads to awkward behavior where one R file can change the behavior of another R file within the same session by using setwd()."
+    "text": "12 Extension: Working directories in R and RStudio (why RStudio Projects)\nThis topic is, in this author’s opinion, one of the most frustrating topic in R.  Compared to other programming languages (e.g., C++. Python, Javascript), R handling of working directories makes it harderto share projects.\n \nA working directory is the folder location used when one file is looking for another file.  It is best shown by its use-case: a script file that is reading in information from another file – this file can be a data file or another script file.\n \nFor example, let’s say we have a script file called weather.r and it is pulling in data from the file weather2020.csv.  weather.r needs to first find the folder location for weather2020.csv before it can access the file.  To do this, weather.r needs a path to weather2020.csv.  This path can be thought of as map directions between two points – and the working directory is the starting point.\n \nFor the vast majority of programming languages, there is no concept of a working directory.  The process of files calling other files works like google maps – a route is specified between the two files starting with the folder the caller (e.g., weather.r) is in and ending where the callee (e.g., weather.csv) is. The path between the two files is called a relative file path. \n\n12.1 R’s default handling of working directories\nIn R, the starting point, or working directory, is fixed for all R files opened in a session (called a session variable).  Using the google maps analogy, this is like saying the map starting point is fixed for everyone – it does not matter where you actually are located.  You can change the working directory in your script using setwd() but this changes the working directories for all R files in the session.  In other words, you are simply changing the starting point to a new location and all files will now use that location.\n\n\n12.2 Absolute file paths (a bad fix to the problem)\nOne way to get around working directories is to use an absolute file path.  So, instead of mapping between weather.R and weather.csv, you just give the file path for weather.csv on your computer (called the absolute file path).\n \nThis will look something like: c:\\Users\\RStudent\\Documents\\WeatherProj\\Data\\weather.csv\n \nDoing this means you do not have to worry about working directories.  But this solution breaks as soon as you move files on your computer or move them to another computer.  The reason is that the file path changes.  Absolute file paths make it almost impossible to share file and should not be used.\n\n\n12.3 How RStudio Projects handle working directory (the least-worst option)\nAn RStudio Project sets the working directory to the Project Folder.  So, for weather.r to find weather.csv inside an RStudio Project, it just needs to know where weather.csv is located relative to the project folder.  Most likely this will be something like: Data\\weather.csv. This makes it far easier to share your project because the path to weather.csv will be the same on any computer.\nWhile I believe this is by far the best method for handling working directory issues, it comes with a major caveat:You need to open script files from within the RStudio Project.  Opening the project sets the working directory for all script files used in the session.  If you a file outside of the Project session, then the working directory is not set by the project.\n\n\n12.4 The default working directory\nA working directory is not defined for a file, it is defined for a session.  So, all files within that session will have the same working directory.  IF you change the working directory in one file, you change it for every file within the session.  This leads to awkward behavior where one R file can change the behavior of another R file within the same session by using setwd().",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-different-ways-to-install-packages",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-different-ways-to-install-packages",
     "title": "01: RStudio Projects Setup",
     "section": "13 Extension: Different ways to install packages",
-    "text": "13 Extension: Different ways to install packages\nHere are three different ways in RStudio to install packages used in your script\n\n13.1 Use the RStudio menu\nTo install packages using the RStudio menu:\n\nClick Tools -&gt; Install Packages…\nIn the Install Packages window, type the package name in the Packages textbox (RStudio will give suggestions based on what you have typed)\n\nnote: you can type in multiple packages using spaces to separate them\n\nClick Install\n\n\n\n13.2 Use the Console tab\nIn R, we can install packages using install.packages().  So, if you wanted to install GGPlot2, you would type:\ninstall.packages(\"GGPlot2\")\nNote: you can install multiple packages at once if you put the names in a vector:\ninstall.packages(c(\"GGPlot2\", \"gridExtra\", \"tidyverse\")\nThe Console tab in RStudio is an R interface, and you could type in the above line to install the GGPlot2 package.\n\n\n\n\n\n\nFigure 22: Using the RStudio Console to install a package\n\n\n\n\n\n13.3 Have RStudio install the packages\nRStudio looks through your script and will prompt you to install packages used in your script that you do not have installed. With a click, RStudio installs all needed packages and dependencies.\n\n\n\n\n\n\nFigure 23: RStudio looking for packages needed by the script– click Install and RStudio installs the required package(s)"
+    "text": "13 Extension: Different ways to install packages\nHere are three different ways in RStudio to install packages used in your script\n\n13.1 Use the RStudio menu\nTo install packages using the RStudio menu:\n\nClick Tools -&gt; Install Packages…\nIn the Install Packages window, type the package name in the Packages textbox (RStudio will give suggestions based on what you have typed)\n\nnote: you can type in multiple packages using spaces to separate them\n\nClick Install\n\n\n\n13.2 Use the Console tab\nIn R, we can install packages using install.packages().  So, if you wanted to install GGPlot2, you would type:\ninstall.packages(\"GGPlot2\")\nNote: you can install multiple packages at once if you put the names in a vector:\ninstall.packages(c(\"GGPlot2\", \"gridExtra\", \"tidyverse\")\nThe Console tab in RStudio is an R interface, and you could type in the above line to install the GGPlot2 package.\n\n\n\n\n\n\nFigure 22: Using the RStudio Console to install a package\n\n\n\n\n\n13.3 Have RStudio install the packages\nRStudio looks through your script and will prompt you to install packages used in your script that you do not have installed. With a click, RStudio installs all needed packages and dependencies.\n\n\n\n\n\n\nFigure 23: RStudio looking for packages needed by the script– click Install and RStudio installs the required package(s)",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-the-help-tab",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-the-help-tab",
     "title": "01: RStudio Projects Setup",
     "section": "14 Extension: The Help tab",
-    "text": "14 Extension: The Help tab\nThe Help tab is essentially an intelligent online search through the R documentation.  So, if you type plot in the search bar and hit enter, the R plot help page from the online documentation will appear.  Note: you could have done the same thing by typing ?plot in the Console tab.\n\n\n\n\n\n\nFigure 24: The R plot help page in the online documentation.\n\n\n\n \nThe page that appears in the Help tab (Figure 24) is this page: https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.html\n \nhttps://stat.ethz.ch is where the official documentation for R is located.  So, you will see this website appear quite often when you do an internet search for something R related.\n \nIn a future lesson we will use the Help tab to find information about GGPlot functions."
+    "text": "14 Extension: The Help tab\nThe Help tab is essentially an intelligent online search through the R documentation.  So, if you type plot in the search bar and hit enter, the R plot help page from the online documentation will appear.  Note: you could have done the same thing by typing ?plot in the Console tab.\n\n\n\n\n\n\nFigure 24: The R plot help page in the online documentation.\n\n\n\n \nThe page that appears in the Help tab (Figure 24) is this page: https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.html\n \nhttps://stat.ethz.ch is where the official documentation for R is located.  So, you will see this website appear quite often when you do an internet search for something R related.\n \nIn a future lesson we will use the Help tab to find information about GGPlot functions.",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-run-vs.-source",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-run-vs.-source",
     "title": "01: RStudio Projects Setup",
     "section": "15 Extension: Run vs. Source",
-    "text": "15 Extension: Run vs. Source\nTechnically speaking, the difference between Run and Source is:\n\nSource will execute all the code in a script file.\nRun will execute either:\n\nThe code that is highlighted (if code is highlighted) OR\nThe command that the cursor is on (if the command is on more than one line) OR\nThe whole line the cursor is on\n\n\n \nThe real difference lies in a historical discussion of scripting vs. programming, which is a discussion beyond this class.  Suffice to say, R was originally intended to be more like an advanced calculator than a programming language. The script files would contain multiple lines of code that could be execute independently and in any order (think of these as buttons on a calculator).  The user could click a “button” to pull in data, click another “button” to run statistical analysis on the data, and click a third “button” to output the analysis.  This is what the Run button does.\n \nHowever, as R has grown, the focus has shifted towards developing well-structured code just like any modern programming language (e.g., Python, C, Java). This means executing the script as a whole instead of in parts.  This is what Source does.  Executing your script as a whole instead of in parts has many advantages as the code is easier to debug, easier to share, and much better organized – because you are forced to organize it. In the not-so-humble opinion of this author, learning to treat your script as a whole is a vital part of learning how to program.  For this reason, we will always be using the Source button in this class."
+    "text": "15 Extension: Run vs. Source\nTechnically speaking, the difference between Run and Source is:\n\nSource will execute all the code in a script file.\nRun will execute either:\n\nThe code that is highlighted (if code is highlighted) OR\nThe command that the cursor is on (if the command is on more than one line) OR\nThe whole line the cursor is on\n\n\n \nThe real difference lies in a historical discussion of scripting vs. programming, which is a discussion beyond this class.  Suffice to say, R was originally intended to be more like an advanced calculator than a programming language. The script files would contain multiple lines of code that could be execute independently and in any order (think of these as buttons on a calculator).  The user could click a “button” to pull in data, click another “button” to run statistical analysis on the data, and click a third “button” to output the analysis.  This is what the Run button does.\n \nHowever, as R has grown, the focus has shifted towards developing well-structured code just like any modern programming language (e.g., Python, C, Java). This means executing the script as a whole instead of in parts.  This is what Source does.  Executing your script as a whole instead of in parts has many advantages as the code is easier to debug, easier to share, and much better organized – because you are forced to organize it. In the not-so-humble opinion of this author, learning to treat your script as a whole is a vital part of learning how to program.  For this reason, we will always be using the Source button in this class.",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   },
   {
     "objectID": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-create-a-standalone-r-script",
     "href": "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html#extension-create-a-standalone-r-script",
     "title": "01: RStudio Projects Setup",
     "section": "16 Extension: Create a standalone R script",
-    "text": "16 Extension: Create a standalone R script\nThere are two ways to create script file in RStudio:\n\nA standalone script\nAs part of an RStudio Project\n\n \nMany people use the first method.  In this class we exclusively use the second method.  The first method of creating a script file is fine for testing something out.  The second method is far better for organizing larger projects and sharing your code with others.\n \nThe reason the second method is better is because a project consist of many file that need to talk each-other.  Script files will call other scripts file or read in data from data files.  In order to makes this work, the script files need to know how to find the other files. In an RStudio Project, this is easy because the working directory is always the Project Folder of your project – and all files in the project are contained within the Project Folder.  So, you just need to look for the file relative to the Project Folder.\n \nR Programmers often get around the lack of a Project Folder/defined working directory by setting the working directory in code using setwd().  This can work locally but becomes problematic when files are shared or moved.  Whereas, RStudio Project always maintain their folder structure."
+    "text": "16 Extension: Create a standalone R script\nThere are two ways to create script file in RStudio:\n\nA standalone script\nAs part of an RStudio Project\n\n \nMany people use the first method.  In this class we exclusively use the second method.  The first method of creating a script file is fine for testing something out.  The second method is far better for organizing larger projects and sharing your code with others.\n \nThe reason the second method is better is because a project consist of many file that need to talk each-other.  Script files will call other scripts file or read in data from data files.  In order to makes this work, the script files need to know how to find the other files. In an RStudio Project, this is easy because the working directory is always the Project Folder of your project – and all files in the project are contained within the Project Folder.  So, you just need to look for the file relative to the Project Folder.\n \nR Programmers often get around the lack of a Project Folder/defined working directory by setting the working directory in code using setwd().  This can work locally but becomes problematic when files are shared or moved.  Whereas, RStudio Project always maintain their folder structure.",
+    "crumbs": [
+      "QFC Tutorials",
+      "RStudio Project Setup",
+      "01: RStudio Projects Setup"
+    ]
   }
 ]

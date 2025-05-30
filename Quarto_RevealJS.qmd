@@ -1,0 +1,34 @@
+---
+title: "Quarto RevealJS"
+---
+
+## What is RevealJS
+
+RevealJS is a system for developing web-based presentation documents, similar to PowerPoint. This tutorial assume that you want to create multiple documents inside a project (e.g., multiple lessons in a class repository).
+
+## YAML
+
+Create a ***\_quarto.yml*** file ([note: the filename starts with an underscore]{.note}) in the root of your project folder and add the following:
+
+``` yaml
+title: Put the title of your class
+date-format: "D MMMM YYYY"
+
+title-slide-attributes:
+    data-background-image: "https://qfcatmsu.github.io/assets/images/qfc_logo.png"
+    data-background-size: "40%"
+    data-background-position: "6% 95%"
+format: 
+  revealjs:
+    css: "https://qfcatmsu.github.io/assets/quarto/qfc_pres_styles.css"
+    slide-number: c/t  
+    theme: simple 
+    include-in-header:
+      - text: |
+          <link rel = "shortcut icon" href = "https://qfcatmsu.github.io/assets/images/qfc_icon.png" />
+          <script src="https://qfcatmsu.github.io/assets/quarto/qfc_pres_styles.js"></script>
+editor: visual
+highlight-style: kate
+```
+
+The YAML above will be applied to all Quarto revealjs documents in your repository

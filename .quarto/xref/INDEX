@@ -127,5 +127,17 @@
   },
   "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.qmd": {
     "01-RStudioProjectsSetup.html": "389a488b"
+  },
+  "Quarto_RevealJS.qmd": {
+    "Quarto_RevealJS.html": "afb72e88"
+  },
+  "tutorials/Quarto-RevealJS/Quarto_RevealJS.qmd": {
+    "Quarto_RevealJS.html": "79214392"
+  },
+  "docs/readme.md": {
+    "readme.html": "6461b032"
+  },
+  "tutorials/res/LICENSE.md": {
+    "LICENSE.html": "7099f3fe"
   }
 }
