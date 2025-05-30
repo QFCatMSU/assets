@@ -1,8 +1,6 @@
 project:
   type: website
-  output-dir: docs 
-  render:
-    - tutorials/**/*.qmd 
+  output-dir: docs
 
 website:
   bread-crumbs: false
