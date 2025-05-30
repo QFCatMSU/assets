@@ -1,26 +1,40 @@
+
+
 document.addEventListener('DOMContentLoaded', function() 
 {
-  subtitle = document.querySelector("p.subtitle");
+    // Only run if we're in print-pdf mode
+  if (window.location.search === "?print-pdf") {
+    window.addEventListener("load", () => {
+      // Give the browser time to finish rendering
+      setTimeout(() => {
+        window.print();
+      }, 1000); // 1 second is usually enough
+    });
+  }
   
-  if(subtitle)
+  else
   {
-    // switch styles to css
-    // remove from print mode
-    protocol = window.location.protocol;
-    host = window.location.hostname;
-    path = window.location.pathname;
+    subtitle = document.querySelector("p.subtitle");
     
-    // Replace .html with .pdf (only at end)
-    let path_pdf = path.replace(/\.html$/, '.pdf');
-    
-    url_pdf = protocol + "//" + host + path_pdf;
-    
-    fetch(path_pdf).then((response) => 
+    // create printer icon 
+  	printLink = document.createElement('a');
+  	printLink.classList.add("self");
+  	printLink.target = "_self";
+  	printLink.href = "#"
+    printLink.addEventListener("click", function() 
     {
-		  if (response.ok) 
-		  {
-			  subtitle.innerHTML += "<br><a style='font-size: 20px;' class='pdfLink' href='" + path_pdf + "' target='new'>Click here for the PDF version</a>";
-		  } 
-    })
+      const url = new URL(window.location.href);
+      url.search = "?print-pdf"; // Trigger Reveal.js print mode
+          window.open(url.toString(), "_blank");
+      //window.location.href = url.toString(); // Reload with new query
+    });
+    printLink.style.marginLeft = "9px";
+  	printLink.innerHTML = "&#9113";
+  	
+  	// stop Quarto from removing the primary header
+  	// titleObj.classList.remove("d-none");
+    
+  	// add printer icon to title
+  	subtitle.appendChild(printLink);
   }
 })
