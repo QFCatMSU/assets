@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() 
 {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("print-pdf") && params.get("filename")) {
-    document.title = params.get("filename");
-  }
-  
   // Only run if we're in print-pdf mode
   if (window.location.search === "?print-pdf") {
+    const params = new URLSearchParams(window.location.search);
+      
+    if (params.get("print-pdf") && params.get("filename")) 
+    {
+      document.title = params.get("filename");
+    }
+  
     window.addEventListener("load", () => {
       // Give the browser time to finish rendering
       setTimeout(() => {
