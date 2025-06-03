@@ -16,10 +16,14 @@ document.addEventListener('DOMContentLoaded', function()
     }
   
     // when revealjs says the pdf is ready, bring up a print dialog
+    window.addEventListener("load", () => {
+      setTimeout(() => window.print(), 1000);
+    });
+    /*
     Reveal.addEventListener('pdf-ready', () => 
     {
       window.print(); 
-    });
+    });*/
 
   }
   
