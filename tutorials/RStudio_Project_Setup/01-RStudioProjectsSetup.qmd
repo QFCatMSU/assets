@@ -380,7 +380,7 @@ If you click ***Source*** again, the **Environment, Plot,** and **Console** tabs
 
 4.  Save the script as ***app01.r***, and to your ***script*** folder
 
-{{< include ../../assets/_AppInstructions.qmd >}}
+{{< include ../../_assets/_AppInstructions.qmd >}}
 
 ### Zip your Project Folder {#sec-zip-folder}
 
