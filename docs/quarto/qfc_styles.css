@@ -164,7 +164,7 @@
   {
     background-color: rgb(255,255,100);
     padding: 2px;
-    margin: 2px;
+    margin: -2px;
     border-radius: 4px;
   }
   /* highlighting on in-page object that is linked to */
