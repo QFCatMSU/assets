@@ -139,5 +139,8 @@
   },
   "tutorials/res/LICENSE.md": {
     "LICENSE.html": "7099f3fe"
+  },
+  "test.qmd": {
+    "test.html": "45b52e14"
   }
 }

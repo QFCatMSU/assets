@@ -3,6 +3,11 @@
 /* rs-theme-name: a11y-light {rsthemes} */
 /* rs-theme-is-dark: FALSE */
 
+/* Issue:
+   In editor mode, if an object has a caption it will start with figure:
+	In HTML, the object has to also have an ID starting with fig-
+*/
+
 /* Remove bolds/ font-weight because it messes with the spacing of the Rstudio cursor */
 .ace_heading
 {
@@ -31,11 +36,12 @@ div[id^="tbl-"]>div>p.table-caption::before, div[id^="tbl-"]>p::before
 
 /* Add "Fig #" before caption that does not have a <br> -- they are empty 
    And add to divs with id starting with "fig-" that contain a paragraph */
-.pm-figcaption:not(:has(br))::before,
+/*.pm-figcaption:not(:has(br))::before,*/
+.pm-figcaption::before, 
 div[id^="fig-"] > p::before
 {
   counter-increment: figCount;               
-  content: "Fig " counter(figCount) ": ";  
+  content: "Figure " counter(figCount) ": ";  
 }
 
 .pm-content .hl

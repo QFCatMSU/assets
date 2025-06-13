@@ -8,7 +8,9 @@ editor: visual
 
  
 
-[rs_theme_light](quarto/qfc_a11y-dark.rstheme)
+[rs_theme_dark](quarto/qfc_a11y-dark.rstheme)
+
+[rs_theme_light](quarto/qfc_a11y-light.rstheme)
 
 [git tutorial](tutorials/01-Git_Setup.html)
 

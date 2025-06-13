@@ -410,7 +410,7 @@
     "href": "index.html",
     "title": "Assests",
     "section": "",
-    "text": "Project Management using Git and GitHub class\n \nrs_theme_light\ngit tutorial\nQFC_Styles.js\nQFC_Styles.css\nQFC_pres_styles.css\nQFC_pres_styles.js\nqfc_logo.png\nqfc_icon.png"
+    "text": "Project Management using Git and GitHub class\n \nrs_theme_dark\nrs_theme_light\ngit tutorial\nQFC_Styles.js\nQFC_Styles.css\nQFC_pres_styles.css\nQFC_pres_styles.js\nqfc_logo.png\nqfc_icon.png"
   },
   {
     "objectID": "tutorials/future_tutorials.html",
@@ -526,5 +526,12 @@
     "title": "1 Assests",
     "section": "",
     "text": "https://qfcatmsu.github.io/assets/"
+  },
+  {
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "Figure 1\n\n\n\n\n\n\ndfgweretweg"
   }
 ]
