@@ -677,7 +677,6 @@ function linksToNewWindow()
 				links[i].setAttribute("download", "");
 			}
 			
-      // remove the link if it is going to the same page and instead
       // replace it with a function that scrolls to the new location 
       // If you do not do this then Quarto will reload pages 
 	    else if(linkUrl.hostname == window.location.hostname &&
@@ -685,7 +684,7 @@ function linksToNewWindow()
 			{
 				hashPos = links[i].href.indexOf("#");
 				hashID = links[i].href.substring((hashPos+1));
-				links[i].removeAttribute("href");  
+		//		links[i].removeAttribute("href");  
 				links[i].classList.add("inpageLink"); 
 							
 				(function(hashID){
@@ -694,13 +693,14 @@ function linksToNewWindow()
 							element = document.getElementById(hashID);
 							// for headers 
 							
-							refElement = document.querySelector("[data-anchor-id='" + String(element.id) + "']");
-							if(!refElement)
-							{
+							highLightObject(element)
+					//		refElement = document.querySelector("[data-anchor-id='" + String(element.id) + "']");
+					//		if(!refElement)
+					//		{
 								// for all but headers
-								refElement = document.querySelector("#" + element.id);
-							}
-							scrollToElement(element.id);
+					//			refElement = document.querySelector("#" + element.id);
+					//		}
+						//	scrollToElement(element.id);
 						});	
 				})(hashID);
 			}
