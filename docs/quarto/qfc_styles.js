@@ -537,11 +537,11 @@ function scrollToElement(elementID, outsideCall = false)
 	
 	// check if the referenced element is a codeline in a div that has a scrollbar
 	if(element.classList.contains("code")  &&   // part of a codeBlock
-		element.parentNode.scrollHeight > element.parentNode.clientHeight) // scrollbar on codeblock
+		 element.parentNode.scrollHeight > element.parentNode.clientHeight) // scrollbar on codeblock
 	{
 		// line is scrolled out of view
 		if(element.offsetTop < element.parentNode.scrollTop || 
-			element.offsetTop > element.parentNode.scrollTop + element.parentNode.offsetHeight) 
+		   element.offsetTop > element.parentNode.scrollTop + element.parentNode.offsetHeight) 
 		{
 			element.parentNode.scrollTop = element.offsetTop - 20;  // scroll line back into view
 		}
@@ -677,7 +677,6 @@ function linksToNewWindow()
 				links[i].setAttribute("download", "");
 			}
 			
-      // remove the link if it is going to the same page and instead
       // replace it with a function that scrolls to the new location 
       // If you do not do this then Quarto will reload pages 
 	    else if(linkUrl.hostname == window.location.hostname &&
@@ -685,22 +684,26 @@ function linksToNewWindow()
 			{
 				hashPos = links[i].href.indexOf("#");
 				hashID = links[i].href.substring((hashPos+1));
-				links[i].removeAttribute("href");  
+
+		//		links[i].removeAttribute("href");  
 				links[i].classList.add("inpageLink"); 
 							
 				(function(hashID){
 					links[i].addEventListener("click", 
 						function() { 
+							event.preventDefault(); 
 							element = document.getElementById(hashID);
 							// for headers 
 							
-							refElement = document.querySelector("[data-anchor-id='" + String(element.id) + "']");
-							if(!refElement)
-							{
-								// for all but headers
-								refElement = document.querySelector("#" + element.id);
-							}
 							scrollToElement(element.id);
+
+					//		refElement = document.querySelector("[data-anchor-id='" + String(element.id) + "']");
+					//		if(!refElement)
+					//		{
+								// for all but headers
+					//			refElement = document.querySelector("#" + element.id);
+					//		}
+						//	scrollToElement(element.id);
 						});	
 				})(hashID);
 			}

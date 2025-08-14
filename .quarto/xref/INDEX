@@ -114,16 +114,19 @@
     "GroupCalendar.html": "cb55cac7"
   },
   "tutorials/Quarto/Quarto.qmd": {
-    "Quarto.html": "487fe442"
+    "Quarto.html": "487fe442",
+    "Quarto.tex": "a3aa16b4"
   },
   "tutorials/future_tutorials.qmd": {
     "future_tutorials.html": "a4fce9b9"
   },
   "tutorials/res/res.qmd": {
-    "res.tex": "b0beba0a"
+    "res.tex": "b0beba0a",
+    "res.html": "ca76e0e2"
   },
   "tutorials/res/res2.qmd": {
-    "res2.tex": "8ff8e25b"
+    "res2.tex": "8ff8e25b",
+    "res2.html": "958d0e7d"
   },
   "tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.qmd": {
     "01-RStudioProjectsSetup.html": "389a488b"
@@ -142,5 +145,9 @@
   },
   "test.qmd": {
     "test.html": "45b52e14"
+  },
+  "tutorials/Quarto/test.qmd": {
+    "test.tex": "761725db",
+    "test.html": "0552083c"
   }
 }

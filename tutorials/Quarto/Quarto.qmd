@@ -24,6 +24,12 @@ This document was created and is maintained by Charlie Belinsky and lives here: 
 
 -   rendering doucments
 
+-   Changing ***editor font:*** Tools -\> Global Options -\> Appearance
+
+    -   Lucida Console (default) causes cursor positioning issues when editing Quarto
+
+    -   I currently use Cascadia Code
+
 ## Install Quarto
 
 You need to download and install Quarto version ***1.4***, which, as of November 16, 2023, is the pre-release version.

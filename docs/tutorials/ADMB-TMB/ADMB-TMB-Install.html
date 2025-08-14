@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-f98ea211b99fe8356d6469e598480a52.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-c5e6fd5a646752829aeb2af341632313.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-fac7000a542ad838aabeb25de73c93bf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,8 +106,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <link rel="shortcut icon" href="https://qfcatmsu.github.io/images/quarto/qfc_icon.png">
 <script>mod=true; menuCollapse=true;</script>
-<script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
-<!--script src="../quarto/qfc_styles.js"></script-->
+<!--script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script-->
+<script src="../../quarto/qfc_styles.js"></script>
  
 
 
@@ -135,6 +136,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -283,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This section is useful for this installation and for any programming you do on your computer.</p>
 <p><span class="note">Note: images in this document can be resized by clicking on them</span></p>
 <p>&nbsp;</p>
-<p>1) Open a File Explorer window and in…</p>
+<p>1) Open a File Explorer window and in ( <a href="#fig-folderOptions" class="quarto-xref">Figure&nbsp;1</a>) …</p>
 <p><strong>Windows 10</strong>: Click <strong><em>View</em></strong> ➔ <strong><em>Options</em></strong> ➔&nbsp;<strong><em>Change folder and search options</em></strong></p>
 <div id="fig-folderOptions" class="fs quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -452,12 +457,12 @@ Figure&nbsp;5: Clean, Compile, and Run buttons in TMB
 <section id="package-inconsistency-error" class="level3" data-number="7.1">
 <h3 data-number="7.1" class="anchored" data-anchor-id="package-inconsistency-error"><span class="header-section-number">7.1</span> Package inconsistency error</h3>
 <p>If you see this message when compiling a TMB program:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Warning</span> message:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Warning</span> message:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">In</span> checkMatrixPackageVersion<span class="er">(</span><span class="kw">)</span> <span class="bu">:</span> Package version inconsistency detected.</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">TMB</span> was built with «Matrix version 1.5.4.1»</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Current</span> «Matrix version is 1.5.4»</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Please</span> re-install <span class="st">'TMB'</span> from source using install.packages<span class="er">(</span><span class="st">'TMB'</span><span class="ex">,</span> type = <span class="st">'source'</span><span class="kw">)</span> <span class="ex">or</span> ask CRAN for a binary version of <span class="st">'TMB'</span> matching CRAN<span class="st">'s '</span>Matrix<span class="st">' package</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">using C++ compiler: '</span>G__~1.EXE <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">12.2.0</span><span class="st">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">using C++ compiler: '</span>G__~1.EXE <span class="er">(</span><span class="ex">GCC</span><span class="kw">)</span> <span class="ex">12.2.0</span><span class="st">'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Do not follow the instructions given.&nbsp; Instead just update or reinstall the outdated package (in this case, <strong><em>Matrix</em></strong>).&nbsp; This is only necessary if the the script does not work because of the outdated package.</p>
 </section>
 </section>

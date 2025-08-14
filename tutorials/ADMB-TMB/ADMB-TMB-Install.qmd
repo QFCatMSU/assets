@@ -68,7 +68,7 @@ This section is useful for this installation and for any programming you do on y
 
  
 
-1\) Open a File Explorer window and in...
+1\) Open a File Explorer window and in ( @fig-folderOptions) ...
 
 **Windows 10**: Click ***View*** ➔ ***Options*** ➔ ***Change folder and search options***
 
