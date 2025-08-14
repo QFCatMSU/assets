@@ -81,6 +81,18 @@ parent.window.onload = function()
 		codeBlockDivs[i].classList.add("hasTab");
 	}
 		
+  // code to add lesson name to table
+  document.addEventListener("DOMContentLoaded", function() 
+  {
+    const titleEl = document.querySelector("h1.title");     // Quarto adds this class
+    const tocTitleEl = document.querySelector("h2#toc-title"); // TOC heading
+    if (titleEl && tocTitleEl) 
+    {
+      const lessonTitle = titleEl.innerText.trim();
+      tocTitleEl.innerHTML = "<b>" + lessonTitle + "</b>";
+    }
+  });   
+  
 	// allow users to resize images from small to full-size
 	createFlexImages();
 	
