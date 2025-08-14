@@ -80,18 +80,6 @@ parent.window.onload = function()
 		codeBlockDivs[i].parentElement.insertBefore(tabSpan, codeBlockDivs[i]);
 		codeBlockDivs[i].classList.add("hasTab");
 	}
-		
-  // code to add lesson name to table
-  document.addEventListener("DOMContentLoaded", function() 
-  {
-    const titleEl = document.querySelector("h1.title");     // Quarto adds this class
-    const tocTitleEl = document.querySelector("h2#toc-title"); // TOC heading
-    if (titleEl && tocTitleEl) 
-    {
-      const lessonTitle = titleEl.innerText.trim();
-      tocTitleEl.innerHTML = "<b>" + lessonTitle + "</b>";
-    }
-  });   
   
 	// allow users to resize images from small to full-size
 	createFlexImages();
@@ -119,6 +107,18 @@ parent.window.onload = function()
 	}
 }
 
+// code to add lesson name to table
+document.addEventListener("DOMContentLoaded", function() 
+{
+  const titleEl = document.querySelector("h1.title");     // Quarto adds this class
+  const tocTitleEl = document.querySelector("h2#toc-title"); // TOC heading
+  if (titleEl && tocTitleEl) 
+  {
+    const lessonTitle = titleEl.innerText.trim();
+    tocTitleEl.innerHTML = "<b>" + lessonTitle + "</b>";
+  }
+}); 
+  
 window.addEventListener("mousedown", function(event)
 {
 	// make sure it's a left-click and the MathJax Frame is not showing
