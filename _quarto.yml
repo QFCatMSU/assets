@@ -1,8 +1,8 @@
 project:
   type: website
   output-dir: docs
-  resources:
-    - quarto/**  # or should I do cp -r assets docs/assets?
+  # resources:
+  #   - quarto/**  # or should I do cp -r assets docs/assets?
 
 website:
   bread-crumbs: false
