@@ -341,9 +341,9 @@ a:hover
 	}
 	code b
   {
-    text-decoration: underline;
+/*    text-decoration: underline;
     text-decoration-color: aqua;
-    text-underline-offset: 4px;
+    text-underline-offset: 4px;  */
   }
   div.sourceCode, span.codeBlockTab
   {
