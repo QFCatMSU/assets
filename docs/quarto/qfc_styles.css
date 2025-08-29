@@ -290,7 +290,7 @@ a:hover
 @media print
 {
   /* remove background color */
-  #quarto-content
+  #quarto-content, main
   {
     background-color: transparent !important;
   }
