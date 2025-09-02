@@ -282,6 +282,11 @@ a:hover
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+.sidebar-header-item
+{
+	font-size: 14px;
+	color: darkred;
+}
 .page-layout-full /* #quarto-content , .sidebar */
 {
   background-color: #18453B !important;
