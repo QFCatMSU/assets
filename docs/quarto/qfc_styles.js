@@ -140,7 +140,7 @@ window.addEventListener("mousedown", function(event)
 			if(fsClick == null)
 			{
 				window.removeEventListener("mousemove", getMousePos);	
-				console.log(2);
+			//	console.log(2);
 			}
 			// bring up shortcut menu if mouse has barely moved
 			if(Math.abs(mouseX2-mouseX) < 10 &&  Math.abs(mouseY2-mouseY) < 10 && clickMode == "click")
@@ -399,6 +399,10 @@ function changeImageSize(element, instruction="none")
 		// set the images height to the smallHeight value and scale the with to match
 		element.style.width = smallImageWidth + "px";	
 	}
+	else if (instruction == "half")
+	{
+		element.style.width = ((smallImageWidth + element.naturalWidth) / 2) + "px";		
+	}
 	else // click directly on image
 	{
 	  // current width of image
@@ -485,6 +489,7 @@ function makeContextMenu(funct, param = null)
 	menuLinks(elemDiv, "Print/ Save as PDF", function(){document.getElementById("longClickMenu").style.visibility = "hidden"; window.print()}, "printToPDF");
 	menuLinks(elemDiv, "Maximize All Images", function() {changeAllPicSize('maximize')}, "maxAllImages");
 	menuLinks(elemDiv, "Minimize All Images", function() {changeAllPicSize('minimize')}, "minAllImages");
+	menuLinks(elemDiv, "All Images 50%", function() {changeAllPicSize('half')}, "halfImages");
 	
 	encapObject.appendChild(elemDiv);
 }
