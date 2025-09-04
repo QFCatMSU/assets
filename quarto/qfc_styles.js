@@ -273,7 +273,7 @@ function createFlexImages()
 {
 	// find all images that have the class name "flexSize" or "fs"
 	var flexVideo = encapObject.querySelectorAll('video.flexSize, video.fs');
-	var flexIframe = encapObject.querySelectorAll("p.fs > iframe, p.flexsize > iframe");
+	var flexIframe = encapObject.querySelectorAll("div.fs iframe, p.fs > iframe, p.flexsize > iframe");
   
   // find all figures within a fs div -- in Quarto these are plots from embedded scripts
   quartoFS = document.querySelectorAll("div.fs img.figure-img");

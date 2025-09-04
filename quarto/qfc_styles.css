@@ -292,6 +292,24 @@ a:hover
   background-color: #18453B !important;
 }
 
+/* style for the button to resize videos */
+.flexButton
+{
+  position: absolute;
+	background-color: orange;
+	font-size: 30px;
+	/*vertical-align: 30%;*/
+}
+.flexButton:hover
+{
+	color: rgb(50,50,255);
+}
+
+iframe
+{
+	margin: 0;
+}
+
 @media print
 {
   /* remove background color */
