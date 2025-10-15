@@ -6,3 +6,4 @@
 /.quarto/
 /sandbox/
 /res/
+**/*.quarto_ipynb
