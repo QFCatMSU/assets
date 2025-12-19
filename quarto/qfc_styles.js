@@ -7,7 +7,7 @@
 - make sure a page break does not break up a codeblock with a codeblock tab
 ****************/
 
-smallImageWidth = 150;			// set the height of flex-sized objects when small 
+smallImageWidth = 300;			// set the height of flex-sized objects when small 
 scrollTopPosition = 0; 			// value saved for links-return-links within a page
 referenceTimer = "";				// timer used to toggle the reference object
 scrollFlag = 0;  						// counts when scrolling of page occurs due to reference links
