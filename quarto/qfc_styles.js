@@ -295,6 +295,7 @@ function createFlexImages()
 			if(event.which == 1)
 			{		
 				fsClick = fsObj[i];
+				fsClick.style.cursor = "ew-resize";
 				fsClick.ondragstart = function() {return false;};
 			}
 		});
@@ -393,15 +394,18 @@ function changeImageSize(element, instruction="none")
 	if(instruction == "maximize")
 	{
 		element.style.width = element.naturalWidth + "px"; // "unset";
+		element.style.cursor = "zoom-out";
 	}
 	else if (instruction == "minimize")
 	{
-		// set the images height to the smallHeight value and scale the with to match
+		// set the images height to the smallHeight value and scale the width to match
 		element.style.width = smallImageWidth + "px";	
+		element.style.cursor = "zoom-in";
 	}
 	else if (instruction == "half")
 	{
-		element.style.width = ((smallImageWidth + element.naturalWidth) / 2) + "px";		
+		element.style.width = ((smallImageWidth + element.naturalWidth) / 2) + "px";
+		element.style.cursor = "zoom-in";
 	}
 	else // click directly on image
 	{
@@ -419,10 +423,12 @@ function changeImageSize(element, instruction="none")
 		    (naturalWidth < parseInt(element.width)))
 		{
 			element.style.width = smallImageWidth + "px";	
+			element.style.cursor = "zoom-in";
 		}
 		else
 		{
 			element.style.width = element.naturalWidth + "px"; // "unset";
+			element.style.cursor = "zoom-out";
 		}
 	}
 }
@@ -771,6 +777,19 @@ function cleanupFlexEvent()
 		
 	if(clickMode == "drag")
 	{
+	  // current width of image
+		currentWidth = parseInt(fsClick.clientWidth);
+		// starting width of image
+		naturalWidth = parseInt(fsClick.naturalWidth);
+		// width of parent frame (image cannot be bigger than this)
+		parentWidth = parseInt(fsClick.parentElement.clientWidth);
+		
+		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) ||
+	    (naturalWidth < parseInt(fsClick.width)))
+		  fsClick.style.cursor = "zoom-out";
+		else
+			fsClick.style.cursor = "zoom-in";
+			
 		fsClick.classList.remove("resizing");
 	}
 	clickMode = null;	
