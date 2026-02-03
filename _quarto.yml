@@ -1,3 +1,10 @@
+# Adds vid- as a possible reference in the document
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Video
+      key: vid
+      
 project:
   type: website
   output-dir: docs
@@ -23,6 +30,7 @@ format:
   html:
     page-layout: full
     css: "https://qfcatmsu.github.io/assets/quarto/qfc_styles.css"
+    # css: "quarto/qfc_styles.css"
     toc: true
     toc-title: "<b>Content</b>"
     toc-location: left
@@ -35,8 +43,8 @@ format:
     include-in-header:
       - text: |
           <link rel = "shortcut icon" href = "https://qfcatmsu.github.io/images/quarto/qfc_icon.png" />
-          <script>mod=true; menuCollapse=true;</script>
+          <script>mod=true;</script>
           <script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
-          <!--script src="../../quarto/qfc_styles.js"></script-->
+          <!--script src="quarto/qfc_styles.js"></script-->
            
 editor: visual

@@ -149,5 +149,11 @@
   "tutorials/Quarto/test.qmd": {
     "test.tex": "761725db",
     "test.html": "0552083c"
+  },
+  "video_test.qmd": {
+    "video_test.html": "4604fb66"
+  },
+  "video_table_test.qmd": {
+    "video_table_test.html": "78f4cd83"
   }
 }

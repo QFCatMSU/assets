@@ -505,5 +505,19 @@
     "title": "1 Assests",
     "section": "",
     "text": "https://qfcatmsu.github.io/assets/"
+  },
+  {
+    "objectID": "video_test.html",
+    "href": "video_test.html",
+    "title": "03: GitHub Repositories",
+    "section": "",
+    "text": "Help here: https://quarto.org/docs/authoring/cross-references-custom.html\niuyoiyy\n\n\n\n\n\n\nFigure 1: kjhygkug\n\n\n\n\nCreate an HTML block (backslash, choose HTML)\nCopy embed code from Kaltura into block\nInsert div and add fig-### or [vid-### – does not work] and fs class\n\ndlkgjsldjgjlshg\n\n\n\n\n\n\n\n\nVideo 1: Video ,,,\n\n\n\n\n\n\n\n\n\n\n\nVideo 2: grkgdkjl"
+  },
+  {
+    "objectID": "video_table_test.html",
+    "href": "video_table_test.html",
+    "title": "03: GitHub Repositories",
+    "section": "",
+    "text": "Help here: https://quarto.org/docs/authoring/cross-references-custom.html\niuyoiyy\n\n\n\n\n\n\nFigure 1: kjhygkug\n\n\n\n\nCreate an HTML block (backslash, choose HTML or ```{=html} )\nCopy embed code from Kaltura into block\nInsert div and add fig-### or [vid-### – only work if shortcut added to YAML] and fs class\n\ndlkgjsldjgjlshg\n\n\n\n\n\n\n\n\nVideo 1: Video ,,,\n\n\n\n\n\n\n\n\n\n\n\nVideo 2: grkgdkjl\n\n\n\nTable\n\nCreate an HTML block ( ```{=html} )\nCopy embed code from Table Generator into block\nInsert div and add tbl-### (works automatically) – add caption like you do for a div\n\n\n\n\nTable 1: dsfkfjljgljagljlgretl\n\n\n\n\n\n\n\ndgdfgdsgdsgsg\n\n\n\n\nrthre\n\n\n\n\n\n\ngdsdsfg\n\n\n\n\n\nhtd\n\ndgsdsgfs\ndfgdsfg\n\n\n\n\nrty\n\n\n\nhrtrteh\n\n\n\n\n\n\n\n\n\n\n\n\ndfgdsfgsg\nrtheh\n\n\nwy\n\n\n\n\nhret"
   }
 ]
