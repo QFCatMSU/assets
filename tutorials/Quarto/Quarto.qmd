@@ -16,19 +16,19 @@ This document was created and is maintained by Charlie Belinsky and lives here: 
 
 ### What's next
 
--   explanation of the two types of Quarto editors (visual and source)
+- explanation of the two types of Quarto editors (visual and source)
 
--   using headers in quarto
+- using headers in quarto
 
--   better organization of the document and presentation types
+- better organization of the document and presentation types
 
--   rendering doucments
+- rendering doucments
 
--   Changing ***editor font:*** Tools -\> Global Options -\> Appearance
+- Changing ***editor font:*** Tools -\> Global Options -\> Appearance
 
-    -   Lucida Console (default) causes cursor positioning issues when editing Quarto
+  - Lucida Console (default) causes cursor positioning issues when editing Quarto
 
-    -   I currently use Cascadia Code
+  - I currently use Cascadia Code
 
 ## Install Quarto
 
