@@ -1,5 +1,12 @@
+#  To-do
+#    - test if this works in MAc and Linux
+#    - color changes do not seem to be working in light mode
+#    - delete old changes before adding new changes
+
+
+
 # Define file paths
-url <- "https://raw.githubusercontent.com/QFCatMSU/assets/refs/heads/main/quarto/css-dark.css"
+url <- "https://raw.githubusercontent.com/QFCatMSU/assets/refs/heads/main/quarto/css_inject.css"
 
 # Base Positron extensions directory (works for any Windows user)
 base_dir <- file.path(Sys.getenv("USERPROFILE"),

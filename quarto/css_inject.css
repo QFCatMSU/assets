@@ -9,6 +9,11 @@ C:\Users\<your-user_name>\.positron\extensions\quarto.quarto-1.###.#\assets\www\
 ****/
 
 /* Dark theme has three colors to change: hl, note, table caption */
+/* To-do
+   - test if this works in MAc and Linux
+   - color changes do not seem to be working in light mode
+   - delete old changes before adding new changes
+*/
 
 /* add equation number to editor */
 span.MJXc-display:after
@@ -39,30 +44,30 @@ div[id^="fig-"] > p::before
   content: "Fig " counter(figCount) ": ";  
 }
 
-.pm-content .hl
-{
-	display: inline !important;
-	color: darkred !important;
+/* Light theme */
+.vscode-light .pm-content .hl {
+  display: inline !important;
+  color: darkred !important;
 }
 
-/* Dark mode override */
-@media (prefers-color-scheme: dark) {
-  .pm-content .hl {
-    color: hotpink !important;   /* or whatever darker-appropriate value */
-  }
+/* Dark theme */
+.vscode-dark .pm-content .hl 
+{
+  display: inline !important;
+  color: hotpink !important;
 }
 
 /* override .note in Quarto (probably want to remove) */
-.pm-content .note
+.vscode-light .pm-content .note
 {
 	display: inline !important;
 	color: darkorange !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  .pm-content .note {
-    color: lightsalmon !important;   /* or whatever darker-appropriate value */
-  }
+.vscode-dark .pm-content .note 
+{
+	display: inline !important;
+  color: lightsalmon !important;   /* or whatever darker-appropriate value */
 }
 
 /* Outline the sections in the editor */
@@ -117,13 +122,22 @@ div[id^="fig-"] > p::before
 	padding-inline-start: 20px;
 }
 
-.pm-figcaption, .pm-content .fig, 
+.vscode-dark .pm-figcaption, .pm-content .fig, 
+span.MJXc-display:after, div[id^="fig-"] > p, 
+.table-caption
+{
+	color: rgb(168, 198, 138);
+	font-style: italic;
+}
+
+.vscode-light .pm-figcaption, .pm-content .fig, 
 span.MJXc-display:after, div[id^="fig-"] > p, 
 .table-caption
 {
 	color: rgb(90,90,0);
 	font-style: italic;
 }
+
 @media (prefers-color-scheme: dark) {
   .table-caption {
 	  color: rgb(168, 198, 138);
