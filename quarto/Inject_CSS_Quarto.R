@@ -1,61 +1,64 @@
-#  To-do
+###  To-do
 #    - test if this works in MAc and Linux
-#    - color changes do not seem to be working in light mode
-#    - delete old changes before adding new changes
-#    - put injection at end of CSS?  Makes it more likely to be executed without !important
+#    - <done> color changes do not seem to be working in light mode
+#    - <done> delete old changes before adding new changes
+#    - <done> put injection at end of CSS?  Makes it more likely to be executed without !important
 
-# Define file paths
-url <- "https://raw.githubusercontent.com/QFCatMSU/assets/refs/heads/main/quarto/css_inject.css"
+### Generic path of quarto css:
+# ~\.positron\extensions\quarto.quarto-1.###.#\assets\www\editor\style.css
 
-# Base Positron extensions directory (works for any Windows user)
-# base_dir <- file.path(Sys.getenv("USERPROFILE"),
-#                       ".positron", "extensions")
+# File path to injected CSS code
+inject_css = "https://raw.githubusercontent.com/QFCatMSU/assets/refs/heads/main/quarto/css_inject.css"
 
+## Get the Home folder for the user (different for Windows)
 if (.Platform$OS.type == "windows") 
 {
-  home_root <- Sys.getenv("USERPROFILE")
+  home_folder = Sys.getenv("USERPROFILE")
 }else
 {
-  home_root <- path.expand("~")
+  home_folder = path.expand("~")
 }
 
-base_dir <- file.path(home_root, ".positron", "extensions")
+## <home_folder>/.positron/extensions
+ext_dir = file.path(home_folder, ".positron", "extensions")
 
-# Find the installed Quarto extension directory
-quarto_dir <- list.dirs(base_dir,
-                        recursive = FALSE,
-                        full.names = TRUE)
+# List all directories in the extensions folder 
+all_dir = list.dirs(ext_dir, recursive = FALSE, full.names = FALSE)
 
-quarto_dir <- quarto_dir[
-  grepl("^quarto\\.quarto-", basename(quarto_dir))
-]
+# Find the index of all the folder that begin with quarto
+quarto_index = grep(all_dir, pattern="^quarto\\.quarto");
 
-quarto_dir = quarto_dir[length(quarto_dir)]
+# Use the last quarto folder (if more than 1) -- this is the latest version
+quarto_dir = all_dir[quarto_index[length(quarto_index)]]
 
-target_file = paste0(quarto_dir, "/assets/www/editor/style.css")
+## Use the last quarto directory if more than 1 installation
+# quarto_dir = quarto_dir[length(quarto_dir)]
 
-# Read contents
-text_prepend <- readLines(url, warn = FALSE)
+# <home_folder>/.positron/extensions/<quarto_dir>/assets/www/editor/style.css
+target_file = paste0(ext_dir, "/", quarto_dir, "/assets/www/editor/style.css")
+
+# Read CSS for inject file, insert a comment at the beginning 
+text_prepend = readLines(inject_css, warn = FALSE)
 inject_msg = "/* Injected by Inject_CSS_Quarto.R */"
 text_prepend2 = c(inject_msg, text_prepend)
 
-# Message to add at end of injection
-text_target  <- readLines(target_file, warn = FALSE)
+# Read in CSS from current quarto CSS file
+text_target  = readLines(target_file, warn = FALSE)
 
 # Find if the inject_msg already exists
 inject_msg_exists = which(text_target == inject_msg)
 
-# Get last line with inject_msg (should only be one, but...)
+# Get first line with inject_msg (should only be one, but...)
 if(length(inject_msg_exists) > 0)
 {
   inject_line = inject_msg_exists[1]
   
-  # delete lines in text_target until (and including) the inject msg
+  # delete lines in text_target from inject msg to the end
   text_target = text_target[1:(inject_line-1)]
 }
 
-# Combine (prepend first file to beginning of second)
-combined_text <- c(text_target, text_prepend2)
+# Combine original CSS with injected CSS
+combined_css = c(text_target, text_prepend2)
 
 # Write back to target file
-writeLines(combined_text, target_file)
+writeLines(combined_css, target_file)
