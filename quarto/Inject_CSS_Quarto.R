@@ -37,7 +37,7 @@ target_file = paste0(quarto_dir, "/assets/www/editor/style.css")
 # Read contents
 text_prepend <- readLines(url, warn = FALSE)
 inject_msg = "/* Injected by Inject_CSS_Quarto.R */"
-text_prepend2 = c(text_prepend, inject_msg)
+text_prepend2 = c(inject_msg, text_prepend)
 
 # Message to add at end of injection
 text_target  <- readLines(target_file, warn = FALSE)
@@ -48,14 +48,14 @@ inject_msg_exists = which(text_target == inject_msg)
 # Get last line with inject_msg (should only be one, but...)
 if(length(inject_msg_exists) > 0)
 {
-  inject_line = inject_msg_exists[length(inject_msg_exists)]
+  inject_line = inject_msg_exists[1]
   
   # delete lines in text_target until (and including) the inject msg
-  text_target = text_target[(inject_line+1):length(text_target)]
+  text_target = text_target[1:(inject_line-1)]
 }
 
 # Combine (prepend first file to beginning of second)
-combined_text <- c(text_prepend2, text_target)
+combined_text <- c(text_target, text_prepend2)
 
 # Write back to target file
 writeLines(combined_text, target_file)
