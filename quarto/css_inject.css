@@ -74,39 +74,37 @@ div[id^="fig-"] > p::before
 .pm-content
 {
   /* start all header counters (must be on one line) */
-  /* This does not work in VSCode -- h3Count and h4count needs to be removed
-     for the counter to reset afterwards.  But, this means you cannot have
-     0.1, 0.2... */
-	counter-reset: h2Count; /* h3Count h4Count; */
+	counter-reset: h2Count; 
 	margin-left: 20px;  /* so you can see the gutter area on the left side */
 }
-.pm-content > h2::before 
+.pm-content h2
 {
-  counter-increment: h2Count;               
-  content: counter(h2Count) "- ";              
-}
-.pm-content > h3::before 
-{
-  counter-increment: h3Count;               
-  content: counter(h2Count) "-" counter(h3Count) " ";    
-}	
-.pm-content > h4::before 
-{
-  counter-increment: h4Count;               
-  content: counter(h2Count) "-" counter(h3Count) "-" counter(h4Count) " ";
-}	
-.pm-content > h1
-{
-  counter-reset: h2Count h3Count h4Count;
-}
-.pm-content > h2
-{
+  counter-increment: h2Count;    
   counter-reset: h3Count h4Count;
 }
-.pm-content > h3
+.pm-content h2::before 
+{    
+  content: counter(h2Count) "- ";              
+}
+.pm-content h3
 {
+  counter-increment: h3Count;               
   counter-reset: h4Count;
 }
+.pm-content h3::before 
+{
+  content: counter(h2Count) "-" counter(h3Count) " ";    
+}	
+.pm-content h4
+{
+  counter-increment: h4Count; 
+}
+.pm-content h4::before 
+{              
+  content: counter(h2Count) "-" counter(h3Count) "-" counter(h4Count) " ";
+}	
+
+
 
 /* remove all vertical margins */
 .pm-content p, .pm-content ul, .pm-content ol
