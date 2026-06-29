@@ -26,23 +26,23 @@ title: "ADMB/TMB Full Installation for Windows"
 
 These procedures in the document install the following software and was tested on [5/20/2025]{.hl}:
 
--   R 4.5.0
+- R 4.5.0
 
--   Rtools 45 (for the CPP compilers)
+- Rtools 45 (for the CPP compilers)
 
--   RStudio 2025.05.0 Build 496
+- RStudio 2025.05.0 Build 496
 
--   TMB package for R 1.9.17
+- TMB package for R 1.9.17
 
--   ADMB 13.1
+- ADMB 13.1
 
--   Emacs 27.2 ([Emacs versions 28 and up will not work]{.hl})
+- Emacs 27.2 ([Emacs versions 28 and up will not work]{.hl})
 
--   Emacs configuration files
+- Emacs configuration files
 
-    -   These files provide the syntax highlighting in Emacs for both ADMB and TMB and set up the Environment
+  - These files provide the syntax highlighting in Emacs for both ADMB and TMB and set up the Environment
 
--   admb2r.cpp in the ADMB folder
+- admb2r.cpp in the ADMB folder
 
  
 
@@ -50,15 +50,15 @@ These procedures in the document install the following software and was tested o
 
 ### Admin access to your computer
 
-The installation procedures will do the following that[might require more administrative access]{.hl} to your computer than your user account has:
+The installation procedures will do the following that [might require more administrative access]{.hl} to your computer than your user account has:
 
--   Install programs (R, RStudio, Rtools, ADMB, Emacs)
+- Install programs (R, RStudio, Rtools, ADMB, Emacs)
 
--   Install programs directly to the **C:** drive (ADMB, RTools)
+- Install programs directly to the **C:** drive (ADMB, RTools)
 
--   Install programs not validated by Microsoft (ADMB)
+- Install programs not validated by Microsoft (ADMB)
 
--   Run a batch file (PATH.bat)
+- Run a batch file (PATH.bat)
 
 ## Viewing hidden files and extensions in Windows (optional)
 
@@ -80,15 +80,15 @@ This section is useful for this installation and for any programming you do on y
 
 2\) Both **Windows 10** and **11**:
 
--   Click ***View*** tab
+- Click ***View*** tab
 
--   Check ***Show hidden files…***
+- Check ***Show hidden files…***
 
--   Uncheck ***Hide extensions for known file types***
+- Uncheck ***Hide extensions for known file types***
 
--   click ***OK***
+- click ***OK***
 
-    ![Showing hidden files and hiding extensions](images/clipboard-2199801578.png){#fig-FileOptions .fs}
+  ![Showing hidden files and hiding extensions](images/clipboard-2199801578.png){#fig-FileOptions .fs}
 
 ## Software Installation
 
@@ -104,7 +104,7 @@ Steps 1-4 are only needed for TMB, step 5 is only needed for ADMB, steps 6 and 7
 
 2\) [Download](https://cran.r-project.org/bin/windows/Rtools/) and install Rtools (you need to have at least version 43 and the version must match your R version)
 
--   Click on ***Rrools4X Installer*** in ***Installing Rtools4X*** section
+- Click on ***Rrools4X Installer*** in ***Installing Rtools4X*** section
 
  
 
@@ -114,21 +114,21 @@ Steps 1-4 are only needed for TMB, step 5 is only needed for ADMB, steps 6 and 7
 
 4\) Open RStudio and install the TMB package
 
--   In RStudio: ***Tools*** ➔ ***Install Packages***… ➔ type ***TMB*** in ***Packages*** textbox ➔ ***Install***
+- In RStudio: ***Tools*** ➔ ***Install Packages***… ➔ type ***TMB*** in ***Packages*** textbox ➔ ***Install***
 
--   [Close RStudio]{.hl} after installing package
+- [Close RStudio]{.hl} after installing package
 
  
 
 5\) [Download](http://www.admb-project.org/downloads/admb-13.1/QuickStartWindows.html) and install ***ADMB-13.1-windows.exe***
 
--   [Alternatively, you can [download](http://www.admb-project.org/downloads/admb-12.3/) ***ADMB-12.3-windows.exe***]{.note} (under ***Windows*** header)
+- [Alternatively, you can [download](http://www.admb-project.org/downloads/admb-12.3/) ***ADMB-12.3-windows.exe***]{.note} (under ***Windows*** header)
 
--   When installing, you will likely get a ***Windows protected your PC*** screen, if so:
+- When installing, you will likely get a ***Windows protected your PC*** screen, if so:
 
-    -   click ***More info***
+  - click ***More info***
 
-    -   click ***Run anyway***
+  - click ***Run anyway***
 
  
 
@@ -138,55 +138,55 @@ Steps 1-4 are only needed for TMB, step 5 is only needed for ADMB, steps 6 and 7
 
 7\) [Go to ADMB-TMB-Install GitHub page](https://github.com/QFCatMSU/ADMB-TMB-Install)
 
--   Click on green ***Code*** button and choose ***Download Zip***
+- Click on green ***Code*** button and choose ***Download Zip***
 
-    -   This will download a zipped file named ***ADMB-TMB-Install-main.zip***
+  - This will download a zipped file named ***ADMB-TMB-Install-main.zip***
 
--   Unzip ***ADMB-TMB-Install-main.zip*** (right-click, ***Extract All*** then ***Extract***). 
+- Unzip ***ADMB-TMB-Install-main.zip*** (right-click, ***Extract All*** then ***Extract***). 
 
--   Execute (double-click) ***Path.bat***
+- Execute (double-click) ***Path.bat***
 
-    -   You will likely get a ***Windows protected your PC*** screen, if so:
+  - You will likely get a ***Windows protected your PC*** screen, if so:
 
-        1.  click ***More info***
+    1.  click ***More info***
 
-        2.  click ***Run anyway***
+    2.  click ***Run anyway***
 
--   If this does not work you can do this: [Appendix 2: manually copy configuration files and admb2r.cpp] (this link also includes more about the files)
+- If this does not work you can do this: [Appendix 2: manually copy configuration files and admb2r.cpp] (this link also includes more about the files)
 
  
 
 8\) Restart computer
 
--   As far as I know, this step is not needed -- but I keep it here just to be safe.
+- As far as I know, this step is not needed -- but I keep it here just to be safe.
 
 ## Have Emacs open TPL files by default (optional)
 
--   Right-click on any ***\*.tpl*** file
+- Right-click on any ***\*.tpl*** file
 
-    -   there is one in the folder you just extracted ***➔*** ***examples ➔ simple ➔ simple.tpl***
+  - there is one in the folder you just extracted ***➔*** ***examples ➔ simple ➔ simple.tpl***
 
--   Choose ***Open With***
+- Choose ***Open With***
 
--   **Windows 10:**
+- **Windows 10:**
 
-    -   At bottom, click ***Choose an app on your PC***
+  - At bottom, click ***Choose an app on your PC***
 
-    -   The Path is: **C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe**
+  - The Path is: **C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe**
 
-    -   Click ***Open***
+  - Click ***Open***
 
-    -   Click ***Always***
+  - Click ***Always***
 
--   **Windows 11:**
+- **Windows 11:**
 
-    -   go to bottom and click on ***Choose another***
+  - go to bottom and click on ***Choose another***
 
-    -   At bottom, click ***Choose an app on your PC***
+  - At bottom, click ***Choose an app on your PC***
 
-    -   The Path is: ***C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe***
+  - The Path is: ***C:\\Program Files\\Emacs\\x86_64\\bin\\runemacs.exe***
 
-    -   Click ***OK***
+  - Click ***OK***
 
  
 
@@ -194,31 +194,31 @@ Steps 1-4 are only needed for TMB, step 5 is only needed for ADMB, steps 6 and 7
 
 ## Testing out ADMB
 
--   In folder you just unzipped, double-click ***emacs ➔ examples*** ***➔ simple*** ***➔ simple.tpl***
+- In folder you just unzipped, double-click ***emacs ➔ examples*** ***➔ simple*** ***➔ simple.tpl***
 
--   Open ***simple.tpl*** in ***Emacs***
+- Open ***simple.tpl*** in ***Emacs***
 
--   Click ***Translate*** (button 1), ***Build*** (button 2), and ***Run*** (button 3)
+- Click ***Translate*** (button 1), ***Build*** (button 2), and ***Run*** (button 3)
 
-    -   Make sure you wait for steps to complete
+  - Make sure you wait for steps to complete
 
--   If the Emacs panels look like this after ***Run,*** then ADMB is properly installed:
+- If the Emacs panels look like this after ***Run,*** then ADMB is properly installed:
 
 ![Translate, Build, and Run buttons in ADMB.  This view is from ADMB 12.3 -- the view from 13.1 is slightly different](images/clipboard-2143533352.png){#fig-testADMB .fs}
 
 ## Testing out TMB
 
--   In folder you just unzipped, double-click ***emacs ➔ examples ➔ mini ➔ mini.cpp***
+- In folder you just unzipped, double-click ***emacs ➔ examples ➔ mini ➔ mini.cpp***
 
--   Open ***mini.cpp*** in ***Emacs***
+- Open ***mini.cpp*** in ***Emacs***
 
--   Click ***Clean*** (button 1), ***Compile*** (button 2), and ***Run*** (button 3)
+- Click ***Clean*** (button 1), ***Compile*** (button 2), and ***Run*** (button 3)
 
-    -   Make sure you wait for each step to complete
+  - Make sure you wait for each step to complete
 
-    -   ***Compile*** take a minute or two
+  - ***Compile*** take a minute or two
 
--   If the Emacs panels look like this after ***Run,*** then TMB is properly installed:
+- If the Emacs panels look like this after ***Run,*** then TMB is properly installed:
 
 ![Clean, Compile, and Run buttons in TMB](images/clipboard-3450310665.png){#fig-testTMB .fs}
 
@@ -265,13 +265,13 @@ Delete any references to older versions of ADMB, TMB, or ADStudio.  You can als
 
 The extracted folder ***ADMB-TMB-Install-main*** contains:
 
--   An executable file called ***PATH.bat*** (which installs the folders and files below)
+- An executable file called ***PATH.bat*** (which installs the folders and files below)
 
--   A folder called ***emacsConfigFiles*** that gets installed to the emacs folder when ***PATH.bat*** is executed
+- A folder called ***emacsConfigFiles*** that gets installed to the emacs folder when ***PATH.bat*** is executed
 
--   A folder called ***Examples***, which contains ADMB and TMB scripts that are used in this document to test the installation.
+- A folder called ***Examples***, which contains ADMB and TMB scripts that are used in this document to test the installation.
 
--   ***admb2r.cpp*** -- a commonly used ADMB script file that is not included with ADMB
+- ***admb2r.cpp*** -- a commonly used ADMB script file that is not included with ADMB
 
  
 
@@ -299,9 +299,9 @@ The file ***admb2r.cpp*** is used in ADMB scripts but it does not come with ADMB
 
 You can add it to ADMB by copying ***admb2r.cpp*** from the ***ADMB-TMB-Install-main*** folder to the following locations:
 
--   **c:\\ADMB-13.1\\include**
+- **c:\\ADMB-13.1\\include**
 
--   **c:\\ADMB-13.1\\include\\contrib**  (I am not sure it is necessary to copy it here)
+- **c:\\ADMB-13.1\\include\\contrib**  (I am not sure it is necessary to copy it here)
 
  
 

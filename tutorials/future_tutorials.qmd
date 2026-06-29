@@ -4,109 +4,109 @@ format: html
 editor: visual
 ---
 
--   Git/GitHub usage
+- Git/GitHub usage
 
--   Setup
+- Setup
 
-    -   CSS injection
+  - CSS injection
 
-    -   VSCode: render externally
+  - VSCode: render externally
 
--   Rendering
+- Rendering
 
-    -   background tasks
+  - background tasks
 
--   Add a new lesson
+- Add a new lesson
 
-    -   create a new lesson
+  - create a new lesson
 
-    -   init lesson
+  - init lesson
 
-        -   starter code
+    - starter code
 
-        -   copy old lesson
+    - copy old lesson
 
-    -   save lesson
+  - save lesson
 
--   Element in webpage
+- Element in webpage
 
-    -   headers (and what they mean)
-    -   paragraphs
-    -   codeblocks
-    -   numbered/bullet lists
+  - headers (and what they mean)
+  - paragraphs
+  - codeblocks
+  - numbered/bullet lists
 
--   Styling
+- Styling
 
-    -   b,i,u,
+  - b,i,u,
 
-    -   highlights and notes
+  - highlights and notes
 
--   Spacing
+- Spacing
 
-    -   Control-Space for extra line/ spaces
+  - Control-Space for extra line/ spaces
 
--   add images
+- add images
 
-    -   resizing
+  - resizing
 
-    -   add caption (figure)
+  - add caption (figure)
 
-    -   differences between VSCode, Quarto
+  - differences between VSCode, Quarto
 
-        -   dropping image renames – can drop in file manager then add to page
+    - dropping image renames – can drop in file manager then add to page
 
-    -   referencing
+  - referencing
 
--   Links
+- Links
 
-    -   inside/ouside project
+  - inside/ouside project
 
-    -   other class lesson
+  - other class lesson
 
-    -   sections (2 ways)
+  - sections (2 ways)
 
-        -   by Header
+    - by Header
 
-        -   add name sec-# and ref by figure
+    - add name sec-# and ref by figure
 
-    -   download
+  - download
 
-    -   email links ??
+  - email links ??
 
--   Code (block)
+- Code (block)
 
-    -   highlighting
+  - highlighting
 
-    -   tab names
+  - tab names
 
-    -   copying
+  - copying
 
-    -   add caption (figure)
+  - add caption (figure)
 
-    -   referencing
+  - referencing
 
-    -   language (R, Python, Java...)
+  - language (R, Python, Java...)
 
-        -   use default if you do not want highlighting (cannot leave blank)
+    - use default if you do not want highlighting (cannot leave blank)
 
--   Equations
+- Equations
 
-    -   inline and display (Latex)
+  - inline and display (Latex)
 
-    -   using EquateIO
+  - using EquateIO
 
-    -   numbering
+  - numbering
 
-    -   captioning/ referencing
+  - captioning/ referencing
 
--   Videos
+- Videos
 
-    -   From Mediaspace
+  - From Mediaspace
 
--   Tables
+- Tables
 
-    -   cannot merge cells (email Quarto re this)
+  - cannot merge cells (email Quarto re this)
 
--   Bibliography
+- Bibliography
 
-    -   Zotero
+  - Zotero

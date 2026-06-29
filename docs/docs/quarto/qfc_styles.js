@@ -80,18 +80,6 @@ parent.window.onload = function()
 		codeBlockDivs[i].parentElement.insertBefore(tabSpan, codeBlockDivs[i]);
 		codeBlockDivs[i].classList.add("hasTab");
 	}
-		
-  // code to add lesson name to table
-  document.addEventListener("DOMContentLoaded", function() 
-  {
-    const titleEl = document.querySelector("h1.title");     // Quarto adds this class
-    const tocTitleEl = document.querySelector("h2#toc-title"); // TOC heading
-    if (titleEl && tocTitleEl) 
-    {
-      const lessonTitle = titleEl.innerText.trim();
-      tocTitleEl.innerHTML = "<b>" + lessonTitle + "</b>";
-    }
-  });   
   
 	// allow users to resize images from small to full-size
 	createFlexImages();
@@ -119,6 +107,18 @@ parent.window.onload = function()
 	}
 }
 
+// code to add lesson name to table
+document.addEventListener("DOMContentLoaded", function() 
+{
+  const titleEl = document.querySelector("h1.title");     // Quarto adds this class
+  const tocTitleEl = document.querySelector("h2#toc-title"); // TOC heading
+  if (titleEl && tocTitleEl) 
+  {
+    const lessonTitle = titleEl.innerText.trim();
+    tocTitleEl.innerHTML = "<b>" + lessonTitle + "</b>";
+  }
+}); 
+  
 window.addEventListener("mousedown", function(event)
 {
 	// make sure it's a left-click and the MathJax Frame is not showing
@@ -140,7 +140,7 @@ window.addEventListener("mousedown", function(event)
 			if(fsClick == null)
 			{
 				window.removeEventListener("mousemove", getMousePos);	
-				console.log(2);
+			//	console.log(2);
 			}
 			// bring up shortcut menu if mouse has barely moved
 			if(Math.abs(mouseX2-mouseX) < 10 &&  Math.abs(mouseY2-mouseY) < 10 && clickMode == "click")
@@ -273,7 +273,7 @@ function createFlexImages()
 {
 	// find all images that have the class name "flexSize" or "fs"
 	var flexVideo = encapObject.querySelectorAll('video.flexSize, video.fs');
-	var flexIframe = encapObject.querySelectorAll("p.fs > iframe, p.flexsize > iframe");
+	var flexIframe = encapObject.querySelectorAll("div.fs iframe, p.fs > iframe, p.flexsize > iframe");
   
   // find all figures within a fs div -- in Quarto these are plots from embedded scripts
   quartoFS = document.querySelectorAll("div.fs img.figure-img");
@@ -295,6 +295,7 @@ function createFlexImages()
 			if(event.which == 1)
 			{		
 				fsClick = fsObj[i];
+				fsClick.style.cursor = "ew-resize";
 				fsClick.ondragstart = function() {return false;};
 			}
 		});
@@ -393,11 +394,18 @@ function changeImageSize(element, instruction="none")
 	if(instruction == "maximize")
 	{
 		element.style.width = element.naturalWidth + "px"; // "unset";
+		element.style.cursor = "zoom-out";
 	}
 	else if (instruction == "minimize")
 	{
-		// set the images height to the smallHeight value and scale the with to match
+		// set the images height to the smallHeight value and scale the width to match
 		element.style.width = smallImageWidth + "px";	
+		element.style.cursor = "zoom-in";
+	}
+	else if (instruction == "half")
+	{
+		element.style.width = ((smallImageWidth + element.naturalWidth) / 2) + "px";
+		element.style.cursor = "zoom-in";
 	}
 	else // click directly on image
 	{
@@ -415,10 +423,12 @@ function changeImageSize(element, instruction="none")
 		    (naturalWidth < parseInt(element.width)))
 		{
 			element.style.width = smallImageWidth + "px";	
+			element.style.cursor = "zoom-in";
 		}
 		else
 		{
 			element.style.width = element.naturalWidth + "px"; // "unset";
+			element.style.cursor = "zoom-out";
 		}
 	}
 }
@@ -485,6 +495,7 @@ function makeContextMenu(funct, param = null)
 	menuLinks(elemDiv, "Print/ Save as PDF", function(){document.getElementById("longClickMenu").style.visibility = "hidden"; window.print()}, "printToPDF");
 	menuLinks(elemDiv, "Maximize All Images", function() {changeAllPicSize('maximize')}, "maxAllImages");
 	menuLinks(elemDiv, "Minimize All Images", function() {changeAllPicSize('minimize')}, "minAllImages");
+	menuLinks(elemDiv, "All Images 50%", function() {changeAllPicSize('half')}, "halfImages");
 	
 	encapObject.appendChild(elemDiv);
 }
@@ -766,6 +777,19 @@ function cleanupFlexEvent()
 		
 	if(clickMode == "drag")
 	{
+	  // current width of image
+		currentWidth = parseInt(fsClick.clientWidth);
+		// starting width of image
+		naturalWidth = parseInt(fsClick.naturalWidth);
+		// width of parent frame (image cannot be bigger than this)
+		parentWidth = parseInt(fsClick.parentElement.clientWidth);
+		
+		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) ||
+	    (naturalWidth < parseInt(fsClick.width)))
+		  fsClick.style.cursor = "zoom-out";
+		else
+			fsClick.style.cursor = "zoom-in";
+			
 		fsClick.classList.remove("resizing");
 	}
 	clickMode = null;	

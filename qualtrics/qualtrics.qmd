@@ -1,0 +1,87 @@
+---
+title: "Qualtrics Surveys"
+format: html
+---
+
+## 1 - Create a Qualtrics Survey Link
+
+The Qualtrics survey link always has this format:
+
+- https://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=*true*&sync=*false*&class=*ggplot*
+
+ \
+The above link is the survey for the ***online*** (online=true) and ***asynchronous*** (sync=false) ***GGPlot*** class.
+
+ 
+
+*You only need to change the highlighted sections of the URL* to link to the survey for your specific class.
+
+ 
+
+The options for:
+
+- ***online*** are ***true*** and ***false***
+
+- ***sync*** are ***true*** and ***false***
+
+- ***class*** currently are
+
+  - Fundamental of Programming Using R: ***fundr***
+
+  - Graphing with GGPlot: ***ggplot***
+
+  - Software Tools for MLE: ***softmle***
+
+  - Structured Decision Making and Adaptive Management: ***sdm***
+
+  - Intro to Simulation Modeling for Decision Analysis: ***simluations***
+
+  - Advanced topics in R: GitHub: ***github***
+
+  - Resampling: ***resampling***
+
+  - Bayesian Methods: ***bayesian***
+
+### Examples
+
+An ***in-class*** and ***synchronous GGPlot*** class survey link:
+
+- https://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=*false*&sync=*true*&class=*ggplot*
+
+   
+
+An ***online*** and ***synchronous Resampling*** class survey link:
+
+- https://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=*true*&sync=*true*&class=*resampling*
+
+   
+
+An ***online*** and ***asynchronous Bayesian*** class survey link:
+
+- https://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=*true*&sync=*false*&class=*bayesian*
+
+### Adding a class to the list
+
+If your class is not on the list, then email ([belinsky\@msu.edu](mailto:belinsky@msu.edu)) to add it
+
+### Adding questions specific to your class to the survey
+
+If you want to add questions specific to the class then send the questions you want to add to Charlie ([belinsky\@msu.edu](mailto:belinsky@msu.edu)).
+
+## Previewing the survey
+
+You can preview the survey using this link:
+
+- https://msu.co1.qualtrics.com/jfe/preview/previewId/6ed04e60-1ade-48df-ad93-32b93af8374b/SV_b9I3VPJ2We28Qzs?Q_CHL=preview&Q_SurveyVersionID=current&online=*true*&sync=*false*&class=*ggplot*
+
+ 
+
+Just like with the survey link, you just need to change the highlighted areas to match your class.
+
+ 
+
+Qualtrics does not record surveys using this preview link.  Email Charlie ([belinsky\@msu.edu](mailto:belinsky@msu.edu)) if you completed a survey using the regular survey link that you do not want recorded. 
+
+## Viewing results of the Quatrics survey
+
+...upcoming

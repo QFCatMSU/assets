@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.18">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>01: RStudio Projects Setup</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -69,15 +72,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../tutorials/Quarto-RevealJS/Quarto_RevealJS.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-f98ea211b99fe8356d6469e598480a52.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-fac7000a542ad838aabeb25de73c93bf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6b648d916be70b808a85e003c3b0aaba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,9 +108,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <link rel="shortcut icon" href="https://qfcatmsu.github.io/images/quarto/qfc_icon.png">
-<script>mod=true; menuCollapse=true;</script>
+<script>mod=true;</script>
 <script src="https://qfcatmsu.github.io/assets/quarto/qfc_styles.js"></script>
-<!--script src="../../quarto/qfc_styles.js"></script-->
+<!--script src="quarto/qfc_styles.js"></script-->
  
 
 
@@ -137,10 +139,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../../index.html" class="sidebar-logo-link">
-      </a>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -234,8 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">8</span> Application</a>
   <ul class="collapse">
   <li><a href="#questions-to-answer" id="toc-questions-to-answer" class="nav-link" data-scroll-target="#questions-to-answer"><span class="header-section-number">8.1</span> Questions to answer</a></li>
-  <li><a href="#turn-in-on-github" id="toc-turn-in-on-github" class="nav-link" data-scroll-target="#turn-in-on-github"><span class="header-section-number">8.2</span> Turn in on GitHub</a></li>
-  <li><a href="#sec-zip-folder" id="toc-sec-zip-folder" class="nav-link" data-scroll-target="#sec-zip-folder"><span class="header-section-number">8.3</span> Zip your Project Folder</a></li>
+  <li><a href="#sec-zip-folder" id="toc-sec-zip-folder" class="nav-link" data-scroll-target="#sec-zip-folder"><span class="header-section-number">8.2</span> Zip your Project Folder</a></li>
   </ul></li>
   <li><a href="#extension-color-schemes" id="toc-extension-color-schemes" class="nav-link" data-scroll-target="#extension-color-schemes"><span class="header-section-number">9</span> Extension: Color Schemes</a>
   <ul class="collapse">
@@ -739,6 +736,10 @@ Figure&nbsp;17: Cleaning out the windows
 <li><p>Save the script as <strong><em>app01.r</em></strong>, and to your <strong><em>script</em></strong> folder</p></li>
 </ol>
 <p>&nbsp;</p>
+<p>Save the script as&nbsp;<strong><em>app01.r</em></strong> in your&nbsp;<strong><em>scripts</em></strong> folder and&nbsp; email your Project Folder to <strong>?var:instructor.name</strong> at <strong>?var:instructor.email</strong>.</p>
+<p>&nbsp;</p>
+<p><a href="1-01-RStudioProjectsSetup.html#sec-zip-folder" target="_blank">Instructions for zipping the Project Folder are here.</a></p>
+<p>&nbsp;</p>
 <p>If you have any questions regarding this application, feel free to email them to <strong>?var:instructor.name</strong> at <strong>?var:instructor.email</strong>.</p>
 <section id="questions-to-answer" class="level3" data-number="8.1">
 <h3 data-number="8.1" class="anchored" data-anchor-id="questions-to-answer"><span class="header-section-number">8.1</span> Questions to answer</h3>
@@ -749,12 +750,8 @@ Figure&nbsp;17: Cleaning out the windows
 <li><p>What are some things you would like to know more about that is related to, but not covered in, this lesson?</p></li>
 </ol>
 </section>
-<section id="turn-in-on-github" class="level3" data-number="8.2">
-<h3 data-number="8.2" class="anchored" data-anchor-id="turn-in-on-github"><span class="header-section-number">8.2</span> Turn in on GitHub</h3>
-<p>Save the script as&nbsp;<strong><em>app01.r</em></strong> in your&nbsp;<strong><em>scripts</em></strong> folder,&nbsp;<strong><em>Push</em></strong> the changes to your GitHub repository, <a href="01b-GitAndGitHubSetup.html#Issues">create an Issue in GitHub</a> that says you have finished the application and assign the issue to<strong><em>&nbsp;<strong>?var:instructor.githubID</strong></em></strong>.</p>
-</section>
-<section id="sec-zip-folder" class="level3" data-number="8.3">
-<h3 data-number="8.3" class="anchored" data-anchor-id="sec-zip-folder"><span class="header-section-number">8.3</span> Zip your Project Folder</h3>
+<section id="sec-zip-folder" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="sec-zip-folder"><span class="header-section-number">8.2</span> Zip your Project Folder</h3>
 <p>In your File Manager (not in RStudio), <span class="hl">right-click</span> on the Project Folder and in:</p>
 <ul>
 <li><p><strong>Windows 10:</strong></p>
@@ -1056,13 +1053,14 @@ Figure&nbsp;24: The R plot help page in the online documentation.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

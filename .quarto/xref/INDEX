@@ -155,5 +155,8 @@
   },
   "video_table_test.qmd": {
     "video_table_test.html": "78f4cd83"
+  },
+  "qualtrics/qualtrics.qmd": {
+    "qualtrics.html": "68dcc4db"
   }
 }

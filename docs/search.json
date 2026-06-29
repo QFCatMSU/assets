@@ -301,7 +301,7 @@
     "href": "tutorials/ADMB-TMB/ADMB-TMB-Install.html#overview",
     "title": "ADMB/TMB Full Installation for Windows",
     "section": "2 Overview",
-    "text": "2 Overview\nThese procedures in the document install the following software and was tested on 5/20/2025:\n\nR 4.5.0\nRtools 45 (for the CPP compilers)\nRStudio 2025.05.0 Build 496\nTMB package for R 1.9.17\nADMB 13.1\nEmacs 27.2 (Emacs versions 28 and up will not work)\nEmacs configuration files\n\nThese files provide the syntax highlighting in Emacs for both ADMB and TMB and set up the Environment\n\nadmb2r.cpp in the ADMB folder\n\n \nAppendix 1: User Environment PATH\n\n2.1 Admin access to your computer\nThe installation procedures will do the following thatmight require more administrative access to your computer than your user account has:\n\nInstall programs (R, RStudio, Rtools, ADMB, Emacs)\nInstall programs directly to the C: drive (ADMB, RTools)\nInstall programs not validated by Microsoft (ADMB)\nRun a batch file (PATH.bat)",
+    "text": "2 Overview\nThese procedures in the document install the following software and was tested on 5/20/2025:\n\nR 4.5.0\nRtools 45 (for the CPP compilers)\nRStudio 2025.05.0 Build 496\nTMB package for R 1.9.17\nADMB 13.1\nEmacs 27.2 (Emacs versions 28 and up will not work)\nEmacs configuration files\n\nThese files provide the syntax highlighting in Emacs for both ADMB and TMB and set up the Environment\n\nadmb2r.cpp in the ADMB folder\n\n \nAppendix 1: User Environment PATH\n\n2.1 Admin access to your computer\nThe installation procedures will do the following that might require more administrative access to your computer than your user account has:\n\nInstall programs (R, RStudio, Rtools, ADMB, Emacs)\nInstall programs directly to the C: drive (ADMB, RTools)\nInstall programs not validated by Microsoft (ADMB)\nRun a batch file (PATH.bat)",
     "crumbs": [
       "QFC Tutorials",
       "ADMB/TMB Full Installation for Windows"
@@ -519,5 +519,54 @@
     "title": "03: GitHub Repositories",
     "section": "",
     "text": "Help here: https://quarto.org/docs/authoring/cross-references-custom.html\niuyoiyy\n\n\n\n\n\n\nFigure 1: kjhygkug\n\n\n\n\nCreate an HTML block (backslash, choose HTML or ```{=html} )\nCopy embed code from Kaltura into block\nInsert div and add fig-### or [vid-### – only work if shortcut added to YAML] and fs class\n\ndlkgjsldjgjlshg\n\n\n\n\n\n\n\n\nVideo 1: Video ,,,\n\n\n\n\n\n\n\n\n\n\n\nVideo 2: grkgdkjl\n\n\n\nTable\n\nCreate an HTML block ( ```{=html} )\nCopy embed code from Table Generator into block\nInsert div and add tbl-### (works automatically) – add caption like you do for a div\n\n\n\n\nTable 1: dsfkfjljgljagljlgretl\n\n\n\n\n\n\n\ndgdfgdsgdsgsg\n\n\n\n\nrthre\n\n\n\n\n\n\ngdsdsfg\n\n\n\n\n\nhtd\n\ndgsdsgfs\ndfgdsfg\n\n\n\n\nrty\n\n\n\nhrtrteh\n\n\n\n\n\n\n\n\n\n\n\n\ndfgdsfgsg\nrtheh\n\n\nwy\n\n\n\n\nhret"
+  },
+  {
+    "objectID": "qualtrics/qualtrics.html",
+    "href": "qualtrics/qualtrics.html",
+    "title": "Qualtrics Surveys",
+    "section": "",
+    "text": "The Qualtrics survey link always has this format:\n\nhttps://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=true&sync=false&class=ggplot\n\n \nThe above link is the survey for the online (online=true) and asynchronous (sync=false) GGPlot class.\n \nYou only need to change the highlighted sections of the URL to link to the survey for your specific class.\n \nThe options for:\n\nonline are true and false\nsync are true and false\nclass currently are\n\nFundamental of Programming Using R: fundr\nGraphing with GGPlot: ggplot\nSoftware Tools for MLE: softmle\nStructured Decision Making and Adaptive Management: sdm\nIntro to Simulation Modeling for Decision Analysis: simluations\nAdvanced topics in R: GitHub: github\nResampling: resampling\nBayesian Methods: bayesian\n\n\n\n\nAn in-class and synchronous GGPlot class survey link:\n\nhttps://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=false&sync=true&class=ggplot\n \n\nAn online and synchronous Resampling class survey link:\n\nhttps://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=true&sync=true&class=resampling\n \n\nAn online and asynchronous Bayesian class survey link:\n\nhttps://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=true&sync=false&class=bayesian\n\n\n\n\nIf your class is not on the list, then email (belinsky@msu.edu) to add it\n\n\n\nIf you want to add questions specific to the class then send the questions you want to add to Charlie (belinsky@msu.edu)."
+  },
+  {
+    "objectID": "qualtrics/qualtrics.html#create-a-qualtrics-survey-link",
+    "href": "qualtrics/qualtrics.html#create-a-qualtrics-survey-link",
+    "title": "Qualtrics Surveys",
+    "section": "",
+    "text": "The Qualtrics survey link always has this format:\n\nhttps://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=true&sync=false&class=ggplot\n\n \nThe above link is the survey for the online (online=true) and asynchronous (sync=false) GGPlot class.\n \nYou only need to change the highlighted sections of the URL to link to the survey for your specific class.\n \nThe options for:\n\nonline are true and false\nsync are true and false\nclass currently are\n\nFundamental of Programming Using R: fundr\nGraphing with GGPlot: ggplot\nSoftware Tools for MLE: softmle\nStructured Decision Making and Adaptive Management: sdm\nIntro to Simulation Modeling for Decision Analysis: simluations\nAdvanced topics in R: GitHub: github\nResampling: resampling\nBayesian Methods: bayesian\n\n\n\n\nAn in-class and synchronous GGPlot class survey link:\n\nhttps://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=false&sync=true&class=ggplot\n \n\nAn online and synchronous Resampling class survey link:\n\nhttps://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=true&sync=true&class=resampling\n \n\nAn online and asynchronous Bayesian class survey link:\n\nhttps://msu.co1.qualtrics.com/jfe/form/SV_b9I3VPJ2We28Qzs?online=true&sync=false&class=bayesian\n\n\n\n\nIf your class is not on the list, then email (belinsky@msu.edu) to add it\n\n\n\nIf you want to add questions specific to the class then send the questions you want to add to Charlie (belinsky@msu.edu)."
+  },
+  {
+    "objectID": "qualtrics/qualtrics.html#previewing-the-survey",
+    "href": "qualtrics/qualtrics.html#previewing-the-survey",
+    "title": "Qualtrics Surveys",
+    "section": "2 Previewing the survey",
+    "text": "2 Previewing the survey\nYou can preview the survey using this link:\n\nhttps://msu.co1.qualtrics.com/jfe/preview/previewId/6ed04e60-1ade-48df-ad93-32b93af8374b/SV_b9I3VPJ2We28Qzs?Q_CHL=preview&Q_SurveyVersionID=current&online=true&sync=false&class=ggplot\n\n \nJust like with the survey link, you just need to change the highlighted areas to match your class.\n \nQualtrics does not record surveys using this preview link.  Email Charlie (belinsky@msu.edu) if you completed a survey using the regular survey link that you do not want recorded."
+  },
+  {
+    "objectID": "qualtrics/qualtrics.html#viewing-results-of-the-quatrics-survey",
+    "href": "qualtrics/qualtrics.html#viewing-results-of-the-quatrics-survey",
+    "title": "Qualtrics Surveys",
+    "section": "3 Viewing results of the Quatrics survey",
+    "text": "3 Viewing results of the Quatrics survey\n…upcoming"
+  },
+  {
+    "objectID": "readme.html",
+    "href": "readme.html",
+    "title": "Assests",
+    "section": "",
+    "text": "rs_theme_light\ngit setup\nQFC_Styles.js\nQFC_Styles.css"
+  },
+  {
+    "objectID": "readme.html#webpage",
+    "href": "readme.html#webpage",
+    "title": "Assests",
+    "section": "1 Webpage",
+    "text": "1 Webpage\nhttps://qfcatmsu.github.io/assets/"
+  },
+  {
+    "objectID": "tutorials/res/res.html",
+    "href": "tutorials/res/res.html",
+    "title": "CV",
+    "section": "",
+    "text": "1 Employment\nArthur Guinness & Son\nChief Brewer (Park Royal) 1935-1937\nResearcher (Dublin) 1899-1935\n\n\n2 Education\nNew College, Oxford University, B.A. Chemistry 1899\n\n\n3 Publications\n\n\n\n\n\n4 Technical Reports\n\n\n\n\n\n5 Stuffs\n\n\n\n\n\n6 More stuffs\n\n\n\n\n\n7 References\nAvailable upon request, though likely would include Karl Pearson and Ronald A. Fisher.\nball2001? acredolo1984?"
   }
 ]

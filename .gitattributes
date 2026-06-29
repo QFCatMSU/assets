@@ -1,0 +1,7 @@
+# Use LF line endings for all text files.
+# This keeps the repository consistent across Windows, macOS, and Linux,
+# and avoids line-ending warnings on Windows.
+* text=auto eol=lf
+
+# Configure Git locally to use LF:
+# git config --global core.autocrlf input
