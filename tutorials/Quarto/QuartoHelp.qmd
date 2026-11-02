@@ -1,0 +1,129 @@
+---
+title: Title of my lesson on two lines
+title-slide-attributes:
+  data-background-image: "https://qfcatmsu.github.io/Images/dark-big.png"  
+  data-background-size: "40%"
+  data-background-position: "95% 95%"
+subtitle: FW 891
+author: Charlie Belinsky<br>belinsky@msu.edu
+institute: <http://github.com/qfcatmsu/githubtest>
+footer: " "  
+date: 2/3/76
+date-format: "D MMMM YYYY"  # Can change the date formatting here
+
+format:
+  revealjs:
+   css: "https://qfcatmsu.github.io/css/presStyle.css"
+#   css: presStyle.css 
+   slide-number: c/t  
+   show-slide-number: all
+---
+
+## Stuff {.centering}
+
+Centering a header will center the whole slide...
+
+h<br> <!-- Sometimes a break is needed to properly arrange objects --> ![Test Image](images/testImage.png){width="50%"}
+
+## Bullets
+
+-   First level
+    -   second level
+    -   2b
+    -   2c
+        -   third level
+    -   2d
+
+## Numbered lists
+
+Numbers must start under text on previous line and you need a newline:
+
+1.  First level
+    1.  second level
+    2.  2b
+    3.  2c
+        1.  third level
+    4.  2d
+
+## Mixed lists
+
+Numbers must start under text on previous line and you need a newline:
+
+1.  First level
+    -   second level
+    -   2b
+    -   2c
+        1.  third level
+        2.  3b
+    -   2d
+        1.  more here...
+
+## Newlines
+
+One really annoying thing about Quarto Is that you must put two spaces\
+at the end of a line or a slash (\\)\
+in order for it to go to the next line sdfasdf\
+sadfasfddsaf asdfere\
+sgdg
+
+## Newlines in visual mode
+
+How does Quarto
+
+[spce]{class="centering"}
+
+this
+
+??
+
+## Alignment and sizing
+
+To change the properties of text inline:\
+before [This will be bigger]{style="font-size: 70px;"} after\
+before [This will be smaller and blue]{style="font-size: 10px;color: blue;"} after\
+[This will be centered]{style="display: block; text-align: center;"}\
+Centering is not encouraged...
+
+## Columns
+
+::: columns
+::: {.column width="70%"}
+Left side of the column\
+Next extra vertical spacing -- have to put in HTML breaks <br><br>\
+sdgflknj
+:::
+
+::: {.column width="30%"}
+Right side of the column\
+More stuff
+
+sdgflknj
+:::
+:::
+
+## Add classes
+
+I will use a class on [this part]{.pageRef} of the text
+
+Enter in visual mode with skip a line (annoying!)
+
+Shift-enter does what you think enter should do...\
+If you want to add multiple spaces,\
+You need to       click control-shift-space (visual mode only\
+REgular mode:        dfkghj
+
+## Spacing an image
+
+Sizing images: easier with percentages? ![](images/llamas-2.jpg){style="width: 400px; position: absolute;bottom:2%; right:2%; z-index:-1; opacity:0.5;"} <br><br><br><br><br> The image also is set to half transparent (opacity: 0.5) and set to go behind any other object like text (z-index: -1)
+
+## Hyperlink Text
+
+[ksdlfads](http://google.com)
+
+## Breaking GitHub cache
+
+The CDN will always update when you push new files. If you want to test it (or break a cache) you can append a query string like myfile.jpg?ver=123 and every time you update the string the cache will bust, and you can verify that the CDN is updating
+
+## Render Quarto directly to Chrome
+
+File -\> Preferences -\> Settings Quarto Render Preview Type: External (was internal)

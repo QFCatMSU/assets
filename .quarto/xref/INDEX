@@ -158,5 +158,11 @@
   },
   "qualtrics/qualtrics.qmd": {
     "qualtrics.html": "68dcc4db"
+  },
+  "tutorials/QFC_Server/QFC_GitHub_Authentication_Guide.qmd": {
+    "QFC_GitHub_Authentication_Guide.html": "d88a82e2"
+  },
+  "tutorials/Quarto/QuartoHelp.qmd": {
+    "QuartoHelp.html": "877f6108"
   }
 }
