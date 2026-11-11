@@ -14,17 +14,17 @@ project:
 website:
   bread-crumbs: false
   page-navigation: true
-  sidebar:
-    search: true
-    collapse-level: 2   
-    contents:
-      - section: "QFC Tutorials"
-        contents: 
-          - tutorials/Quarto/Quarto.qmd
-          - tutorials/GroupCalendar/GroupCalendar.qmd
-          - tutorials/Quarto-RevealJS/Quarto_RevealJS.qmd
-          - tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.qmd
-          - tutorials/ADMB-TMB/ADMB-TMB-Install.qmd
+#  sidebar:
+#    search: true
+#    collapse-level: 2   
+#    contents:
+#      - section: "QFC Tutorials"
+#        contents: 
+#          - tutorials/Quarto/Quarto.qmd
+#          - tutorials/GroupCalendar/GroupCalendar.qmd
+#          - tutorials/Quarto-RevealJS/Quarto_RevealJS.qmd
+#          - tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.qmd
+#          - tutorials/ADMB-TMB/ADMB-TMB-Install.qmd
 
 format: 
   html:

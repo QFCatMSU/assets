@@ -164,5 +164,8 @@
   },
   "tutorials/Quarto/QuartoHelp.qmd": {
     "QuartoHelp.html": "877f6108"
+  },
+  "quarto/test.qmd": {
+    "test.html": "6e6ccd2d"
   }
 }

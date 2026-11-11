@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -62,7 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -70,14 +72,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6b648d916be70b808a85e003c3b0aaba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a2647b6886050aaca61ed2f2a2e5c67d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,79 +118,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="https://qfcatmsu.github.io/assets/quarto/qfc_styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Adding GitHub Team Authentication to a Website on the QFC Server</h1>
-        </a>     
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">QFC Tutorials</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tutorials/Quarto/Quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto Installation and help</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tutorials/GroupCalendar/GroupCalendar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">New QFC Group Calendar</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tutorials/Quarto-RevealJS/Quarto_RevealJS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto RevealJS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tutorials/RStudio_Project_Setup/01-RStudioProjectsSetup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01: RStudio Projects Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../tutorials/ADMB-TMB/ADMB-TMB-Install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ADMB/TMB Full Installation for Windows</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title"><b>Content</b></h2>
    
   <ul>
@@ -196,11 +134,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#server-files-added-or-modified" id="toc-server-files-added-or-modified" class="nav-link" data-scroll-target="#server-files-added-or-modified"><span class="header-section-number">1.1</span> Server files added or modified</a></li>
   </ul></li>
-  <li><a href="#create-a-github-team" id="toc-create-a-github-team" class="nav-link" data-scroll-target="#create-a-github-team"><span class="header-section-number">2</span> Create a GitHub team</a></li>
+  <li><a href="#create-a-github-team" id="toc-create-a-github-team" class="nav-link" data-scroll-target="#create-a-github-team"><span class="header-section-number">2</span> Create a GitHub team</a>
+  <ul class="collapse">
+  <li><a href="#adding-members" id="toc-adding-members" class="nav-link" data-scroll-target="#adding-members"><span class="header-section-number">2.1</span> Adding members</a></li>
+  </ul></li>
   <li><a href="#sec-GitHubOAuth" id="toc-sec-GitHubOAuth" class="nav-link" data-scroll-target="#sec-GitHubOAuth"><span class="header-section-number">3</span> Create a GitHub OAuth application</a></li>
   <li><a href="#create-the-oauth2-proxy-configuration" id="toc-create-the-oauth2-proxy-configuration" class="nav-link" data-scroll-target="#create-the-oauth2-proxy-configuration"><span class="header-section-number">4</span> Create the OAuth2 Proxy configuration</a>
   <ul class="collapse">
-  <li><a href="#sec-availablePort" id="toc-sec-availablePort" class="nav-link" data-scroll-target="#sec-availablePort"><span class="header-section-number">4.1</span> Select an available port</a></li>
+  <li><a href="#sec-availablePort" id="toc-sec-availablePort" class="nav-link" data-scroll-target="#sec-availablePort"><span class="header-section-number">4.1</span> Select an available port &lt;find a better way to pick a port #?&gt;</a></li>
   <li><a href="#sec-generateCookie" id="toc-sec-generateCookie" class="nav-link" data-scroll-target="#sec-generateCookie"><span class="header-section-number">4.2</span> Generate a cookie secret</a></li>
   <li><a href="#sec-createConfig" id="toc-sec-createConfig" class="nav-link" data-scroll-target="#sec-createConfig"><span class="header-section-number">4.3</span> Create the configuration file</a></li>
   </ul></li>
@@ -223,7 +164,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">6.8</span> Troubleshooting</a></li>
   </ul></li>
   <li><a href="#manage-access-in-github" id="toc-manage-access-in-github" class="nav-link" data-scroll-target="#manage-access-in-github"><span class="header-section-number">7</span> Manage access in GitHub</a></li>
-  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference"><span class="header-section-number">8</span> Quick reference</a></li>
   </ul>
 </nav>
 </nav>
@@ -232,12 +172,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Adding GitHub Team Authentication to a Website on the QFC Server</h1>
-<p class="subtitle lead">Administrator procedure | QFC-auth | Static Quarto websites and Shiny applications</p>
+<h1 class="title">Adding GitHub Team Authentication to a Website on the QFC Server</h1>
 </div>
 
 
@@ -256,67 +195,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="to-do" class="level3" data-number="0.1">
 <h3 data-number="0.1" class="anchored" data-anchor-id="to-do"><span class="header-section-number">0.1</span> To-do</h3>
-<p>Not sure where to put this or if I need it:</p>
 <ul>
-<li>Before modifying Nginx, back up <strong><em>/etc/nginx/sites-available/default</em></strong>; always run <code>sudo nginx -t</code> before reloading. When pasting large configuration blocks, disable autoindent in micro to avoid accumulating indentation.</li>
+<li>A better way to pick port numbers?</li>
+<li>Better way to structure the Nginx file? Does it have to be one file?</li>
 </ul>
 </section>
 <section id="overview" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
-<p>This procedure adds GitHub Team authentication to an already deployed static website or Shiny application at <a href="https://qfc.msu.edu" class="uri">https://qfc.msu.edu</a>. Access is granted to members of the designated team in <strong><em>QFC-auth</em></strong>.</p>
+<p>This procedure adds GitHub Team authentication to an already deployed static website or Shiny application on <a href="https://qfc.msu.edu" class="uri">https://qfc.msu.edu</a>. The GitHub Teams are created in the <a href="https://github.com/QFC-auth">QFC-auth</a> organization.</p>
 <p>&nbsp;</p>
 <p><strong>Prerequisites:</strong></p>
 <ul>
 <li><p>Ubuntu Server with Nginx (HTTPS), OAuth2 Proxy, and systemd installed.</p></li>
 <li><p>sudo access to the server</p></li>
-<li><p>a deployed website</p></li>
+<li><p>a deployed website or shiny app</p></li>
 <li><p>write access to the <strong><em>QFC-auth</em></strong> GitHub organization</p></li>
 </ul>
 <p>&nbsp;</p>
-<p>These examples use <strong><em>micro</em></strong> to edit server configuration files. All text for the configuration files in this document assume the website is named <strong><em>biology</em></strong> and the port number is <strong><em>4183</em></strong>. These example values need to be changed throughout.</p>
+<p>These examples use <strong><em>micro</em></strong> to edit server configuration files. All text for the configuration files in this document assume the website is named <strong><em>biology</em></strong> and the port number is <strong><em>4183</em></strong>. The example values, <strong><em>biology</em></strong> and <strong><em>4183</em></strong>, need to be changed throughout.</p>
 <section id="server-files-added-or-modified" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="server-files-added-or-modified"><span class="header-section-number">1.1</span> Server files added or modified</h3>
 <p>For each new protected website, two files are added to the server and one file is modified:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 36%">
-<col style="width: 38%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Action</th>
-<th>Server file</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Add</td>
-<td>/etc/oauth2-proxy/oauth2-proxy-biology.cfg</td>
-<td>OAuth provider, GitHub organization/team, app credentials, callback, cookie, and unique local port.</td>
-</tr>
-<tr class="even">
-<td>Add</td>
-<td>/etc/systemd/system/oauth2-proxy-biology.service</td>
-<td>Runs and restarts the site-specific OAuth2 Proxy instance.</td>
-</tr>
-<tr class="odd">
-<td>Modify</td>
-<td>/etc/nginx/sites-available/default</td>
-<td>Adds protected site routing, sign-in redirect, OAuth2 endpoints, and auth check within the HTTPS server block.</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Added:</strong> /etc/oauth2-proxy/oauth2-proxy-biology.cfg</p>
+<ul>
+<li>OAuth provider, GitHub organization/team, app credentials, callback, cookie, and unique local port.</li>
+</ul>
+<p><strong>Added:</strong> /etc/systemd/system/oauth2-proxy-biology.service</p>
+<ul>
+<li>Runs and restarts the site-specific OAuth2 Proxy instance.</li>
+</ul>
+<p><strong>Modified:</strong> /etc/nginx/sites-available/default</p>
+<ul>
+<li>Adds protected site routing, sign-in redirect, OAuth2 endpoints, and auth check within the HTTPS server block.</li>
+</ul>
 </section>
 </section>
 <section id="create-a-github-team" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="create-a-github-team"><span class="header-section-number">2</span> Create a GitHub team</h2>
-<p>In GitHub, open <a href="https://github.com/orgs/QFC-auth/teams" class="uri">https://github.com/orgs/QFC-auth/teams</a> and create a team named <strong><em>biology</em></strong>. Add authorized users. <span class="note">Note: authorized users can be added and removed on GitHub at any time</span><span id="note">.</span> Users must first join the QFC-auth organization. Use the team URL slug in the OAuth2 Proxy configuration; it may differ from the display name.</p>
+<p>In GitHub, open <a href="https://github.com/orgs/QFC-auth/teams" class="uri">https://github.com/orgs/QFC-auth/teams</a> and create a new team named <strong><em>biology</em></strong>.</p>
+<section id="adding-members" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="adding-members"><span class="header-section-number">2.1</span> Adding members</h3>
+<p><span class="hl">Members can be added and removed on GitHub at any time</span><span id="note">.</span> The first time a member is added to the organization, that member will receive an invite to the QFC-auth organization. They will have to accept the invite before they can be authorized.</p>
+</section>
 </section>
 <section id="sec-GitHubOAuth" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="sec-GitHubOAuth"><span class="header-section-number">3</span> Create a GitHub OAuth application</h2>
-<p>Under the <strong><em>QFC-auth</em></strong> organization, register a new OAuth application with the following values:</p>
+<p>In the <a href="https://github.com/QFC-auth"><strong><em>QFC-auth</em></strong></a> organization go to: <em><strong>Settings</strong> -&gt; <strong>Developer Settings</strong> -&gt; <strong>Oauth Apps</strong> -&gt; <strong>new Oauth app</strong></em> and use the following values:</p>
 <ul>
 <li><p><strong>Application name:</strong> QFC Biology</p></li>
 <li><p><strong>Homepage URL:</strong> https://qfc.msu.edu/biology/</p></li>
@@ -324,14 +248,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Authorization callback URL</strong>: https://qfc.msu.edu/oauth2-biology/callback</p></li>
 </ul>
 <p>&nbsp;</p>
-<p>Record the new Client ID and generate a Client Secret – you will use these two values in <a href="#sec-createConfig" class="quarto-xref">Section&nbsp;4.3</a> . <span class="hl">Never share the secret value.</span></p>
+<p>Record the new Client ID and generate a new Client Secret – you will use these two values in <a href="#sec-createConfig" class="quarto-xref">Section&nbsp;4.3</a> . <span class="hl">Never share the secret value.</span></p>
 </section>
 <section id="create-the-oauth2-proxy-configuration" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="create-the-oauth2-proxy-configuration"><span class="header-section-number">4</span> Create the OAuth2 Proxy configuration</h2>
 <p>Each website requires its own OAuth2 Proxy configuration file. We will create a new file using <strong><em>biology</em></strong> as the example website.</p>
 <section id="sec-availablePort" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="sec-availablePort"><span class="header-section-number">4.1</span> Select an available port</h3>
-<p>Each OAuth2 Proxy instance on qfc.msu.edu has a unique port number starting with 4180.</p>
+<h3 data-number="4.1" class="anchored" data-anchor-id="sec-availablePort"><span class="header-section-number">4.1</span> Select an available port &lt;find a better way to pick a port #?&gt;</h3>
+<p>OAuth2 Proxy instances needs a unique port. We started with 4180.</p>
 <p>&nbsp;</p>
 <p>This command finds the first candidate port, starting at 4180, that is not currently listening and is not assigned to an existing OAuth2 Proxy configuration:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> port <span class="kw">in</span> <span class="va">$(</span><span class="fu">seq</span> 4180 65535<span class="va">)</span><span class="kw">;</span> <span class="cf">do</span></span>
@@ -345,18 +269,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sec-generateCookie" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="sec-generateCookie"><span class="header-section-number">4.2</span> Generate a cookie secret</h3>
-<p>Each OAuth2 Proxy instance should have its own secret cookie. Run the following command:</p>
+<p>Each OAuth2 Proxy instance should have its own cookie secret. Run the following:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">openssl</span> rand <span class="at">-base64</span> 32 <span class="kw">|</span> <span class="fu">tr</span> <span class="st">'+/'</span> <span class="st">'-_'</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Copy the generated value. You will use it for <code>cookie_secret</code> in the configuration below.</p>
 </section>
 <section id="sec-createConfig" class="level3" data-number="4.3">
 <h3 data-number="4.3" class="anchored" data-anchor-id="sec-createConfig"><span class="header-section-number">4.3</span> Create the configuration file</h3>
-<p>The first command creates the new configuration file with root access if the file does not exist already. The second command opens the file in <strong><em>micro</em></strong>:</p>
+<p>The first command creates the new configuration file with root access (if the file does not exist already). The second command opens the file in <strong><em>micro</em></strong>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sh <span class="at">-c</span> <span class="st">'umask 077; set -C; : &gt; /etc/oauth2-proxy/oauth2-proxy-«biology».cfg'</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> micro /etc/oauth2-proxy/oauth2-proxy-«biology».cfg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Replace the highlighted values in the text below with:</p>
+<p>Copy and paste the text below into the new file. Replace the highlighted values in the text below with:</p>
 <ul>
-<li><p><code>biology</code> — Your website name and GitHub team slug</p></li>
+<li><p><code>biology</code> — Your GitHub team slug</p></li>
 <li><p><code>YOUR_CLIENT_ID</code> — Client ID from <a href="#sec-GitHubOAuth" class="quarto-xref">Section&nbsp;3</a></p></li>
 <li><p><code>YOUR_CLIENT_SECRET</code> — Client Secret from <a href="#sec-GitHubOAuth" class="quarto-xref">Section&nbsp;3</a></p></li>
 <li><p><code>YOUR_GENERATED_COOKIE_SECRET</code> — Value generated in section <a href="#sec-generateCookie" class="quarto-xref">Section&nbsp;4.2</a></p></li>
@@ -430,7 +354,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="configure-nginx" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="configure-nginx"><span class="header-section-number">6</span> Configure Nginx</h2>
-<p>Nginx controls how visitors access websites on the QFC server. We need to configure Nginx to:</p>
+<p>Nginx controls how visitors access websites on the QFC server. Nginx is configured to:</p>
 <ol type="1">
 <li><p>Identify websites that require authentication.</p></li>
 <li><p>Check whether a visitor is authorized through OAuth2 Proxy.</p></li>
@@ -438,10 +362,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Serve the website after successful authentication.</p></li>
 </ol>
 <p>&nbsp;</p>
-<p>Nginx configuration differs slightly between <strong>static websites</strong> (e.g., Quarto websites) and <strong>Shiny applications</strong>.</p>
+<p>Nginx configuration differs between <strong>static websites</strong> (e.g., Quarto websites) and <strong>Shiny applications</strong> – both examples are given.</p>
 <section id="backup-the-nginx-configuration-file" class="level3" data-number="6.1">
 <h3 data-number="6.1" class="anchored" data-anchor-id="backup-the-nginx-configuration-file"><span class="header-section-number">6.1</span> Backup the Nginx configuration file</h3>
-<p>The file is vital and should be backed up before you edit it. This command will create a backup with a time stamp in the name:</p>
+<p>The Nginx file is vital and should be backed up before you edit it. This command will create a backup in the same folder with a time stamp in the name:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp /etc/nginx/sites-available/default <span class="dt">\</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"/etc/nginx/sites-available/default.bak.</span><span class="va">$(</span><span class="fu">date</span> +%Y%m%d-%H%M%S<span class="va">)</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
@@ -450,11 +374,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> micro /etc/nginx/sites-available/default</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The file contains two <code>server</code> blocks:</p>
 <ul>
-<li><p>The first redirects HTTP requests to HTTPS.</p></li>
+<li><p>The first, and far smaller, redirects HTTP requests to HTTPS.</p></li>
 <li><p>The second handles HTTPS requests and contains the website configurations.</p></li>
 </ul>
 <p>&nbsp;</p>
-<p><strong>All new configuration should be added inside the second <code>server</code> block</strong>, before the final <code>location /</code> block that redirects unmatched requests to the main QFC website.</p>
+<p>All new configuration needs to be added inside the second <code>server</code> block, before the final <code>location /</code> block that redirects unmatched requests to the main QFC website.</p>
 <p>&nbsp;</p>
 <p>For each new website, we will add a section containing the website configuration and its authentication endpoints.</p>
 </section>
@@ -468,12 +392,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For this example, we assume:</p>
 <ul>
 <li><p><strong>Website URL</strong>: https://qfc.msu.edu/biology/</p></li>
-<li><p><strong>Website directory</strong>: /var/www/html/biology/docs/</p></li>
+<li><p><strong>Website directory</strong>: /var/www/html/biology/docs/ (Quarto pages typically use docs as the host folder)</p></li>
 <li><p><strong>OAuth2 Proxy prefix</strong>: /oauth2-biology</p></li>
 </ul>
 <p>&nbsp;<br>
 Add the following configuration (replace <strong><em>biology</em></strong> with the website):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># «BIOLOGY» — PROTECTED STATIC WEBSITE </span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub organization: QFC-auth </span></span>
@@ -481,17 +405,17 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Website directory: /var/www/html/«biology»/docs/ </span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="dt">location</span> <span class="er">/«</span><span class="dt">biology</span><span class="er">»/</span> <span class="er">{</span> </span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">auth_request</span> <span class="er">/</span><span class="dt">oauth2-</span><span class="er">«</span><span class="dt">biology</span><span class="er">»/</span><span class="dt">auth</span><span class="er">;</span> </span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">error_page</span> <span class="dt">401</span> <span class="op">=</span> <span class="er">@</span><span class="dt">oauth2_</span><span class="er">«</span><span class="dt">biology</span><span class="er">»</span><span class="dt">_signin</span><span class="er">;</span> </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="ex">location</span> /«biology»/ { </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">auth_request</span> /oauth2-«biology»/auth<span class="kw">;</span> </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">error_page</span> 401 = @oauth2_«biology»_signin<span class="kw">;</span> </span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">alias</span> <span class="er">/</span><span class="dt">var</span><span class="er">/</span><span class="dt">www</span><span class="er">/</span><span class="dt">html</span><span class="er">/«</span><span class="dt">biology</span><span class="er">»/</span><span class="dt">docs</span><span class="er">/;</span> </span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">index</span> <span class="dt">index.html</span><span class="er">;</span> </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">alias</span> /var/www/html/«biology»/docs/<span class="kw">;</span> </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">index</span> index.html<span class="kw">;</span> </span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="er">}</span> </span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Redirect /«biology» to /«biology»/ </span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="dt">location</span> <span class="op">=</span> <span class="er">/«</span><span class="dt">biology</span><span class="er">»</span> <span class="er">{</span> </span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">return</span> <span class="dt">301</span> <span class="er">/«</span><span class="dt">biology</span><span class="er">»/;</span> </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="ex">location</span> = /«biology» { </span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">301</span> <span class="ex">/«biology»/</span><span class="kw">;</span> </span>
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>How this works:</strong></p>
 <ul>
@@ -518,33 +442,33 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
 </ul>
 <p>&nbsp;</p>
 <p>Add the following configuration (replace <strong><em>biology</em></strong> with the website):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># «BIOLOGY» — PROTECTED SHINY APPLICATION </span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub organization: QFC-auth </span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub team: «biology» </span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Shiny Server: 127.0.0.1:3838 </span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="dt">location</span> <span class="er">/«</span><span class="dt">biology</span><span class="er">»/</span> <span class="er">{</span> </span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">auth_request</span> <span class="er">/</span><span class="dt">oauth2-</span><span class="er">«</span><span class="dt">biology</span><span class="er">»/</span><span class="dt">auth</span><span class="er">;</span> </span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">error_page</span> <span class="dt">401</span> <span class="op">=</span> <span class="er">@</span><span class="dt">oauth2_</span><span class="er">«</span><span class="dt">biology</span><span class="er">»</span><span class="dt">_signin</span><span class="er">;</span> </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="ex">location</span> /«biology»/ { </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">auth_request</span> /oauth2-«biology»/auth<span class="kw">;</span> </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">error_page</span> 401 = @oauth2_«biology»_signin<span class="kw">;</span> </span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_pass</span> <span class="dt">http</span><span class="er">://</span><span class="dt">127.0.0.1</span><span class="er">:</span><span class="dt">3838</span><span class="er">/«</span><span class="dt">biology</span><span class="er">»/;</span> </span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_http_version</span> <span class="dt">1.1</span><span class="er">;</span> </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_pass</span> http://127.0.0.1:3838/«biology»/<span class="kw">;</span> </span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_http_version</span> 1.1<span class="kw">;</span> </span>
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">Host</span> <span class="er">$</span><span class="dt">host</span><span class="er">;</span> </span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Real-IP</span> <span class="er">$</span><span class="dt">remote_addr</span><span class="er">;</span> </span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Forwarded-For</span> <span class="er">$</span><span class="dt">proxy_add_x_forwarded_for</span><span class="er">;</span> </span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Forwarded-Proto</span> <span class="er">$</span><span class="dt">scheme</span><span class="er">;</span> </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> Host <span class="va">$host</span><span class="kw">;</span> </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Real-IP <span class="va">$remote_addr</span><span class="kw">;</span> </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Forwarded-For <span class="va">$proxy_add_x_forwarded_for</span><span class="kw">;</span> </span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Forwarded-Proto <span class="va">$scheme</span><span class="kw">;</span> </span>
 <span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Required for Shiny WebSocket connections </span></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">Upgrade</span> <span class="er">$</span><span class="dt">http_upgrade</span><span class="er">;</span> </span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">Connection</span> <span class="dt">"upgrade"</span><span class="er">;</span> </span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> Upgrade <span class="va">$http_upgrade</span><span class="kw">;</span> </span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> Connection <span class="st">"upgrade"</span><span class="kw">;</span> </span>
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="er">}</span> </span>
 <span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Redirect /«biology» to /«biology»/ </span></span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="dt">location</span> <span class="op">=</span> <span class="er">/«</span><span class="dt">biology</span><span class="er">»</span> <span class="er">{</span> </span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">return</span> <span class="dt">301</span> <span class="er">/«</span><span class="dt">biology</span><span class="er">»/;</span> </span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="ex">location</span> = /«biology» { </span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">301</span> <span class="ex">/«biology»/</span><span class="kw">;</span> </span>
 <span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>How this differs from a static website:</strong></p>
 <ul>
@@ -559,13 +483,10 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
 </section>
 <section id="configure-the-authentication-endpoints" class="level3" data-number="6.4">
 <h3 data-number="6.4" class="anchored" data-anchor-id="configure-the-authentication-endpoints"><span class="header-section-number">6.4</span> Configure the authentication endpoints</h3>
-<p><strong>This section is identical for static websites and Shiny applications.</strong></p>
+<p>This section is for both static websites and Shiny applications.</p>
 <p>&nbsp;</p>
-<p>Add the following blocks after the website configuration.</p>
-<p>&nbsp;</p>
-<p>These blocks connect Nginx to the OAuth2 Proxy instance created in <a href="#sec-createConfig" class="quarto-xref">Section&nbsp;4.3</a> and <a href="#sec-createService" class="quarto-xref">Section&nbsp;5.1</a> .</p>
-<p>For this example, OAuth2 Proxy uses port <code>4183</code> – replace that with the actual port number</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
+<p>Add the following blocks after the website configuration. Thise blocks connect Nginx to the OAuth2 Proxy instance created in <a href="#sec-createConfig" class="quarto-xref">Section&nbsp;4.3</a> and <a href="#sec-createService" class="quarto-xref">Section&nbsp;5.1</a> .</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># «BIOLOGY» — GITHUB AUTHENTICATION </span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># OAuth2 Proxy service: oauth2-proxy-«biology» </span></span>
@@ -573,34 +494,34 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># OAuth2 Proxy prefix: /oauth2-«biology» </span></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ======================================================== </span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Redirect unauthenticated visitors to sign-in </span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="dt">location</span> <span class="er">@</span><span class="dt">oauth2_</span><span class="er">«</span><span class="dt">biology</span><span class="er">»</span><span class="dt">_signin</span> <span class="er">{</span> </span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">return</span> <span class="dt">302</span> <span class="er">/</span><span class="dt">oauth2-</span><span class="er">«</span><span class="dt">biology</span><span class="er">»/</span><span class="dt">sign_in</span><span class="er">?</span><span class="dt">rd</span><span class="op">=</span><span class="er">$</span><span class="dt">scheme</span><span class="er">://$</span><span class="dt">host</span><span class="er">$</span><span class="dt">request_uri</span><span class="er">;</span> </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="ex">location</span> @oauth2_«biology»_signin { </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">302</span> <span class="ex">/oauth2-«biology»/sign_in?rd=</span><span class="va">$scheme</span><span class="ex">://</span><span class="va">$host$request_uri</span><span class="kw">;</span> </span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="er">}</span> </span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Forward OAuth2 requests to OAuth2 Proxy </span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="dt">location</span> <span class="er">/</span><span class="dt">oauth2-</span><span class="er">«</span><span class="dt">biology</span><span class="er">»/</span> <span class="er">{</span> </span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_pass</span> <span class="dt">http</span><span class="er">://</span><span class="dt">127.0.0.1</span><span class="er">:«</span><span class="dt">4183</span><span class="er">»;</span> </span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="ex">location</span> /oauth2-«biology»/ { </span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_pass</span> http://127.0.0.1:«4183»<span class="kw">;</span> </span>
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">Host</span> <span class="er">$</span><span class="dt">host</span><span class="er">;</span> </span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Real-IP</span> <span class="er">$</span><span class="dt">remote_addr</span><span class="er">;</span> </span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Forwarded-For</span> <span class="er">$</span><span class="dt">proxy_add_x_forwarded_for</span><span class="er">;</span> </span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Forwarded-Proto</span> <span class="er">$</span><span class="dt">scheme</span><span class="er">;</span> </span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> Host <span class="va">$host</span><span class="kw">;</span> </span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Real-IP <span class="va">$remote_addr</span><span class="kw">;</span> </span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Forwarded-For <span class="va">$proxy_add_x_forwarded_for</span><span class="kw">;</span> </span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Forwarded-Proto <span class="va">$scheme</span><span class="kw">;</span> </span>
 <span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="er">}</span> </span>
 <span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether visitors are authenticated </span></span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="dt">location</span> <span class="op">=</span> <span class="er">/</span><span class="dt">oauth2-</span><span class="er">«</span><span class="dt">biology</span><span class="er">»/</span><span class="dt">auth</span> <span class="er">{</span> </span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">internal</span><span class="er">;</span> </span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="ex">location</span> = /oauth2-«biology»/auth { </span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="ex">internal</span><span class="kw">;</span> </span>
 <span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_pass</span> <span class="dt">http</span><span class="er">://</span><span class="dt">127.0.0.1</span><span class="er">:«</span><span class="dt">4183</span><span class="er">»/</span><span class="dt">oauth2-</span><span class="er">«</span><span class="dt">biology</span><span class="er">»/</span><span class="dt">auth</span><span class="er">;</span> </span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_pass</span> http://127.0.0.1:«4183»/oauth2-«biology»/auth<span class="kw">;</span> </span>
 <span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_pass_request_body</span> <span class="dt">off</span><span class="er">;</span> </span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">Content-Length</span> <span class="dt">""</span><span class="er">;</span> </span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_pass_request_body</span> off<span class="kw">;</span> </span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> Content-Length <span class="st">""</span><span class="kw">;</span> </span>
 <span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Original-URI</span> <span class="er">$</span><span class="dt">request_uri</span><span class="er">;</span> </span>
-<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Real-IP</span> <span class="er">$</span><span class="dt">remote_addr</span><span class="er">;</span> </span>
-<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Forwarded-For</span> <span class="er">$</span><span class="dt">proxy_add_x_forwarded_for</span><span class="er">;</span> </span>
-<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">X-Forwarded-Proto</span> <span class="er">$</span><span class="dt">scheme</span><span class="er">;</span></span>
-<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>    <span class="dt">proxy_set_header</span> <span class="dt">Host</span> <span class="er">$</span><span class="dt">host</span><span class="er">;</span> </span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Original-URI <span class="va">$request_uri</span><span class="kw">;</span> </span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Real-IP <span class="va">$remote_addr</span><span class="kw">;</span> </span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Forwarded-For <span class="va">$proxy_add_x_forwarded_for</span><span class="kw">;</span> </span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> X-Forwarded-Proto <span class="va">$scheme</span><span class="kw">;</span></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>    <span class="ex">proxy_set_header</span> Host <span class="va">$host</span><span class="kw">;</span> </span>
 <span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>How these blocks work:</strong></p>
 <p>Sign-in redirect</p>
@@ -630,7 +551,7 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nginx:</span> configuration file /etc/nginx/nginx.conf test is successful</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If an error is reported, return to the configuration file and correct it before proceeding.</p>
 <p>&nbsp;</p>
-<p><span class="hl">Do not reload Nginx until the configuration test succeeds.</span></p>
+<p><span class="hl">Do not proceed until the configuration test succeeds.</span></p>
 </section>
 <section id="reload-nginx" class="level3" data-number="6.6">
 <h3 data-number="6.6" class="anchored" data-anchor-id="reload-nginx"><span class="header-section-number">6.6</span> Reload nginx</h3>
@@ -641,14 +562,11 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
 <section id="verify-the-website" class="level3" data-number="6.7">
 <h3 data-number="6.7" class="anchored" data-anchor-id="verify-the-website"><span class="header-section-number">6.7</span> Verify the website</h3>
 <p>Open a private browser window and visit: <code>https://qfc.msu.edu/biology/</code></p>
-<p>&nbsp;</p>
-<p>You should be redirected to GitHub authentication.</p>
-<p>&nbsp;</p>
-<p>After signing in, users belonging to the appropriate GitHub team should be able to access the website.</p>
-<p>&nbsp;</p>
-<p>Users who are not members of the team should be denied access.</p>
-<p>&nbsp;</p>
-<p>For Shiny applications, also verify that the application responds correctly to user input.</p>
+<ul>
+<li><p>You should be redirected to GitHub authentication</p></li>
+<li><p>After signing in, users belonging to the appropriate GitHub team should be able to access the website.</p></li>
+<li><p>Users who are not members of the team should be denied access.</p></li>
+</ul>
 </section>
 <section id="troubleshooting" class="level3" data-number="6.8">
 <h3 data-number="6.8" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">6.8</span> Troubleshooting</h3>
@@ -659,49 +577,6 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
 <section id="manage-access-in-github" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="manage-access-in-github"><span class="header-section-number">7</span> Manage access in GitHub</h2>
 <p>To grant or revoke access, add or remove users from the <strong><em>biology</em></strong> team in <strong><em>QFC-auth</em></strong>. No changes to server configuration files are required.</p>
-</section>
-<section id="quick-reference" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="quick-reference"><span class="header-section-number">8</span> Quick reference</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Component</strong></td>
-<td><strong>Required Action</strong></td>
-</tr>
-<tr class="even">
-<td>GitHub organization</td>
-<td>No change</td>
-</tr>
-<tr class="odd">
-<td>GitHub team</td>
-<td>Create one per site</td>
-</tr>
-<tr class="even">
-<td>OAuth application</td>
-<td>Create one per site</td>
-</tr>
-<tr class="odd">
-<td>OAuth2 Proxy configuration</td>
-<td>Create one .cfg per site</td>
-</tr>
-<tr class="even">
-<td>systemd</td>
-<td>Create one service per site</td>
-</tr>
-<tr class="odd">
-<td>Nginx</td>
-<td>Add protected site, sign-in, proxy, and auth-check routes</td>
-</tr>
-<tr class="even">
-<td>Website content</td>
-<td>No changes required for an existing static site</td>
-</tr>
-</tbody>
-</table>
 
 
 </section>
@@ -785,7 +660,8 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -794,8 +670,69 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -809,6 +746,7 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -971,44 +909,54 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1106,6 +1054,9 @@ Add the following configuration (replace <strong><em>biology</em></strong> with 
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 

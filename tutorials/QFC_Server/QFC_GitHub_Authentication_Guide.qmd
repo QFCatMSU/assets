@@ -1,19 +1,17 @@
 ---
 title: "Adding GitHub Team Authentication to a Website on the QFC Server"
-subtitle: "Administrator procedure | QFC-auth | Static Quarto websites and Shiny applications"
 short: "Server"
 # special characters for highlighting code : «» 
 ---
 
 ### To-do
 
-Not sure where to put this or if I need it:
-
-- Before modifying Nginx, back up ***/etc/nginx/sites-available/default***; always run `sudo nginx -t` before reloading. When pasting large configuration blocks, disable autoindent in micro to avoid accumulating indentation.
+- A better way to pick port numbers?
+- Better way to structure the Nginx file? Does it have to be one file?
 
 ## Overview
 
-This procedure adds GitHub Team authentication to an already deployed static website or Shiny application at <https://qfc.msu.edu>. Access is granted to members of the designated team in ***QFC-auth***.
+This procedure adds GitHub Team authentication to an already deployed static website or Shiny application on <https://qfc.msu.edu>. The GitHub Teams are created in the [QFC-auth](https://github.com/QFC-auth) organization.
 
  
 
@@ -23,31 +21,41 @@ This procedure adds GitHub Team authentication to an already deployed static web
 
 - sudo access to the server
 
-- a deployed website
+- a deployed website or shiny app
 
 - write access to the ***QFC-auth*** GitHub organization
 
  
 
-These examples use ***micro*** to edit server configuration files. All text for the configuration files in this document assume the website is named ***biology*** and the port number is ***4183***. These example values need to be changed throughout.
+These examples use ***micro*** to edit server configuration files. All text for the configuration files in this document assume the website is named ***biology*** and the port number is ***4183***. The example values, ***biology*** and ***4183***, need to be changed throughout.
 
 ### Server files added or modified
 
 For each new protected website, two files are added to the server and one file is modified:
 
-| Action | Server file | Purpose |
-|------------------|--------------------------|----------------------------|
-| Add | /etc/oauth2-proxy/oauth2-proxy-biology.cfg | OAuth provider, GitHub organization/team, app credentials, callback, cookie, and unique local port. |
-| Add | /etc/systemd/system/oauth2-proxy-biology.service | Runs and restarts the site-specific OAuth2 Proxy instance. |
-| Modify | /etc/nginx/sites-available/default | Adds protected site routing, sign-in redirect, OAuth2 endpoints, and auth check within the HTTPS server block. |
+**Added:** /etc/oauth2-proxy/oauth2-proxy-biology.cfg
+
+- OAuth provider, GitHub organization/team, app credentials, callback, cookie, and unique local port.
+
+**Added:** /etc/systemd/system/oauth2-proxy-biology.service
+
+- Runs and restarts the site-specific OAuth2 Proxy instance.
+
+**Modified:** /etc/nginx/sites-available/default
+
+- Adds protected site routing, sign-in redirect, OAuth2 endpoints, and auth check within the HTTPS server block.
 
 ## Create a GitHub team
 
-In GitHub, open <https://github.com/orgs/QFC-auth/teams> and create a team named ***biology***. Add authorized users. [Note: authorized users can be added and removed on GitHub at any time]{.note}[.]{#note} Users must first join the QFC-auth organization. Use the team URL slug in the OAuth2 Proxy configuration; it may differ from the display name.
+In GitHub, open <https://github.com/orgs/QFC-auth/teams> and create a new team named ***biology***.
+
+### Adding members
+
+[Members can be added and removed on GitHub at any time]{.hl}[.]{#note} The first time a member is added to the organization, that member will receive an invite to the QFC-auth organization. They will have to accept the invite before they can be authorized.
 
 ## Create a GitHub OAuth application {#sec-GitHubOAuth}
 
-Under the ***QFC-auth*** organization, register a new OAuth application with the following values:
+In the [***QFC-auth***](https://github.com/QFC-auth) organization go to: ***Settings** -\> **Developer Settings** -\> **Oauth Apps** -\> **new Oauth app*** and use the following values:
 
 - **Application name:** QFC Biology
 
@@ -59,15 +67,15 @@ Under the ***QFC-auth*** organization, register a new OAuth application with the
 
  
 
-Record the new Client ID and generate a Client Secret – you will use these two values in @sec-createConfig . [Never share the secret value.]{.hl}
+Record the new Client ID and generate a new Client Secret – you will use these two values in @sec-createConfig . [Never share the secret value.]{.hl}
 
 ## Create the OAuth2 Proxy configuration
 
 Each website requires its own OAuth2 Proxy configuration file. We will create a new file using ***biology*** as the example website.
 
-### Select an available port {#sec-availablePort}
+### Select an available port \<find a better way to pick a port #?\> {#sec-availablePort}
 
-Each OAuth2 Proxy instance on qfc.msu.edu has a unique port number starting with 4180.
+OAuth2 Proxy instances needs a unique port. We started with 4180.
 
  
 
@@ -87,7 +95,7 @@ Use the ***Available port*** number given after running this command. For these 
 
 ### Generate a cookie secret {#sec-generateCookie}
 
-Each OAuth2 Proxy instance should have its own secret cookie. Run the following command:
+Each OAuth2 Proxy instance should have its own cookie secret. Run the following:
 
 ``` bash
 openssl rand -base64 32 | tr '+/' '-_' | tr -d '\n'
@@ -97,16 +105,16 @@ Copy the generated value. You will use it for `cookie_secret` in the configurati
 
 ### Create the configuration file {#sec-createConfig}
 
-The first command creates the new configuration file with root access if the file does not exist already. The second command opens the file in ***micro***:
+The first command creates the new configuration file with root access (if the file does not exist already). The second command opens the file in ***micro***:
 
 ``` bash
 sudo sh -c 'umask 077; set -C; : > /etc/oauth2-proxy/oauth2-proxy-«biology».cfg'
 sudo micro /etc/oauth2-proxy/oauth2-proxy-«biology».cfg
 ```
 
-Replace the highlighted values in the text below with:
+Copy and paste the text below into the new file. Replace the highlighted values in the text below with:
 
-- `biology` — Your website name and GitHub team slug
+- `biology` — Your GitHub team slug
 
 - `YOUR_CLIENT_ID` — Client ID from @sec-GitHubOAuth
 
@@ -206,7 +214,7 @@ Confirm the service is active before continuing.
 
 ## Configure Nginx
 
-Nginx controls how visitors access websites on the QFC server. We need to configure Nginx to:
+Nginx controls how visitors access websites on the QFC server. Nginx is configured to:
 
 1.  Identify websites that require authentication.
 
@@ -218,11 +226,11 @@ Nginx controls how visitors access websites on the QFC server. We need to config
 
  
 
-Nginx configuration differs slightly between **static websites** (e.g., Quarto websites) and **Shiny applications**.
+Nginx configuration differs between **static websites** (e.g., Quarto websites) and **Shiny applications** – both examples are given.
 
 ### Backup the Nginx configuration file
 
-The file is vital and should be backed up before you edit it. This command will create a backup with a time stamp in the name:
+The Nginx file is vital and should be backed up before you edit it. This command will create a backup in the same folder with a time stamp in the name:
 
 ``` bash
 sudo cp /etc/nginx/sites-available/default \
@@ -237,13 +245,13 @@ sudo micro /etc/nginx/sites-available/default
 
 The file contains two `server` blocks:
 
-- The first redirects HTTP requests to HTTPS.
+- The first, and far smaller, redirects HTTP requests to HTTPS.
 
 - The second handles HTTPS requests and contains the website configurations.
 
  
 
-**All new configuration should be added inside the second `server` block**, before the final `location /` block that redirects unmatched requests to the main QFC website.
+All new configuration needs to be added inside the second `server` block, before the final `location /` block that redirects unmatched requests to the main QFC website.
 
  
 
@@ -263,14 +271,14 @@ For this example, we assume:
 
 - **Website URL**: https://qfc.msu.edu/biology/
 
-- **Website directory**: /var/www/html/biology/docs/
+- **Website directory**: /var/www/html/biology/docs/ (Quarto pages typically use docs as the host folder)
 
 - **OAuth2 Proxy prefix**: /oauth2-biology
 
  \
 Add the following configuration (replace ***biology*** with the website):
 
-``` toml
+``` bash
 # ======================================================== 
 # «BIOLOGY» — PROTECTED STATIC WEBSITE 
 # ======================================================== 
@@ -331,7 +339,7 @@ For this example, we assume:
 
 Add the following configuration (replace ***biology*** with the website):
 
-``` toml
+``` bash
 # ======================================================== 
 # «BIOLOGY» — PROTECTED SHINY APPLICATION 
 # ======================================================== 
@@ -378,19 +386,13 @@ The Shiny application must already be deployed and accessible through Shiny Serv
 
 ### Configure the authentication endpoints
 
-**This section is identical for static websites and Shiny applications.**
+This section is for both static websites and Shiny applications.
 
  
 
-Add the following blocks after the website configuration.
+Add the following blocks after the website configuration. Thise blocks connect Nginx to the OAuth2 Proxy instance created in @sec-createConfig and @sec-createService .
 
- 
-
-These blocks connect Nginx to the OAuth2 Proxy instance created in @sec-createConfig and @sec-createService .
-
-For this example, OAuth2 Proxy uses port `4183` – replace that with the actual port number
-
-``` toml
+``` bash
 # ======================================================== 
 # «BIOLOGY» — GITHUB AUTHENTICATION 
 # ======================================================== 
@@ -473,7 +475,7 @@ If an error is reported, return to the configuration file and correct it before 
 
  
 
-[Do not reload Nginx until the configuration test succeeds.]{.hl}
+[Do not proceed until the configuration test succeeds.]{.hl}
 
 ### Reload nginx
 
@@ -489,21 +491,11 @@ The new website should now require GitHub authentication.
 
 Open a private browser window and visit: `https://qfc.msu.edu/biology/`
 
- 
+- You should be redirected to GitHub authentication
 
-You should be redirected to GitHub authentication.
+- After signing in, users belonging to the appropriate GitHub team should be able to access the website.
 
- 
-
-After signing in, users belonging to the appropriate GitHub team should be able to access the website.
-
- 
-
-Users who are not members of the team should be denied access.
-
- 
-
-For Shiny applications, also verify that the application responds correctly to user input.
+- Users who are not members of the team should be denied access.
 
 ### Troubleshooting
 
@@ -516,16 +508,3 @@ sudo journalctl -u oauth2-proxy-«biology» -n 50 --no-pager
 ## Manage access in GitHub
 
 To grant or revoke access, add or remove users from the ***biology*** team in ***QFC-auth***. No changes to server configuration files are required.
-
-## Quick reference
-
-|  |  |
-|------------------------------------|------------------------------------|
-| **Component** | **Required Action** |
-| GitHub organization | No change |
-| GitHub team | Create one per site |
-| OAuth application | Create one per site |
-| OAuth2 Proxy configuration | Create one .cfg per site |
-| systemd | Create one service per site |
-| Nginx | Add protected site, sign-in, proxy, and auth-check routes |
-| Website content | No changes required for an existing static site |
