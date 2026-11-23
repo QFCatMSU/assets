@@ -5,13 +5,13 @@
   padding-bottom:15px;
   
   /* add dotted red border to images that can be resized, make solid on hover */
-  img.fs, img.flexSize
+  img.fs
   {
     border-color: lime;
     border-style: dotted;
     border-width: 2px;
   }
-  img.fs:hover, img.flexSize:hover
+  img.fs:hover
   {
     border-style: solid;
   }

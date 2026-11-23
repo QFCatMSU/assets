@@ -16,11 +16,14 @@ scrollFlag = 0;  						// counts when scrolling of page occurs due to reference 
 longClickTimer = null;
 overRCMenu = false;
 // keep mouse positions in global memory because they can only be captured on mouse events
-mouseX = mouseX2 = mouseY = mouseY2 = 0; 
-
-clickMode = null;
-fsClick = null;
-origWidth = null;
+// Shared state for long-click menus and image resizing.
+let mouseX = 0;
+let mouseY = 0;
+let mouseX2 = 0;
+let mouseY2 = 0;
+let clickMode = null;
+let fsClick = null;
+let origWidth = null;
 
 // Initialize custom Quarto page behavior after the window finishes loading.
 window.addEventListener("load", function()
@@ -253,11 +256,11 @@ the size of the image.  Called on page load.
 function createFlexImages()
 {
 	// find all images that have the class name "flexSize" or "fs"
-	var flexVideo = encapObject.querySelectorAll('video.flexSize, video.fs');
-	var flexIframe = encapObject.querySelectorAll("div.fs iframe, p.fs > iframe, p.flexsize > iframe");
+	const flexVideo = encapObject.querySelectorAll('video.fs');
+	const flexIframe = encapObject.querySelectorAll("div.fs iframe, p.fs > iframe");
   
   // find all figures within a fs div -- in Quarto these are plots from embedded scripts
-  quartoFS = document.querySelectorAll("div.fs img.figure-img");
+  const quartoFS = document.querySelectorAll("div.fs img.figure-img");
   for(let i=0; i<quartoFS.length; i++)
   {
     // add fs directly to the image
@@ -265,7 +268,7 @@ function createFlexImages()
   }
   
 	// find all flexsized images
-	fsObj = document.querySelectorAll("img.fs");
+	const fsObj = document.querySelectorAll("img.fs, img.flexSize");
 
 	// for each flexsized image
 	for(let i=0; i<fsObj.length; i++)
@@ -273,7 +276,7 @@ function createFlexImages()
 		// mousedown: set the flexsized object
 		fsObj[i].addEventListener("mousedown", function(event)
 		{
-			if(event.which == 1)
+			if(event.button == 0)
 			{		
 				fsClick = fsObj[i];
 				fsClick.style.cursor = "ew-resize";
@@ -282,7 +285,7 @@ function createFlexImages()
 		});
 		fsObj[i].addEventListener("mouseup", function(event)
 		{
-			if(event.which == 1)
+			if(event.button == 0)
 			{	
 				if(clickMode == "click")
 				{
@@ -295,17 +298,7 @@ function createFlexImages()
 		{	
 			cleanupFlexEvent()
 		});
-		fsObj[i].addEventListener("click", function(event)
-		{
-		});
-		fsObj[i].addEventListener("dragstart", function(event)
-		{
-			//event.preventDefault();
-		});
-		fsObj[i].addEventListener("dragend", function(event)
-		{
-			//event.preventDefault();
-		});
+
 		//initialize image to small size
 		changeImageSize(fsObj[i], "minimize");
 	}
@@ -313,8 +306,8 @@ function createFlexImages()
 	// go through all the videos...
 	for(let i=0; i<flexVideo.length; i++)	// for each flexSize element
 	{
-		let videoHeight = flexVideo[i].height;
-		let videoWidth = flexVideo[i].width;
+		const videoHeight = flexVideo[i].height;
+		const videoWidth = flexVideo[i].width;
 		flexVideo[i].height = smallImageWidth *  videoHeight/ videoWidth;
 		flexVideo[i].width = smallImageWidth;
 		flexVideo[i].addEventListener("play", 
@@ -339,7 +332,7 @@ function createFlexImages()
 		flexIframe[i].width = smallImageWidth;
 
 		// create a small span button 
-		resizeButton = document.createElement("span");
+		const resizeButton = document.createElement("span");
 		resizeButton.classList.add("flexButton");
 		resizeButton.classList.add("noSelect");
 		resizeButton.innerText = "\u{1f846}";
@@ -350,6 +343,9 @@ function createFlexImages()
 				{
 					flexIframe[i].width = iframeWidth; 
 					flexIframe[i].height = iframeHeight; 
+					// Some embedded video players (possibly Kaltura) do not adjust
+					// their internal layout when the iframe is resized.
+					// Reload the iframe so the player initializes at the new dimensions.
 					flexIframe[i].src = flexIframe[i].src;
 					this.innerText = "\u{1f844}";
 				}
@@ -390,12 +386,9 @@ function changeImageSize(element, instruction="none")
 	}
 	else // click directly on image
 	{
-	  // current width of image
-		currentWidth = parseInt(element.clientWidth);
-		// starting width of image
-		naturalWidth = parseInt(element.naturalWidth);
-		// width of parent frame (image cannot be bigger than this)
-		parentWidth = parseInt(element.parentElement.clientWidth);
+		const currentWidth = element.clientWidth;   // current image width
+		let naturalWidth = element.naturalWidth;    // starting image width
+		const parentWidth = element.parentElement.clientWidth;  // width of parent frame 
 		
 		if(naturalWidth >= parentWidth) 
 		  naturalWidth = parentWidth
@@ -419,11 +412,9 @@ function changeImageSize(element, instruction="none")
 	all the flex-sized images in the page */
 function changeAllPicSize(param)
 {
-	/****
-	Quarto will add class names to the div around the image 
-	****/
-	var flexImage = encapObject.querySelectorAll('img.flexSize, img.fs');
-	for(i=0; i<flexImage.length; i++)
+	// Quarto will add class names to the div around the image 
+	const flexImage = encapObject.querySelectorAll('img.fs');
+	for(let i=0; i<flexImage.length; i++)
 	{
 		changeImageSize(flexImage[i], param);
 	}
@@ -444,8 +435,6 @@ function goBackToPrevLocation()
     window.scrollTo(leftPos, scrollTopPosition);
     scrollTopPosition = newScrollTopPosition;
 }
-
-
 
 function goToTopOfPage()
 {
@@ -708,7 +697,7 @@ function getMousePos(event)
     // Resize the image as the mouse moves.
     if(clickMode == "drag")
     {
-        newWidth = origWidth + mouseX2 - mouseX;
+        const newWidth = origWidth + mouseX2 - mouseX;
 
         if(newWidth > 100)
         {
@@ -724,12 +713,9 @@ function cleanupFlexEvent()
 		
 	if(clickMode == "drag")
 	{
-	  // current width of image
-		currentWidth = parseInt(fsClick.clientWidth);
-		// starting width of image
-		naturalWidth = parseInt(fsClick.naturalWidth);
-		// width of parent frame (image cannot be bigger than this)
-		parentWidth = parseInt(fsClick.parentElement.clientWidth);
+		const currentWidth = fsClick.clientWidth;    // current width
+		const naturalWidth = fsClick.naturalWidth;   // starting width
+		const parentWidth = fsClick.parentElement.clientWidth;   // parent frame width
 		
 		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) ||
 	    (naturalWidth < parseInt(fsClick.width)))
