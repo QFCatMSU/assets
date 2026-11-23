@@ -49,34 +49,41 @@ window.addEventListener("load", function()
 		titleObj.appendChild(printLink);
 	}
 	
-  // change symbols to highlighting
-  if(mod && mod == true)  // allow highlighting in all code
-  {
-    codeBlocks = document.querySelectorAll("pre");
-  }
-  else  // allow highlighting only when class="mod"
-  {
-    codeBlocks = document.querySelectorAll("pre.mod");
-  }
-  for(i=0; i<codeBlocks.length; i++)
+	// Highlight portions of code enclosed in « and ».
+	// When mod is true, process all code blocks;
+	// otherwise, process only code blocks with class="mod".
+
+	let codeBlocks;
+
+	if(typeof mod !== "undefined" && mod == true)
 	{
-	  newHTML = codeBlocks[i].innerHTML;
-	  newHTML = newHTML.replace(/«/g, "<b>");
-	  newHTML = newHTML.replace(/»/g, "</b>");
-	  codeBlocks[i].innerHTML = newHTML;
+		codeBlocks = document.querySelectorAll("pre");
+	}
+	else
+	{
+		codeBlocks = document.querySelectorAll("pre.mod");
+	}
+
+	for(let i = 0; i < codeBlocks.length; i++)
+	{
+		let newHTML = codeBlocks[i].innerHTML;
+		newHTML = newHTML.replace(/«/g, "<b>");
+		newHTML = newHTML.replace(/»/g, "</b>");
+		codeBlocks[i].innerHTML = newHTML;
 	}
 	
-	codeBlockDivs = document.querySelectorAll("[data-tab]");
-	for(i=0; i<codeBlockDivs.length; i++)
+	// Add a label above code blocks with a data-tab attribute.
+	const codeBlockDivs = document.querySelectorAll("[data-tab]");
+
+	for(let i = 0; i < codeBlockDivs.length; i++)
 	{
-    par = document.createElement("p");
-		par.classList.add("noSelect");
-		par.style.textAlign = "left";
-		tabSpan = document.createElement("span");
+		const tabSpan = document.createElement("span");
+		const tabText = codeBlockDivs[i].getAttribute("data-tab");
+
 		tabSpan.classList.add("codeBlockTab", "noSelect", "noCode", "nonum");
-		tabSpan.setAttribute("data-text", codeBlockDivs[i].getAttribute("data-tab"));
-		tabSpan.innerText = codeBlockDivs[i].getAttribute("data-tab");
-		par.appendChild(tabSpan);
+		tabSpan.setAttribute("data-text", tabText);
+		tabSpan.innerText = tabText;
+
 		codeBlockDivs[i].parentElement.insertBefore(tabSpan, codeBlockDivs[i]);
 		codeBlockDivs[i].classList.add("hasTab");
 	}
