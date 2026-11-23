@@ -445,63 +445,81 @@ function goToTopOfPage()
     enablePrevious();
 }
 
-function makeContextMenu(funct, param = null)
-{	
-	var elemDiv = document.createElement('div');
-	elemDiv.id = "longClickMenu";
-	elemDiv.classList.add("rcMenu");
-	elemDiv.addEventListener("mouseenter", function() {overRCMenu = true;}); 
-	elemDiv.addEventListener("mouseleave", function() {overRCMenu = false;}); 
-	
-	var scTitle = document.createElement('a');
-	elemDiv.innerHTML = "<b>Shortcut Menu</b>";
-	elemDiv.style.display = "block";
-	elemDiv.classList.add("sameWin", "noSelect");
-	elemDiv.appendChild(scTitle);
-	
-	// create the menmu items
-	menuLinks(elemDiv, "Return to previous location", goBackToPrevLocation, "previousLocMenuItem", false);
-	menuLinks(elemDiv, "Go to Top of Page", goToTopOfPage, "topMenuItem");
-	menuLinks(elemDiv, "Print/ Save as PDF", function(){document.getElementById("longClickMenu").style.visibility = "hidden"; window.print()}, "printToPDF");
-	menuLinks(elemDiv, "Maximize All Images", function() {changeAllPicSize('maximize')}, "maxAllImages");
-	menuLinks(elemDiv, "Minimize All Images", function() {changeAllPicSize('minimize')}, "minAllImages");
-	menuLinks(elemDiv, "All Images 50%", function() {changeAllPicSize('half')}, "halfImages");
-	
-	encapObject.appendChild(elemDiv);
+function makeContextMenu()
+{
+    // Create the shortcut menu.
+    const elemDiv = document.createElement("div");
+    elemDiv.id = "longClickMenu";
+    elemDiv.classList.add("rcMenu", "sameWin", "noSelect");
+    elemDiv.innerHTML = "<b>Shortcut Menu</b>";
+
+    // Track whether the mouse is over the menu.
+    elemDiv.addEventListener("mouseenter", function()
+    {
+        overRCMenu = true;
+    });
+
+    elemDiv.addEventListener("mouseleave", function()
+    {
+        overRCMenu = false;
+    });
+
+    // Add menu commands.
+    menuLinks(elemDiv, "Return to previous location", goBackToPrevLocation, "previousLocMenuItem", false);
+    menuLinks(elemDiv, "Go to Top of Page", goToTopOfPage, "topMenuItem");
+
+    menuLinks(elemDiv, "Print/ Save as PDF", function()
+    {
+        document.getElementById("longClickMenu").style.visibility = "hidden";
+        window.print();
+    }, "printToPDF");
+
+    menuLinks(elemDiv, "Maximize All Images", function()
+    {
+        changeAllPicSize("maximize");
+    }, "maxAllImages");
+
+    menuLinks(elemDiv, "Minimize All Images", function()
+    {
+        changeAllPicSize("minimize");
+    }, "minAllImages");
+
+    menuLinks(elemDiv, "All Images 50%", function()
+    {
+        changeAllPicSize("half");
+    }, "halfImages");
+
+    encapObject.appendChild(elemDiv);
 }
 
-function menuLinks(menu, text, command, linkid="", enable=true)  
+function menuLinks(menu, text, command, linkid = "", enable = true)
 {
-	// create a block span to encapsulate the hyperlink
-	spanEncap = document.createElement('span');
-	spanEncap.style.display = "block";
-		
-	link = document.createElement('a');
-	if(!enable)
-		link.classList.add("disabledLink");
-	link.id = linkid;
-	link.innerText = text;
-	link.classList.add("sameWin", "jsLink");
-	link.addEventListener("mouseup", 
-								 function(event) 
-								 { 
-									command(); 	
-									document.getElementById("longClickMenu").style.visibility = "hidden"; 
-									document.getElementById("longClickMenu").style.top = "0px"; 
-								 });
-	spanEncap.appendChild(link);
-	
-	menu.appendChild(spanEncap);
-}
+    // Create a menu item.
+    const spanEncap = document.createElement("span");
+    spanEncap.style.display = "block";
 
-function scrollToElementReturn(elementID)
-{
-	// this resolves the fact that variables are function scoped in JavaScript
-	//   -- not block scoped
-	return function() 
-	{
-		scrollToElement(elementID);	
-	}
+    const link = document.createElement("a");
+    link.id = linkid;
+    link.innerText = text;
+    link.classList.add("sameWin", "jsLink");
+
+    if(!enable)
+    {
+        link.classList.add("disabledLink");
+    }
+
+    // Execute the command and close the menu.
+    link.addEventListener("mouseup", function(event)
+    {
+        command();
+
+        const menuDiv = document.getElementById("longClickMenu");
+        menuDiv.style.visibility = "hidden";
+        menuDiv.style.top = "0px";
+    });
+
+    spanEncap.appendChild(link);
+    menu.appendChild(spanEncap);
 }
 
 function checkURLForPos()
