@@ -133,15 +133,12 @@ window.addEventListener("mousedown", function(event)
 		mouseX = mouseX2 = parseInt(event.clientX);
 		mouseY = mouseY2 = parseInt(event.clientY);
 		
-	  // Is there a way to check the new position of the mouse after 350ms?
-	  // event.clientX just gives the position when the mouse was down
 		longClickTimer = setTimeout(function() 
 		{
 			// not over a dragable object
 			if(fsClick == null)
 			{
 				window.removeEventListener("mousemove", getMousePos);	
-			//	console.log(2);
 			}
 			// bring up shortcut menu if mouse has barely moved
 			if(Math.abs(mouseX2-mouseX) < 10 &&  Math.abs(mouseY2-mouseY) < 10 && clickMode == "click")
@@ -154,22 +151,17 @@ window.addEventListener("mousedown", function(event)
 				encapObject.style.msUserSelect = "none";
 			}
 	  }, 350);
-		
-		// get current mouse pointer position -- used to allow for wiggle in the mouse
-	//	let mouseX = parseInt(event.clientX);
-	//	let mouseY = parseInt(event.clientY);
 	}
 });
 
 // disable short-cut menu on scroll (mousemoves are not triggered on scroll)
 window.addEventListener("scroll", function(event)
 { 
-	clearInterval(longClickTimer);
+	clearTimeout(longClickTimer);
 });
 	
 window.addEventListener("mouseup", function()
 {
-	//clearInterval(longClickTimer);
 	cleanupFlexEvent();
 
 	//	tried to avoid this with stopPropogation -- that did not work
@@ -698,30 +690,36 @@ function linksToNewWindow()
     }
 }
 
-function getMousePos()
+// Track mouse movement for long-click detection and image resizing.
+function getMousePos(event)
 {
-	mouseX2 = parseInt(event.clientX);
-	mouseY2 = parseInt(event.clientY);
-	
-	if(clickMode == "click" && fsClick != null && Math.abs(mouseX2-mouseX) > 20)
-	{
-		clickMode = "drag";
-		fsClick.classList.add("resizing");
-		mouseX = mouseX2;  
-		origWidth = parseInt(fsClick.clientWidth); 
-	}
-	if(clickMode == "drag")
-	{	
-		newWidth = (origWidth + mouseX2 - mouseX);
+    mouseX2 = event.clientX;
+    mouseY2 = event.clientY;
 
-		if(newWidth > 100)
-			fsClick.style.width = newWidth + "px";
-	}	
+    // Start resizing when the mouse moves far enough.
+    if(clickMode == "click" && fsClick != null && Math.abs(mouseX2 - mouseX) > 20)
+    {
+        clickMode = "drag";
+        fsClick.classList.add("resizing");
+        mouseX = mouseX2;
+        origWidth = fsClick.clientWidth;
+    }
+
+    // Resize the image as the mouse moves.
+    if(clickMode == "drag")
+    {
+        newWidth = origWidth + mouseX2 - mouseX;
+
+        if(newWidth > 100)
+        {
+            fsClick.style.width = newWidth + "px";
+        }
+    }
 }
 
 function cleanupFlexEvent()
 {
-	clearInterval(longClickTimer);
+	clearTimeout(longClickTimer);
 	window.removeEventListener("mousemove", getMousePos);	
 		
 	if(clickMode == "drag")
