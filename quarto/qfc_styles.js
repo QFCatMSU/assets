@@ -529,12 +529,9 @@ function scrollToElement(elementID, outsideCall = false)
 {		
 	//	var element = encapObject.querySelector("#" + elementID); 
 	var element = document.getElementById(elementID); 
-	var windowHeight = window.parent.innerHeight;// height of the webpage with the lesson
-	var windowScroll = window.parent.scrollY; 	// amount window has been scrolled
-	var divWindowScroll = 0;							// for object in a scrolling div
-
-	// find the position of the iframe -- if content is not in iframe this will return 0,0
-	const [offsetLeft, offsetTop] = getIframeOffset();
+	const windowHeight = window.innerHeight; // height of the webpage with the lesson
+	const windowScroll = window.scrollY; 	 // amount window has been scrolled
+	let divWindowScroll = 0;				 // for object in a scrolling div
 	
 	// check if the referenced element is a codeline in a div that has a scrollbar
 	if(element.classList.contains("code")  &&   // part of a codeBlock
@@ -549,8 +546,8 @@ function scrollToElement(elementID, outsideCall = false)
 		divWindowScroll = element.parentNode.scrollTop;  // get the current scroll position
 	}
 
-	// calc the vertical position of the linked element in the parent page
-	elementYPos = element.offsetParent.offsetTop + element.offsetTop + offsetTop - divWindowScroll; 
+	// Calculate the element's vertical position in the document.
+	const elementYPos = element.getBoundingClientRect().top + window.scrollY; 
 	
 	// if the element is not on the screen
 	if(elementYPos < windowScroll || elementYPos > (windowScroll+(2*windowHeight)))
@@ -566,10 +563,10 @@ function scrollToElement(elementID, outsideCall = false)
 		}
 		
 		// save the current value of the scroll position so we can return to this spot
-		scrollTopPosition = window.parent.scrollY; 
+		scrollTopPosition = window.scrollY; 
 		
 		// scroll the parent to the vertical position of the linkTo element
-		window.parent.scrollTo(element.offsetLeft, (elementYPos -offsetPadding) );	
+		window.scrollTo(element.offsetLeft, (elementYPos -offsetPadding) );	
 		
 		scrollFlag = scrollFlag +1;
 		if(scrollFlag <= 2) {activateNotification(event, "scroll");}
@@ -581,10 +578,10 @@ function scrollToElement(elementID, outsideCall = false)
 		offsetPadding = windowHeight - 200;
 		
 		// save the current value of the scroll position so we can return to this spot
-		scrollTopPosition = window.parent.scrollY; 
+		scrollTopPosition = window.scrollY; 
 		
 		// scroll the parent to the vertical position of the linkTo element
-		window.parent.scrollTo(element.offsetLeft, (elementYPos -offsetPadding) );	
+		window.scrollTo(element.offsetLeft, (elementYPos -offsetPadding) );	
 		enablePrevious();
 	}
 	
@@ -620,35 +617,6 @@ function highLightObject(element, time=2000)
 	{
 		refElement.classList.remove("refObjHighlight");
 	}, time);
-}
-
-// get the top and left position of the iframe within the parent window
-function getIframeOffset()
-{
-	offsetLeft = 0;
-	offsetTop = 0;	
-	
-	// check if the lesson is in an iframe
-	if (window.self !== window.top)  // we are in an iframe
-	{
-		// get iframes from the parent windows:
-		parentIFrames = window.parent.document.getElementsByTagName("iframe");
-			
-		// go through iframe to find which has the same source as this lesson  
-		// 	(i.e., the iframe that contains this page)
-		for(i=0; i<parentIFrames.length; i++)	// most likely there is only one iframe!
-		{
-			// this is the iframe that conatins the lesson
-			if (window.location.href == parentIFrames[i].src) 
-			{
-				// distance between the top of this iFrame at the top of the parent window
-				offsetLeft = parentIFrames[i].offsetLeft; 	
-				offsetTop = parentIFrames[i].offsetTop; 
-				break;  // don't need to check any more iframes
-			}
-		}
-	}
-	return[offsetLeft, offsetTop];
 }
 
 function enablePrevious()
