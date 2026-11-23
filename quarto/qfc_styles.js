@@ -22,8 +22,8 @@ clickMode = null;
 fsClick = null;
 origWidth = null;
 
-// this still seems to work if there is no parent -- probably should check for this, though
-parent.window.onload = function()
+// Initialize custom Quarto page behavior after the window finishes loading.
+window.addEventListener("load", function()
 {		
 
 	encapObject = document.body; 
@@ -99,13 +99,7 @@ parent.window.onload = function()
 	// if this page was hyperlinked from elsewhere and a hash tag was added to the link
 	if(window.location.hash.slice(1) != "") 
 		scrollToElement(window.location.hash.slice(1), true);
-
-	// resize the iframe in the parent window when the page gets resized (if in an iframe)
-	if(window !== window.parent && document.body)
-	{
-		new ResizeObserver(resizeIframeContent).observe(document.body);
-	}
-}
+});
 
 // code to add lesson name to table
 document.addEventListener("DOMContentLoaded", function() 
@@ -249,19 +243,6 @@ function activateElement(e, element, offset = 5)
 	}
 	
 	element.style.visibility = "visible"; 
-}
-
-function resizeIframeContent()
-{
-	// The iframe containing the content in D2L will only change size 
-	// if the content inside increasing in height -- not if it decreases
-	// This will change the size anytime
-	
-	// get iframes from the parent windows:
-	parentIFrames = window.parent.document.getElementsByTagName("iframe");
-	
-	// set height to the total scroll length of the lesson window
-	parentIFrames[0].style.height = document.body.scrollHeight + "px";
 }
 
 /*
