@@ -176,7 +176,7 @@ window.addEventListener("mouseup", function()
 });
 
 // will combine the following two functions later...
-function activateNotification(e, type)
+function activateNotification(e)
 {
 	// create a notification layer is there is not one
 	if(!encapObject.querySelector("#notification"))
@@ -192,18 +192,9 @@ function activateNotification(e, type)
 		clearInterval(notifTimer);  // make sure the timer is not running
 	}
 	
-	// set the text in the notificaytion layer
-	if(type=="code")
-	{
-		notifDiv.innerHTML = "Codeblock copied to clipboard";
-		displayTime = 1000;
-		
-	}
-	else if(type=="scroll")
-	{
-		notifDiv.innerHTML = "Hold left mouse button to return to previous location";			
-		displayTime = 2000;
-	}
+	// Display a notification after scrolling to a referenced element.
+	notifDiv.innerHTML = "Hold left mouse button to return to previous location";
+	const displayTime = 2000;
 	
 	if(e && typeof e.clientX === "number" && typeof e.clientY === "number")
 	{
@@ -227,7 +218,7 @@ function activateNotification(e, type)
 	}, displayTime);
 }
 
-// used for long-click menu, code copying notification, and scrolling notification
+// Position the long-click menu or a notification near the mouse pointer.
 function activateElement(e, element, offset = 5)
 {			
 	rcMenuDim = element.getBoundingClientRect();
@@ -583,7 +574,7 @@ function scrollToElement(elementID, outsideCall = false)
 		scrollFlag = scrollFlag +1;
 		if(scrollFlag <= 2) 
 		{
-    		activateNotification(null, "scroll");
+    		activateNotification(null);
 		}
 		enablePrevious();
 	}
