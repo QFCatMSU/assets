@@ -218,7 +218,6 @@ function activateNotification(e, type)
 // used for long-click menu, code copying notification, and scrolling notification
 function activateElement(e, element, offset = 5)
 {			
-	const[offsetLeft, offsetTop] = getIframeOffset();
 	rcMenuDim = element.getBoundingClientRect();
 	
 	if(window.innerWidth - e.clientX < rcMenuDim.width)  
@@ -230,10 +229,9 @@ function activateElement(e, element, offset = 5)
 		element.style.left = (window.scrollX + e.clientX - offset) + "px";
 	}
 	
-	// need to check if the mouse click happened right above the bottom of the screen
-	// or the bottom of the iframe window if in an iframe
-	if( ( window.innerHeight - e.clientY < rcMenuDim.height) ||
-	    ( window.parent.scrollY + window.parent.innerHeight - offsetTop - e.clientY < rcMenuDim.height ) )
+	// Position the element above the pointer if there is insufficient
+	// room below it in the browser window.
+	if(window.innerHeight - e.clientY < rcMenuDim.height)	
 	{
 		element.style.top = (window.scrollY + e.clientY - rcMenuDim.height + offset) + "px";
 	}
@@ -432,28 +430,28 @@ function changeAllPicSize(param)
 /* Linkback function */
 function goBackToPrevLocation()
 {
-	leftPos = window.parent.scrollX; 	// get the left position of the scroll
-   
-	prevLocLink = document.getElementById("previousLocMenuItem");
-	prevLocLink.classList.add("disabledLink"); 
-	
-	newScrollTopPosition = window.parent.scrollY;  
-	// scroll the page vertically to the position the page was
-	// at when the link was originally clicked (stored as a global variable)
-	window.parent.scrollTo(leftPos, scrollTopPosition);
-	scrollTopPosition = newScrollTopPosition;
-	//return false;	// so the page does not reload (don't ask why!)
+    const leftPos = window.scrollX;
+
+    const prevLocLink = document.getElementById("previousLocMenuItem");
+    prevLocLink.classList.add("disabledLink");
+
+    const newScrollTopPosition = window.scrollY;
+
+    // Return to the previous scroll position, while saving
+    // the current position so the user can navigate back again.
+    window.scrollTo(leftPos, scrollTopPosition);
+    scrollTopPosition = newScrollTopPosition;
 }
 
 
 
 function goToTopOfPage()
 {
-	// save current scroll position
-	scrollTopPosition = window.parent.scrollY;  
-	// scroll to position 0
-	window.parent.scrollTo(window.parent.scrollX, 0);
-	enablePrevious();
+    // Save the current position so the user can return to it.
+    scrollTopPosition = window.scrollY;
+
+    window.scrollTo(window.scrollX, 0);
+    enablePrevious();
 }
 
 function makeContextMenu(funct, param = null)
@@ -517,15 +515,14 @@ function scrollToElementReturn(elementID)
 
 function checkURLForPos()
 {
-	// In D2L, the page is inside an iframe -- so need to check the parent
-	var urlString = parent.window.location.href;
-	var url = new URL(urlString);
-	var ref = url.searchParams.get("ref");
-	
-	if(ref != null)
-	{
-		scrollToElement(ref);
-	}
+    // Scroll to an element specified by the URL's ref parameter.
+    const url = new URL(window.location.href);
+    const ref = url.searchParams.get("ref");
+
+    if(ref != null)
+    {
+        scrollToElement(ref);
+    }
 }
 
 function scrollToElement(elementID, outsideCall = false)
