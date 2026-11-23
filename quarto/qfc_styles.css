@@ -1,51 +1,3 @@
-/* Move .rcMenu styles into .content? */
-.slideshowStuff 
-{
-  .pageRef
-  {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-  .quarto-title-affiliation::first-line
-  {
-    /* in case you want the first line of affiliation to look different from the rest */
-  }
-  .quarto-title-affiliation
-  {  
-    margin: 0 !important;
-    /* being used to style the GitHub link */
-    text-align: left;
-    font-size: 40px !important;
-  }
-  .quarto-title-author
-  {
-    padding-left: 0 !important;
-  }
-  .quarto-title-authors
-  {
-    margin-top: 17%;
-    font-weight: normal;
-    font-size: 40px;
-    justify-content: left !important;
-    text-align: left;
-   /* font-family: 'Times New Roman', Times, serif !important;*/
-  }
-  .quarto-title-author::first-line
-  {
-    /* in case you want the name to look different than the email */
-  }
-  .date
-  {
-  
-  }
-  div.slide-number
-  {
-    width: 100%;
-    text-align: center;
-  }
-}
-
 /* content in web documents in Quarto is contained within a .content object */ 
 .content
 {
@@ -57,7 +9,7 @@
   {
     border-color: lime;
     border-style: dotted;
-    border-width: 1px;
+    border-width: 2px;
   }
   img.fs:hover, img.flexSize:hover
   {
