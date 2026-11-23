@@ -641,71 +641,61 @@ function enablePrevious()
 
 function linksToNewWindow()
 {
-	// links = document.getElementById("quarto-document-content").querySelectorAll('a[href]');
-	quartoContent = document.getElementById("quarto-content");
-	if(quartoContent !== null)
-	{
-		links = quartoContent.querySelectorAll('#TOC a[href], #quarto-document-content a[href]');
+    const quartoContent = document.getElementById("quarto-content");
 
-		for(i=0; i<links.length; i++)
-		{
-		  const linkUrl = new URL(links[i].href);
-		  		
-      // make the link a download link if it contains class dl or download
-      //  or is an R or CSV file 
-      if(linkUrl.href.endsWith(".R") || linkUrl.href.endsWith(".csv") ||
-         links[i].classList.contains("dl") || links[i].classList.contains("download"))
-			{
-				links[i].setAttribute("download", "");
-			}
-			
-      // replace it with a function that scrolls to the new location 
-      // If you do not do this then Quarto will reload pages 
-	    else if(linkUrl.hostname == window.location.hostname &&
-	            linkUrl.pathname == window.location.pathname)
-			{
-				hashPos = links[i].href.indexOf("#");
-				hashID = links[i].href.substring((hashPos+1));
+    if(quartoContent !== null)
+    {
+        const links = quartoContent.querySelectorAll('#TOC a[href], #quarto-document-content a[href]');
 
-		//		links[i].removeAttribute("href");  
-				links[i].classList.add("inpageLink"); 
-							
-				(function(hashID){
-					links[i].addEventListener("click", 
-						function() { 
-							event.preventDefault(); 
-							element = document.getElementById(hashID);
-							// for headers 
-							
-							scrollToElement(element.id);
+        for(let i=0; i<links.length; i++)
+        {
+            const linkUrl = new URL(links[i].href);
 
-					//		refElement = document.querySelector("[data-anchor-id='" + String(element.id) + "']");
-					//		if(!refElement)
-					//		{
-								// for all but headers
-					//			refElement = document.querySelector("#" + element.id);
-					//		}
-						//	scrollToElement(element.id);
-						});	
-				})(hashID);
-			}
-      // if the site is the same and the link is not explicitly going to a new page 
-	//		else if (linkUrl.host == window.location.host && links[i].target != "_blank")
-	//		{
-	//				links[i].target = "_self"; 
-	//		}
-	    else if(links[i].classList.contains("self") || links[i].classList.contains("sameWin"))
-	    {
-	      links[i].target = "_self"; 
-	    }
-			else if(links[i].href.trim() != "" &&                    // link is not blank
-				 !(links[i].classList.contains("quarto-xref")) &&      // link does not contain class quarto-xref
-				 (links[i].target == "_self" || !(links[i].target)) )  // link contains instruction to go to same window
-			{
-				links[i].target = "_blank";
-			}
-		}
-	}
+            // Download R and CSV files, or links explicitly marked for download
+            if(linkUrl.pathname.endsWith(".R") || linkUrl.pathname.endsWith(".csv") ||
+               links[i].classList.contains("dl") || links[i].classList.contains("download"))
+            {
+                links[i].setAttribute("download", "");
+            }
+
+            // Handle links to locations within the current page
+            else if(linkUrl.origin == window.location.origin &&
+                    linkUrl.pathname == window.location.pathname &&
+                    linkUrl.search == window.location.search &&
+                    linkUrl.hash != "")
+            {
+                const hashID = decodeURIComponent(linkUrl.hash.substring(1));
+
+                links[i].classList.add("inpageLink");
+
+                links[i].addEventListener("click", function(event)
+                {
+                    const element = document.getElementById(hashID);
+
+                    if(element !== null)
+                    {
+                        event.preventDefault();
+                        scrollToElement(element.id);
+                    }
+                });
+            }
+
+            // Links explicitly marked to open in the current window
+            else if(links[i].classList.contains("self") ||
+                    links[i].classList.contains("sameWin"))
+            {
+                links[i].target = "_self";
+            }
+
+            // Open other links in a new window, except Quarto cross-references
+            else if(links[i].href.trim() != "" &&
+                    !links[i].classList.contains("quarto-xref") &&
+                    (links[i].target == "_self" || !links[i].target))
+            {
+                links[i].target = "_blank";
+            }
+        }
+    }
 }
 
 function getMousePos()
