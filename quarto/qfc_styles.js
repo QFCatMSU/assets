@@ -606,34 +606,38 @@ function scrollToElement(elementID, outsideCall = false)
 	highLightObject(element);
 }
 
-function highLightObject(element, time=2000)
+function highLightObject(element, time = 2000)
 {
-  // for headers 
-  let refElement = document.querySelector("[data-anchor-id='" + String(element.id) + "']");
-  if(!refElement)
-  {
-    // for all but headers
-    refElement = document.querySelector("#" + element.id);
-  }
-  
-  // spans cannot have background color, so change element to parent of span
-  if(refElement.tagName == "SPAN")
-  {
-    refElement = refElement.parentElement; 
-  }
-  			    
-	// check if there already is an object being highlighted
-	if(encapObject.querySelector(".refObjHighlight"))
-	{
-		encapObject.querySelector(".refObjHighlight").classList.remove("refObjHighlight");
-		clearTimeout(referenceTimer);
-	}
+    // Quarto headings use data-anchor-id rather than the heading's ID.
+    let refElement = document.querySelector("[data-anchor-id='" + element.id + "']");
 
-	refElement.classList.add("refObjHighlight");
-	referenceTimer = setTimeout(function() 
-	{
-		refElement.classList.remove("refObjHighlight");
-	}, time);
+    if(refElement == null)
+    {
+        refElement = element;
+    }
+
+    // Highlight the parent element when the reference is a span.
+    if(refElement.tagName == "SPAN")
+    {
+        refElement = refElement.parentElement;
+    }
+
+    // Remove any existing reference highlight.
+    const previousHighlight = encapObject.querySelector(".refObjHighlight");
+
+    if(previousHighlight != null)
+    {
+        previousHighlight.classList.remove("refObjHighlight");
+        clearTimeout(referenceTimer);
+    }
+
+    // Highlight the referenced element temporarily.
+    refElement.classList.add("refObjHighlight");
+
+    referenceTimer = setTimeout(function()
+    {
+        refElement.classList.remove("refObjHighlight");
+    }, time);
 }
 
 function enablePrevious()
