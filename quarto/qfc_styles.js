@@ -7,14 +7,18 @@
 - make sure a page break does not break up a codeblock with a codeblock tab
 ****************/
 
-smallImageWidth = 150;			// set the height of flex-sized objects when small 
-scrollTopPosition = 0; 			// value saved for links-return-links within a page
-referenceTimer = "";				// timer used to toggle the reference object
-scrollFlag = 0;  						// counts when scrolling of page occurs due to reference links
+// Shared settings and state
+const smallImageWidth = 150;  // width of minimized images
+let scrollTopPosition = 0;    // saved position for returning after following a link
+let referenceTimer = null;    // timer for reference highlighting
+let scrollFlag = 0;          // number of reference-link scrolling events
 
-/*** Handling the long-press menu ****/
-longClickTimer = null;
-overRCMenu = false;
+// Long-click menu state
+let longClickTimer = null;
+let overRCMenu = false;
+
+let notifTimer = null;
+
 // keep mouse positions in global memory because they can only be captured on mouse events
 // Shared state for long-click menus and image resizing.
 let mouseX = 0;
@@ -25,20 +29,22 @@ let clickMode = null;
 let fsClick = null;
 let origWidth = null;
 
+let encapObject = null;       // main document element
+
 // Initialize custom Quarto page behavior after the window finishes loading.
 window.addEventListener("load", function()
 {		
 
 	encapObject = document.body; 
-	scrollTopPosition = window.parent.scrollY;  
+	scrollTopPosition = window.scrollY;  
   
    // add a print button to the title line
-	titleObj = encapObject.querySelector(".title");
+	const titleObj = encapObject.querySelector(".title");
 	
 	if(titleObj)  // there is a title 
 	{
 		// create printer icon 
-		printLink = document.createElement('a');
+		const printLink = document.createElement('a');
 		printLink.classList.add("self");
 		printLink.target = "_self";
 		printLink.href = "javascript:window.print();"
@@ -126,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function()
 window.addEventListener("mousedown", function(event)
 {
 	// make sure it's a left-click and the MathJax Frame is not showing
-	if(event.which == 1 && !document.querySelector("#MathJax_MenuFrame"))
+	if(event.button == 0 && !document.querySelector("#MathJax_MenuFrame"))
 	{
 		clickMode = "click";
 		// keep track of mouse position during timer
@@ -180,19 +186,20 @@ window.addEventListener("mouseup", function()
 // will combine the following two functions later...
 function activateNotification(e)
 {
-	// create a notification layer is there is not one
-	if(!encapObject.querySelector("#notification"))
-	{
-		// create a new notification layer
-		notifDiv = document.createElement("div");
-		notifDiv.id = "notification";
-		notifDiv.classList.add("rcMenu"); // use same style as menu
-		encapObject.appendChild(notifDiv);
-	}
-	else
-	{
-		clearInterval(notifTimer);  // make sure the timer is not running
-	}
+    let notifDiv = encapObject.querySelector("#notification");
+
+    // Create the notification if it does not already exist.
+    if(notifDiv == null)
+    {
+        notifDiv = document.createElement("div");
+        notifDiv.id = "notification";
+        notifDiv.classList.add("rcMenu");
+        encapObject.appendChild(notifDiv);
+    }
+    else
+    {
+        clearTimeout(notifTimer);
+    }
 	
 	// Display a notification after scrolling to a referenced element.
 	notifDiv.innerHTML = "Hold left mouse button to return to previous location";
@@ -223,7 +230,7 @@ function activateNotification(e)
 // Position the long-click menu or a notification near the mouse pointer.
 function activateElement(e, element, offset = 5)
 {			
-	rcMenuDim = element.getBoundingClientRect();
+	const rcMenuDim = element.getBoundingClientRect();
 	
 	if(window.innerWidth - e.clientX < rcMenuDim.width)  
 	{
@@ -249,7 +256,7 @@ function activateElement(e, element, offset = 5)
 }
 
 /*
-Find all images within the page that have the "flexSize" class
+Find all images within the page that have the "fs" class
 and add click events that give the user the ability to change 
 the size of the image.  Called on page load.
 */
@@ -268,7 +275,7 @@ function createFlexImages()
   }
   
 	// find all flexsized images
-	const fsObj = document.querySelectorAll("img.fs, img.flexSize");
+	const fsObj = document.querySelectorAll("img.fs");
 
 	// for each flexsized image
 	for(let i=0; i<fsObj.length; i++)
@@ -537,10 +544,10 @@ function checkURLForPos()
 function scrollToElement(elementID, outsideCall = false)
 {		
 	//	var element = encapObject.querySelector("#" + elementID); 
-	var element = document.getElementById(elementID); 
+	const element = document.getElementById(elementID); 
 	const windowHeight = window.innerHeight; // height of the webpage with the lesson
 	const windowScroll = window.scrollY; 	 // amount window has been scrolled
-	let divWindowScroll = 0;				 // for object in a scrolling div
+	let offsetPadding = 0;
 	
 	// check if the referenced element is a codeline in a div that has a scrollbar
 	if(element.classList.contains("code")  &&   // part of a codeBlock
@@ -552,7 +559,6 @@ function scrollToElement(elementID, outsideCall = false)
 		{
 			element.parentNode.scrollTop = element.offsetTop - 20;  // scroll line back into view
 		}
-		divWindowScroll = element.parentNode.scrollTop;  // get the current scroll position
 	}
 
 	// Calculate the element's vertical position in the document.
@@ -603,8 +609,7 @@ function scrollToElement(elementID, outsideCall = false)
 function highLightObject(element, time=2000)
 {
   // for headers 
-  //refElement = document.querySelector("[data-anchor-id=" + element.id + "]");
-  refElement = document.querySelector("[data-anchor-id='" + String(element.id) + "']");
+  let refElement = document.querySelector("[data-anchor-id='" + String(element.id) + "']");
   if(!refElement)
   {
     // for all but headers
@@ -621,7 +626,7 @@ function highLightObject(element, time=2000)
 	if(encapObject.querySelector(".refObjHighlight"))
 	{
 		encapObject.querySelector(".refObjHighlight").classList.remove("refObjHighlight");
-		clearInterval(referenceTimer);
+		clearTimeout(referenceTimer);
 	}
 
 	refElement.classList.add("refObjHighlight");
@@ -634,7 +639,7 @@ function highLightObject(element, time=2000)
 function enablePrevious()
 {	
 	// change the right-click menu to show the return link
-	prevLocLink = document.getElementById("previousLocMenuItem");
+	const prevLocLink = document.getElementById("previousLocMenuItem");
 	prevLocLink.classList.remove("disabledLink");
 }
 
@@ -750,10 +755,10 @@ function cleanupFlexEvent()
 function format_TOC_Sidebar()
 {
   // find table of contents
-	toc = document.querySelector("nav.toc-active");
+	const toc = document.querySelector("nav.toc-active");
 
 	// find sidebar
-	sidebar = document.querySelector("div.sidebar-item-container");
+	const sidebar = document.querySelector("div.sidebar-item-container");
 	
 	// if both sidebar and toc exists...
 	if(sidebar !== null && toc !== null)
