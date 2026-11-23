@@ -205,7 +205,19 @@ function activateNotification(e, type)
 		displayTime = 2000;
 	}
 	
-	activateElement(e, notifDiv, -2);
+	if(e && typeof e.clientX === "number" && typeof e.clientY === "number")
+	{
+		// Position the notification near the mouse pointer.
+		activateElement(e, notifDiv, -2);
+	}
+	else
+	{
+		// No mouse event: position the notification near the top-right
+		// corner of the visible browser window.
+		notifDiv.style.left = (window.scrollX + window.innerWidth - 350) + "px";
+		notifDiv.style.top = (window.scrollY + 20) + "px";
+		notifDiv.style.visibility = "visible";
+	}
 
 	// set timer for notfication layer
 	notifTimer = setTimeout(function()
@@ -569,7 +581,10 @@ function scrollToElement(elementID, outsideCall = false)
 		window.scrollTo(element.offsetLeft, (elementYPos -offsetPadding) );	
 		
 		scrollFlag = scrollFlag +1;
-		if(scrollFlag <= 2) {activateNotification(event, "scroll");}
+		if(scrollFlag <= 2) 
+		{
+    		activateNotification(null, "scroll");
+		}
 		enablePrevious();
 	}
 	// if the scrolling-to element is within one page
