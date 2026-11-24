@@ -1,9 +1,14 @@
 /***** To-do ******
+- Document the CRLF issue in Windows
+- Document how to use equation numbering / referencing
 - Scrollable codeblocks (done)
+- test videos from multiple sources (Kaltura, Youtube, file in class)
 - check webpages with ref=
 - Linking to figure when below can cut off top  
-- make sure a page break does not break up a codeblock with a codeblock tab (print mode)
-- test highlighting of code line
+- stop page breaks from breaking up a codeblock and its a codeblock tab in print mode
+- test highlighting of code line (done -- want to improve)
+- Hosted on GitHub Pages forcing a manual copy to docs folder.  
+  - Could do a GitHub action or use jsdelivr instead
 ****************/
 
 // Shared settings and state
@@ -106,7 +111,7 @@ window.addEventListener("load", function()
 	createFlexImages();
 	
 	// reposition table of contents and sidebar in quarto
-  formatTOCSidebar();
+	formatTOCSidebar();
 	
 	// Create a long-click menu
 	makeContextMenu();  // needs to happen after divs are created
@@ -127,13 +132,13 @@ window.addEventListener("load", function()
 // code to add lesson name to table
 document.addEventListener("DOMContentLoaded", function() 
 {
-  const titleEl = document.querySelector("h1.title");     // Quarto adds this class
-  const tocTitleEl = document.querySelector("h2#toc-title"); // TOC heading
-  if (titleEl && tocTitleEl) 
-  {
-    const lessonTitle = titleEl.innerText.trim();
-    tocTitleEl.innerHTML = "<b>" + lessonTitle + "</b>";
-  }
+	const titleEl = document.querySelector("h1.title");     // Quarto adds this class
+	const tocTitleEl = document.querySelector("h2#toc-title"); // TOC heading
+	if (titleEl && tocTitleEl) 
+	{
+		const lessonTitle = titleEl.innerText.trim();
+		tocTitleEl.innerHTML = "<b>" + lessonTitle + "</b>";
+  	}
 }); 
   
 window.addEventListener("mousedown", function(event)
@@ -167,7 +172,7 @@ window.addEventListener("mousedown", function(event)
 				window.removeEventListener("mousemove", getMousePos);		
 				encapObject.style.userSelect = "none";
 			}
-	  }, 350);
+	  	}, 350);
 	}
 });
 
@@ -191,31 +196,31 @@ window.addEventListener("mouseup", function()
 
 function activateNotification()
 {
-    let notifDiv = encapObject.querySelector("#notification");
+	let notifDiv = encapObject.querySelector("#notification");
 
-    // Create the notification if it does not already exist.
-    if(notifDiv == null)
-    {
-        notifDiv = document.createElement("div");
-        notifDiv.id = "notification";
-        notifDiv.classList.add("rcMenu");
-        encapObject.appendChild(notifDiv);
-    }
-    else
-    {
-        // Cancel the previous timer if the notification is already present.
-        clearTimeout(notifTimer);
-    }
+	// Create the notification if it does not already exist.
+	if(notifDiv == null)
+	{
+		notifDiv = document.createElement("div");
+		notifDiv.id = "notification";
+		notifDiv.classList.add("rcMenu");
+		encapObject.appendChild(notifDiv);
+	}
+	else
+	{
+		// Cancel the previous timer if the notification is already present.
+		clearTimeout(notifTimer);
+	}
 
-    // Display a message after scrolling to a referenced element.
-    notifDiv.innerHTML = "Hold left mouse button to return to previous location";
-    notifDiv.style.visibility = "visible";
+	// Display a message after scrolling to a referenced element.
+	notifDiv.innerHTML = "Hold left mouse button to return to previous location";
+	notifDiv.style.visibility = "visible";
 
-    // Hide the notification after two seconds.
-    notifTimer = setTimeout(function()
-    {
-        notifDiv.style.visibility = "hidden";
-    }, 2000);
+	// Hide the notification after two seconds.
+	notifTimer = setTimeout(function()
+	{
+		notifDiv.style.visibility = "hidden";
+	}, 2000);
 }
 
 // Position the long-click menu near the mouse pointer.
@@ -385,8 +390,9 @@ function changeImageSize(element, instruction="none")
 		const parentWidth = element.parentElement.clientWidth;  // width of parent frame 
 		
 		if(naturalWidth >= parentWidth) 
+		{
 		  naturalWidth = parentWidth
-		
+		}
 		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) ||
 		    (naturalWidth < element.width))
 		{
@@ -417,115 +423,115 @@ function changeAllPicSize(param)
 /* Linkback function */
 function goBackToPrevLocation()
 {
-    const leftPos = window.scrollX;
+	const leftPos = window.scrollX;
 
-    const prevLocLink = document.getElementById("previousLocMenuItem");
-    prevLocLink.classList.add("disabledLink");
+	const prevLocLink = document.getElementById("previousLocMenuItem");
+	prevLocLink.classList.add("disabledLink");
 
-    const newScrollTopPosition = window.scrollY;
+	const newScrollTopPosition = window.scrollY;
 
-    // Return to the previous scroll position, while saving
-    // the current position so the user can navigate back again.
-    window.scrollTo(leftPos, scrollTopPosition);
-    scrollTopPosition = newScrollTopPosition;
+	// Return to the previous scroll position, while saving
+	// the current position so the user can navigate back again.
+	window.scrollTo(leftPos, scrollTopPosition);
+	scrollTopPosition = newScrollTopPosition;
 }
 
 function goToTopOfPage()
 {
-    // Save the current position so the user can return to it.
-    scrollTopPosition = window.scrollY;
+	// Save the current position so the user can return to it.
+	scrollTopPosition = window.scrollY;
 
-    window.scrollTo(window.scrollX, 0);
-    enablePrevious();
+	window.scrollTo(window.scrollX, 0);
+	enablePrevious();
 }
 
 function makeContextMenu()
 {
-    // Create the shortcut menu.
-    const elemDiv = document.createElement("div");
-    elemDiv.id = "longClickMenu";
-    elemDiv.classList.add("rcMenu", "sameWin", "noSelect");
-    elemDiv.innerHTML = "<b>Shortcut Menu</b>";
+	// Create the shortcut menu.
+	const elemDiv = document.createElement("div");
+	elemDiv.id = "longClickMenu";
+	elemDiv.classList.add("rcMenu", "sameWin", "noSelect");
+	elemDiv.innerHTML = "<b>Shortcut Menu</b>";
 
-    // Track whether the mouse is over the menu.
-    elemDiv.addEventListener("mouseenter", function()
-    {
-        overRCMenu = true;
-    });
+	// Track whether the mouse is over the menu.
+	elemDiv.addEventListener("mouseenter", function()
+	{
+		overRCMenu = true;
+	});
 
-    elemDiv.addEventListener("mouseleave", function()
-    {
-        overRCMenu = false;
-    });
+	elemDiv.addEventListener("mouseleave", function()
+	{
+		overRCMenu = false;
+	});
 
-    // Add menu commands.
-    menuLinks(elemDiv, "Return to previous location", goBackToPrevLocation, "previousLocMenuItem", false);
-    menuLinks(elemDiv, "Go to Top of Page", goToTopOfPage, "topMenuItem");
+	// Add menu commands.
+	menuLinks(elemDiv, "Return to previous location", goBackToPrevLocation, "previousLocMenuItem", false);
+	menuLinks(elemDiv, "Go to Top of Page", goToTopOfPage, "topMenuItem");
 
-    menuLinks(elemDiv, "Print/ Save as PDF", function()
-    {
-        document.getElementById("longClickMenu").style.visibility = "hidden";
-        window.print();
-    }, "printToPDF");
+	menuLinks(elemDiv, "Print/ Save as PDF", function()
+	{
+		document.getElementById("longClickMenu").style.visibility = "hidden";
+		window.print();
+	}, "printToPDF");
 
-    menuLinks(elemDiv, "Maximize All Images", function()
-    {
-        changeAllPicSize("maximize");
-    }, "maxAllImages");
+	menuLinks(elemDiv, "Maximize All Images", function()
+	{
+		changeAllPicSize("maximize");
+	}, "maxAllImages");
 
-    menuLinks(elemDiv, "Minimize All Images", function()
-    {
-        changeAllPicSize("minimize");
-    }, "minAllImages");
+	menuLinks(elemDiv, "Minimize All Images", function()
+	{
+		changeAllPicSize("minimize");
+	}, "minAllImages");
 
-    menuLinks(elemDiv, "All Images 50%", function()
-    {
-        changeAllPicSize("half");
-    }, "halfImages");
+	menuLinks(elemDiv, "All Images 50%", function()
+	{
+		changeAllPicSize("half");
+	}, "halfImages");
 
-    encapObject.appendChild(elemDiv);
+	encapObject.appendChild(elemDiv);
 }
 
 function menuLinks(menu, text, command, linkid = "", enable = true)
 {
-    // Create a menu item.
-    const spanEncap = document.createElement("span");
-    spanEncap.style.display = "block";
+	// Create a menu item.
+	const spanEncap = document.createElement("span");
+	spanEncap.style.display = "block";
 
-    const link = document.createElement("a");
-    link.id = linkid;
-    link.innerText = text;
-    link.classList.add("sameWin", "jsLink");
+	const link = document.createElement("a");
+	link.id = linkid;
+	link.innerText = text;
+	link.classList.add("sameWin", "jsLink");
 
-    if(!enable)
-    {
-        link.classList.add("disabledLink");
-    }
+	if(!enable)
+	{
+		link.classList.add("disabledLink");
+	}
 
-    // Execute the command and close the menu.
-    link.addEventListener("mouseup", function(event)
-    {
-        command();
+	// Execute the command and close the menu.
+	link.addEventListener("mouseup", function(event)
+	{
+		command();
 
-        const menuDiv = document.getElementById("longClickMenu");
-        menuDiv.style.visibility = "hidden";
-        menuDiv.style.top = "0px";
-    });
+		const menuDiv = document.getElementById("longClickMenu");
+		menuDiv.style.visibility = "hidden";
+		menuDiv.style.top = "0px";
+	});
 
-    spanEncap.appendChild(link);
-    menu.appendChild(spanEncap);
+	spanEncap.appendChild(link);
+	menu.appendChild(spanEncap);
 }
 
 function checkURLForPos()
 {
-    // Scroll to an element specified by the URL's ref parameter.
-    const url = new URL(window.location.href);
-    const ref = url.searchParams.get("ref");
+	// Scroll to an element specified by the URL's ref parameter.
+	const url = new URL(window.location.href);
+	const ref = url.searchParams.get("ref");
 
-    if(ref != null)
-    {
-        scrollToElement(ref);
-    }
+	if(ref != null)
+	{
+		scrollToElement(ref);
+	}
 }
 
 function scrollToElement(elementID)
@@ -540,6 +546,7 @@ function scrollToElement(elementID)
 	}
 
 	// Make referenced code lines visible within scrollable code blocks.
+	// closest goes up the HTML hierachy
 	if(element.tagName == "SPAN" && element.closest("pre.sourceCode"))
 	{
 		scrollToCodeLine(element);
@@ -596,13 +603,13 @@ function scrollToElement(elementID)
 
 function highLightObject(element, time = 2000)
 {
-    // Quarto headings use data-anchor-id rather than the heading's ID.
-    let refElement = document.querySelector("[data-anchor-id='" + element.id + "']");
+	// Quarto headings use data-anchor-id rather than the heading's ID.
+	let refElement = document.querySelector("[data-anchor-id='" + element.id + "']");
 
-    if(refElement == null)
-    {
-        refElement = element;
-    }
+	if(refElement == null)
+	{
+		refElement = element;
+	}
 
 	// Highlight code-line spans directly.
 	// For other spans, highlight the parent element.
@@ -611,22 +618,22 @@ function highLightObject(element, time = 2000)
 		refElement = refElement.parentElement;
 	}
 
-    // Remove any existing reference highlight.
-    const previousHighlight = encapObject.querySelector(".refObjHighlight");
+	// Remove any existing reference highlight.
+	const previousHighlight = encapObject.querySelector(".refObjHighlight");
 
-    if(previousHighlight != null)
-    {
-        previousHighlight.classList.remove("refObjHighlight");
-        clearTimeout(referenceTimer);
-    }
+	if(previousHighlight != null)
+	{
+		previousHighlight.classList.remove("refObjHighlight");
+		clearTimeout(referenceTimer);
+	}
 
-    // Highlight the referenced element temporarily.
-    refElement.classList.add("refObjHighlight");
+	// Highlight the referenced element temporarily.
+	refElement.classList.add("refObjHighlight");
 
-    referenceTimer = setTimeout(function()
-    {
-        refElement.classList.remove("refObjHighlight");
-    }, time);
+	referenceTimer = setTimeout(function()
+	{
+		refElement.classList.remove("refObjHighlight");
+	}, time);
 }
 
 function enablePrevious()
@@ -638,88 +645,88 @@ function enablePrevious()
 
 function linksToNewWindow()
 {
-    const quartoContent = document.getElementById("quarto-content");
+	const quartoContent = document.getElementById("quarto-content");
 
-    if(quartoContent !== null)
-    {
-        const links = quartoContent.querySelectorAll('#TOC a[href], #quarto-document-content a[href]');
+	if(quartoContent !== null)
+	{
+		const links = quartoContent.querySelectorAll('#TOC a[href], #quarto-document-content a[href]');
 
-        for(let i=0; i<links.length; i++)
-        {
-            const linkUrl = new URL(links[i].href);
+		for(let i=0; i<links.length; i++)
+		{
+			const linkUrl = new URL(links[i].href);
 
-            // Download R and CSV files, or links explicitly marked for download
-            if(linkUrl.pathname.endsWith(".R") || linkUrl.pathname.endsWith(".csv") ||
-               links[i].classList.contains("dl") || links[i].classList.contains("download"))
-            {
-                links[i].setAttribute("download", "");
-            }
+			// Download R and CSV files, or links explicitly marked for download
+			if(linkUrl.pathname.endsWith(".R") || linkUrl.pathname.endsWith(".csv") ||
+				links[i].classList.contains("dl") || links[i].classList.contains("download"))
+			{
+				links[i].setAttribute("download", "");
+			}
 
-            // Handle links to locations within the current page
-            else if(linkUrl.origin == window.location.origin &&
-                    linkUrl.pathname == window.location.pathname &&
-                    linkUrl.search == window.location.search &&
-                    linkUrl.hash != "")
-            {
-                const hashID = decodeURIComponent(linkUrl.hash.substring(1));
+			// Handle links to locations within the current page
+			else if(linkUrl.origin == window.location.origin &&
+					  linkUrl.pathname == window.location.pathname &&
+					  linkUrl.search == window.location.search &&
+					  linkUrl.hash != "")
+			{
+				const hashID = decodeURIComponent(linkUrl.hash.substring(1));
 
-                links[i].classList.add("inpageLink");
+				links[i].classList.add("inpageLink");
 
-                links[i].addEventListener("click", function(event)
-                {
-                    const element = document.getElementById(hashID);
+				links[i].addEventListener("click", function(event)
+				{
+					const element = document.getElementById(hashID);
 
-                    if(element !== null)
-                    {
-                        event.preventDefault();
-                        scrollToElement(element.id);
-                    }
-                });
-            }
+					if(element !== null)
+					{
+						event.preventDefault();
+						scrollToElement(element.id);
+					}
+				});
+			}
 
-            // Links explicitly marked to open in the current window
-            else if(links[i].classList.contains("self") ||
-                    links[i].classList.contains("sameWin"))
-            {
-                links[i].target = "_self";
-            }
+			// Links explicitly marked to open in the current window
+			else if(links[i].classList.contains("self") ||
+						links[i].classList.contains("sameWin"))
+			{
+				links[i].target = "_self";
+			}
 
-            // Open other links in a new window, except Quarto cross-references
-            else if(links[i].href.trim() != "" &&
-                    !links[i].classList.contains("quarto-xref") &&
-                    (links[i].target == "_self" || !links[i].target))
-            {
-                links[i].target = "_blank";
-            }
-        }
-    }
+			// Open other links in a new window, except Quarto cross-references
+			else if(links[i].href.trim() != "" &&
+						!links[i].classList.contains("quarto-xref") &&
+						(links[i].target == "_self" || !links[i].target))
+			{
+				links[i].target = "_blank";
+			}
+		}
+	}
 }
 
 // Track mouse movement for long-click detection and image resizing.
 function getMousePos(event)
 {
-    mouseX2 = event.clientX;
-    mouseY2 = event.clientY;
+	mouseX2 = event.clientX;
+	mouseY2 = event.clientY;
 
-    // Start resizing when the mouse moves far enough.
-    if(clickMode == "click" && fsClick != null && Math.abs(mouseX2 - mouseX) > 20)
-    {
-        clickMode = "drag";
-        fsClick.classList.add("resizing");
-        mouseX = mouseX2;
-        origWidth = fsClick.clientWidth;
-    }
+	// Start resizing when the mouse moves far enough.
+	if(clickMode == "click" && fsClick != null && Math.abs(mouseX2 - mouseX) > 20)
+	{
+		clickMode = "drag";
+		fsClick.classList.add("resizing");
+		mouseX = mouseX2;
+		origWidth = fsClick.clientWidth;
+	}
 
-    // Resize the image as the mouse moves.
-    if(clickMode == "drag")
-    {
-        const newWidth = origWidth + mouseX2 - mouseX;
+	// Resize the image as the mouse moves.
+	if(clickMode == "drag")
+	{
+		const newWidth = origWidth + mouseX2 - mouseX;
 
-        if(newWidth > 100)
-        {
-            fsClick.style.width = newWidth + "px";
-        }
-    }
+		if(newWidth > 100)
+		{
+			fsClick.style.width = newWidth + "px";
+		}
+	}
 }
 
 function cleanupFlexEvent()
@@ -734,7 +741,7 @@ function cleanupFlexEvent()
 		
 		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) ||
 	    (naturalWidth < fsClick.width))
-		  fsClick.style.cursor = "zoom-out";
+			fsClick.style.cursor = "zoom-out";
 		else
 			fsClick.style.cursor = "zoom-in";
 			
@@ -746,7 +753,7 @@ function cleanupFlexEvent()
 
 function formatTOCSidebar()
 {
-  // find table of contents
+   // find table of contents
 	const toc = document.querySelector("nav.toc-active");
 
 	// find sidebar
@@ -762,7 +769,7 @@ function formatTOCSidebar()
 	// find search bar
 	const searchBar = document.querySelector(".sidebar-search input");
 	
-// Customize the search box placeholder.
+	// Customize the search box placeholder.
 	if (searchBar !== null)  
 		searchBar.setAttribute("placeholder", "Search all lessons");
 }
@@ -770,51 +777,26 @@ function formatTOCSidebar()
 // Scroll a code block to make a referenced line visible.
 function scrollToCodeLine(element)
 {
-    const codeBlock = element.closest("pre.sourceCode");
+	const codeBlock = element.closest("pre.sourceCode");
 
-    if(codeBlock == null)
-    {
-        return;
-    }
-
-    // Only scroll if the code block has overflowed.
-    if(codeBlock.scrollHeight <= codeBlock.clientHeight)
-    {
-        return;
-    }
-
-    // Determine the line's position relative to the code block.
-    const lineRect = element.getBoundingClientRect();
-    const blockRect = codeBlock.getBoundingClientRect();
-
-    // Scroll the code block if the line is outside its visible area.
-    if(lineRect.top < blockRect.top || lineRect.bottom > blockRect.bottom)
-    {
-        codeBlock.scrollTop += lineRect.top - blockRect.top - 20;
-    }
-}
-/* function has been deprecated by Quarto
-function equationNumbering()
-{
-	// find all elements that are equation numbers
-	var equations = encapObject.getElementsByClassName("eqNum");
-	
-	// add the equation number after the equation
-	for(i=0; i<equations.length; i++)
+	if(codeBlock == null)
 	{
-		if(equations[i].textContent.trim() != "")
-		{		
-			eqNumber = document.createElement("span");
-			eqNumber.classList.add("eqNum");
-			eqNumber.id = equations[i].id;
-			
-			eqNumber.textContent =  "\u00a0( " + (i+1) + " )";
-
-			equations[i].appendChild(eqNumber);
-			
-			// remove class from original element -- otherwise class could be applied to whole equation
-			equations[i].id = "";
-			equations[i].classList.remove("eqNum");   
-		}
+		return;
 	}
-} */
+
+	// Only scroll if the code block has overflowed.
+	if(codeBlock.scrollHeight <= codeBlock.clientHeight)
+	{
+		return;
+	}
+
+	// Determine the line's position relative to the code block.
+	const lineRect = element.getBoundingClientRect();
+	const blockRect = codeBlock.getBoundingClientRect();
+
+	// Scroll the code block if the line is outside its visible area.
+	if(lineRect.top < blockRect.top || lineRect.bottom > blockRect.bottom)
+	{
+		codeBlock.scrollTop += lineRect.top - blockRect.top - 20;
+	}
+}
