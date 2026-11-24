@@ -1,10 +1,9 @@
 /***** To-do ******
-- Have shortcut menu disable drag event
-- <done> image sizing compares images current size to full screen,
-  as opposed to actual screen size
-- implement a "Return to Previous location" button that
-  goes away when scrolling occurs
+- Scrollable codeblocks
+- check webpages with ref=
+- Linking to figure when below can cut off top  
 - make sure a page break does not break up a codeblock with a codeblock tab
+- test highlighting of code line
 ****************/
 
 // Shared settings and state
@@ -114,7 +113,7 @@ window.addEventListener("load", function()
 	
 	// if this page was hyperlinked from elsewhere and a hash tag was added to the link
 	if(window.location.hash.slice(1) != "") 
-		scrollToElement(window.location.hash.slice(1), true);
+		scrollToElement(window.location.hash.slice(1));
 });
 
 // code to add lesson name to table
@@ -541,25 +540,23 @@ function checkURLForPos()
     }
 }
 
-function scrollToElement(elementID, outsideCall = false)
+function scrollToElement(elementID)
 {		
 	//	var element = encapObject.querySelector("#" + elementID); 
 	const element = document.getElementById(elementID); 
+
+	// Ignore references to elements that do not exist.
+	if(element == null)
+	{
+		console.warn("Reference element not found: " + elementID);
+		return;
+	}
+
 	const windowHeight = window.innerHeight; // height of the webpage with the lesson
 	const windowScroll = window.scrollY; 	 // amount window has been scrolled
 	let offsetPadding = 0;
 	
 	// check if the referenced element is a codeline in a div that has a scrollbar
-	if(element.classList.contains("code")  &&   // part of a codeBlock
-		 element.parentNode.scrollHeight > element.parentNode.clientHeight) // scrollbar on codeblock
-	{
-		// line is scrolled out of view
-		if(element.offsetTop < element.parentNode.scrollTop || 
-		   element.offsetTop > element.parentNode.scrollTop + element.parentNode.offsetHeight) 
-		{
-			element.parentNode.scrollTop = element.offsetTop - 20;  // scroll line back into view
-		}
-	}
 
 	// Calculate the element's vertical position in the document.
 	const elementYPos = element.getBoundingClientRect().top + window.scrollY; 
@@ -581,7 +578,7 @@ function scrollToElement(elementID, outsideCall = false)
 		scrollTopPosition = window.scrollY; 
 		
 		// scroll the parent to the vertical position of the linkTo element
-		window.scrollTo(element.offsetLeft, (elementYPos -offsetPadding) );	
+		window.scrollTo(window.scrollX, elementYPos - offsetPadding);
 		
 		scrollFlag = scrollFlag +1;
 		if(scrollFlag <= 2) 
@@ -599,7 +596,7 @@ function scrollToElement(elementID, outsideCall = false)
 		scrollTopPosition = window.scrollY; 
 		
 		// scroll the parent to the vertical position of the linkTo element
-		window.scrollTo(element.offsetLeft, (elementYPos -offsetPadding) );	
+		window.scrollTo(window.scrollX, elementYPos - offsetPadding);
 		enablePrevious();
 	}
 	
