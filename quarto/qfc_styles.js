@@ -201,36 +201,22 @@ function activateNotification()
     }
     else
     {
+        // Cancel the previous timer if the notification is already present.
         clearTimeout(notifTimer);
     }
-	
-	// Display a notification after scrolling to a referenced element.
-	notifDiv.innerHTML = "Hold left mouse button to return to previous location";
-	const displayTime = 2000;
-	
-	if(e && typeof e.clientX === "number" && typeof e.clientY === "number")
-	{
-		// Position the notification near the mouse pointer.
-		activateElement(e, notifDiv, -2);
-	}
-	else
-	{
-		// No mouse event: position the notification near the top-right
-		// corner of the visible browser window.
-		notifDiv.style.left = (window.scrollX + window.innerWidth - 350) + "px";
-		notifDiv.style.top = (window.scrollY + 20) + "px";
-		notifDiv.style.visibility = "visible";
-	}
 
-	// set timer for notfication layer
-	notifTimer = setTimeout(function()
-	{
-		notifDiv.style.visibility = 'hidden';
-		notifDiv.style.top = '0px';
-	}, displayTime);
+    // Display a message after scrolling to a referenced element.
+    notifDiv.innerHTML = "Hold left mouse button to return to previous location";
+    notifDiv.style.visibility = "visible";
+
+    // Hide the notification after two seconds.
+    notifTimer = setTimeout(function()
+    {
+        notifDiv.style.visibility = "hidden";
+    }, 2000);
 }
 
-// Position the long-click menu or a notification near the mouse pointer.
+// Position the long-click menu near the mouse pointer.
 function activateElement(e, element, offset = 5)
 {			
 	const rcMenuDim = element.getBoundingClientRect();
@@ -736,7 +722,6 @@ function cleanupFlexEvent()
 	{
 		const currentWidth = fsClick.clientWidth;    // current width
 		const naturalWidth = fsClick.naturalWidth;   // starting width
-		const parentWidth = fsClick.parentElement.clientWidth;   // parent frame width
 		
 		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) ||
 	    (naturalWidth < fsClick.width))
