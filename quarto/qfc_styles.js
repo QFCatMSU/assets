@@ -1,8 +1,8 @@
 /***** To-do ******
-- Scrollable codeblocks
+- Scrollable codeblocks (done)
 - check webpages with ref=
 - Linking to figure when below can cut off top  
-- make sure a page break does not break up a codeblock with a codeblock tab
+- make sure a page break does not break up a codeblock with a codeblock tab (print mode)
 - test highlighting of code line
 ****************/
 
@@ -118,8 +118,10 @@ window.addEventListener("load", function()
 	linksToNewWindow();
 	
 	// if this page was hyperlinked from elsewhere and a hash tag was added to the link
-	if(window.location.hash.slice(1) != "") 
+	if(window.location.hash.slice(1) != "")
+	{
 		scrollToElement(window.location.hash.slice(1));
+	}
 });
 
 // code to add lesson name to table
@@ -537,6 +539,12 @@ function scrollToElement(elementID)
 		return;
 	}
 
+	// Make referenced code lines visible within scrollable code blocks.
+	if(element.tagName == "SPAN" && element.closest("pre.sourceCode"))
+	{
+		scrollToCodeLine(element);
+	}
+
 	const windowHeight = window.innerHeight; // height of the webpage with the lesson
 	const windowScroll = window.scrollY; 	 // amount window has been scrolled
 	let offsetPadding = 0;
@@ -582,7 +590,7 @@ function scrollToElement(elementID)
 		window.scrollTo(window.scrollX, elementYPos - offsetPadding);
 		enablePrevious();
 	}
-	
+
 	highLightObject(element);
 }
 
@@ -596,11 +604,12 @@ function highLightObject(element, time = 2000)
         refElement = element;
     }
 
-    // Highlight the parent element when the reference is a span.
-    if(refElement.tagName == "SPAN")
-    {
-        refElement = refElement.parentElement;
-    }
+	// Highlight code-line spans directly.
+	// For other spans, highlight the parent element.
+	if(refElement.tagName == "SPAN" && !refElement.closest("pre.sourceCode"))
+	{
+		refElement = refElement.parentElement;
+	}
 
     // Remove any existing reference highlight.
     const previousHighlight = encapObject.querySelector(".refObjHighlight");
@@ -758,6 +767,32 @@ function formatTOCSidebar()
 		searchBar.setAttribute("placeholder", "Search all lessons");
 }
 
+// Scroll a code block to make a referenced line visible.
+function scrollToCodeLine(element)
+{
+    const codeBlock = element.closest("pre.sourceCode");
+
+    if(codeBlock == null)
+    {
+        return;
+    }
+
+    // Only scroll if the code block has overflowed.
+    if(codeBlock.scrollHeight <= codeBlock.clientHeight)
+    {
+        return;
+    }
+
+    // Determine the line's position relative to the code block.
+    const lineRect = element.getBoundingClientRect();
+    const blockRect = codeBlock.getBoundingClientRect();
+
+    // Scroll the code block if the line is outside its visible area.
+    if(lineRect.top < blockRect.top || lineRect.bottom > blockRect.bottom)
+    {
+        codeBlock.scrollTop += lineRect.top - blockRect.top - 20;
+    }
+}
 /* function has been deprecated by Quarto
 function equationNumbering()
 {

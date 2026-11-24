@@ -4,6 +4,12 @@
   /* add padding at the bottom of the page */
   padding-bottom:15px;
   
+  /* Limit code-block height and allow scrolling when necessary */
+  pre.sourceCode
+  {
+      max-height: 400px;
+      overflow-y: auto !important;
+  }
   /* Show resizable images with a dotted lime border */
   img.fs
   {
@@ -267,6 +273,12 @@ iframe
   main
   {
     margin: 0;
+  }
+  /* Print complete code blocks rather than scrollable regions */
+  pre.sourceCode
+  {
+      max-height: none !important;
+      overflow: visible !important;
   }
   /* wrap code to next line in print mode */
   pre > code.sourceCode
