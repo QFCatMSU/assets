@@ -37,23 +37,29 @@ window.addEventListener("load", function()
 	encapObject = document.body; 
 	scrollTopPosition = window.scrollY;  
   
-   // add a print button to the title line
+	// Add a print button to the lesson title.
 	const titleObj = encapObject.querySelector(".title");
-	
-	if(titleObj)  // there is a title 
+
+	if(titleObj != null)
 	{
-		// create printer icon 
-		const printLink = document.createElement('a');
+		// Ensure the primary Quarto title is visible.
+		titleObj.classList.remove("d-none");
+
+		// Create the print icon.
+		const printLink = document.createElement("a");
 		printLink.classList.add("self");
-		printLink.target = "_self";
-		printLink.href = "javascript:window.print();"
 		printLink.style.marginLeft = "9px";
 		printLink.innerHTML = "&#9113";
-		
-		// stop Quarto from removing the primary header
-		titleObj.classList.remove("d-none");
-    
-		// add printer icon to title
+		printLink.href = "#";
+		printLink.title = "Print or save as PDF";
+
+		// Print the page when the icon is clicked.
+		printLink.addEventListener("click", function(event)
+		{
+			event.preventDefault();
+			window.print();
+		});
+
 		titleObj.appendChild(printLink);
 	}
 	
@@ -100,9 +106,9 @@ window.addEventListener("load", function()
 	createFlexImages();
 	
 	// reposition table of contents and sidebar in quarto
-  format_TOC_Sidebar();
+  formatTOCSidebar();
 	
-	// Create a right-click menu
+	// Create a long-click menu
 	makeContextMenu();  // needs to happen after divs are created
 		
 	// check the URL to see if there is a request to go to a specific part of the page
@@ -130,16 +136,18 @@ document.addEventListener("DOMContentLoaded", function()
   
 window.addEventListener("mousedown", function(event)
 {
-	// make sure it's a left-click and the MathJax Frame is not showing
-	if(event.button == 0 && !document.querySelector("#MathJax_MenuFrame"))
+	// Respond only to the primary mouse button.
+	if(event.button == 0)
 	{
 		clickMode = "click";
 		// keep track of mouse position during timer
 		window.addEventListener("mousemove", getMousePos);	
 		
 		// get current position of mouse -- save to start and final position
-		mouseX = mouseX2 = parseInt(event.clientX);
-		mouseY = mouseY2 = parseInt(event.clientY);
+		mouseX = event.clientX;
+		mouseX2 = event.clientX;
+		mouseY = event.clientY;
+		mouseY2 = event.clientY;
 		
 		longClickTimer = setTimeout(function() 
 		{
@@ -156,7 +164,6 @@ window.addEventListener("mousedown", function(event)
 				clickMode = "menu";
 				window.removeEventListener("mousemove", getMousePos);		
 				encapObject.style.userSelect = "none";
-				encapObject.style.msUserSelect = "none";
 			}
 	  }, 350);
 	}
@@ -172,18 +179,15 @@ window.addEventListener("mouseup", function()
 {
 	cleanupFlexEvent();
 
-	//	tried to avoid this with stopPropogation -- that did not work
 	if(!overRCMenu)
 	{
 		encapObject.querySelector("#longClickMenu").style.visibility = "hidden";
 		encapObject.querySelector("#longClickMenu").style.top = "0px";
 		encapObject.style.userSelect = "";
-		encapObject.style.msUserSelect = "";
 	}
 });
 
-// will combine the following two functions later...
-function activateNotification(e)
+function activateNotification()
 {
     let notifDiv = encapObject.querySelector("#notification");
 
@@ -261,7 +265,7 @@ the size of the image.  Called on page load.
 */
 function createFlexImages()
 {
-	// find all images that have the class name "flexSize" or "fs"
+	// Find videos and embedded iframes marked for resizing.
 	const flexVideo = encapObject.querySelectorAll('video.fs');
 	const flexIframe = encapObject.querySelectorAll("div.fs iframe, p.fs > iframe");
   
@@ -310,7 +314,7 @@ function createFlexImages()
 	}
 	
 	// go through all the videos...
-	for(let i=0; i<flexVideo.length; i++)	// for each flexSize element
+	for(let i=0; i<flexVideo.length; i++)	
 	{
 		const videoHeight = flexVideo[i].height;
 		const videoWidth = flexVideo[i].width;
@@ -332,8 +336,8 @@ function createFlexImages()
 		
 	for(let i=0; i<flexIframe.length; i++)
 	{
-		let iframeHeight = flexIframe[i].height; 
-		let iframeWidth = flexIframe[i].width; 
+		const iframeHeight = flexIframe[i].height; 
+		const iframeWidth = flexIframe[i].width; 
 		flexIframe[i].height = smallImageWidth *  iframeHeight / iframeWidth;
 		flexIframe[i].width = smallImageWidth;
 
@@ -366,12 +370,8 @@ function createFlexImages()
 	}
 }
 
-/*
-function called when a flexSize image is clicked --
-changes the size of images between small and large
-
-possible instruction values: minimize and maximize
-*/
+// Resize an image when clicked or when a shortcut-menu command is selected.
+// Instructions: minimize, maximize, or half.
 function changeImageSize(element, instruction="none")
 {
 	if(instruction == "maximize")
@@ -400,7 +400,7 @@ function changeImageSize(element, instruction="none")
 		  naturalWidth = parentWidth
 		
 		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) ||
-		    (naturalWidth < parseInt(element.width)))
+		    (naturalWidth < element.width))
 		{
 			element.style.width = smallImageWidth + "px";	
 			element.style.cursor = "zoom-in";
@@ -414,7 +414,7 @@ function changeImageSize(element, instruction="none")
 }
 
 
-/* call from right-click menu in page to either minimize or maximize (param)
+/* call from long-click menu in page to either minimize or maximize (param)
 	all the flex-sized images in the page */
 function changeAllPicSize(param)
 {
@@ -542,7 +542,6 @@ function checkURLForPos()
 
 function scrollToElement(elementID)
 {		
-	//	var element = encapObject.querySelector("#" + elementID); 
 	const element = document.getElementById(elementID); 
 
 	// Ignore references to elements that do not exist.
@@ -555,8 +554,6 @@ function scrollToElement(elementID)
 	const windowHeight = window.innerHeight; // height of the webpage with the lesson
 	const windowScroll = window.scrollY; 	 // amount window has been scrolled
 	let offsetPadding = 0;
-	
-	// check if the referenced element is a codeline in a div that has a scrollbar
 
 	// Calculate the element's vertical position in the document.
 	const elementYPos = element.getBoundingClientRect().top + window.scrollY; 
@@ -583,7 +580,7 @@ function scrollToElement(elementID)
 		scrollFlag = scrollFlag +1;
 		if(scrollFlag <= 2) 
 		{
-    		activateNotification(null);
+    		activateNotification();
 		}
 		enablePrevious();
 	}
@@ -639,7 +636,7 @@ function highLightObject(element, time = 2000)
 
 function enablePrevious()
 {	
-	// change the right-click menu to show the return link
+	// change the long-click menu to show the return link
 	const prevLocLink = document.getElementById("previousLocMenuItem");
 	prevLocLink.classList.remove("disabledLink");
 }
@@ -742,7 +739,7 @@ function cleanupFlexEvent()
 		const parentWidth = fsClick.parentElement.clientWidth;   // parent frame width
 		
 		if( (naturalWidth - currentWidth) < (currentWidth - smallImageWidth) ||
-	    (naturalWidth < parseInt(fsClick.width)))
+	    (naturalWidth < fsClick.width))
 		  fsClick.style.cursor = "zoom-out";
 		else
 			fsClick.style.cursor = "zoom-in";
@@ -753,7 +750,7 @@ function cleanupFlexEvent()
 	fsClick = null;
 }
 
-function format_TOC_Sidebar()
+function formatTOCSidebar()
 {
   // find table of contents
 	const toc = document.querySelector("nav.toc-active");
@@ -769,9 +766,9 @@ function format_TOC_Sidebar()
 	}
 	
 	// find search bar
-	searchBar = document.querySelector(".sidebar-search input");
+	const searchBar = document.querySelector(".sidebar-search input");
 	
-	// this is supposed to be done in YAML but it does not work yet
+// Customize the search box placeholder.
 	if (searchBar !== null)  
 		searchBar.setAttribute("placeholder", "Search all lessons");
 }
