@@ -1,68 +1,28 @@
-/* Move .rcMenu styles into .content? */
-.slideshowStuff 
-{
-  .pageRef
-  {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-  .quarto-title-affiliation::first-line
-  {
-    /* in case you want the first line of affiliation to look different from the rest */
-  }
-  .quarto-title-affiliation
-  {  
-    margin: 0 !important;
-    /* being used to style the GitHub link */
-    text-align: left;
-    font-size: 40px !important;
-  }
-  .quarto-title-author
-  {
-    padding-left: 0 !important;
-  }
-  .quarto-title-authors
-  {
-    margin-top: 17%;
-    font-weight: normal;
-    font-size: 40px;
-    justify-content: left !important;
-    text-align: left;
-   /* font-family: 'Times New Roman', Times, serif !important;*/
-  }
-  .quarto-title-author::first-line
-  {
-    /* in case you want the name to look different than the email */
-  }
-  .date
-  {
-  
-  }
-  div.slide-number
-  {
-    width: 100%;
-    text-align: center;
-  }
-}
-
 /* content in web documents in Quarto is contained within a .content object */ 
 .content
 {
   /* add padding at the bottom of the page */
   padding-bottom:15px;
   
-  /* add dotted red border to images that can be resized, make solid on hover */
-  img.fs, img.flexSize
+  /* Limit code-block height and allow scrolling when necessary */
+  pre.sourceCode
+  {
+      max-height: 400px;
+      overflow-y: auto !important;
+  }
+  /* Show resizable images with a dotted lime border */
+  img.fs
   {
     border-color: lime;
     border-style: dotted;
-    border-width: 1px;
+    border-width: 2px;
   }
-  img.fs:hover, img.flexSize:hover
+  /* Use a solid border when hovering */
+  img.fs:hover
   {
     border-style: solid;
   }
+  /* Show a red border while resizing */
   .resizing
   {
     border-color: red !important;
@@ -93,8 +53,7 @@
   {
     margin-top: 0;  /* tab takes up the margin space */
   }
-  /* add outline to code blocks on hover,
-     make copy buton inside code block the same color */
+  /* Highlight code blocks when the mouse is over them */
   div.sourceCode:hover
   {
     outline: 2px solid lime;
@@ -104,23 +63,25 @@
   {
     display: none;
   }
-  /* add a line above the header 2 and 3 */
+  /* Green separators above section headings.
+   Higher-level sections have thicker separators. */
+  section.level2, section.level3, section.level4
+  {
+      margin-top: 15px;
+  }
   section.level2
   {
     box-shadow: 0 -8px 0 -1px #18453B;
-    margin-top: 15px;
   }
   section.level3
   {
     box-shadow: 0 -4px 0 -1px #18453B;
-    margin-top: 15px;
   }
   section.level4
   {
     box-shadow: 0 -2px 0 -1px #18453B;
-    margin-top: 15px;
   }
-  /* put caption directly under image in figure (needed??) */
+  /* Keep figure captions directly below their images */
   .figure-img
   {
     margin-bottom: 0; 
@@ -145,7 +106,7 @@
   {
     list-style-type: circle !important;
   }
-  /* reduce indentation of lists (which I feel is too much) */
+  /* reduce list indentation */
   ol, ul
   {
     padding-left: 1.5rem; 
@@ -164,8 +125,6 @@
   {
     background-color: rgb(255,255,100);
     box-shadow: 0 0 0 2px rgb(255,255,100);
-/*    padding: 2px;
-    margin: -2px; */
     border-radius: 4px;
   }
   /* highlighting on in-page object that is linked to */
@@ -177,7 +136,6 @@
   h1
   {
   	color: rgb(0,0,100);
-  	width: 100%;
   	text-align: center;
   }
   h2, h2>.header-section-number
@@ -194,28 +152,23 @@
   {
   	color: rgb(90,20,20);
   }
-  /* in-page links and references style */
+    /* any kind of link */
+  a
+  {
+   	border-bottom: dotted 1px;
+    text-decoration: none;
+    color: rgb(0,0,150);
+  }
+  /* Internal references and captions */
   .quarto-xref, a.inpageLink, figcaption, table caption
   {
   	color: rgb(90,90,0);
   }
-  /* any kind of link (need quarto-href ??)*/
-  a, .quarto-xref  
-  {
-   	border-bottom: dotted 1px;
-    cursor: pointer !important;
-    text-decoration: none;
-  }
-  /* any kind of link on hover */
+  /* Solid underline when hovering over hyperlinks */
   a:hover
   {
   	border-bottom: solid 1px;
   } 
-  /* link to outside page */
-  a
-  {
-    color: rgb(0,0,150);
-  }
   th, td
   {
     border-width: 1px;
@@ -225,24 +178,26 @@
     width: fit-content;
   }
 }
-
+/* Reference notification near the top-center */
+#notification
+{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: fit-content;
+    max-width: 90%;
+    text-align: center;
+}
 /* add a bit of spacing between TOC and lesson menu */
 nav.toc-active
 {
   margin-bottom: 20px;
 }
-
-/* links outside of content page */
-a:hover
+/* Long-click shortcut menu and reference notification */
+.rcMenu 
 {
-	cursor: pointer;
-} 
-
-/* style for long-click menu (which is outside of content) */
-.rcMenu  /* the right-click menu */
-{
-	/* should it start as display: none; ?? */
-	display: block;
 	visibility: hidden; 
 	position: absolute;
 	top: 0px;
@@ -252,9 +207,7 @@ a:hover
 	z-index: 100;
 	box-shadow: 4px 4px 3px #555555;
 	border-radius: 3px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: rgb(130,130,130);
+  border: 1px solid rgb(130,130,130);
 }
 .rcMenu a
 {
@@ -268,7 +221,7 @@ a:hover
 	border-bottom: solid 1px;
 } 
   
-[id^="quarto-sidebar"], main /*, .toc-active, .sidebar-menu-container, .sidebar-header*/
+[id^="quarto-sidebar"], main 
 {
   background-color: rgb(245,250,250) !important;
   border-radius: 10px;
@@ -287,7 +240,7 @@ a:hover
 	font-size: 14px;
 	color: darkred;
 }
-.page-layout-full /* #quarto-content , .sidebar */
+.page-layout-full 
 {
   background-color: #18453B !important;
 }
@@ -298,7 +251,6 @@ a:hover
   position: absolute;
 	background-color: orange;
 	font-size: 30px;
-	/*vertical-align: 30%;*/
 }
 .flexButton:hover
 {
@@ -322,16 +274,17 @@ iframe
   {
     margin: 0;
   }
+  /* Print complete code blocks rather than scrollable regions */
+  pre.sourceCode
+  {
+      max-height: none !important;
+      overflow: visible !important;
+  }
   /* wrap code to next line in print mode */
   pre > code.sourceCode
   {
     white-space: pre-wrap !important;
   }
-  /* Quarto has a large indentation of code in print mode -- don't know why 
-  pre > code.sourceCode > span
-  {
-    padding-left: 0 !important;
-  }*/
   #quarto-document-content, body
   {
     /* extra padding not needed in print mode */
@@ -347,32 +300,36 @@ iframe
   {
     display: block !important;
   }
-	.title>a, video    /* Get rid of printer icon and videos */ 
+	.title > a, video    /* Get rid of printer icon and videos */ 
 	{
 		display: none !important;
 	}
-	/** stop lines from breaking in the middle on page break
-	    works in Edge and Chrome but not Firefox */
+  /* Prevent elements from splitting across printed pages */
 	img, p, h1, h2, h3, h4, figure, li
 	{
-		break-inside: avoid; /* Images naturally do this? */
+		break-inside: avoid; 
 	}
-	/* gets page breaks working in Firefox */
-	div
-	{
-		display: block !important; 	  
-	}
-	code b
+  /* Improve page breaks in Firefox */
+  div
   {
- /*   text-decoration: underline;
-    text-decoration-color: aqua;
-    text-underline-offset: 4px; */
+    display: block !important;
   }
   div.sourceCode, span.codeBlockTab
   {
     border-style: solid;
     border-color: gray;
     border-width: 1px;
+  }
+  /* Keep headings with the content that follows */
+  h1, h2, h3, h4
+  {
+      break-after: avoid;
+  }
+
+  /* Keep code-block tabs with their associated code blocks */
+  .codeBlockTab
+  {
+      break-after: avoid;
   }
 }
   
