@@ -321,5 +321,23 @@ iframe
     border-color: gray;
     border-width: 1px;
   }
+  /* Remove section shadows that can appear at page boundaries */
+  section.level2, section.level3, section.level4
+  {
+      box-shadow: none !important;
+  }
+  /* Keep section separators attached to headings when printing */
+  h2
+  {
+      border-top: 7px solid #18453B;
+  }
+  h3
+  {
+      border-top: 3px solid #18453B;
+  }
+  h4
+  {
+      border-top: 1px solid #18453B;
+  }
 }
   
