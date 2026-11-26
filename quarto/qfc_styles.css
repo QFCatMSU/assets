@@ -72,6 +72,7 @@
   }
   section.level2
   {
+    /* 0: box-shadow does not occupy space (does not offset the page) */
     box-shadow: 0 -8px 0 -1px #18453B;
   }
   section.level3
@@ -324,20 +325,30 @@ iframe
   /* Remove section shadows that can appear at page boundaries */
   section.level2, section.level3, section.level4
   {
-      box-shadow: none !important;
+    box-shadow: none !important;
   }
   /* Keep section separators attached to headings when printing */
   h2
   {
-      border-top: 7px solid #18453B;
+    border-top: 7px solid #18453B;
   }
   h3
   {
-      border-top: 3px solid #18453B;
+    border-top: 3px solid #18453B;
   }
   h4
   {
-      border-top: 1px solid #18453B;
+    border-top: 1px solid #18453B;
+  }
+  /* Align code-block tabs with the code-block border */
+  .codeBlockTab
+  {
+    top: 1px;
+  }
+  /* Remove top-left rounding from code blocks with tabs */
+  div.sourceCode.hasTab
+  {
+    border-top-left-radius: 0;
   }
 }
   

@@ -1,5 +1,7 @@
 /***** To-do ******
 - Document the CRLF issue in Windows
+- Multiple-line highlighting in code
+- Merge box-shadow/section/web and border/div/print?
 - Document how to use equation numbering / referencing
 - Scrollable codeblocks (done)
 - test videos from multiple sources (Kaltura, Youtube, file in class)
@@ -218,9 +220,9 @@ function activateNotification()
 
 	// Hide the notification after two seconds.
 	notifTimer = setTimeout(function()
-	{
-		notifDiv.style.visibility = "hidden";
-	}, 2000);
+		{
+			notifDiv.style.visibility = "hidden";
+		}, 2000);
 }
 
 // Position the long-click menu near the mouse pointer.
@@ -237,7 +239,7 @@ function activateElement(e, element, offset = 5)
 		element.style.left = (window.scrollX + e.clientX - offset) + "px";
 	}
 	
-	// Position the element above the pointer if there is insufficient
+	// Position the element above the pointer if there is not enough
 	// room below it in the browser window.
 	if(window.innerHeight - e.clientY < rcMenuDim.height)	
 	{
@@ -263,13 +265,13 @@ function createFlexImages()
 	const flexIframe = encapObject.querySelectorAll("div.fs iframe, p.fs > iframe");
   
   // find all figures within a fs div -- in Quarto these are plots from embedded scripts
-  const quartoFS = document.querySelectorAll("div.fs img.figure-img");
-  for(let i=0; i<quartoFS.length; i++)
-  {
-    // add fs directly to the image
-    quartoFS[i].classList.add("fs");
-  }
-  
+	const quartoFS = document.querySelectorAll("div.fs img.figure-img");
+	for(let i=0; i<quartoFS.length; i++)
+	{
+		// add fs directly to the image
+		quartoFS[i].classList.add("fs");
+	}
+	
 	// find all flexsized images
 	const fsObj = document.querySelectorAll("img.fs");
 
@@ -799,4 +801,127 @@ function scrollToCodeLine(element)
 	{
 		codeBlock.scrollTop += lineRect.top - blockRect.top - 20;
 	}
+}
+
+// ------------------------------------------------------------
+// Preserve the first visible lesson block during window resizing.
+//
+// Horizontal and diagonal resizing can cause text to reflow,
+// shifting the lesson vertically. Keep the first visible block
+// (paragraph, heading, code block, etc.) at its original position.
+//
+// Vertical-only resizing is left to the browser.
+// Quarto's responsive layout, including sidebar transitions,
+// remains unchanged.
+// ------------------------------------------------------------
+
+function initializeResizeAnchoring() {
+  const content = document.querySelector("#quarto-document-content");
+  if (!content) return;
+
+  let anchor = null;
+  let lastWidth = window.innerWidth;
+  let resizeTimer = null;
+  let frameId = null;
+  let resizing = false;
+
+  function findAnchor() {
+    const blocks = content.querySelectorAll(
+      "p, h1, h2, h3, h4, h5, h6, pre, figure, table, ul, ol, blockquote"
+    );
+
+    const top = Math.max(
+      0,
+      document.querySelector("#quarto-header")?.getBoundingClientRect().bottom || 0
+    );
+
+    for (const element of blocks) {
+      const rect = element.getBoundingClientRect();
+
+      if (rect.bottom > top && rect.top < window.innerHeight) {
+        return {
+          element,
+          y: rect.top
+        };
+      }
+    }
+
+    return null;
+  }
+
+  function restoreAnchor() {
+    if (!anchor || !anchor.element.isConnected) return;
+
+    const difference =
+      anchor.element.getBoundingClientRect().top - anchor.y;
+
+    if (!Number.isFinite(difference)) return;
+
+    if (Math.abs(difference) > 0.5) {
+      window.scrollBy({
+        top: difference,
+        behavior: "instant"
+      });
+    }
+  }
+
+  function cancelPending() {
+    clearTimeout(resizeTimer);
+    resizeTimer = null;
+
+    if (frameId !== null) {
+      cancelAnimationFrame(frameId);
+      frameId = null;
+    }
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!resizing) {
+      anchor = findAnchor();
+    }
+  }, { passive: true });
+
+  window.addEventListener("resize", () => {
+    const width = window.innerWidth;
+    const widthChanged = width !== lastWidth;
+
+    lastWidth = width;
+
+    // Vertical-only resizing: do not adjust scrolling.
+    if (!widthChanged) {
+      cancelPending();
+      resizing = false;
+      anchor = findAnchor();
+      return;
+    }
+
+    // Horizontal or diagonal resizing.
+    resizing = true;
+    cancelPending();
+
+    restoreAnchor();
+
+    // Correct again after the browser updates the layout.
+    frameId = requestAnimationFrame(() => {
+      frameId = null;
+      restoreAnchor();
+    });
+
+    // Reestablish the anchor after resizing stops.
+    resizeTimer = setTimeout(() => {
+      resizeTimer = null;
+      restoreAnchor();
+      resizing = false;
+      anchor = findAnchor();
+    }, 200);
+  });
+
+  anchor = findAnchor();
+}
+
+// Initialize after the document has loaded.
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeResizeAnchoring);
+} else {
+  initializeResizeAnchoring();
 }
