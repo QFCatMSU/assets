@@ -64,13 +64,15 @@
     display: none;
   }
   /* Green separators above section headings.
-   Higher-level sections have thicker separators. */
+   Higher-level sections have thicker separators. 
+   Note: sections "contain" the heading and their content */
   section.level2, section.level3, section.level4
   {
-      margin-top: 15px;
+    margin-top: 15px;
   }
   section.level2
   {
+    /* 0: box-shadow does not occupy space (does not offset the page) */
     box-shadow: 0 -8px 0 -1px #18453B;
   }
   section.level3
@@ -320,16 +322,33 @@ iframe
     border-color: gray;
     border-width: 1px;
   }
-  /* Keep headings with the content that follows */
-  h1, h2, h3, h4
+  /* Remove section shadows that can appear at page boundaries */
+  section.level2, section.level3, section.level4
   {
-      break-after: avoid;
+    box-shadow: none !important;
   }
-
-  /* Keep code-block tabs with their associated code blocks */
+  /* Keep section separators attached to headings when printing */
+  h2
+  {
+    border-top: 7px solid #18453B;
+  }
+  h3
+  {
+    border-top: 3px solid #18453B;
+  }
+  h4
+  {
+    border-top: 1px solid #18453B;
+  }
+  /* Align code-block tabs with the code-block border */
   .codeBlockTab
   {
-      break-after: avoid;
+    top: 1px;
+  }
+  /* Remove top-left rounding from code blocks with tabs */
+  div.sourceCode.hasTab
+  {
+    border-top-left-radius: 0;
   }
 }
   
